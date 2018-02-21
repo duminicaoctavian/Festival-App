@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
+		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
 		DECDBBFB203DE43B0001B7BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFA203DE43B0001B7BA /* ViewController.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
@@ -33,6 +34,9 @@
 		71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC0DB20DDEF4341F89F1 /* Pods-Festival-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.debug.xcconfig"; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECDBBFA203DE43B0001B7BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE5A810E203DE50C00D8A7FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */,
+				DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */,
+				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DECDBBEC203DE43B0001B7BA = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +114,7 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
+				DE5A810E203DE50C00D8A7FA /* Supporting Files */,
 				DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */,
 				DECDBBFA203DE43B0001B7BA /* ViewController.swift */,
 				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
@@ -187,6 +202,7 @@
 				TargetAttributes = {
 					DECDBBF4203DE43B0001B7BA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					DECDBC0B203DE43B0001B7BA = {
@@ -351,6 +367,7 @@
 				DECDBBFB203DE43B0001B7BA /* ViewController.swift in Sources */,
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
+				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,12 +521,15 @@
 			baseConfigurationReference = 772DBC0DB20DDEF4341F89F1 /* Pods-Festival-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PX5AU8YC45;
 				INFOPLIST_FILE = "Festival-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Octavian.Festival-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Supporting Files/Festival-App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -520,12 +540,14 @@
 			baseConfigurationReference = E0C2CB2CEAB042BFC7EA6144 /* Pods-Festival-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PX5AU8YC45;
 				INFOPLIST_FILE = "Festival-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Octavian.Festival-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Supporting Files/Festival-App-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
