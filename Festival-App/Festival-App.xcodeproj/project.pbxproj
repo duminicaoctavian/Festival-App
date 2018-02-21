@@ -10,8 +10,10 @@
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
+		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
+		DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeVC.swift */; };
+		DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811A203DEA3300D8A7FA /* GradientView.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
-		DECDBBFB203DE43B0001B7BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFA203DE43B0001B7BA /* ViewController.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
 		DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC02203DE43B0001B7BA /* Assets.xcassets */; };
@@ -37,9 +39,11 @@
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuVC.swift; sourceTree = "<group>"; };
+		DE5A8118203DE80D00D8A7FA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		DE5A811A203DEA3300D8A7FA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DECDBBFA203DE43B0001B7BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DECDBC00203DE43B0001B7BA /* Festival_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Festival_App.xcdatamodel; sourceTree = "<group>"; };
 		DECDBC02203DE43B0001B7BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +95,30 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DE5A8113203DE5B800D8A7FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
+				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE5A8114203DE5C400D8A7FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE5A8115203DE5CB00D8A7FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DECDBBEC203DE43B0001B7BA = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +142,11 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
+				DE5A8115203DE5CB00D8A7FA /* Model */,
+				DE5A8114203DE5C400D8A7FA /* View */,
+				DE5A8113203DE5B800D8A7FA /* Controller */,
 				DE5A810E203DE50C00D8A7FA /* Supporting Files */,
 				DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */,
-				DECDBBFA203DE43B0001B7BA /* ViewController.swift */,
 				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
 				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
@@ -364,9 +394,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECDBBFB203DE43B0001B7BA /* ViewController.swift in Sources */,
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
+				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
+				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
+				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

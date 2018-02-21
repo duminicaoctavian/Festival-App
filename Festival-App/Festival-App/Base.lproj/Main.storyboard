@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="abn-NV-w3i"/>
+                        <viewControllerLayoutGuide type="bottom" id="PLk-Gh-ewy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="CmV-eH-Uik" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="tat-d2-rEe"/>
+                        <segue destination="WnR-pl-plV" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="SfX-aN-LVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-7" y="50"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="VuU-Zh-S2G">
+            <objects>
+                <viewController id="WnR-pl-plV" customClass="HomeVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u4V-vC-hUs"/>
+                        <viewControllerLayoutGuide type="bottom" id="jGe-89-rLo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZW-nm-ysU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHN-7S-UH2" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce3-Xu-AAm">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="7h9-lv-OtZ"/>
+                                            <constraint firstAttribute="width" constant="24" id="WIF-9G-fxM"/>
+                                        </constraints>
+                                        <state key="normal" image="menuStack"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-w7-plN">
+                                        <rect key="frame" x="161.5" y="43.5" width="52.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ce3-Xu-AAm" secondAttribute="bottom" constant="12" id="X4v-Ot-EW3"/>
+                                    <constraint firstItem="RW2-w7-plN" firstAttribute="centerY" secondItem="ce3-Xu-AAm" secondAttribute="centerY" id="YiX-ou-gD3"/>
+                                    <constraint firstItem="ce3-Xu-AAm" firstAttribute="leading" secondItem="XHN-7S-UH2" secondAttribute="leading" constant="12" id="a9d-DZ-zsg"/>
+                                    <constraint firstAttribute="height" constant="77" id="hvC-pw-EN7"/>
+                                    <constraint firstItem="RW2-w7-plN" firstAttribute="centerX" secondItem="XHN-7S-UH2" secondAttribute="centerX" id="kLf-WU-GNx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XHN-7S-UH2" firstAttribute="leading" secondItem="LZW-nm-ysU" secondAttribute="leading" id="Fhf-oN-1d1"/>
+                            <constraint firstAttribute="trailing" secondItem="XHN-7S-UH2" secondAttribute="trailing" id="OlB-18-UHQ"/>
+                            <constraint firstItem="XHN-7S-UH2" firstAttribute="top" secondItem="LZW-nm-ysU" secondAttribute="top" id="c2Q-U3-7E8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuBtn" destination="ce3-Xu-AAm" id="ZYI-x4-x8r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-L5-erm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864.79999999999995" y="414.24287856071965"/>
+        </scene>
+        <!--User MenuVC-->
+        <scene sceneID="PR4-9P-hHd">
+            <objects>
+                <viewController id="CmV-eH-Uik" customClass="UserMenuVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oth-Gd-dbB"/>
+                        <viewControllerLayoutGuide type="bottom" id="7nS-BX-HGI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kca-DZ-dc8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3on-8W-xFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="-273"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuStack" width="40" height="40"/>
+    </resources>
 </document>
