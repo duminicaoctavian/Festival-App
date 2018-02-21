@@ -12,6 +12,10 @@ class UserMenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSWRevealViewControllerTrailingSpace()
+    }
+    
+    func setSWRevealViewControllerTrailingSpace() {
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
     }
 }

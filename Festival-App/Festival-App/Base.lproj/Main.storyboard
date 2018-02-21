@@ -19,8 +19,8 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="abn-NV-w3i"/>
-                        <viewControllerLayoutGuide type="bottom" id="PLk-Gh-ewy"/>
+                        <viewControllerLayoutGuide type="top" id="SDA-f7-iED"/>
+                        <viewControllerLayoutGuide type="bottom" id="kPn-Oc-BAb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -41,13 +41,79 @@
             <objects>
                 <viewController id="WnR-pl-plV" customClass="HomeVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u4V-vC-hUs"/>
-                        <viewControllerLayoutGuide type="bottom" id="jGe-89-rLo"/>
+                        <viewControllerLayoutGuide type="top" id="8e5-mw-IQ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="fca-JU-moQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LZW-nm-ysU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-Ct-F6i" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-UU-14G">
+                                        <rect key="frame" x="67" y="35" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="0ws-bY-N2c"/>
+                                            <constraint firstAttribute="width" constant="240" id="Gez-UV-Y2F"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-QD-eR6" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="510" width="245" height="50"/>
+                                        <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cb8-lD-Vth"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Buy Tickets">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraTextWhite" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-vb-7Bw">
+                                        <rect key="frame" x="67" y="283" width="240" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="106" id="2GQ-Pq-Gqx"/>
+                                            <constraint firstAttribute="width" constant="240" id="Z41-58-XMm"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FL2-UU-14G" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="67" id="54I-b2-lsm"/>
+                                    <constraint firstItem="5vx-QD-eR6" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="65" id="5gj-TW-iBn"/>
+                                    <constraint firstItem="EWL-vb-7Bw" firstAttribute="top" secondItem="FL2-UU-14G" secondAttribute="bottom" constant="8" id="6Le-gj-43b"/>
+                                    <constraint firstAttribute="trailing" secondItem="FL2-UU-14G" secondAttribute="trailing" constant="68" id="CpS-St-0wU"/>
+                                    <constraint firstItem="EWL-vb-7Bw" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="67" id="Hy6-6H-KZb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5vx-QD-eR6" secondAttribute="trailing" constant="65" id="KkK-UM-5pg"/>
+                                    <constraint firstAttribute="bottom" secondItem="5vx-QD-eR6" secondAttribute="bottom" constant="30" id="OSr-ed-Z9e"/>
+                                    <constraint firstItem="FL2-UU-14G" firstAttribute="top" secondItem="FUY-Ct-F6i" secondAttribute="top" constant="35" id="cSa-GI-7Ck"/>
+                                    <constraint firstAttribute="trailing" secondItem="EWL-vb-7Bw" secondAttribute="trailing" constant="68" id="jJ8-bj-6GK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.00046930917714694338" green="0.15181804663879772" blue="0.21340673575129532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHN-7S-UH2" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
@@ -73,13 +139,37 @@
                                     <constraint firstAttribute="height" constant="77" id="hvC-pw-EN7"/>
                                     <constraint firstItem="RW2-w7-plN" firstAttribute="centerX" secondItem="XHN-7S-UH2" secondAttribute="centerX" id="kLf-WU-GNx"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.21796020760000001" green="0.079810581780000001" blue="0.37307731379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fca-JU-moQ" firstAttribute="top" secondItem="FUY-Ct-F6i" secondAttribute="bottom" id="7Sd-uJ-sBE"/>
                             <constraint firstItem="XHN-7S-UH2" firstAttribute="leading" secondItem="LZW-nm-ysU" secondAttribute="leading" id="Fhf-oN-1d1"/>
                             <constraint firstAttribute="trailing" secondItem="XHN-7S-UH2" secondAttribute="trailing" id="OlB-18-UHQ"/>
-                            <constraint firstItem="XHN-7S-UH2" firstAttribute="top" secondItem="LZW-nm-ysU" secondAttribute="top" id="c2Q-U3-7E8"/>
+                            <constraint firstAttribute="trailing" secondItem="FUY-Ct-F6i" secondAttribute="trailing" id="X5H-7J-NyC"/>
+                            <constraint firstItem="FUY-Ct-F6i" firstAttribute="top" secondItem="XHN-7S-UH2" secondAttribute="bottom" id="jpk-RS-4X8"/>
+                            <constraint firstItem="FUY-Ct-F6i" firstAttribute="leading" secondItem="LZW-nm-ysU" secondAttribute="leading" id="plj-sk-DZv"/>
+                            <constraint firstItem="XHN-7S-UH2" firstAttribute="top" secondItem="LZW-nm-ysU" secondAttribute="top" id="r0P-W9-zkO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -88,15 +178,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-L5-erm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="414.24287856071965"/>
+            <point key="canvasLocation" x="864.79999999999995" y="413.3433283358321"/>
         </scene>
         <!--User MenuVC-->
         <scene sceneID="PR4-9P-hHd">
             <objects>
                 <viewController id="CmV-eH-Uik" customClass="UserMenuVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oth-Gd-dbB"/>
-                        <viewControllerLayoutGuide type="bottom" id="7nS-BX-HGI"/>
+                        <viewControllerLayoutGuide type="top" id="WFg-Ng-DbP"/>
+                        <viewControllerLayoutGuide type="bottom" id="EnW-TD-TYK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kca-DZ-dc8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -111,5 +201,7 @@
     </scenes>
     <resources>
         <image name="menuStack" width="40" height="40"/>
+        <image name="ultraLogoWhite" width="205" height="204"/>
+        <image name="ultraTextWhite" width="700" height="181"/>
     </resources>
 </document>
