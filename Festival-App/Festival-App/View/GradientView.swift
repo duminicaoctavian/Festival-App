@@ -12,13 +12,13 @@ import UIKit
 class GradientView: UIView {
     
     // update the layout of the view
-    @IBInspectable var topColor: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) {
+    @IBInspectable var topColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
             self.setNeedsLayout()
         }
     }
     
-    @IBInspectable var bottomColor: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) {
+    @IBInspectable var bottomColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
             self.setNeedsLayout()
         }
@@ -56,7 +56,6 @@ class GradientView: UIView {
         gradientLayer.endPoint = CGPoint(x: endX, y: endY)
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0) //insert at first layer
-        super.prepareForInterfaceBuilder()
     }
 }
 
