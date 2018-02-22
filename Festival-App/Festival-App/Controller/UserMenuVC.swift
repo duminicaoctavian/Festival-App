@@ -24,12 +24,12 @@ class UserMenuVC: UIViewController {
 
 extension UserMenuVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.userMenuOptions.count
+        return USER_MENU_OPTIONS.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.userMenuCellIdentifier, for: indexPath) as? UserMenuCell {
-            let option = Constants.userMenuOptions[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: USER_MENU_OPTIONS[indexPath.row], for: indexPath) as? UserMenuCell {
+            let option = USER_MENU_OPTIONS[indexPath.row]
             cell.configureCell(optionName: option)
             return cell
         } else {

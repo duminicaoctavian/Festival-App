@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
+		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
+		DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5A203F1F1300FE29BB /* Artist.swift */; };
+		DE0FCD5D203F20CB00FE29BB /* ArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */; };
+		DE0FCD5F203F211F00FE29BB /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
 		DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeVC.swift */; };
@@ -39,6 +43,10 @@
 		71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC0DB20DDEF4341F89F1 /* Pods-Festival-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.debug.xcconfig"; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
+		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsVC.swift; sourceTree = "<group>"; };
+		DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -91,6 +99,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE0FCD56203F1CC800FE29BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DE5A810E203DE50C00D8A7FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +122,7 @@
 			children = (
 				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
 				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
+				DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,6 +133,7 @@
 				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
 				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
+				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +141,7 @@
 		DE5A8115203DE5CB00D8A7FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +177,7 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
+				DE0FCD56203F1CC800FE29BB /* Services */,
 				DE5A811E203E1DDB00D8A7FA /* Utils */,
 				DE5A8115203DE5CB00D8A7FA /* Model */,
 				DE5A8114203DE5C400D8A7FA /* View */,
@@ -411,15 +431,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0FCD5F203F211F00FE29BB /* ArtistCell.swift in Sources */,
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
+				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
+				DE0FCD5D203F20CB00FE29BB /* ArtistsVC.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
+				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
