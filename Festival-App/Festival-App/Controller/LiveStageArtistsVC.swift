@@ -59,6 +59,14 @@ extension LiveStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ARTIST_CELL_IDENTIFIER, for: indexPath) as? ArtistCell {
             let artist = ArtistService.instance.artists[indexPath.row]
             cell.configureCell(artist: artist)
+            cell.didRequestToShowDetails = { (cell) in
+                let detailsVC = ArtistDetailsVC()
+                detailsVC.name = artist.name
+                detailsVC.genre = artist.genre
+                detailsVC.artistDescription = artist.description
+                detailsVC.modalPresentationStyle = .custom
+                self.present(detailsVC, animated: true, completion: nil)
+            }
             return cell
         } else {
             return UITableViewCell()

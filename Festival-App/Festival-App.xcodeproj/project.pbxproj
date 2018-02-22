@@ -16,6 +16,8 @@
 		DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */; };
 		DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */; };
 		DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */; };
+		DE0FCD6B203F747900FE29BB /* ArtistDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */; };
+		DE0FCD6C203F747900FE29BB /* ArtistDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
 		DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeVC.swift */; };
@@ -53,6 +55,8 @@
 		DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistanceStageArtistsVC.swift; sourceTree = "<group>"; };
 		DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStageArtistsVC.swift; sourceTree = "<group>"; };
 		DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisStageArtistsVC.swift; sourceTree = "<group>"; };
+		DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsVC.swift; sourceTree = "<group>"; };
+		DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistDetailsVC.xib; sourceTree = "<group>"; };
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -113,6 +117,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DE0FCD68203F740E00FE29BB /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		DE5A810E203DE50C00D8A7FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
 				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
 				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
+				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
+				DE0FCD68203F740E00FE29BB /* XIBs */,
 				DE0FCD56203F1CC800FE29BB /* Services */,
 				DE5A811E203E1DDB00D8A7FA /* Utils */,
 				DE5A8115203DE5CB00D8A7FA /* Model */,
@@ -314,6 +328,7 @@
 			files = (
 				DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */,
 				DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */,
+				DE0FCD6C203F747900FE29BB /* ArtistDetailsVC.xib in Resources */,
 				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +465,7 @@
 				DE0FCD5D203F20CB00FE29BB /* MainStageArtistsVC.swift in Sources */,
 				DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
+				DE0FCD6B203F747900FE29BB /* ArtistDetailsVC.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,

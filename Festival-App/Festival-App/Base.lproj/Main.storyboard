@@ -11,6 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
             <string>Avenir-Medium</string>
         </array>
     </customFonts>
@@ -98,7 +99,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZlX-3x-6VH" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="541"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="na9-9Y-dpf">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="na9-9Y-dpf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -116,8 +117,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="Cnw-A4-MF8"/>
                                                                 <constraint firstAttribute="width" constant="80" id="PWm-ap-A28"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                            <state key="normal">
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                                            <state key="normal" title=". . .">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -125,16 +126,13 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onDetailsPressed:" destination="IAf-Yk-c3M" eventType="touchUpInside" id="2X9-a3-R3V"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAH-4N-cg8">
                                                             <rect key="frame" x="113" y="4" width="111" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
-                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=". . ." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5U-ff-DrW">
-                                                            <rect key="frame" x="127" y="47" width="51" height="27"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="36"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -150,14 +148,11 @@
                                                         <constraint firstAttribute="bottomMargin" secondItem="JsY-MF-cIZ" secondAttribute="bottom" constant="6" id="Dlo-U1-cht"/>
                                                         <constraint firstAttribute="bottom" secondItem="Tjs-AM-Za6" secondAttribute="bottom" constant="2" id="Fhj-pZ-7f7"/>
                                                         <constraint firstItem="fAH-4N-cg8" firstAttribute="leading" secondItem="Tjs-AM-Za6" secondAttribute="trailing" constant="8" id="Hoi-fQ-sZo"/>
-                                                        <constraint firstItem="D5U-ff-DrW" firstAttribute="top" secondItem="bQZ-SR-9Uj" secondAttribute="topMargin" constant="36" id="OwY-GB-LoU"/>
-                                                        <constraint firstItem="D5U-ff-DrW" firstAttribute="leading" secondItem="Tjs-AM-Za6" secondAttribute="trailing" constant="22" id="Wa0-Zs-wYS"/>
                                                         <constraint firstItem="JsY-MF-cIZ" firstAttribute="top" secondItem="fAH-4N-cg8" secondAttribute="bottom" constant="3" id="hTk-7a-n0A"/>
                                                         <constraint firstItem="fAH-4N-cg8" firstAttribute="top" secondItem="bQZ-SR-9Uj" secondAttribute="top" constant="4" id="iKg-dF-5qy"/>
                                                         <constraint firstItem="JsY-MF-cIZ" firstAttribute="leading" secondItem="Tjs-AM-Za6" secondAttribute="trailing" constant="8" id="l9O-nT-CNR"/>
                                                         <constraint firstItem="Tjs-AM-Za6" firstAttribute="top" secondItem="bQZ-SR-9Uj" secondAttribute="top" constant="3" id="pH8-hs-ANz"/>
                                                         <constraint firstItem="Tjs-AM-Za6" firstAttribute="leading" secondItem="bQZ-SR-9Uj" secondAttribute="leading" constant="10" id="uGo-6E-58K"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="D5U-ff-DrW" secondAttribute="bottom" constant="15" id="zhK-Lp-ncV"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -292,7 +287,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWl-dB-Ijd" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="541"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eve-Gf-HSa">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eve-Gf-HSa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -310,8 +305,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="OEA-M5-7fO"/>
                                                                 <constraint firstAttribute="width" constant="80" id="n7i-mK-RfT"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                            <state key="normal">
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                                            <state key="normal" title=". . .">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -319,16 +314,13 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onDetailsPressed:" destination="iOl-eq-ae9" eventType="touchUpInside" id="SUr-JI-FBF"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkK-d5-tAg">
                                                             <rect key="frame" x="113" y="4" width="111" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
-                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=". . ." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ1-NT-wud">
-                                                            <rect key="frame" x="127" y="47" width="51" height="27"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="36"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -342,13 +334,10 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="kZj-Hu-Pea" firstAttribute="leading" secondItem="Yz7-YU-gho" secondAttribute="leading" constant="10" id="2Da-Aa-IA3"/>
-                                                        <constraint firstItem="tZ1-NT-wud" firstAttribute="top" secondItem="Yz7-YU-gho" secondAttribute="topMargin" constant="36" id="6Qc-Xp-amA"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="0cU-Q6-CgP" secondAttribute="bottom" constant="6" id="FQU-CK-LhB"/>
                                                         <constraint firstItem="bkK-d5-tAg" firstAttribute="leading" secondItem="kZj-Hu-Pea" secondAttribute="trailing" constant="8" id="Lvd-2f-oQx"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="tZ1-NT-wud" secondAttribute="bottom" constant="15" id="UEJ-zd-Nfx"/>
                                                         <constraint firstItem="0cU-Q6-CgP" firstAttribute="top" secondItem="bkK-d5-tAg" secondAttribute="bottom" constant="3" id="VWl-QR-KuV"/>
                                                         <constraint firstItem="0cU-Q6-CgP" firstAttribute="leading" secondItem="kZj-Hu-Pea" secondAttribute="trailing" constant="8" id="YUv-yF-iQ3"/>
-                                                        <constraint firstItem="tZ1-NT-wud" firstAttribute="leading" secondItem="kZj-Hu-Pea" secondAttribute="trailing" constant="22" id="cna-L6-j5u"/>
                                                         <constraint firstAttribute="bottom" secondItem="kZj-Hu-Pea" secondAttribute="bottom" constant="2" id="hL1-Vp-NjR"/>
                                                         <constraint firstItem="kZj-Hu-Pea" firstAttribute="top" secondItem="Yz7-YU-gho" secondAttribute="top" constant="3" id="p6T-3H-glO"/>
                                                         <constraint firstItem="bkK-d5-tAg" firstAttribute="top" secondItem="Yz7-YU-gho" secondAttribute="top" constant="4" id="sJQ-7h-A0J"/>
@@ -486,7 +475,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMG-JM-qAT" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="541"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-iu-Ma5">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-iu-Ma5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -504,8 +493,8 @@
                                                                 <constraint firstAttribute="width" constant="80" id="UL7-TB-LsE"/>
                                                                 <constraint firstAttribute="height" constant="30" id="dDD-MS-aYK"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                            <state key="normal">
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                                            <state key="normal" title=". . .">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -513,16 +502,13 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onDetailsPressed:" destination="mSi-G2-8RW" eventType="touchUpInside" id="6HI-6H-maa"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-nu-lxv">
                                                             <rect key="frame" x="113" y="4" width="111" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
-                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=". . ." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy3-g7-Q2M">
-                                                            <rect key="frame" x="127" y="47" width="51" height="27"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="36"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -536,15 +522,12 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="3y8-4c-XgO" secondAttribute="bottom" constant="2" id="0PS-5R-DgI"/>
-                                                        <constraint firstItem="Xy3-g7-Q2M" firstAttribute="leading" secondItem="3y8-4c-XgO" secondAttribute="trailing" constant="22" id="25k-uN-I4O"/>
                                                         <constraint firstItem="Ecn-4x-gUe" firstAttribute="top" secondItem="Hgp-nu-lxv" secondAttribute="bottom" constant="3" id="70O-3g-zwl"/>
                                                         <constraint firstItem="Ecn-4x-gUe" firstAttribute="leading" secondItem="3y8-4c-XgO" secondAttribute="trailing" constant="8" id="HNS-hv-Iac"/>
                                                         <constraint firstItem="Hgp-nu-lxv" firstAttribute="leading" secondItem="3y8-4c-XgO" secondAttribute="trailing" constant="8" id="LY9-2h-n2O"/>
-                                                        <constraint firstItem="Xy3-g7-Q2M" firstAttribute="top" secondItem="X93-fu-9ai" secondAttribute="topMargin" constant="36" id="RCc-QS-z72"/>
                                                         <constraint firstItem="3y8-4c-XgO" firstAttribute="leading" secondItem="X93-fu-9ai" secondAttribute="leading" constant="10" id="Toc-x6-ZtB"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="Ecn-4x-gUe" secondAttribute="bottom" constant="6" id="bQC-1o-S9Z"/>
                                                         <constraint firstItem="Hgp-nu-lxv" firstAttribute="top" secondItem="X93-fu-9ai" secondAttribute="top" constant="4" id="ih4-ie-0is"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="Xy3-g7-Q2M" secondAttribute="bottom" constant="15" id="tbR-ah-BxB"/>
                                                         <constraint firstItem="3y8-4c-XgO" firstAttribute="top" secondItem="X93-fu-9ai" secondAttribute="top" constant="3" id="yY0-Vl-2kK"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -679,7 +662,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6F-Mb-ePO" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="541"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-fB-hOd">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-fB-hOd">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -697,8 +680,8 @@
                                                                 <constraint firstAttribute="width" constant="80" id="nrM-xr-tcn"/>
                                                                 <constraint firstAttribute="height" constant="30" id="r8L-gi-oaS"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                            <state key="normal">
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                                            <state key="normal" title=". . .">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -706,16 +689,13 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onDetailsPressed:" destination="zvT-C9-RgH" eventType="touchUpInside" id="Ete-XX-fVT"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW2-BO-b1g">
                                                             <rect key="frame" x="113" y="4" width="111" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
-                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=". . ." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-3m-gpP">
-                                                            <rect key="frame" x="127" y="47" width="51" height="27"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="36"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -728,8 +708,6 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="g0p-3m-gpP" firstAttribute="leading" secondItem="0fO-Lx-r2b" secondAttribute="trailing" constant="22" id="46X-ow-LBc"/>
-                                                        <constraint firstItem="g0p-3m-gpP" firstAttribute="top" secondItem="8qq-4W-yRz" secondAttribute="topMargin" constant="36" id="6Dr-yS-MtH"/>
                                                         <constraint firstItem="oW2-BO-b1g" firstAttribute="leading" secondItem="0fO-Lx-r2b" secondAttribute="trailing" constant="8" id="PAk-Sl-c59"/>
                                                         <constraint firstItem="0fO-Lx-r2b" firstAttribute="top" secondItem="8qq-4W-yRz" secondAttribute="top" constant="3" id="VmW-mT-3Yi"/>
                                                         <constraint firstItem="oW2-BO-b1g" firstAttribute="top" secondItem="8qq-4W-yRz" secondAttribute="top" constant="4" id="dPX-Pg-V1Y"/>
@@ -737,7 +715,6 @@
                                                         <constraint firstItem="0fO-Lx-r2b" firstAttribute="leading" secondItem="8qq-4W-yRz" secondAttribute="leading" constant="10" id="g0x-Ss-IuX"/>
                                                         <constraint firstAttribute="bottom" secondItem="0fO-Lx-r2b" secondAttribute="bottom" constant="2" id="gXC-86-Klw"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="7Y6-zq-eVd" secondAttribute="bottom" constant="6" id="hYd-xd-7fK"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="g0p-3m-gpP" secondAttribute="bottom" constant="15" id="jTi-h9-MgX"/>
                                                         <constraint firstItem="7Y6-zq-eVd" firstAttribute="top" secondItem="oW2-BO-b1g" secondAttribute="bottom" constant="3" id="rzG-GO-2Tu"/>
                                                     </constraints>
                                                 </tableViewCellContentView>

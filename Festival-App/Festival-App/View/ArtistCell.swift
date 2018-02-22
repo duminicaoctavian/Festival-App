@@ -21,4 +21,10 @@ class ArtistCell: UITableViewCell {
         artistNameLbl.text = artist.name
         artistImageView.image = UIImage(named: "\(artist.name!)")
     }
+    
+    var didRequestToShowDetails: ((_ cell:UITableViewCell) -> ())?
+    
+    @IBAction func onDetailsPressed(_ sender: Any) {
+        self.didRequestToShowDetails?(self)
+    }
 }
