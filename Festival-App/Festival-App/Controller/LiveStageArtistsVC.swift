@@ -1,5 +1,5 @@
 //
-//  ArtistsVC.swift
+//  LiveStageArtistsVC.swift
 //  Festival-App
 //
 //  Created by Duminica Octavian on 22/02/2018.
@@ -8,17 +8,39 @@
 
 import UIKit
 
-class ArtistsVC: UIViewController {
-
+class LiveStageArtistsVC: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        startSpinner()
         ArtistService.instance.findAllArtists { (success) in
+            self.stopSpinner()
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ArtistService.instance.clearArtists()
+        tableView.reloadData()
+    }
+    
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
     }
     
     func setUpSWRevealViewController() {
@@ -28,7 +50,7 @@ class ArtistsVC: UIViewController {
     }
 }
 
-extension ArtistsVC: UITableViewDataSource, UITableViewDelegate {
+extension LiveStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ArtistService.instance.artists.count
     }

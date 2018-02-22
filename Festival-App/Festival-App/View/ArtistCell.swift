@@ -20,6 +20,5 @@ class ArtistCell: UITableViewCell {
     func configureCell(artist: Artist) {
         artistNameLbl.text = artist.name
         artistImageView.image = UIImage(named: "\(artist.name!)")
-        print("\(artist.name)")
     }
 }

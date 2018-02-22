@@ -11,8 +11,11 @@
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
 		DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5A203F1F1300FE29BB /* Artist.swift */; };
-		DE0FCD5D203F20CB00FE29BB /* ArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */; };
+		DE0FCD5D203F20CB00FE29BB /* MainStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */; };
 		DE0FCD5F203F211F00FE29BB /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */; };
+		DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */; };
+		DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */; };
+		DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
 		DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeVC.swift */; };
@@ -45,8 +48,11 @@
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsVC.swift; sourceTree = "<group>"; };
+		DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStageArtistsVC.swift; sourceTree = "<group>"; };
 		DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistanceStageArtistsVC.swift; sourceTree = "<group>"; };
+		DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStageArtistsVC.swift; sourceTree = "<group>"; };
+		DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisStageArtistsVC.swift; sourceTree = "<group>"; };
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -122,7 +128,10 @@
 			children = (
 				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
 				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
-				DE0FCD5C203F20CB00FE29BB /* ArtistsVC.swift */,
+				DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */,
+				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
+				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
+				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -435,10 +444,13 @@
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
+				DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
-				DE0FCD5D203F20CB00FE29BB /* ArtistsVC.swift in Sources */,
+				DE0FCD5D203F20CB00FE29BB /* MainStageArtistsVC.swift in Sources */,
+				DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
+				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
