@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum Stages: String {
+    case Main = "Main"
+    case Resistance = "Resistance"
+    case Live = "Live"
+    case Oasis = "Oasis"
+}
+
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accomodation"]

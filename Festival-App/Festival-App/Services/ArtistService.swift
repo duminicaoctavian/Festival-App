@@ -15,8 +15,8 @@ class ArtistService {
     
     var artists = [Artist]()
     
-    func findAllArtists(completion: @escaping CompletionHandler) {
-        Alamofire.request(URL_GET_ARTISTS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+    func findAllArtistsForStage(stage: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -28,7 +28,8 @@ class ArtistService {
                         let name = item["name"].stringValue
                         let genre = item["genre"].stringValue
                         let description = item["description"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description)
+                        let stageItem = item["stage"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem)
                         self.artists.append(artist)
                     }
                     //NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)

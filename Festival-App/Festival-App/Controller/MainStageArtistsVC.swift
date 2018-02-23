@@ -21,7 +21,7 @@ class MainStageArtistsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         startSpinner()
-        ArtistService.instance.findAllArtists { (success) in
+        ArtistService.instance.findAllArtistsForStage(stage: Stages.Main.rawValue) { (success) in
             self.stopSpinner()
             self.tableView.reloadData()
         }

@@ -21,7 +21,7 @@ class OasisStageArtistsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         startSpinner()
-        ArtistService.instance.findAllArtists { (success) in
+        ArtistService.instance.findAllArtistsForStage(stage: Stages.Oasis.rawValue) { (success) in
             self.stopSpinner()
             self.tableView.reloadData()
         }

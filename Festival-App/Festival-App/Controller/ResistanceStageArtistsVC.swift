@@ -21,7 +21,7 @@ class ResistanceStageArtistsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         startSpinner()
-        ArtistService.instance.findAllArtists { (success) in
+        ArtistService.instance.findAllArtistsForStage(stage: Stages.Resistance.rawValue) { (success) in
             self.stopSpinner()
             self.tableView.reloadData()
         }
