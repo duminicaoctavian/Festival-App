@@ -20,6 +20,7 @@ class ResistanceStageArtistsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        ArtistService.instance.clearArtists()
         startSpinner()
         ArtistService.instance.findAllArtistsForStage(stage: Stages.Resistance.rawValue) { (success) in
             self.stopSpinner()
@@ -71,5 +72,13 @@ extension ResistanceStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.95, 1, 1)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        }, completion: nil)
     }
 }
