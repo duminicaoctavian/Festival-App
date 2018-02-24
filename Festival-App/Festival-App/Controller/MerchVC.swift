@@ -23,3 +23,19 @@ class MerchVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
 }
+
+extension MerchVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return PRODUCT_CATEGORIES.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: PRODUCT_CATEGORY_CELL_IDENTIFIER, for: indexPath) as? ProductCategoryCell {
+            let category = PRODUCT_CATEGORIES[indexPath.row]
+            cell.configureCell(category: category)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+}
