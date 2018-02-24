@@ -17,9 +17,10 @@ enum Stages: String {
 
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
-let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accomodation"]
+let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accomodation", "Merch"]
 let USER_MENU_CELL_IDENTIFIER = "userMenuCell"
 let ARTIST_CELL_IDENTIFIER = "artistCell"
+let NEWS_CELL_IDENTIFIER = "newsCell"
 
 // URL Constants
 let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
