@@ -32,7 +32,6 @@ class ArtistService {
                         let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem)
                         self.artists.append(artist)
                     }
-                    //NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     completion(true)
                 } catch {
                     debugPrint(error)

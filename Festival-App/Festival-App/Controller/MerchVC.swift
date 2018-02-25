@@ -9,33 +9,56 @@
 import UIKit
 
 class MerchVC: UIViewController {
-
-    @IBOutlet weak var menuBtn: UIButton!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    var category: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSWRevealViewController()
     }
     
-    func setUpSWRevealViewController() {
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    override func viewWillAppear(_ animated: Bool) {
+        ProductService.instance.clearProducts()
+        startSpinner()
+        ProductService.instance.findAllProductsForCategory(category: category) { (success) in
+            self.stopSpinner()
+            self.collectionView.reloadData()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ProductService.instance.clearProducts()
+        collectionView.reloadData()
+    }
+    
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
     }
 }
 
-extension MerchVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PRODUCT_CATEGORIES.count
+extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ProductService.instance.products.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: PRODUCT_CATEGORY_CELL_IDENTIFIER, for: indexPath) as? ProductCategoryCell {
-            let category = PRODUCT_CATEGORIES[indexPath.row]
-            cell.configureCell(category: category)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PRODUCT_CELL_IDENTIFIER, for: indexPath) as? ProductCell {
+            let product = ProductService.instance.products[indexPath.row]
+            cell.configureCell(product: product)
             return cell
-        } else {
-            return UITableViewCell()
         }
+        return UICollectionViewCell()
     }
 }

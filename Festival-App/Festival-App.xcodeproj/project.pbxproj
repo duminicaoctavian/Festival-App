@@ -21,10 +21,14 @@
 		DE1648502041F56100EB371B /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16484F2041F56100EB371B /* ProductService.swift */; };
 		DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648512041F9E500EB371B /* ProductCategoryCell.swift */; };
 		DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648552042006F00EB371B /* HalfRoundedView.swift */; };
+		DE16485A2042134000EB371B /* MerchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648592042134000EB371B /* MerchVC.swift */; };
+		DE16485C2042191700EB371B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16485B2042191700EB371B /* Product.swift */; };
+		DE16485E204219DE00EB371B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16485D204219DE00EB371B /* ProductCell.swift */; };
+		DE1648622042350400EB371B /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648612042350400EB371B /* RoundedImage.swift */; };
 		DE4DF1662041BEDF0083A8F1 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */; };
 		DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1672041C1720083A8F1 /* NewsCell.swift */; };
 		DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1692041CB340083A8F1 /* LineupVC.swift */; };
-		DE4DF16C2041CB4E0083A8F1 /* MerchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16B2041CB4E0083A8F1 /* MerchVC.swift */; };
+		DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */; };
 		DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
@@ -68,10 +72,14 @@
 		DE16484F2041F56100EB371B /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		DE1648512041F9E500EB371B /* ProductCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryCell.swift; sourceTree = "<group>"; };
 		DE1648552042006F00EB371B /* HalfRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfRoundedView.swift; sourceTree = "<group>"; };
+		DE1648592042134000EB371B /* MerchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchVC.swift; sourceTree = "<group>"; };
+		DE16485B2042191700EB371B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DE16485D204219DE00EB371B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		DE1648612042350400EB371B /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		DE4DF1672041C1720083A8F1 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DE4DF1692041CB340083A8F1 /* LineupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupVC.swift; sourceTree = "<group>"; };
-		DE4DF16B2041CB4E0083A8F1 /* MerchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchVC.swift; sourceTree = "<group>"; };
+		DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchCategoryVC.swift; sourceTree = "<group>"; };
 		DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomodationVC.swift; sourceTree = "<group>"; };
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -164,8 +172,9 @@
 				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
 				DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
-				DE4DF16B2041CB4E0083A8F1 /* MerchVC.swift */,
+				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
+				DE1648592042134000EB371B /* MerchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +189,8 @@
 				DE4DF1672041C1720083A8F1 /* NewsCell.swift */,
 				DE1648512041F9E500EB371B /* ProductCategoryCell.swift */,
 				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
+				DE16485D204219DE00EB371B /* ProductCell.swift */,
+				DE1648612042350400EB371B /* RoundedImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
+				DE16485B2042191700EB371B /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -484,20 +496,24 @@
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
+				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
 				DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
-				DE4DF16C2041CB4E0083A8F1 /* MerchVC.swift in Sources */,
+				DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */,
 				DE0FCD5D203F20CB00FE29BB /* MainStageArtistsVC.swift in Sources */,
 				DE1648502041F56100EB371B /* ProductService.swift in Sources */,
 				DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
+				DE16485A2042134000EB371B /* MerchVC.swift in Sources */,
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsVC.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
+				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
+				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
