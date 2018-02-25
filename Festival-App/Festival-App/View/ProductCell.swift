@@ -23,7 +23,7 @@ class ProductCell: UICollectionViewCell {
         let imageUrl = URL(string: "\(BASE_URL)/\(product.productImage!)")!
         
         // Start background thread so that image loading does not make app unresponsive
-        DispatchQueue.global(qos: .userInitiated).async {
+        // DispatchQueue.global(qos: .userInitiated).async {
             
             let imageData = NSData(contentsOf: imageUrl)!
             
@@ -32,7 +32,7 @@ class ProductCell: UICollectionViewCell {
                 let image = UIImage(data: imageData as Data)
                 self.productImageView.image = image
             }
-        }
+        // }
     }
     
     var didRequestToShowDetails: ((_ cell:UICollectionViewCell) -> ())?
