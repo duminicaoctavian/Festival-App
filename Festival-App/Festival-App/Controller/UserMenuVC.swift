@@ -11,6 +11,7 @@ import UIKit
 class UserMenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,12 @@ class UserMenuVC: UIViewController {
     
     func setSWRevealViewControllerTrailingSpace() {
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
+    }
+    
+    @IBAction func onUserButtonPressed(_ sender: Any) {
+        AuthService.instance.logoutUser { (success) in
+            self.performSegue(withIdentifier: LOGOUT_SEGUE, sender: self)
+        }
     }
 }
 
