@@ -57,7 +57,7 @@ class AuthService {
                 do {
                     let json = try JSON(data: data)
                     self.userEmail = json["user"].stringValue
-                    self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                    self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
                 } catch {
                     debugPrint(error)
                 }

@@ -38,6 +38,7 @@
 		DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */; };
 		DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811F203E1DF200D8A7FA /* Constants.swift */; };
 		DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */; };
+		DE742A112044963A000CF48F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginVC.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
@@ -92,6 +93,7 @@
 		DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		DE5A811F203E1DF200D8A7FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuCell.swift; sourceTree = "<group>"; };
+		DE742A102044963A000CF48F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
 				DE1648592042134000EB371B /* MerchVC.swift */,
+				DE742A102044963A000CF48F /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
+				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
