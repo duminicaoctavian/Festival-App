@@ -24,7 +24,9 @@ class UserMenuVC: UIViewController {
     
     @IBAction func onUserButtonPressed(_ sender: Any) {
         AuthService.instance.logoutUser { (success) in
-            self.performSegue(withIdentifier: LOGOUT_SEGUE, sender: self)
+            if success {
+                self.performSegue(withIdentifier: LOGOUT_SEGUE, sender: self)
+            }
         }
     }
 }

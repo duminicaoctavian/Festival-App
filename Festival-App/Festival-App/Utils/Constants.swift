@@ -28,17 +28,20 @@ let PRODUCT_VC_IDENTIFIER = "MerchVC"
 
 // URL Constants
 let BASE_URL = "http://localhost:3000"
-//let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
+// let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
 let URL_GET_ARTISTS = "\(BASE_URL)/artists"
 let URL_GET_PRODUCTS = "\(BASE_URL)/products"
 let URL_REGISTER_USER = "\(BASE_URL)/users"
 let URL_LOGIN_USER = "\(BASE_URL)/users/login"
+let URL_LOGOUT_USER = "\(BASE_URL)/users/me/token"
 
 // Notification Constants
 
 // Segues
 let LOGOUT_SEGUE = "logoutSegue"
-let TO_HOME = "toHome"
+let TO_HOME_FROM_LOGIN = "toHomeFromLogin"
+let TO_REGISTER = "toRegister"
+let TO_HOME_FROM_REGISTER = "toHomeFromRegister"
 
 // User Defaults
 let TOKEN_KEY = "token"

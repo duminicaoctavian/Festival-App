@@ -18,6 +18,14 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
     @IBAction func onLoginPressed(_ sender: Any) {
@@ -29,8 +37,11 @@ class LoginVC: UIViewController {
             if (success) {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
-                self.performSegue(withIdentifier: TO_HOME, sender: self)
+                self.performSegue(withIdentifier: TO_HOME_FROM_LOGIN, sender: self)
             }
         }
+    }
+    @IBAction func onRegisterPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_REGISTER, sender: self)
     }
 }

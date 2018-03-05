@@ -42,6 +42,35 @@ class AuthService {
         }
     }
     
+    func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        
+        Alamofire.request(URL_REGISTER_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                do {
+                    let json = try JSON(data: data)
+                    self.userEmail = json["user"].stringValue
+                    self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
+                    // self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                } catch {
+                    debugPrint(error)
+                }
+                self.isLoggedIn = true
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
     func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
 
         let lowerCaseEmail = email.lowercased()
@@ -58,6 +87,7 @@ class AuthService {
                     let json = try JSON(data: data)
                     self.userEmail = json["user"].stringValue
                     self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
+                    // self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                 } catch {
                     debugPrint(error)
                 }
@@ -71,9 +101,18 @@ class AuthService {
     }
     
     func logoutUser(completion: @escaping CompletionHandler) {
-        AuthService.instance.isLoggedIn = false
-        AuthService.instance.userEmail = ""
-        AuthService.instance.authToken = ""
-        completion(true)
+        
+        Alamofire.request(URL_LOGOUT_USER, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        
+            if response.result.error == nil {
+                self.isLoggedIn = false
+                self.userEmail = ""
+                self.authToken = ""
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
     }
 }

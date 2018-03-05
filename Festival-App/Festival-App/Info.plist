@@ -40,9 +40,15 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
-  <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-  </dict>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires access to maps.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app requires access to maps.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires access to maps.</string>
 </dict>
 </plist>
