@@ -56,9 +56,12 @@ class AuthService {
                 guard let data = response.data else {return}
                 do {
                     let json = try JSON(data: data)
-                    self.userEmail = json["user"].stringValue
+                    self.userEmail = json["email"].stringValue
+                    let id = json["_id"].stringValue
                     self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
                     // self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                    
+                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
                 } catch {
                     debugPrint(error)
                 }
@@ -85,9 +88,12 @@ class AuthService {
                 guard let data = response.data else {return}
                 do {
                     let json = try JSON(data: data)
-                    self.userEmail = json["user"].stringValue
+                    self.userEmail = json["email"].stringValue
+                    let id = json["_id"].stringValue
                     self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
                     // self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                    print(id)
+                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
                 } catch {
                     debugPrint(error)
                 }
@@ -109,6 +115,29 @@ class AuthService {
                 self.userEmail = ""
                 self.authToken = ""
                 completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)/\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                do {
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let email = json["email"].stringValue
+                    
+                    UserDataService.instance.setUserData(id: id, email: email, name: email)
+                    completion(true)
+                } catch {
+                    debugPrint(error)
+                }
+                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)

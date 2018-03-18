@@ -46,8 +46,16 @@
 		DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC02203DE43B0001B7BA /* Assets.xcassets */; };
 		DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */; };
 		DECDBC11203DE43B0001B7BA /* Festival_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */; };
-		DEE34C96205E7ADD006C7B55 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */; };
-		DEE34C98205E7AED006C7B55 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatVC.swift */; };
+		DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */; };
+		DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */; };
+		DEE34C9D205E91AE006C7B55 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9C205E91AE006C7B55 /* SocketService.swift */; };
+		DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9E205E91DE006C7B55 /* Channel.swift */; };
+		DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9F205E91DE006C7B55 /* Message.swift */; };
+		DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */; };
+		DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA4205E9208006C7B55 /* ChannelCell.swift */; };
+		DEE34CA7205E9208006C7B55 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA5205E9208006C7B55 /* MessageCell.swift */; };
+		DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA8205E923E006C7B55 /* MessageService.swift */; };
+		DEE34CAB205E93B7006C7B55 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CAA205E93B7006C7B55 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +116,16 @@
 		DECDBC0C203DE43B0001B7BA /* Festival-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Festival-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival_AppTests.swift; sourceTree = "<group>"; };
 		DECDBC12203DE43B0001B7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
-		DEE34C97205E7AED006C7B55 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
+		DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowVC.swift; sourceTree = "<group>"; };
+		DEE34C9C205E91AE006C7B55 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		DEE34C9E205E91DE006C7B55 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		DEE34C9F205E91DE006C7B55 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		DEE34CA4205E9208006C7B55 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		DEE34CA5205E9208006C7B55 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		DEE34CA8205E923E006C7B55 /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		DEE34CAA205E93B7006C7B55 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		E0C2CB2CEAB042BFC7EA6144 /* Pods-Festival-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.release.xcconfig"; sourceTree = "<group>"; };
 		E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,9 +162,12 @@
 		DE0FCD56203F1CC800FE29BB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DEE34CAA205E93B7006C7B55 /* UserDataService.swift */,
 				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
 				DE16484F2041F56100EB371B /* ProductService.swift */,
 				DE3B2CF62043300C00C4E49D /* AuthService.swift */,
+				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
+				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,8 +207,8 @@
 				DE1648592042134000EB371B /* MerchVC.swift */,
 				DE742A102044963A000CF48F /* LoginVC.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
-				DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */,
-				DEE34C97205E7AED006C7B55 /* ChatVC.swift */,
+				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
+				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +216,9 @@
 		DE5A8114203DE5C400D8A7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
+				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
+				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
 				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
 				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
@@ -215,6 +237,8 @@
 			children = (
 				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
 				DE16485B2042191700EB371B /* Product.swift */,
+				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
+				DEE34C9F205E91DE006C7B55 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,9 +530,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE34C9D205E91AE006C7B55 /* SocketService.swift in Sources */,
+				DEE34CA7205E9208006C7B55 /* MessageCell.swift in Sources */,
 				DE0FCD5F203F211F00FE29BB /* ArtistCell.swift in Sources */,
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
+				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
@@ -530,9 +557,14 @@
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
-				DEE34C98205E7AED006C7B55 /* ChatVC.swift in Sources */,
+				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
+				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
-				DEE34C96205E7ADD006C7B55 /* ChannelVC.swift in Sources */,
+				DEE34CAB205E93B7006C7B55 /* UserDataService.swift in Sources */,
+				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
+				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
+				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
+				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,

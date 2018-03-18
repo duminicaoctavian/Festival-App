@@ -1311,10 +1311,10 @@
             </objects>
             <point key="canvasLocation" x="865" y="410"/>
         </scene>
-        <!--ChannelVC-->
+        <!--ChannelsVC-->
         <scene sceneID="Mp1-dX-8ti">
             <objects>
-                <viewController id="ajF-8x-yZf" customClass="ChannelVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ajF-8x-yZf" customClass="ChannelsVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="63h-cT-GGJ"/>
                         <viewControllerLayoutGuide type="bottom" id="3aw-IJ-3V9"/>
@@ -1323,7 +1323,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INc-HA-Z2s" customClass="GradientView" customModule="Smack" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INc-HA-Z2s" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LZ-wK-iC3">
@@ -1336,7 +1336,7 @@
                                         <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="Dqr-me-c18" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="Dqr-me-c18" customClass="ChannelCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dqr-me-c18" id="1zN-gp-3P6">
@@ -1357,10 +1357,14 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="channelName" destination="kvF-kp-Vvi" id="S56-xR-OMW"/>
+                                                    <outlet property="channelName" destination="kvF-kp-Vvi" id="mFR-ak-TbU"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ajF-8x-yZf" id="FeS-68-nhh"/>
+                                            <outlet property="delegate" destination="ajF-8x-yZf" id="75g-hu-1At"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1402,6 +1406,9 @@
                             <constraint firstItem="INc-HA-Z2s" firstAttribute="leading" secondItem="n1o-1B-iPO" secondAttribute="leading" id="v25-GS-tR5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="LuE-6j-mTV" id="nur-Ru-gu5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymb-Sg-0aD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1429,10 +1436,10 @@
             </objects>
             <point key="canvasLocation" x="865" y="1232"/>
         </scene>
-        <!--ChatVC-->
+        <!--Chat WindowVC-->
         <scene sceneID="N3o-v0-oou">
             <objects>
-                <viewController id="sTM-Zz-30O" customClass="ChatVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sTM-Zz-30O" customClass="ChatWindowVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qg0-IP-Kbf"/>
                         <viewControllerLayoutGuide type="bottom" id="vTx-4I-EfV"/>
@@ -1494,14 +1501,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="80" id="QuR-BG-qwP" customClass="MessageCell" customModule="Smack" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="80" id="QuR-BG-qwP" customClass="MessageCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QuR-BG-qwP" id="fZ0-Rp-VVH">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="OiJ-vy-InB" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="OiJ-vy-InB">
                                                             <rect key="frame" x="8" y="11" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="idM-a8-6hP"/>
@@ -1542,13 +1549,16 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="messageBodyLbl" destination="csd-tG-6Yn" id="OhU-nd-b3T"/>
-                                                    <outlet property="timeStampLbl" destination="zXA-DH-ZBX" id="SbP-U6-rxr"/>
-                                                    <outlet property="userImage" destination="OiJ-vy-InB" id="sip-8W-k9v"/>
-                                                    <outlet property="usernameLbl" destination="8mJ-tk-IXc" id="tZw-Do-bh4"/>
+                                                    <outlet property="messageBodyLbl" destination="csd-tG-6Yn" id="Ybg-hl-dU2"/>
+                                                    <outlet property="timeStampLbl" destination="zXA-DH-ZBX" id="h6k-t6-rzt"/>
+                                                    <outlet property="usernameLbl" destination="8mJ-tk-IXc" id="iqX-BQ-2VA"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="sTM-Zz-30O" id="eBG-IR-yS8"/>
+                                            <outlet property="delegate" destination="sTM-Zz-30O" id="yBi-QL-bJN"/>
+                                        </connections>
                                     </tableView>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-fR-S3P">
                                         <rect key="frame" x="0.0" y="550" width="337" height="40"/>
@@ -1559,6 +1569,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="messageBoxEditing:" destination="sTM-Zz-30O" eventType="editingDidEnd" id="gWG-cH-PMQ"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-jM-wPf">
                                         <rect key="frame" x="337" y="555" width="30" height="30"/>
@@ -1567,6 +1580,9 @@
                                             <constraint firstAttribute="width" constant="30" id="p4D-6p-hLA"/>
                                         </constraints>
                                         <state key="normal" image="sendBtn"/>
+                                        <connections>
+                                            <action selector="sendMessagePressed:" destination="sTM-Zz-30O" eventType="touchUpInside" id="q47-LR-Z2d"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9F-Cl-zc0">
                                         <rect key="frame" x="8" y="520" width="359" height="30"/>
@@ -1574,8 +1590,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="F5m-dS-uEV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1628,7 +1644,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chatBtn" destination="JhK-ZN-Atx" id="Z7C-gr-IPb"/>
+                        <outlet property="channelNameLbl" destination="iqq-4e-5ir" id="PWr-ci-qQR"/>
+                        <outlet property="chatBtn" destination="JhK-ZN-Atx" id="pcH-rK-56X"/>
+                        <outlet property="messageTextBox" destination="WfA-fR-S3P" id="7hE-QR-xzD"/>
+                        <outlet property="sendBtn" destination="yCe-jM-wPf" id="OZw-Qm-Xi8"/>
+                        <outlet property="tableView" destination="swF-Ea-0rW" id="8vI-it-DPN"/>
+                        <outlet property="typingLbl" destination="X9F-Cl-zc0" id="Qx7-sg-Khh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a2-FH-sic" userLabel="First Responder" sceneMemberID="firstResponder"/>
