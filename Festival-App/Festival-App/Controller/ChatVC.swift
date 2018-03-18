@@ -1,17 +1,16 @@
 //
-//  HomeVC.swift
+//  ChatVC.swift
 //  Festival-App
 //
-//  Created by Duminica Octavian on 21/02/2018.
+//  Created by Duminica Octavian on 18/03/2018.
 //  Copyright © 2018 Duminica Octavian. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController {
-    
-    // Outlets
-    @IBOutlet weak var menuBtn: UIButton!
+class ChatVC: UIViewController {
+
+    @IBOutlet weak var chatBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +18,8 @@ class HomeVC: UIViewController {
     }
     
     func setUpSWRevealViewController() {
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        chatBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-    }
-    
-    @IBAction func onChatPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_CHAT, sender: self)
     }
 }

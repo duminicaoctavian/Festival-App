@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         if AuthService.instance.isLoggedIn {
             
             let rootController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")

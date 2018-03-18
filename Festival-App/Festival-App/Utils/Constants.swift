@@ -42,6 +42,7 @@ let LOGOUT_SEGUE = "logoutSegue"
 let TO_HOME_FROM_LOGIN = "toHomeFromLogin"
 let TO_REGISTER = "toRegister"
 let TO_HOME_FROM_REGISTER = "toHomeFromRegister"
+let TO_CHAT = "toChat"
 
 // User Defaults
 let TOKEN_KEY = "token"

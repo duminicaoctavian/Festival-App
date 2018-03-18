@@ -46,6 +46,8 @@
 		DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC02203DE43B0001B7BA /* Assets.xcassets */; };
 		DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */; };
 		DECDBC11203DE43B0001B7BA /* Festival_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */; };
+		DEE34C96205E7ADD006C7B55 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */; };
+		DEE34C98205E7AED006C7B55 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		DECDBC0C203DE43B0001B7BA /* Festival-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Festival-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival_AppTests.swift; sourceTree = "<group>"; };
 		DECDBC12203DE43B0001B7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		DEE34C97205E7AED006C7B55 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		E0C2CB2CEAB042BFC7EA6144 /* Pods-Festival-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.release.xcconfig"; sourceTree = "<group>"; };
 		E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,6 +188,8 @@
 				DE1648592042134000EB371B /* MerchVC.swift */,
 				DE742A102044963A000CF48F /* LoginVC.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
+				DEE34C95205E7ADD006C7B55 /* ChannelVC.swift */,
+				DEE34C97205E7AED006C7B55 /* ChatVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -524,7 +530,9 @@
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
+				DEE34C98205E7AED006C7B55 /* ChatVC.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
+				DEE34C96205E7ADD006C7B55 /* ChannelVC.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
