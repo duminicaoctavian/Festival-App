@@ -26,7 +26,6 @@
 		DE16485E204219DE00EB371B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16485D204219DE00EB371B /* ProductCell.swift */; };
 		DE1648622042350400EB371B /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648612042350400EB371B /* RoundedImage.swift */; };
 		DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B2CF62043300C00C4E49D /* AuthService.swift */; };
-		DE4DF1662041BEDF0083A8F1 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */; };
 		DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1672041C1720083A8F1 /* NewsCell.swift */; };
 		DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1692041CB340083A8F1 /* LineupVC.swift */; };
 		DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */; };
@@ -40,6 +39,8 @@
 		DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */; };
 		DE742A112044963A000CF48F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginVC.swift */; };
 		DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterVC.swift */; };
+		DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B5205F882400A276E5 /* CircleImage.swift */; };
+		DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsVC.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
@@ -90,7 +91,6 @@
 		DE16485D204219DE00EB371B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		DE1648612042350400EB371B /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		DE3B2CF62043300C00C4E49D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		DE4DF1672041C1720083A8F1 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DE4DF1692041CB340083A8F1 /* LineupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupVC.swift; sourceTree = "<group>"; };
 		DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchCategoryVC.swift; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuCell.swift; sourceTree = "<group>"; };
 		DE742A102044963A000CF48F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DEA52116204B3EDE00ED285A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		DEA915B5205F882400A276E5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		DEA915B7205FBBD000A276E5 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,7 +202,6 @@
 				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
 				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
 				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
-				DE4DF1652041BEDF0083A8F1 /* NewsVC.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
 				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
@@ -209,6 +210,7 @@
 				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
 				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
+				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +221,7 @@
 				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
 				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
 				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
+				DEA915B5205F882400A276E5 /* CircleImage.swift */,
 				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
 				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
@@ -551,6 +554,7 @@
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
 				DE16485A2042134000EB371B /* MerchVC.swift in Sources */,
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsVC.swift in Sources */,
+				DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
@@ -571,7 +575,7 @@
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
-				DE4DF1662041BEDF0083A8F1 /* NewsVC.swift in Sources */,
+				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,8 @@ class ChatWindowVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatWindowVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         SocketService.instance.getChatMessage { (newMessage) in
-            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+            print(MessageService.instance.selectedChannel!.id)
+            if newMessage.channelId == MessageService.instance.selectedChannel!.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
@@ -82,8 +83,15 @@ class ChatWindowVC: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if MessageService.instance.messages.count > 0 {
+            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
+        }
+    }
+    
     func setUpSWRevealViewController() {
-        chatBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        chatBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
@@ -165,6 +173,9 @@ class ChatWindowVC: UIViewController {
             }
             isTyping = true
         }
+    }
+    @IBAction func onBackPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
