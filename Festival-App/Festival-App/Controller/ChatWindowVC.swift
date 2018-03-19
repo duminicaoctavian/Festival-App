@@ -39,9 +39,16 @@ class ChatWindowVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatWindowVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         SocketService.instance.getChatMessage { (newMessage) in
-            print(MessageService.instance.selectedChannel!.id)
+            
             if newMessage.channelId == MessageService.instance.selectedChannel!.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
+                
+                // for the multiple window bug
+                if (MessageService.instance.messages[MessageService.instance.messages.count - 1].id == MessageService.instance.messages[MessageService.instance.messages.count - 2].id) {
+                    MessageService.instance.messages.remove(at: MessageService.instance.messages.count - 1)
+                }
+                //
+                
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
