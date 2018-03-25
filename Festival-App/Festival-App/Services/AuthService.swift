@@ -58,8 +58,8 @@ class AuthService {
                     let json = try JSON(data: data)
                     self.userEmail = json["email"].stringValue
                     let id = json["_id"].stringValue
-                    self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
-                    // self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                    //self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
+                    self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                     
                     UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
                 } catch {
