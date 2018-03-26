@@ -12,15 +12,62 @@ class NewsVC: UIViewController {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        
+        tableView.estimatedRowHeight = 250;
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func setUpSWRevealViewController() {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NewsService.instance.clearNews()
+        startSpinner()
+        NewsService.instance.findAllNews(completion: { (success) in
+            self.stopSpinner()
+            self.tableView.reloadData()
+        })
+    }
+    
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
+}
+
+extension NewsVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return NewsService.instance.news.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: NEWS_CELL_IDENTIFIER, for: indexPath) as? NewsCell {
+            let news = NewsService.instance.news[indexPath.row]
+            cell.configureCell(news: news)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.95, 0.95, 1)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        }, completion: nil)
     }
 }

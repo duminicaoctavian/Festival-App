@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable //lets the class know it needs to be rendered on the storyboard, useful for custom work
+//@IBDesignable //lets the class know it needs to be rendered on the storyboard, useful for custom work
 class GradientView: UIView {
     
     // update the layout of the view

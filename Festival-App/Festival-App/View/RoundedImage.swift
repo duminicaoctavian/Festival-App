@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class RoundedImage: UIImageView {
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
         didSet {

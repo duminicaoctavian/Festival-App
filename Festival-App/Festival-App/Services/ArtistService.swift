@@ -16,7 +16,7 @@ class ArtistService {
     var artists = [Artist]()
     
     func findAllArtistsForStage(stage: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }

@@ -25,6 +25,8 @@
 		DE16485C2042191700EB371B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16485B2042191700EB371B /* Product.swift */; };
 		DE16485E204219DE00EB371B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16485D204219DE00EB371B /* ProductCell.swift */; };
 		DE1648622042350400EB371B /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1648612042350400EB371B /* RoundedImage.swift */; };
+		DE241F712069069400F07C33 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE241F702069069400F07C33 /* News.swift */; };
+		DE241F7320690A7400F07C33 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE241F7220690A7400F07C33 /* NewsService.swift */; };
 		DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B2CF62043300C00C4E49D /* AuthService.swift */; };
 		DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1672041C1720083A8F1 /* NewsCell.swift */; };
 		DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1692041CB340083A8F1 /* LineupVC.swift */; };
@@ -90,6 +92,8 @@
 		DE16485B2042191700EB371B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DE16485D204219DE00EB371B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		DE1648612042350400EB371B /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		DE241F702069069400F07C33 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		DE241F7220690A7400F07C33 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		DE3B2CF62043300C00C4E49D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DE4DF1672041C1720083A8F1 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DE4DF1692041CB340083A8F1 /* LineupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupVC.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				DE3B2CF62043300C00C4E49D /* AuthService.swift */,
 				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
+				DE241F7220690A7400F07C33 /* NewsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				DE16485B2042191700EB371B /* Product.swift */,
 				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
 				DEE34C9F205E91DE006C7B55 /* Message.swift */,
+				DE241F702069069400F07C33 /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */,
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
+				DE241F712069069400F07C33 /* News.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
@@ -562,6 +569,7 @@
 				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
+				DE241F7320690A7400F07C33 /* NewsService.swift in Sources */,
 				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				DEE34CAB205E93B7006C7B55 /* UserDataService.swift in Sources */,

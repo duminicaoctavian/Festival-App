@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@IBDesignable
+//@IBDesignable
 class HalfRoundedView: UIView {
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
         didSet {

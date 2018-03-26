@@ -27,7 +27,7 @@ let PRODUCT_CELL_IDENTIFIER = "productCell"
 let PRODUCT_VC_IDENTIFIER = "MerchVC"
 
 // URL Constants
-//let BASE_URL = "http://localhost:3000"
+// let BASE_URL = "http://localhost:3000"
 let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
 let URL_GET_ARTISTS = "\(BASE_URL)/artists"
 let URL_GET_PRODUCTS = "\(BASE_URL)/products"
@@ -37,6 +37,7 @@ let URL_LOGOUT_USER = "\(BASE_URL)/users/me/token"
 let URL_GET_CHANNELS = "\(BASE_URL)/channels"
 let URL_GET_MESSAGES = "\(BASE_URL)/messages"
 let URL_USER_BY_EMAIL = "\(BASE_URL)/users"
+let URL_GET_NEWS = "\(BASE_URL)/news"
 
 // Notification constant
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
