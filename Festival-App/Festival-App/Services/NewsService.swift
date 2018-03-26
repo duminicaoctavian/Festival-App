@@ -14,6 +14,8 @@ class NewsService {
     static let instance = NewsService()
     
     var news = [News]()
+    var count = 0
+    var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {
         Alamofire.request("\(URL_GET_NEWS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
@@ -41,6 +43,8 @@ class NewsService {
             }
         }
     }
+    
+    
     
     func clearNews() {
         news.removeAll()

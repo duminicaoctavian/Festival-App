@@ -20,6 +20,15 @@ class NewsVC: UIViewController {
         
         tableView.estimatedRowHeight = 250;
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.isHidden = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewsVC.webViewsFinishedLoading(_:)), name: NOTIF_WEBVIEWS_LOADED, object: nil)
+    }
+    
+    @objc func webViewsFinishedLoading(_ notif: Notification) {
+        self.stopSpinner()
+        self.tableView.isHidden = false
+        NewsService.instance.loaded = true
     }
     
     func setUpSWRevealViewController() {
@@ -32,8 +41,11 @@ class NewsVC: UIViewController {
         NewsService.instance.clearNews()
         startSpinner()
         NewsService.instance.findAllNews(completion: { (success) in
-            self.stopSpinner()
-            self.tableView.reloadData()
+            if (success) {
+                self.tableView.reloadData()
+                NewsService.instance.count = 0
+                NewsService.instance.loaded = false
+            }
         })
     }
     

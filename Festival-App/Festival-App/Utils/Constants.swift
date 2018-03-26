@@ -43,6 +43,7 @@ let URL_GET_NEWS = "\(BASE_URL)/news"
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
 let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
+let NOTIF_WEBVIEWS_LOADED = Notification.Name("webViewsLoaded")
 
 // Segues
 let LOGOUT_SEGUE = "logoutSegue"
