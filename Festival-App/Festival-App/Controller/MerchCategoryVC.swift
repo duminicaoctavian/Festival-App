@@ -44,4 +44,8 @@ extension MerchCategoryVC: UITableViewDelegate, UITableViewDataSource {
         merchVC.category = PRODUCT_CATEGORIES[indexPath.row]
         present(merchVC, animated: true, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.size.height/4.5;
+    }
 }

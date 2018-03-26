@@ -48,7 +48,7 @@ class MerchVC: UIViewController {
     }
 }
 
-extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ProductService.instance.products.count
     }
@@ -60,6 +60,10 @@ extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:(collectionView.frame.width / 2) - 20, height: (collectionView.frame.height / 2) - 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

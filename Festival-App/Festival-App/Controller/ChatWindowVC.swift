@@ -96,12 +96,12 @@ class ChatWindowVC: UIViewController {
     }
     
     // TODO
-    override func viewDidAppear(_ animated: Bool) {
-        if MessageService.instance.messages.count > 0 {
-            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if MessageService.instance.messages.count > 0 {
+//            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+//            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
+//        }
+//    }
 
     
     func setUpSWRevealViewController() {

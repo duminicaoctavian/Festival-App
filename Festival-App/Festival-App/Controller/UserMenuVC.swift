@@ -45,4 +45,8 @@ extension UserMenuVC: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.size.height/9;
+    }
 }

@@ -17,6 +17,7 @@ class ProductCell: UICollectionViewCell {
     var data: NSData!
     
     func configureCell(product: Product) {
+        
         productNameLbl.text = product.name!
         productPriceLbl.text = "$\(product.price!)"
 
