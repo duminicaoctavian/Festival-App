@@ -2549,6 +2549,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4B-VN-evY" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRC-Gu-UBr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="O6W-XD-lSn" id="YIF-Xw-1Sm"/>
+                                            <outlet property="delegate" destination="O6W-XD-lSn" id="8Qh-7U-dVo"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sRC-Gu-UBr" firstAttribute="top" secondItem="U4B-VN-evY" secondAttribute="top" id="9rW-gS-Irt"/>
+                                    <constraint firstItem="sRC-Gu-UBr" firstAttribute="leading" secondItem="U4B-VN-evY" secondAttribute="leading" id="D7a-no-ojd"/>
+                                    <constraint firstAttribute="trailing" secondItem="sRC-Gu-UBr" secondAttribute="trailing" id="GzZ-Hb-Zeh"/>
+                                    <constraint firstAttribute="bottom" secondItem="sRC-Gu-UBr" secondAttribute="bottom" id="MZM-A8-ZFQ"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="startX">
                                         <real key="value" value="0.5"/>
@@ -2584,11 +2600,12 @@
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="QQw-tV-6Gj" id="N0h-zW-lUo"/>
+                        <outlet property="tableView" destination="sRC-Gu-UBr" id="1vB-Ej-Ujs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5av-rz-7m0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-1251"/>
+            <point key="canvasLocation" x="853.60000000000002" y="-1251.7241379310346"/>
         </scene>
         <!--NewsVC-->
         <scene sceneID="kpU-FQ-20X">
