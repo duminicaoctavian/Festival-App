@@ -29,7 +29,39 @@ class ArtistService {
                         let genre = item["genre"].stringValue
                         let description = item["description"].stringValue
                         let stageItem = item["stage"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem)
+                        let day = item["day"].stringValue
+                        let time = item["time"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time)
+                        self.artists.append(artist)
+                    }
+                    completion(true)
+                } catch {
+                    debugPrint(error)
+                }
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func getFilteredArtists(stage: String, day: Int, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)/\(day)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                do {
+                    let json = try JSON(data: data)
+                    let array = json["artists"].arrayValue
+                    for item in array {
+                        let _id = item["_id"].stringValue
+                        let name = item["name"].stringValue
+                        let genre = item["genre"].stringValue
+                        let description = item["description"].stringValue
+                        let stageItem = item["stage"].stringValue
+                        let day = item["day"].stringValue
+                        let time = item["time"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time)
                         self.artists.append(artist)
                     }
                     completion(true)

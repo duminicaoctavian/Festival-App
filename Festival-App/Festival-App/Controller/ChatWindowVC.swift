@@ -16,6 +16,7 @@ class ChatWindowVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var typingLbl: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     //Variables
     var isTyping = false
@@ -124,6 +125,7 @@ class ChatWindowVC: UIViewController {
     func onLoginGetMessages() {
         MessageService.instance.findAllChannels { (success) in
             if success {
+                self.startSpinner()
                 if MessageService.instance.channels.count > 0 {
                     MessageService.instance.selectedChannel = MessageService.instance.channels[0] //set first channel as selected one
                     self.updateWithChannel()
@@ -133,7 +135,6 @@ class ChatWindowVC: UIViewController {
             }
         }
     }
-    
     
     @objc func handleTap() {
         view.endEditing(true)
@@ -153,6 +154,7 @@ class ChatWindowVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
             if success {
+                self.stopSpinner()
                 self.tableView.reloadData()
             }
         }
@@ -188,8 +190,19 @@ class ChatWindowVC: UIViewController {
             isTyping = true
         }
     }
+    
     @IBAction func onBackPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
     }
 }
 

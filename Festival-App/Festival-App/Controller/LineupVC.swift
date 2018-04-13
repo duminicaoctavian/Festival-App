@@ -12,34 +12,62 @@ class LineupVC: UIViewController {
 
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mainStageBtn: UIButton!
+    @IBOutlet weak var resistanceStageBtn: UIButton!
+    @IBOutlet weak var liveStageBtn: UIButton!
+    @IBOutlet weak var oasisStageBtn: UIButton!
+    @IBOutlet weak var dayOneBtn: UIButton!
+    @IBOutlet weak var dayTwoBtn: UIButton!
+    @IBOutlet weak var dayThreeBtn: UIButton!
+    @IBOutlet weak var dayFourBtn: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    let data:[Int: [(TimelinePoint, UIColor, String, String, String?, String?, String?)]] = [0:[
-        (TimelinePoint(), UIColor.lightGray, "12:30", "Borgore", nil, nil, nil),
-        (TimelinePoint(), UIColor.lightGray, "15:30", "Noisia", nil, nil, nil),
-        (TimelinePoint(), UIColor.green, "16:30", "Carl Cox", nil, nil, nil),
-        (TimelinePoint(), UIColor.lightGray, "19:00", "Getter", nil, nil, nil),
-        (TimelinePoint(), UIColor.lightGray, "20:00", "Skrillex", nil, nil, nil),
-        (TimelinePoint(), UIColor.clear, "21:00", "Steve Aoki", nil, nil, nil)
-        ], 1:[
-            (TimelinePoint(), UIColor.lightGray, "08:30", "Dua Lipa", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "09:30", "David Guetta", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "10:00", "Avicii", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "11:30", "Eptic", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "12:30", "Nina Kraviz", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "13:00", "Solomun", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "15:00", "Pendulum", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "17:30", "The Prodigy", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "18:30", "Rita Ora", nil, nil, nil),
-            (TimelinePoint(), UIColor.lightGray, "19:30", "Modestep", nil, nil, nil),
-            (TimelinePoint(), backColor: UIColor.clear, "20:00", "Martin Garrix", nil, nil, nil)
-        ]]
+    var data = [Int: [(TimelinePoint, UIColor, String, String)]]()
+    var day: Int!
+    var stage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        day = 1
+        stage = "Main"
+        highlightBtn(btn: mainStageBtn)
+        highlightBtn(btn: dayOneBtn)
         
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
+        
+        getFilteredArtists(stage: stage, day: day)
+    }
+    
+    func getFilteredArtists(stage: String, day: Int) {
+        startSpinner()
+        ArtistService.instance.clearArtists()
+        data.removeAll()
+        tableView.reloadData()
+        ArtistService.instance.getFilteredArtists(stage: stage, day: day) { (success) in
+            if (success) {
+                for index in 0..<ArtistService.instance.artists.count {
+                    let artist = ArtistService.instance.artists[index]
+                    
+                    if index == ArtistService.instance.artists.count - 1 {
+                        self.data[Int(artist.day)!]?.append((TimelinePoint(), backColor: UIColor.clear, artist.time, artist.name))
+                        break
+                    }
+                    
+                    let keyExists = self.data[Int(artist.day)!] != nil
+                    
+                    if keyExists {
+                        self.data[Int(artist.day)!]?.append((TimelinePoint(), UIColor.lightGray, artist.time, artist.name))
+                    } else {
+                        self.data[Int(artist.day)!] = [(TimelinePoint(), UIColor.lightGray, artist.time, artist.name)]
+                    }
+                    
+                }
+                self.stopSpinner()
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func setUpSWRevealViewController() {
@@ -47,16 +75,82 @@ class LineupVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
+    @IBAction func onMainStagePressed(_ sender: Any) {
+        stage = "Main"
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: mainStageBtn)
+        unHighlightBtns(btn1: resistanceStageBtn, btn2: liveStageBtn, btn3: oasisStageBtn)
+    }
+    @IBAction func onResistancePressed(_ sender: Any) {
+        stage = "Resistance"
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: resistanceStageBtn)
+        unHighlightBtns(btn1: mainStageBtn, btn2: liveStageBtn, btn3: oasisStageBtn)
+    }
+    @IBAction func onLivePressed(_ sender: Any) {
+        stage = "Live"
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: liveStageBtn)
+        unHighlightBtns(btn1: mainStageBtn, btn2: resistanceStageBtn, btn3: oasisStageBtn)
+    }
+    @IBAction func onOasisPressed(_ sender: Any) {
+        stage = "Oasis"
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: oasisStageBtn)
+        unHighlightBtns(btn1: mainStageBtn, btn2: resistanceStageBtn, btn3: liveStageBtn)
+    }
+    
+    @IBAction func onDayOnePressed(_ sender: Any) {
+        day = 1
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: dayOneBtn)
+        unHighlightBtns(btn1: dayTwoBtn, btn2: dayThreeBtn, btn3: dayFourBtn)
+    }
+    @IBAction func onDayTwoPressed(_ sender: Any) {
+        day = 2
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: dayTwoBtn)
+        unHighlightBtns(btn1: dayOneBtn, btn2: dayThreeBtn, btn3: dayFourBtn)
+    }
+    
+    @IBAction func onDayThreePressed(_ sender: Any) {
+        day = 3
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: dayThreeBtn)
+        unHighlightBtns(btn1: dayOneBtn, btn2: dayTwoBtn, btn3: dayFourBtn)
+    }
+    @IBAction func onDayFourPressed(_ sender: Any) {
+        day = 4
+        getFilteredArtists(stage: stage, day: day)
+        highlightBtn(btn: dayFourBtn)
+        unHighlightBtns(btn1: dayOneBtn, btn2: dayTwoBtn, btn3: dayThreeBtn)
+    }
+    
+    func highlightBtn(btn: UIButton) {
+        btn.alpha = 1.0
+    }
+    
+    func unHighlightBtns(btn1: UIButton, btn2: UIButton, btn3: UIButton) {
+        btn1.alpha = 0.3
+        btn2.alpha = 0.3
+        btn3.alpha = 0.3
+    }
+    
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
 }
 
 extension LineupVC: UITableViewDataSource, UITableViewDelegate {
-   
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionData = data[section] else {
+        guard let sectionData = data[day] else {
             return 0
         }
         return sectionData.count
@@ -67,11 +161,11 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
         
         // Configure the cell...
-        guard let sectionData = data[indexPath.section] else {
+        guard let sectionData = data[day] else {
             return cell
         }
         
-        let (timelinePoint, timelineBackColor, title, description, _, _, _) = sectionData[indexPath.row]
+        let (timelinePoint, timelineBackColor, title, description) = sectionData[indexPath.row]
         var timelineFrontColor = UIColor.clear
         if (indexPath.row > 0) {
             timelineFrontColor = sectionData[indexPath.row - 1].1
@@ -94,22 +188,8 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         print(sectionData[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-        headerView.backgroundColor = #colorLiteral(red: 0.2196078431, green: 0.07843137255, blue: 0.3725490196, alpha: 1)
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        titleLabel.text = "Day " + String(describing: section + 1)
-        titleLabel.textColor = UIColor.white
-        titleLabel.textAlignment = .center
-        titleLabel.center = headerView.center
-        headerView.addSubview(titleLabel)
-        return headerView
-    }
-    
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layer.transform = CATransform3DMakeScale(0.95, 0.95, 1)
+        cell.layer.transform = CATransform3DMakeScale(0.95, 1.0, 1)
         
         UIView.animate(withDuration: 0.3, animations: {
             cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)

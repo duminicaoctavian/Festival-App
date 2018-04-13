@@ -15,6 +15,7 @@ class ArtistDetailsVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var innerView: GradientView!
+    @IBOutlet weak var closeBtn: RoundedButton!
     
     var name: String!
     var genre: String!
@@ -23,6 +24,9 @@ class ArtistDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        
+        closeBtn.setTitle("Close", for: .normal)
+        closeBtn.sizeToFit()
     }
     
     func setUpView() {

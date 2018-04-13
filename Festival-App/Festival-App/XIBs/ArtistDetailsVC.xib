@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-            <string>Avenir-Medium</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistDetailsVC" customModule="Festival_App" customModuleProvider="target">
             <connections>
+                <outlet property="closeBtn" destination="5R5-Xs-cpf" id="TFM-Bf-xqI"/>
                 <outlet property="descriptionTextView" destination="mR2-mq-WBk" id="Ca0-fq-KO9"/>
                 <outlet property="genreLbl" destination="QkO-KQ-ET8" id="yhX-g7-GMS"/>
                 <outlet property="imageView" destination="A2w-Da-ad2" id="Wjf-kn-ebK"/>
@@ -44,8 +39,8 @@
                                 <constraint firstAttribute="width" constant="100" id="ua1-Ui-k6e"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-UZ-fAK">
-                            <rect key="frame" x="122" y="26" width="111" height="41"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-UZ-fAK">
+                            <rect key="frame" x="122" y="26" width="225" height="41"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -65,9 +60,10 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R5-Xs-cpf" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                            <rect key="frame" x="130" y="503" width="94" height="30"/>
+                            <rect key="frame" x="137.5" y="503" width="80" height="30"/>
                             <color key="backgroundColor" red="0.23921568627450979" green="0.086274509803921567" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="80" id="2t3-2T-46G"/>
                                 <constraint firstAttribute="height" constant="30" id="UB9-Vr-YO9"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
@@ -94,10 +90,10 @@
                         <constraint firstAttribute="trailing" secondItem="mR2-mq-WBk" secondAttribute="trailing" constant="8" id="Mpv-hG-3TC"/>
                         <constraint firstItem="5R5-Xs-cpf" firstAttribute="top" secondItem="mR2-mq-WBk" secondAttribute="bottom" constant="8" id="TvZ-GD-Gvi"/>
                         <constraint firstItem="AI8-UZ-fAK" firstAttribute="top" secondItem="0Eh-mr-h8i" secondAttribute="top" constant="26" id="VsO-n9-djC"/>
-                        <constraint firstItem="5R5-Xs-cpf" firstAttribute="leading" secondItem="0Eh-mr-h8i" secondAttribute="leading" constant="130" id="Wcd-Ph-JbE"/>
                         <constraint firstItem="mR2-mq-WBk" firstAttribute="leading" secondItem="0Eh-mr-h8i" secondAttribute="leading" constant="8" id="Xop-Zh-OfU"/>
-                        <constraint firstAttribute="trailing" secondItem="5R5-Xs-cpf" secondAttribute="trailing" constant="131" id="aXW-1b-jPB"/>
+                        <constraint firstAttribute="trailing" secondItem="AI8-UZ-fAK" secondAttribute="trailing" constant="8" id="aMZ-rS-UNm"/>
                         <constraint firstItem="mR2-mq-WBk" firstAttribute="top" secondItem="A2w-Da-ad2" secondAttribute="bottom" constant="8" id="gal-KB-Zjp"/>
+                        <constraint firstItem="5R5-Xs-cpf" firstAttribute="centerX" secondItem="0Eh-mr-h8i" secondAttribute="centerX" id="uio-aO-Ai9"/>
                         <constraint firstItem="QkO-KQ-ET8" firstAttribute="leading" secondItem="A2w-Da-ad2" secondAttribute="trailing" constant="14" id="v6W-Gj-jSH"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

@@ -14,4 +14,6 @@ struct Artist {
     public private(set) var genre: String!
     public private(set) var description: String!
     public private(set) var stage: String!
+    public private(set) var day: String!
+    public private(set) var time: String!
 }
