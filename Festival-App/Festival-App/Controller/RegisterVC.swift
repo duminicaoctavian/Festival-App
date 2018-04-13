@@ -38,14 +38,42 @@ class RegisterVC: UIViewController {
         let confirmPasswordInput = confirmPasswordTextField.text!
         
         if passwordInput != confirmPasswordInput {
-            print("PASSWORDS DO NOT MATCH!")
+            passwordTextField.text = ""
+            confirmPasswordTextField.text = ""
+            emailTextField.text = ""
+            
+            let alertController = UIAlertController(title: "Registration Failed", message: "Passwords do not match.", preferredStyle: .alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            
+            self.present(alertController, animated: true, completion: nil)
         } else {
+            
             spinner.isHidden = false
             spinner.startAnimating()
             
             AuthService.instance.registerUser(email: emailInput, password: passwordInput, completion: { (success) in
-                if success {
+                if (success) {
                     self.performSegue(withIdentifier: TO_HOME_FROM_REGISTER, sender: self)
+                } else {
+                    self.passwordTextField.text = ""
+                    self.confirmPasswordTextField.text = ""
+
+                    self.spinner.isHidden = true
+                    self.spinner.stopAnimating()
+                    
+                    let alertController = UIAlertController(title: "Registration Failed", message: "Invalid input data.", preferredStyle: .alert)
+                    //We add buttons to the alert controller by creating UIAlertActions:
+                    let actionOk = UIAlertAction(title: "OK",
+                                                 style: .default,
+                                                 handler: nil) //You can use a block here to handle a press on this button
+                    
+                    alertController.addAction(actionOk)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }

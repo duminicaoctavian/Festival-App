@@ -31,7 +31,7 @@ class NewsCell: UITableViewCell {
                 self.titleLabel.isHidden = false;
                 self.dateLabel.isHidden = false;
                 self.newsTextLabel.isHidden = false;
-                self.webView.isHidden = false;
+                self.webView.isHidden = false;    
                 
                 let videoId = self.getYoutubeId(youtubeUrl: news.url)
                 let urlString = "http://www.youtube.com/embed/\(videoId!)"

@@ -1030,22 +1030,31 @@
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-Pc-lQm">
-                                        <rect key="frame" x="91" y="210" width="192" height="120"/>
+                                        <rect key="frame" x="92" y="210" width="192" height="120"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40J-G2-fAI">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="192" id="oAn-Ai-Nqp"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-ex-uPe">
                                                 <rect key="frame" x="0.0" y="45" width="192" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="192" id="YEm-OY-gc3"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUb-nW-LsJ">
                                                 <rect key="frame" x="0.0" y="90" width="192" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="192" id="Bc6-oz-Fy4"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1057,6 +1066,7 @@
                                         <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0ct-RC-6IO"/>
+                                            <constraint firstAttribute="width" constant="192" id="2FO-Aa-BPx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <state key="normal" title="Create Ultra Account">
@@ -1076,7 +1086,8 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="YU3-ir-0bv">
                                         <rect key="frame" x="107" y="26" width="160" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="YU3-ir-0bv" secondAttribute="height" multiplier="1:1" id="BtQ-jt-xGc"/>
+                                            <constraint firstAttribute="width" constant="160" id="8vY-gP-l6e"/>
+                                            <constraint firstAttribute="height" constant="160" id="KeR-lu-PjI"/>
                                         </constraints>
                                     </imageView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KI6-lp-Zdg">
@@ -1086,16 +1097,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KI6-lp-Zdg" firstAttribute="centerY" secondItem="caU-dm-u1f" secondAttribute="centerY" constant="-70" id="4HU-FP-A0G"/>
-                                    <constraint firstItem="YU3-ir-0bv" firstAttribute="leading" secondItem="caU-dm-u1f" secondAttribute="leading" constant="107" id="GW1-bz-qsb"/>
+                                    <constraint firstItem="rjb-bF-JMM" firstAttribute="centerX" secondItem="caU-dm-u1f" secondAttribute="centerX" id="76w-q0-aH6"/>
                                     <constraint firstItem="a7H-Pc-lQm" firstAttribute="top" secondItem="caU-dm-u1f" secondAttribute="top" constant="210" id="Hja-jW-M7i"/>
-                                    <constraint firstAttribute="trailing" secondItem="rjb-bF-JMM" secondAttribute="trailing" constant="92" id="Jtf-XW-9ax"/>
-                                    <constraint firstItem="rjb-bF-JMM" firstAttribute="leading" secondItem="caU-dm-u1f" secondAttribute="leading" constant="91" id="Knz-Xc-V6k"/>
+                                    <constraint firstItem="YU3-ir-0bv" firstAttribute="centerX" secondItem="caU-dm-u1f" secondAttribute="centerX" id="Lbt-iU-8Eq"/>
                                     <constraint firstItem="KI6-lp-Zdg" firstAttribute="centerX" secondItem="caU-dm-u1f" secondAttribute="centerX" id="RUe-Mh-e0P"/>
-                                    <constraint firstAttribute="trailing" secondItem="a7H-Pc-lQm" secondAttribute="trailing" constant="92" id="T4S-Qs-Ilm"/>
                                     <constraint firstItem="YU3-ir-0bv" firstAttribute="top" secondItem="caU-dm-u1f" secondAttribute="top" constant="26" id="ePy-Hb-PeP"/>
-                                    <constraint firstAttribute="trailing" secondItem="YU3-ir-0bv" secondAttribute="trailing" constant="108" id="erx-iR-7Xt"/>
                                     <constraint firstItem="rjb-bF-JMM" firstAttribute="top" secondItem="a7H-Pc-lQm" secondAttribute="bottom" constant="30" id="gP2-7b-yIk"/>
-                                    <constraint firstItem="a7H-Pc-lQm" firstAttribute="leading" secondItem="caU-dm-u1f" secondAttribute="leading" constant="91" id="m1X-lP-aVH"/>
+                                    <constraint firstItem="a7H-Pc-lQm" firstAttribute="centerX" secondItem="caU-dm-u1f" secondAttribute="centerX" id="kQe-sw-P9r"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="startX">
@@ -2993,6 +3001,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="COe-lv-7BE"/>
-        <segue reference="hgO-G5-ZHv"/>
+        <segue reference="Bb2-sH-5zi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,6 +38,20 @@ class LoginVC: UIViewController {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
                 self.performSegue(withIdentifier: TO_HOME_FROM_LOGIN, sender: self)
+            } else {
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                
+                let alertController = UIAlertController(title: "Login Failed", message: "Please try again.", preferredStyle: .alert)
+                //We add buttons to the alert controller by creating UIAlertActions:
+                let actionOk = UIAlertAction(title: "OK",
+                                             style: .default,
+                                             handler: nil) //You can use a block here to handle a press on this button
+                
+                alertController.addAction(actionOk)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }

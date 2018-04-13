@@ -54,19 +54,28 @@ class AuthService {
         Alamofire.request(URL_REGISTER_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else {return}
-                do {
-                    let json = try JSON(data: data)
-                    self.userEmail = json["email"].stringValue
-                    let id = json["_id"].stringValue
-                    //self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
-                    self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
-                    
-                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
-                } catch {
-                    debugPrint(error)
+                if response.response?.statusCode == 400 {
+                    completion(false)
+                } else {
+                    do {
+                        let json = try JSON(data: data)
+                        self.userEmail = json["email"].stringValue
+                        let id = json["_id"].stringValue
+                        //self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
+                        if response.response?.allHeaderFields["X-Auth"] != nil {
+                            self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                        }
+                        
+                        UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
+                    } catch {
+                        debugPrint(error)
+                        completion(false)
+                    }
+                    print("Here")
+                    self.isLoggedIn = true
+                    completion(true)
                 }
-                self.isLoggedIn = true
-                completion(true)
+                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
@@ -96,6 +105,7 @@ class AuthService {
                     UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
                 } catch {
                     debugPrint(error)
+                    completion(false)
                 }
                 self.isLoggedIn = true
                 completion(true)
