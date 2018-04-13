@@ -16,4 +16,5 @@ struct Artist {
     public private(set) var stage: String!
     public private(set) var day: String!
     public private(set) var time: String!
+    public private(set) var artistImage: String!
 }

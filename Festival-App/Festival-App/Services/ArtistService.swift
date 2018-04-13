@@ -31,7 +31,8 @@ class ArtistService {
                         let stageItem = item["stage"].stringValue
                         let day = item["day"].stringValue
                         let time = item["time"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time)
+                        let artistImage = item["artistImage"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage)
                         self.artists.append(artist)
                     }
                     completion(true)
@@ -61,7 +62,8 @@ class ArtistService {
                         let stageItem = item["stage"].stringValue
                         let day = item["day"].stringValue
                         let time = item["time"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time)
+                        let artistImage = item["artistImage"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage)
                         self.artists.append(artist)
                     }
                     completion(true)

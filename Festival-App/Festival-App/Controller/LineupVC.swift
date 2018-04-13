@@ -22,9 +22,12 @@ class LineupVC: UIViewController {
     @IBOutlet weak var dayFourBtn: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var data = [Int: [(TimelinePoint, UIColor, String, String)]]()
+    var data = [Int: [(TimelinePoint, UIColor, String, String, String)]]()
     var day: Int!
     var stage: String!
+    var imageUrlString: String?
+    
+    let imageCache = NSCache<AnyObject, AnyObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +54,16 @@ class LineupVC: UIViewController {
                     let artist = ArtistService.instance.artists[index]
                     
                     if index == ArtistService.instance.artists.count - 1 {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), backColor: UIColor.clear, artist.time, artist.name))
+                        self.data[Int(artist.day)!]?.append((TimelinePoint(), backColor: UIColor.clear, artist.time, artist.name, artist.artistImage))
                         break
                     }
                     
                     let keyExists = self.data[Int(artist.day)!] != nil
                     
                     if keyExists {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), UIColor.lightGray, artist.time, artist.name))
+                        self.data[Int(artist.day)!]?.append((TimelinePoint(), UIColor.lightGray, artist.time, artist.name, artist.artistImage))
                     } else {
-                        self.data[Int(artist.day)!] = [(TimelinePoint(), UIColor.lightGray, artist.time, artist.name)]
+                        self.data[Int(artist.day)!] = [(TimelinePoint(), UIColor.lightGray, artist.time, artist.name, artist.artistImage)]
                     }
                     
                 }
@@ -165,7 +168,7 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         
-        let (timelinePoint, timelineBackColor, title, description) = sectionData[indexPath.row]
+        let (timelinePoint, timelineBackColor, title, description, imageLink) = sectionData[indexPath.row]
         var timelineFrontColor = UIColor.clear
         if (indexPath.row > 0) {
             timelineFrontColor = sectionData[indexPath.row - 1].1
@@ -175,7 +178,32 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         cell.timeline.backColor = timelineBackColor
         cell.titleLabel.text = title
         cell.descriptionLabel.text = description
-        cell.illustrationImageView.image = UIImage(named: description)
+        //cell.illustrationImageView.image = UIImage(named: description)
+        print(imageLink)
+        
+        let imageUrl = URL(string: imageLink)!
+        
+        cell.illustrationImageView.image = nil
+        
+        if let imageFromCache = imageCache.object(forKey: imageLink as AnyObject) as? UIImage {
+            cell.illustrationImageView.image = imageFromCache
+            return cell
+        }
+        
+        // Start background thread so that image loading does not make app unresponsive
+        DispatchQueue.global(qos: .userInitiated).async {
+        
+            let imageData = NSData(contentsOf: imageUrl)!
+        
+            // When from background thread, UI needs to be updated on main_queue
+            DispatchQueue.main.async {
+                let imageToCache = UIImage(data: imageData as Data)
+                
+                self.imageCache.setObject(imageToCache!, forKey: imageLink as AnyObject)
+                
+                cell.illustrationImageView.image = imageToCache
+            }
+        }
         
         return cell
     }

@@ -20,6 +20,7 @@ class ArtistDetailsVC: UIViewController {
     var name: String!
     var genre: String!
     var artistDescription: String!
+    var artistImage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,11 @@ class ArtistDetailsVC: UIViewController {
     func setUpView() {
         genreLbl.text = "Genre: \(genre!)"
         nameLbl.text = name!
-        imageView.image = UIImage(named: "\(name!)")
         descriptionTextView.text = artistDescription!
         
+        let imageFromCache = cache.object(forKey:  artistImage as AnyObject) as? UIImage
+        imageView.image = imageFromCache
+       
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ArtistDetailsVC.closeTap(_:)))
         innerView.addGestureRecognizer(closeTouch)
     }
