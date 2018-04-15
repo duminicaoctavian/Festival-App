@@ -12,10 +12,20 @@ class UserMenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userBtn: UIButton!
+    @IBOutlet weak var profileImgView: CircleImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setSWRevealViewControllerTrailingSpace()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        profileImgView.isUserInteractionEnabled = true
+        profileImgView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        self.revealViewController().pushFrontViewController(profileVC, animated: true)
     }
     
     func setSWRevealViewControllerTrailingSpace() {
@@ -47,6 +57,10 @@ extension UserMenuVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let modelName = UIDevice.current.modelName
+        if modelName == "iPhone 5s" {
+            return UIScreen.main.bounds.size.height/10;
+        }
         return UIScreen.main.bounds.size.height/9;
     }
 }

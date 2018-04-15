@@ -13,7 +13,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,48 +35,32 @@ class RegisterVC: UIViewController {
     @IBAction func onSignUpPressed(_ sender: Any) {
         let emailInput = emailTextField.text!
         let passwordInput = passwordTextField.text!
-        let confirmPasswordInput = confirmPasswordTextField.text!
+        let usernameInput = usernameTextField.text!
+            
+        spinner.isHidden = false
+        spinner.startAnimating()
         
-        if passwordInput != confirmPasswordInput {
-            passwordTextField.text = ""
-            confirmPasswordTextField.text = ""
-            emailTextField.text = ""
-            
-            let alertController = UIAlertController(title: "Registration Failed", message: "Passwords do not match.", preferredStyle: .alert)
-            //We add buttons to the alert controller by creating UIAlertActions:
-            let actionOk = UIAlertAction(title: "OK",
-                                         style: .default,
-                                         handler: nil) //You can use a block here to handle a press on this button
-            
-            alertController.addAction(actionOk)
-            
-            self.present(alertController, animated: true, completion: nil)
-        } else {
-            
-            spinner.isHidden = false
-            spinner.startAnimating()
-            
-            AuthService.instance.registerUser(email: emailInput, password: passwordInput, completion: { (success) in
-                if (success) {
-                    self.performSegue(withIdentifier: TO_HOME_FROM_REGISTER, sender: self)
-                } else {
-                    self.passwordTextField.text = ""
-                    self.confirmPasswordTextField.text = ""
-
-                    self.spinner.isHidden = true
-                    self.spinner.stopAnimating()
-                    
-                    let alertController = UIAlertController(title: "Registration Failed", message: "Invalid input data.", preferredStyle: .alert)
-                    //We add buttons to the alert controller by creating UIAlertActions:
-                    let actionOk = UIAlertAction(title: "OK",
-                                                 style: .default,
-                                                 handler: nil) //You can use a block here to handle a press on this button
-                    
-                    alertController.addAction(actionOk)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            })
-        }
-        
+        AuthService.instance.registerUser(username: usernameInput, email: emailInput, password: passwordInput, completion: { (success) in
+            if (success) {
+                self.performSegue(withIdentifier: TO_HOME_FROM_REGISTER, sender: self)
+            } else {
+                self.passwordTextField.text = ""
+                self.emailTextField.text = ""
+                self.usernameTextField.text = ""
+                
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
+                
+                let alertController = UIAlertController(title: "Registration Failed", message: "Invalid input data.", preferredStyle: .alert)
+                //We add buttons to the alert controller by creating UIAlertActions:
+                let actionOk = UIAlertAction(title: "OK",
+                                             style: .default,
+                                             handler: nil) //You can use a block here to handle a press on this button
+                
+                alertController.addAction(actionOk)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        })
     }
+        
 }

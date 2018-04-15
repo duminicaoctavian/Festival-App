@@ -56,12 +56,13 @@ let TO_CHAT = "toChat"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+let USER_NAME = "userName"
 
 // Headers
 let HEADER = [
     "Content-Type" : "application/json; charset=utf-8"
 ]
 
-let BEARER_HEADER = [
-    "x-auth": "\(AuthService.instance.authToken)"
+var BEARER_HEADER = [
+    "X-Auth": "\(AuthService.instance.authToken)"
 ]

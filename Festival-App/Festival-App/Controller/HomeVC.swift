@@ -16,6 +16,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        print(AuthService.instance.authToken)
     }
     
     func setUpSWRevealViewController() {

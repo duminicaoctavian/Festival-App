@@ -42,11 +42,21 @@ class AuthService {
         }
     }
     
-    func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
+    var userName: String {
+        get {
+            return defaults.value(forKey: USER_NAME) as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: USER_NAME)
+        }
+    }
+    
+    func registerUser(username: String, email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
         
         let body: [String: Any] = [
+            "username": username,
             "email": lowerCaseEmail,
             "password": password
         ]
@@ -60,18 +70,17 @@ class AuthService {
                     do {
                         let json = try JSON(data: data)
                         self.userEmail = json["email"].stringValue
+                        self.userName = json["username"].stringValue
                         let id = json["_id"].stringValue
-                        //self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
                         if response.response?.allHeaderFields["X-Auth"] != nil {
                             self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                         }
                         
-                        UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
+                        UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userName)
                     } catch {
                         debugPrint(error)
                         completion(false)
                     }
-                    print("Here")
                     self.isLoggedIn = true
                     completion(true)
                 }
@@ -98,11 +107,11 @@ class AuthService {
                 do {
                     let json = try JSON(data: data)
                     self.userEmail = json["email"].stringValue
+                    self.userName = json["username"].stringValue
                     let id = json["_id"].stringValue
-                    //self.authToken = (response.response?.allHeaderFields["x-auth"] as? String)!
                     self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
-                    print(id)
-                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userEmail)
+                    
+                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userName)
                 } catch {
                     debugPrint(error)
                     completion(false)
@@ -117,13 +126,17 @@ class AuthService {
     }
     
     func logoutUser(completion: @escaping CompletionHandler) {
+        BEARER_HEADER = [
+            "X-Auth": "\(AuthService.instance.authToken)"
+        ]
         
         Alamofire.request(URL_LOGOUT_USER, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-        
+            
             if response.result.error == nil {
                 self.isLoggedIn = false
                 self.userEmail = ""
                 self.authToken = ""
+                self.userName = ""
                 completion(true)
             } else {
                 completion(false)
@@ -141,8 +154,9 @@ class AuthService {
                     let json = try JSON(data: data)
                     let id = json["_id"].stringValue
                     let email = json["email"].stringValue
+                    let username = json["username"].stringValue
                     
-                    UserDataService.instance.setUserData(id: id, email: email, name: email)
+                    UserDataService.instance.setUserData(id: id, email: email, name: username)
                     completion(true)
                 } catch {
                     debugPrint(error)

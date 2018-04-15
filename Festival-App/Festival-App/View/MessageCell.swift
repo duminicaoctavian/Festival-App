@@ -26,7 +26,7 @@ class MessageCell: UITableViewCell {
     }
     
     func configureCell(message: Message) {
-        if message.userName == AuthService.instance.userEmail {
+        if message.userName == AuthService.instance.userName {
             otherImageView.isHidden = true
             otherTimeStampLbl.isHidden = true
             otherUsernameLbl.isHidden = true

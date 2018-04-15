@@ -47,6 +47,10 @@
 		DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterVC.swift */; };
 		DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B5205F882400A276E5 /* CircleImage.swift */; };
 		DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsVC.swift */; };
+		DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA6487208334B700C53E58 /* ProfileVC.swift */; };
+		DEAA648B2083497300C53E58 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA64892083497300C53E58 /* EditProfileVC.swift */; };
+		DEAA648C2083497300C53E58 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAA648A2083497300C53E58 /* EditProfileVC.xib */; };
+		DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D0792083B9DC00127695 /* Extensions.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
@@ -120,6 +124,10 @@
 		DEA52116204B3EDE00ED285A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		DEA915B5205F882400A276E5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DEA915B7205FBBD000A276E5 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		DEAA6487208334B700C53E58 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		DEAA64892083497300C53E58 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		DEAA648A2083497300C53E58 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		DEC8D0792083B9DC00127695 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 			children = (
 				DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */,
 				DE19FC6A2071A7A400316199 /* TimelineTableViewCell.xib */,
+				DEAA648A2083497300C53E58 /* EditProfileVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -225,6 +234,8 @@
 				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
 				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
+				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
+				DEAA64892083497300C53E58 /* EditProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 				DE5A811F203E1DF200D8A7FA /* Constants.swift */,
 				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
 				DE19FC6E2071A7CB00316199 /* TimelinePoint.swift */,
+				DEC8D0792083B9DC00127695 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 			files = (
 				DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */,
 				DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */,
+				DEAA648C2083497300C53E58 /* EditProfileVC.xib in Resources */,
 				DE19FC6B2071A7A400316199 /* TimelineTableViewCell.xib in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsVC.xib in Resources */,
 				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,
@@ -561,6 +574,7 @@
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
 				DE241F712069069400F07C33 /* News.swift in Sources */,
+				DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* TimelineTableViewCell.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
@@ -571,6 +585,7 @@
 				DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */,
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
 				DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */,
+				DEAA648B2083497300C53E58 /* EditProfileVC.swift in Sources */,
 				DE0FCD5D203F20CB00FE29BB /* MainStageArtistsVC.swift in Sources */,
 				DE1648502041F56100EB371B /* ProductService.swift in Sources */,
 				DE0FCD61203F6D6200FE29BB /* ResistanceStageArtistsVC.swift in Sources */,
@@ -581,6 +596,7 @@
 				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
+				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,

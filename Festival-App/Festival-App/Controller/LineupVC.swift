@@ -173,10 +173,12 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         if (indexPath.row > 0) {
             timelineFrontColor = sectionData[indexPath.row - 1].1
         }
+        let date = title.split(separator: " ")
+        let time = date[1]
         cell.timelinePoint = timelinePoint
         cell.timeline.frontColor = timelineFrontColor
         cell.timeline.backColor = timelineBackColor
-        cell.titleLabel.text = title
+        cell.titleLabel.text = String(time)
         cell.descriptionLabel.text = description
         //cell.illustrationImageView.image = UIImage(named: description)
         print(imageLink)
