@@ -14,4 +14,5 @@ struct Message {
     public private(set) var channelId: String!
     public private(set) var id: String!
     public private(set) var timeStamp: String!
+    public private(set) var userId: String!
 }

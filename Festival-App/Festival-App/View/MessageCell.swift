@@ -26,7 +26,7 @@ class MessageCell: UITableViewCell {
     }
     
     func configureCell(message: Message) {
-        if message.userName == AuthService.instance.userName {
+        if message.userId == AuthService.instance.id {
             otherImageView.isHidden = true
             otherTimeStampLbl.isHidden = true
             otherUsernameLbl.isHidden = true
@@ -37,7 +37,7 @@ class MessageCell: UITableViewCell {
             otherMessageBodyLbl.isHidden = true
             
             messageBodyLbl.text = message.message
-            usernameLbl.text = message.userName
+            usernameLbl.text = AuthService.instance.userName
             
             // 2017-07-13T21:49:25.590Z
             guard var isoDate = message.timeStamp else { return }

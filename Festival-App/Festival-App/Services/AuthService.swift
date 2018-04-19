@@ -51,6 +51,15 @@ class AuthService {
         }
     }
     
+    var id: String {
+        get {
+            return defaults.value(forKey: USER_ID) as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: USER_ID)
+        }
+    }
+    
     func registerUser(username: String, email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
@@ -71,12 +80,12 @@ class AuthService {
                         let json = try JSON(data: data)
                         self.userEmail = json["email"].stringValue
                         self.userName = json["username"].stringValue
-                        let id = json["_id"].stringValue
+                        self.id = json["_id"].stringValue
                         if response.response?.allHeaderFields["X-Auth"] != nil {
                             self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                         }
                         
-                        UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userName)
+                        UserDataService.instance.setUserData(id: self.id, email: self.userEmail, name: self.userName)
                     } catch {
                         debugPrint(error)
                         completion(false)
@@ -108,10 +117,10 @@ class AuthService {
                     let json = try JSON(data: data)
                     self.userEmail = json["email"].stringValue
                     self.userName = json["username"].stringValue
-                    let id = json["_id"].stringValue
+                    self.id = json["_id"].stringValue
                     self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                     
-                    UserDataService.instance.setUserData(id: id, email: self.userEmail, name: self.userName)
+                    UserDataService.instance.setUserData(id: self.id, email: self.userEmail, name: self.userName)
                 } catch {
                     debugPrint(error)
                     completion(false)
@@ -137,6 +146,7 @@ class AuthService {
                 self.userEmail = ""
                 self.authToken = ""
                 self.userName = ""
+                self.id = ""
                 completion(true)
             } else {
                 completion(false)

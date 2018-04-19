@@ -55,15 +55,20 @@ class SocketService: NSObject {
     func getChatMessage(completion: @escaping (_ newMessage: Message) -> Void) {
         socket.on("messageCreated") { (dataArray, ack) in
             guard let msgBody = dataArray[0] as? String else { return }
+            guard let userId = dataArray[1] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }
             guard let userName = dataArray[3] as? String else { return }
             guard let id = dataArray[4] as? String else { return }
             guard let timeStamp = dataArray[5] as? String else { return }
             
-            let newMessage = Message(message: msgBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp)
+            let newMessage = Message(message: msgBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp, userId: userId)
             
             completion(newMessage)
         }
+    }
+    
+    func disableGetChatListener() {
+        socket.off("messageCreated")
     }
     
     func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String: String]) -> Void) {

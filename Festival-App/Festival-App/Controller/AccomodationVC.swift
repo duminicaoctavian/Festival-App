@@ -28,6 +28,14 @@ class AccomodationVC: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         mapView.showsUserLocation = true
         configureLocationServices()
+        centerMapOnUserLocation()
+        
+        let location = CLLocationCoordinate2D(latitude: 46.7713703752866, longitude: 23.6226196502705)
+        
+        let annotation = MapPin(coordinate: location, identifier: "droppablePin")
+        mapView.addAnnotation(annotation)
+        
+        //addTap()
     }
     
     func setUpSWRevealViewController() {
@@ -35,6 +43,13 @@ class AccomodationVC: UIViewController {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
+    
+    
+    
+    func addTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender: )))
+        mapView.addGestureRecognizer(tap)
     }
     
     @IBAction func centerBtnWasPressed(_ sender: Any) {
@@ -47,10 +62,40 @@ class AccomodationVC: UIViewController {
 
 extension AccomodationVC : MKMapViewDelegate {
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
+        pinAnnotation.pinTintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        pinAnnotation.animatesDrop = true
+        return pinAnnotation
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        let pinDetailsVC = PinDetailsVC()
+//        pinDetailsVC.modalPresentationStyle = .custom
+//        self.present(pinDetailsVC, animated: true, completion: nil)
+    }
+    
     func centerMapOnUserLocation() {
         guard let coordinate = locationManager.location?.coordinate else { return } //if there is no value, return
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius*2, regionRadius*2)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @objc func dropPin(sender: UITapGestureRecognizer) {
+        
+        let touchPoint = sender.location(in: mapView)
+        let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        
+        let annotation = MapPin(coordinate: touchCoordinate, identifier: "droppablePin")
+        mapView.addAnnotation(annotation)
+        
+        print(touchCoordinate.latitude)
+        print(touchCoordinate.longitude)
+        
     }
 }
 
@@ -68,3 +113,4 @@ extension AccomodationVC : CLLocationManagerDelegate {
         centerMapOnUserLocation()
     }
 }
+

@@ -44,17 +44,6 @@ class ChatWindowVC: UIViewController {
             if newMessage.channelId == MessageService.instance.selectedChannel!.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
                 
-                
-                //TODO
-                // for the multiple window bug
-                if (MessageService.instance.messages.count > 0) {
-                    if (MessageService.instance.messages[MessageService.instance.messages.count - 1].id == MessageService.instance.messages[MessageService.instance.messages.count - 2].id) {
-                    MessageService.instance.messages.remove(at: MessageService.instance.messages.count - 1)
-                    }
-                }
-                
-                //
-                
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
@@ -95,15 +84,6 @@ class ChatWindowVC: UIViewController {
             })
         }
     }
-    
-    // TODO
-//    override func viewDidAppear(_ animated: Bool) {
-//        if MessageService.instance.messages.count > 0 {
-//            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-//            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
-//        }
-//    }
-
     
     func setUpSWRevealViewController() {
         chatBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
@@ -156,6 +136,10 @@ class ChatWindowVC: UIViewController {
             if success {
                 self.stopSpinner()
                 self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
+                }
             }
         }
     }
@@ -204,6 +188,10 @@ class ChatWindowVC: UIViewController {
         spinner.isHidden = true
         spinner.stopAnimating()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        SocketService.instance.disableGetChatListener()
+    }
 }
 
 extension ChatWindowVC: UITableViewDelegate, UITableViewDataSource {
@@ -221,7 +209,5 @@ extension ChatWindowVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.messages.count
     }
-    
-    
 }
 

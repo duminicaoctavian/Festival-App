@@ -51,6 +51,7 @@
 		DEAA648B2083497300C53E58 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA64892083497300C53E58 /* EditProfileVC.swift */; };
 		DEAA648C2083497300C53E58 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAA648A2083497300C53E58 /* EditProfileVC.xib */; };
 		DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D0792083B9DC00127695 /* Extensions.swift */; };
+		DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D07B2083EFC300127695 /* MapPin.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
 		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
@@ -128,6 +129,7 @@
 		DEAA64892083497300C53E58 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		DEAA648A2083497300C53E58 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		DEC8D0792083B9DC00127695 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DEC8D07B2083EFC300127695 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		DE5A8114203DE5C400D8A7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DEC8D07B2083EFC300127695 /* MapPin.swift */,
 				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
 				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
 				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
@@ -574,6 +577,7 @@
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
 				DE241F712069069400F07C33 /* News.swift in Sources */,
+				DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */,
 				DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* TimelineTableViewCell.swift in Sources */,

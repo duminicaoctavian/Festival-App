@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class UserDataService {
     static let instance = UserDataService()
@@ -21,6 +23,49 @@ class UserDataService {
         self.email = email
         self.name = name
     }
+    
+    func editUser(username: String, password: String, completion: @escaping CompletionHandler) {
+        
+        let body: [String: Any] = [
+            "username": username,
+            "password": password
+        ]
+        
+        Alamofire.request("\(URL_PATCH_USER)/\(AuthService.instance.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            print(self.id)
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                
+                if response.response?.statusCode == 400 {
+                    
+                    completion(false)
+                    
+                } else {
+                    do {
+                        let json = try JSON(data: data)
+                        AuthService.instance.userEmail = json["email"].stringValue
+                        AuthService.instance.userName = json["username"].stringValue
+                        let id = json["_id"].stringValue
+                        
+                        print(AuthService.instance.userName)
+                        
+                        UserDataService.instance.setUserData(id: id, email: AuthService.instance.userEmail, name: AuthService.instance.userName)
+                    } catch {
+                        debugPrint(error)
+                        completion(false)
+                    }
+                    completion(true)
+                }
+                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    
     
     func logoutUser() {
         id = ""

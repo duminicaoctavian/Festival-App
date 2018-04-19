@@ -62,8 +62,8 @@ class MessageService {
                             let id = item["_id"].stringValue
                             let userName = item["userName"].stringValue
                             let timeStamp = item["timeStamp"].stringValue
-                            
-                            let message = Message(message: messageBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp)
+                            let userId = item["userId"].stringValue
+                            let message = Message(message: messageBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp, userId: userId)
                             self.messages.append(message)
                         }
                         completion(true)

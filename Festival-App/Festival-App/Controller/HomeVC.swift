@@ -17,6 +17,10 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setUpSWRevealViewController()
         print(AuthService.instance.authToken)
+        print(AuthService.instance.userEmail)
+        print(AuthService.instance.userName)
+        print(AuthService.instance.isLoggedIn)
+        print(AuthService.instance.id)
     }
     
     func setUpSWRevealViewController() {
