@@ -23,6 +23,14 @@ class UserMenuVC: UIViewController {
         profileImgView.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+            //self.artistImageView.image = imageFromCache
+            profileImgView.image = imageFromCache
+        }
+    }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
         self.revealViewController().pushFrontViewController(profileVC, animated: true)

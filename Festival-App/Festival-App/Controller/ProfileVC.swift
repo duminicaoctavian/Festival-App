@@ -12,6 +12,7 @@ class ProfileVC: UIViewController {
 
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var profileImgView: CircleImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,12 @@ class ProfileVC: UIViewController {
         setUpSWRevealViewController()
         
         usernameLbl.text = AuthService.instance.userName
+        
+        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+            //self.artistImageView.image = imageFromCache
+            profileImgView.image = imageFromCache
+            return
+        }
     }
     
     func setUpSWRevealViewController() {

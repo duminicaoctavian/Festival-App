@@ -32,7 +32,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lq7-fx-d81" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="77" width="320" height="442"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eu" translatesAutoresizingMaskIntoConstraints="NO" id="3OI-DW-A58" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="3OI-DW-A58" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
                             <rect key="frame" x="135" y="35" width="170" height="170"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="3OI-DW-A58" secondAttribute="height" multiplier="1:1" id="PFp-lJ-4dt"/>
@@ -188,6 +188,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Eu" width="481" height="320"/>
+        <image name="profileDefault" width="192" height="192"/>
     </resources>
 </document>

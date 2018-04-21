@@ -18,9 +18,11 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var chageProfileBtn: UIButton!
     
     let bucketName = "octaviansuniversalbucket"
+    var imageName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageName = randomString(length: 20)
         
         chageProfileBtn.setTitle("Change Image", for: .normal)
         chageProfileBtn.sizeToFit()
@@ -28,6 +30,12 @@ class EditProfileVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
         
         view.addGestureRecognizer(tap)
+        
+        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+            //self.artistImageView.image = imageFromCache
+            profileImgView.image = imageFromCache
+            
+        }
         
         // Initialize the Amazon Cognito credentials provider
         
@@ -46,24 +54,32 @@ class EditProfileVC: UIViewController {
     @IBAction func onSavePressed(_ sender: Any) {
         let usernameInput = usernameTxtField.text!
         let passwordInput = passwordTxtField.text!
-        UserDataService.instance.editUser(username: usernameInput, password: passwordInput) { (success) in
+        let imgUrl = "\(BASE_AWS)/\(imageName!).jpg"
+        UserDataService.instance.editUser(username: usernameInput, password: passwordInput, imageUrl: imgUrl) { (success) in
             if success {
-                let imgName = self.randomString(length: 20)
-                self.uploadFile(imgName: imgName)
-                self.dismiss(animated: true, completion: nil)
+                self.uploadFile(imgUrl: imgUrl, completion: { (success) in
+                    if success {
+                        self.downloadFile(completion: { (success) in
+                            if success {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        })
+                    }
+                })
+                
             }
         }
     }
     
-    func uploadFile(imgName: String) {
+    func uploadFile(imgUrl: String, completion: @escaping CompletionHandler) {
         let image = profileImgView.image!
         let fileManager = FileManager.default
         
-        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(imgName).jpg")
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(imageName!).jpg")
         let imageData = UIImageJPEGRepresentation(image, 0)
         fileManager.createFile(atPath: path as String, contents: imageData, attributes: nil)
     
-        let key = "\(imgName).jpg"
+        let key = "\(imageName!).jpg"
         let localImageUrl = URL(fileURLWithPath: path)
         
         let request = AWSS3TransferManagerUploadRequest()!
@@ -79,10 +95,29 @@ class EditProfileVC: UIViewController {
             }
             if task.result != nil {
                 print("Uploaded \(key)")
+                completion(true)
             }
             
             return nil
         }
+    }
+    
+    func downloadFile(completion: @escaping CompletionHandler) {
+        let imageUrl = URL(string: AuthService.instance.imageUrl)!
+        
+        // Start background thread so that image loading does not make app unresponsive
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let imageData = NSData(contentsOf: imageUrl)!
+            
+            // When from background thread, UI needs to be updated on main_queue
+            DispatchQueue.main.async {
+                let imageToCache = UIImage(data: imageData as Data)
+                
+                globalCache.setObject(imageToCache!, forKey: AuthService.instance.imageUrl as AnyObject)
+            }
+        }
+        completion(true)
     }
     
     func randomString(length: Int) -> String {

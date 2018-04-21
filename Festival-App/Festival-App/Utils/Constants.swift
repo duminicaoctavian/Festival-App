@@ -29,6 +29,7 @@ let PRODUCT_VC_IDENTIFIER = "MerchVC"
 // URL Constants
 //let BASE_URL = "http://localhost:3000"
 let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
+let BASE_AWS = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket"
 let URL_GET_ARTISTS = "\(BASE_URL)/artists"
 let URL_GET_PRODUCTS = "\(BASE_URL)/products"
 let URL_REGISTER_USER = "\(BASE_URL)/users" 
@@ -60,6 +61,7 @@ let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
 let USER_NAME = "userName"
 let USER_ID = "userId"
+let USER_IMAGE_URL = "userImageUrl"
 
 // Headers
 let HEADER = [

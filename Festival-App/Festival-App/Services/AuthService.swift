@@ -60,6 +60,15 @@ class AuthService {
         }
     }
     
+    var imageUrl: String {
+        get {
+            return defaults.value(forKey: USER_IMAGE_URL) as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: USER_IMAGE_URL)
+        }
+    }
+    
     func registerUser(username: String, email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
@@ -81,6 +90,7 @@ class AuthService {
                         self.userEmail = json["email"].stringValue
                         self.userName = json["username"].stringValue
                         self.id = json["_id"].stringValue
+                        self.imageUrl = json["imageUrl"].stringValue
                         if response.response?.allHeaderFields["X-Auth"] != nil {
                             self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                         }
@@ -118,6 +128,7 @@ class AuthService {
                     self.userEmail = json["email"].stringValue
                     self.userName = json["username"].stringValue
                     self.id = json["_id"].stringValue
+                    self.imageUrl = json["imageUrl"].stringValue
                     self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
                     
                     UserDataService.instance.setUserData(id: self.id, email: self.userEmail, name: self.userName)
@@ -146,6 +157,7 @@ class AuthService {
                 self.userEmail = ""
                 self.authToken = ""
                 self.userName = ""
+                self.imageUrl = ""
                 self.id = ""
                 completion(true)
             } else {

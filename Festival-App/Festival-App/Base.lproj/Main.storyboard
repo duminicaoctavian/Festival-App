@@ -1512,7 +1512,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eu" translatesAutoresizingMaskIntoConstraints="NO" id="OiJ-vy-InB" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="OiJ-vy-InB" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="11" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="2ih-xk-9xK"/>
@@ -1786,7 +1786,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-HL-5jb" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eu" translatesAutoresizingMaskIntoConstraints="NO" id="G76-Ep-6jI" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="G76-Ep-6jI" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
                                         <rect key="frame" x="87" y="35" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="G76-Ep-6jI" secondAttribute="height" multiplier="1:1" id="Ccu-Ki-OII"/>
@@ -1888,6 +1888,7 @@
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="U1N-mf-gna" id="lvf-JG-XN1"/>
+                        <outlet property="profileImgView" destination="G76-Ep-6jI" id="MT0-sW-OKz"/>
                         <outlet property="usernameLbl" destination="GaJ-aj-wLa" id="E7p-EB-Xb1"/>
                     </connections>
                 </viewController>
@@ -2116,7 +2117,7 @@
                                             <action selector="onUserButtonPressed:" destination="CmV-eH-Uik" eventType="touchUpInside" id="VWi-1t-3At"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eu" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-6H-3Ww" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-6H-3Ww" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
                                         <rect key="frame" x="20" y="572" width="75" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="7aS-yq-zYd"/>
@@ -3154,7 +3155,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Eu" width="481" height="320"/>
         <image name="Live" width="25" height="25"/>
         <image name="Main" width="25" height="25"/>
         <image name="Oasis" width="25" height="25"/>
@@ -3171,7 +3171,7 @@
         <image name="ultraTextWhite" width="700" height="181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SfX-aN-LVd"/>
+        <segue reference="COe-lv-7BE"/>
         <segue reference="hgO-G5-ZHv"/>
     </inferredMetricsTieBreakers>
 </document>

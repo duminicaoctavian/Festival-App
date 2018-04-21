@@ -24,11 +24,12 @@ class UserDataService {
         self.name = name
     }
     
-    func editUser(username: String, password: String, completion: @escaping CompletionHandler) {
+    func editUser(username: String, password: String, imageUrl: String, completion: @escaping CompletionHandler) {
         
         let body: [String: Any] = [
             "username": username,
-            "password": password
+            "password": password,
+            "imageUrl": imageUrl
         ]
         
         Alamofire.request("\(URL_PATCH_USER)/\(AuthService.instance.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
@@ -46,9 +47,10 @@ class UserDataService {
                         let json = try JSON(data: data)
                         AuthService.instance.userEmail = json["email"].stringValue
                         AuthService.instance.userName = json["username"].stringValue
+                        AuthService.instance.imageUrl = json["imageUrl"].stringValue
                         let id = json["_id"].stringValue
                         
-                        print(AuthService.instance.userName)
+                        print(AuthService.instance.imageUrl)
                         
                         UserDataService.instance.setUserData(id: id, email: AuthService.instance.userEmail, name: AuthService.instance.userName)
                     } catch {

@@ -8,6 +8,8 @@
 
 import UIKit
 
+let globalCache = NSCache<AnyObject, AnyObject>()
+
 class HomeVC: UIViewController {
     
     // Outlets
@@ -16,6 +18,31 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        
+        if AuthService.instance.imageUrl != "" {
+
+            let imageUrl = URL(string: AuthService.instance.imageUrl)!
+
+
+            if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+                //self.artistImageView.image = imageFromCache
+                print("Already in Cache")
+                return
+            }
+
+            // Start background thread so that image loading does not make app unresponsive
+            DispatchQueue.global(qos: .userInitiated).async {
+
+                let imageData = NSData(contentsOf: imageUrl)!
+
+                // When from background thread, UI needs to be updated on main_queue
+                DispatchQueue.main.async {
+                    let imageToCache = UIImage(data: imageData as Data)
+
+                    globalCache.setObject(imageToCache!, forKey: AuthService.instance.imageUrl as AnyObject)
+                }
+            }
+        }
     }
     
     func setUpSWRevealViewController() {
@@ -27,4 +54,6 @@ class HomeVC: UIViewController {
     @IBAction func onChatPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CHAT, sender: self)
     }
+    
+    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
 }
