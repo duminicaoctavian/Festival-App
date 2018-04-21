@@ -39,7 +39,6 @@ class LocationService {
                         }
                         let location = Location(_id: _id, latitude: latitude, longitude: longitude, userId: userId, title: title, address: address, description: description, images: images)
                         self.locations.append(location)
-                        print(location)
                     }
                     completion(true)
                 } catch {

@@ -12,8 +12,8 @@ class PinDetailsVC: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
-    @IBOutlet weak var thumbnailImgView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var imageScrollView: UIScrollView!
     
     var locationTitle: String!
     var locationAddress: String!
@@ -27,15 +27,28 @@ class PinDetailsVC: UIViewController {
         addressLbl.text = locationAddress
         descriptionTextView.text = locationDescription
         
-        let imageUrl = URL(string: locationImages[0])!
-        
-        let imageData = NSData(contentsOf: imageUrl)!
-        
-        let imageToCache = UIImage(data: imageData as Data)
-        
-        self.thumbnailImgView.image = imageToCache
-        
+        for i in 0..<locationImages.count {
+            let imageView = UIImageView()
+            
+            let imageUrl = URL(string: locationImages[i])!
+            
+            let imageData = NSData(contentsOf: imageUrl)!
+            
+            let imageToCache = UIImage(data: imageData as Data)
+            
+            imageView.image = imageToCache
+            imageView.contentMode = .scaleAspectFit
+            
+            let xPosition = UIScreen.main.bounds.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPosition, y: imageScrollView.frame.minY, width: UIScreen.main.bounds.width, height: imageScrollView.frame.height)
+            
+            imageScrollView.contentSize.width = UIScreen.main.bounds.width * CGFloat(locationImages.count)
+            
+            imageScrollView.addSubview(imageView)
+        }
+       
     }
+
     @IBAction func onClosePressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -43,7 +56,5 @@ class PinDetailsVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func onMessageSellerPressed(_ sender: Any) {
-    }
-    @IBAction func onMorePhotosPressed(_ sender: Any) {
     }
 }

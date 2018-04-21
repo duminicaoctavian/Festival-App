@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="addressLbl" destination="3mn-vE-cUF" id="b8M-ib-JP8"/>
                 <outlet property="descriptionTextView" destination="2nW-iz-sot" id="4FI-K6-ftw"/>
-                <outlet property="thumbnailImgView" destination="Wck-js-hOW" id="cWS-zg-PIa"/>
+                <outlet property="imageScrollView" destination="YxL-87-DI7" id="F9h-Li-v4N"/>
                 <outlet property="titleLbl" destination="vyC-Fp-aWi" id="meJ-xb-t2b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -103,12 +103,6 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Room1" translatesAutoresizingMaskIntoConstraints="NO" id="Wck-js-hOW">
-                            <rect key="frame" x="15" y="8" width="290" height="170.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="Wck-js-hOW" secondAttribute="height" multiplier="345:203" id="DdK-2m-gP6"/>
-                            </constraints>
-                        </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2nW-iz-sot">
                             <rect key="frame" x="8" y="263.5" width="304" height="174.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,46 +111,31 @@
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-bu-mDb" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                            <rect key="frame" x="273" y="148.5" width="30" height="30"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-87-DI7">
+                            <rect key="frame" x="0.0" y="8" width="320" height="171"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="30" id="94b-6h-Ia9"/>
-                                <constraint firstAttribute="height" constant="30" id="hVj-Yy-rQQ"/>
+                                <constraint firstAttribute="width" secondItem="YxL-87-DI7" secondAttribute="height" multiplier="320:171" id="0jp-v1-5JC"/>
                             </constraints>
-                            <state key="normal" image="camera">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="onMorePhotosPressed:" destination="-1" eventType="touchUpInside" id="dgx-vv-geE"/>
-                            </connections>
-                        </button>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="vyC-Fp-aWi" firstAttribute="top" secondItem="Wck-js-hOW" secondAttribute="bottom" constant="8" id="2oB-za-Xa2"/>
+                        <constraint firstItem="YxL-87-DI7" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" id="2RO-86-jDP"/>
                         <constraint firstAttribute="trailing" secondItem="3mn-vE-cUF" secondAttribute="trailing" constant="15" id="5OB-PQ-uzV"/>
-                        <constraint firstItem="Wck-js-hOW" firstAttribute="top" secondItem="78I-e3-PB5" secondAttribute="top" constant="8" id="5ut-Iz-7WP"/>
                         <constraint firstItem="3mn-vE-cUF" firstAttribute="top" secondItem="vyC-Fp-aWi" secondAttribute="bottom" constant="8" id="7Ma-07-fiv"/>
                         <constraint firstItem="2nW-iz-sot" firstAttribute="top" secondItem="3mn-vE-cUF" secondAttribute="bottom" constant="8" id="Cc4-4O-hU5"/>
                         <constraint firstItem="3mn-vE-cUF" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="Gn8-Gx-E4k"/>
+                        <constraint firstItem="YxL-87-DI7" firstAttribute="top" secondItem="78I-e3-PB5" secondAttribute="top" constant="8" id="JgM-W2-8Wb"/>
                         <constraint firstAttribute="bottom" secondItem="hTw-uw-zGN" secondAttribute="bottom" constant="8" id="JrE-Wn-VP0"/>
                         <constraint firstAttribute="trailing" secondItem="hTw-uw-zGN" secondAttribute="trailing" constant="15" id="PHE-OG-3uf"/>
                         <constraint firstItem="2nW-iz-sot" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="8" id="SmQ-8t-qse"/>
                         <constraint firstItem="hTw-uw-zGN" firstAttribute="top" secondItem="2nW-iz-sot" secondAttribute="bottom" constant="8" id="UXr-D5-8fs"/>
                         <constraint firstItem="vyC-Fp-aWi" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="Y15-Bg-nYV"/>
-                        <constraint firstAttribute="trailing" secondItem="Wck-js-hOW" secondAttribute="trailing" constant="15" id="cMt-aE-mOH"/>
+                        <constraint firstAttribute="trailing" secondItem="YxL-87-DI7" secondAttribute="trailing" id="bq3-1F-6dx"/>
                         <constraint firstItem="hTw-uw-zGN" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="dnA-mS-bDb"/>
-                        <constraint firstItem="j8e-bu-mDb" firstAttribute="bottom" secondItem="Wck-js-hOW" secondAttribute="bottom" id="gGy-iH-UMk"/>
                         <constraint firstAttribute="trailing" secondItem="vyC-Fp-aWi" secondAttribute="trailing" constant="15" id="gjE-eG-AyY"/>
-                        <constraint firstItem="Wck-js-hOW" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="gyf-GZ-KTR"/>
-                        <constraint firstAttribute="trailing" secondItem="j8e-bu-mDb" secondAttribute="trailing" constant="17" id="uzY-ny-WRH"/>
                         <constraint firstAttribute="trailing" secondItem="2nW-iz-sot" secondAttribute="trailing" constant="8" id="x9r-oq-Qin"/>
+                        <constraint firstItem="vyC-Fp-aWi" firstAttribute="top" secondItem="YxL-87-DI7" secondAttribute="bottom" constant="7.5" id="xEx-fg-R5l"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="startX">
@@ -187,11 +166,7 @@
                 <constraint firstItem="78I-e3-PB5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxE-TD-r2A"/>
                 <constraint firstItem="78I-e3-PB5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="sLL-tz-rPe"/>
             </constraints>
-            <point key="canvasLocation" x="33.5" y="56.5"/>
+            <point key="canvasLocation" x="33" y="56"/>
         </view>
     </objects>
-    <resources>
-        <image name="Room1" width="1280" height="960"/>
-        <image name="camera" width="170" height="170"/>
-    </resources>
 </document>
