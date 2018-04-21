@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinDetailsVC" customModule="Festival_App" customModuleProvider="target">
+            <connections>
+                <outlet property="addressLbl" destination="3mn-vE-cUF" id="b8M-ib-JP8"/>
+                <outlet property="descriptionTextView" destination="2nW-iz-sot" id="4FI-K6-ftw"/>
+                <outlet property="thumbnailImgView" destination="Wck-js-hOW" id="cWS-zg-PIa"/>
+                <outlet property="titleLbl" destination="vyC-Fp-aWi" id="meJ-xb-t2b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000596046448" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-jB-axZ" userLabel="bgView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78I-e3-PB5" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="77" width="320" height="491"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hTw-uw-zGN">
+                            <rect key="frame" x="15" y="446" width="290" height="37"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw5-Wu-qk7" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="37"/>
+                                    <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="tvJ-Rn-Gxx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                    <state key="normal" title="Close">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onClosePressed:" destination="-1" eventType="touchUpInside" id="ghq-kt-hez"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-vT-esd" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                    <rect key="frame" x="90" y="0.0" width="110" height="37"/>
+                                    <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Message Seller">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onMessageSellerPressed:" destination="-1" eventType="touchUpInside" id="NvO-SW-Ttn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-Dc-3B0" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                    <rect key="frame" x="210" y="0.0" width="80" height="37"/>
+                                    <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="Ty4-dm-Ez6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                    <state key="normal" title="Book">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onBookPressed:" destination="-1" eventType="touchUpInside" id="7fD-yD-J4Q"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms for rent near Iulius Mall" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vyC-Fp-aWi">
+                            <rect key="frame" x="15" y="186.5" width="290" height="41"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address: Str. Slanic nr. 42" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-vE-cUF">
+                            <rect key="frame" x="15" y="235" width="290" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Room1" translatesAutoresizingMaskIntoConstraints="NO" id="Wck-js-hOW">
+                            <rect key="frame" x="15" y="8" width="290" height="170.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Wck-js-hOW" secondAttribute="height" multiplier="345:203" id="DdK-2m-gP6"/>
+                            </constraints>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2nW-iz-sot">
+                            <rect key="frame" x="8" y="263.5" width="304" height="174.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-bu-mDb" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                            <rect key="frame" x="273" y="148.5" width="30" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="94b-6h-Ia9"/>
+                                <constraint firstAttribute="height" constant="30" id="hVj-Yy-rQQ"/>
+                            </constraints>
+                            <state key="normal" image="camera">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onMorePhotosPressed:" destination="-1" eventType="touchUpInside" id="dgx-vv-geE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="vyC-Fp-aWi" firstAttribute="top" secondItem="Wck-js-hOW" secondAttribute="bottom" constant="8" id="2oB-za-Xa2"/>
+                        <constraint firstAttribute="trailing" secondItem="3mn-vE-cUF" secondAttribute="trailing" constant="15" id="5OB-PQ-uzV"/>
+                        <constraint firstItem="Wck-js-hOW" firstAttribute="top" secondItem="78I-e3-PB5" secondAttribute="top" constant="8" id="5ut-Iz-7WP"/>
+                        <constraint firstItem="3mn-vE-cUF" firstAttribute="top" secondItem="vyC-Fp-aWi" secondAttribute="bottom" constant="8" id="7Ma-07-fiv"/>
+                        <constraint firstItem="2nW-iz-sot" firstAttribute="top" secondItem="3mn-vE-cUF" secondAttribute="bottom" constant="8" id="Cc4-4O-hU5"/>
+                        <constraint firstItem="3mn-vE-cUF" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="Gn8-Gx-E4k"/>
+                        <constraint firstAttribute="bottom" secondItem="hTw-uw-zGN" secondAttribute="bottom" constant="8" id="JrE-Wn-VP0"/>
+                        <constraint firstAttribute="trailing" secondItem="hTw-uw-zGN" secondAttribute="trailing" constant="15" id="PHE-OG-3uf"/>
+                        <constraint firstItem="2nW-iz-sot" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="8" id="SmQ-8t-qse"/>
+                        <constraint firstItem="hTw-uw-zGN" firstAttribute="top" secondItem="2nW-iz-sot" secondAttribute="bottom" constant="8" id="UXr-D5-8fs"/>
+                        <constraint firstItem="vyC-Fp-aWi" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="Y15-Bg-nYV"/>
+                        <constraint firstAttribute="trailing" secondItem="Wck-js-hOW" secondAttribute="trailing" constant="15" id="cMt-aE-mOH"/>
+                        <constraint firstItem="hTw-uw-zGN" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="dnA-mS-bDb"/>
+                        <constraint firstItem="j8e-bu-mDb" firstAttribute="bottom" secondItem="Wck-js-hOW" secondAttribute="bottom" id="gGy-iH-UMk"/>
+                        <constraint firstAttribute="trailing" secondItem="vyC-Fp-aWi" secondAttribute="trailing" constant="15" id="gjE-eG-AyY"/>
+                        <constraint firstItem="Wck-js-hOW" firstAttribute="leading" secondItem="78I-e3-PB5" secondAttribute="leading" constant="15" id="gyf-GZ-KTR"/>
+                        <constraint firstAttribute="trailing" secondItem="j8e-bu-mDb" secondAttribute="trailing" constant="17" id="uzY-ny-WRH"/>
+                        <constraint firstAttribute="trailing" secondItem="2nW-iz-sot" secondAttribute="trailing" constant="8" id="x9r-oq-Qin"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                            <color key="value" red="0.0" green="0.1529411765" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="78I-e3-PB5" secondAttribute="bottom" id="8y4-LH-0vr"/>
+                <constraint firstAttribute="trailing" secondItem="78I-e3-PB5" secondAttribute="trailing" id="HAr-fs-8vP"/>
+                <constraint firstItem="78I-e3-PB5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxE-TD-r2A"/>
+                <constraint firstItem="78I-e3-PB5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="sLL-tz-rPe"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="56.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Room1" width="1280" height="960"/>
+        <image name="camera" width="170" height="170"/>
+    </resources>
+</document>

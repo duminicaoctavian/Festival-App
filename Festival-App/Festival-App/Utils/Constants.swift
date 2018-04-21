@@ -39,6 +39,7 @@ let URL_GET_MESSAGES = "\(BASE_URL)/messages"
 let URL_USER_BY_EMAIL = "\(BASE_URL)/users"
 let URL_GET_NEWS = "\(BASE_URL)/news"
 let URL_PATCH_USER = "\(BASE_URL)/users"
+let URL_GET_LOCATIONS = "\(BASE_URL)/locations"
 
 // Notification constant
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")

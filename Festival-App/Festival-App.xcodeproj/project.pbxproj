@@ -44,6 +44,10 @@
 		DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811F203E1DF200D8A7FA /* Constants.swift */; };
 		DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */; };
 		DE742A112044963A000CF48F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginVC.swift */; };
+		DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */; };
+		DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */; };
+		DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F43E208B69C600CE35FA /* LocationService.swift */; };
+		DE84F441208B69F400CE35FA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F440208B69F400CE35FA /* Location.swift */; };
 		DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterVC.swift */; };
 		DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B5205F882400A276E5 /* CircleImage.swift */; };
 		DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsVC.swift */; };
@@ -122,6 +126,10 @@
 		DE5A811F203E1DF200D8A7FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuCell.swift; sourceTree = "<group>"; };
 		DE742A102044963A000CF48F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailsVC.swift; sourceTree = "<group>"; };
+		DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinDetailsVC.xib; sourceTree = "<group>"; };
+		DE84F43E208B69C600CE35FA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		DE84F440208B69F400CE35FA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DEA52116204B3EDE00ED285A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		DEA915B5205F882400A276E5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DEA915B7205FBBD000A276E5 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
 				DE241F7220690A7400F07C33 /* NewsService.swift */,
+				DE84F43E208B69C600CE35FA /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 				DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */,
 				DE19FC6A2071A7A400316199 /* TimelineTableViewCell.xib */,
 				DEAA648A2083497300C53E58 /* EditProfileVC.xib */,
+				DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -238,6 +248,7 @@
 				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
 				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
 				DEAA64892083497300C53E58 /* EditProfileVC.swift */,
+				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
 				DEE34C9F205E91DE006C7B55 /* Message.swift */,
 				DE241F702069069400F07C33 /* News.swift */,
+				DE84F440208B69F400CE35FA /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,6 +454,7 @@
 				DEAA648C2083497300C53E58 /* EditProfileVC.xib in Resources */,
 				DE19FC6B2071A7A400316199 /* TimelineTableViewCell.xib in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsVC.xib in Resources */,
+				DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */,
 				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +593,7 @@
 				DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */,
 				DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
+				DE84F441208B69F400CE35FA /* Location.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* TimelineTableViewCell.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
@@ -602,6 +616,7 @@
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
+				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
@@ -617,6 +632,7 @@
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
+				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,

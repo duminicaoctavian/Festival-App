@@ -30,12 +30,18 @@ class AccomodationVC: UIViewController {
         configureLocationServices()
         centerMapOnUserLocation()
         
-        let location = CLLocationCoordinate2D(latitude: 46.7713703752866, longitude: 23.6226196502705)
-        
-        let annotation = MapPin(coordinate: location, identifier: "droppablePin")
-        mapView.addAnnotation(annotation)
-        
         //addTap()
+        
+        LocationService.instance.findAllLocations { (success) in
+            if success {
+                LocationService.instance.locations.forEach({ (location) in
+                    let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude)!, longitude: Double(location.longitude)!)
+                    
+                    let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title!, locationAddress: location.address!, locationDescription: location.description, locationImages: location.images!)
+                    self.mapView.addAnnotation(annotation)
+                })
+            }
+        }
     }
     
     func setUpSWRevealViewController() {
@@ -74,9 +80,14 @@ extension AccomodationVC : MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        let pinDetailsVC = PinDetailsVC()
-//        pinDetailsVC.modalPresentationStyle = .custom
-//        self.present(pinDetailsVC, animated: true, completion: nil)
+        let location = view.annotation as! MapPin
+        let pinDetailsVC = PinDetailsVC()
+        pinDetailsVC.locationTitle = location.locationTitle
+        pinDetailsVC.locationAddress = location.locationAddress
+        pinDetailsVC.locationDescription = location.locationDescription
+        pinDetailsVC.locationImages = location.locationImages
+        pinDetailsVC.modalPresentationStyle = .custom
+        self.present(pinDetailsVC, animated: true, completion: nil)
     }
     
     func centerMapOnUserLocation() {
@@ -90,8 +101,8 @@ extension AccomodationVC : MKMapViewDelegate {
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
-        let annotation = MapPin(coordinate: touchCoordinate, identifier: "droppablePin")
-        mapView.addAnnotation(annotation)
+//        let annotation = MapPin(coordinate: touchCoordinate, identifier: "droppablePin")
+//        mapView.addAnnotation(annotation)
         
         print(touchCoordinate.latitude)
         print(touchCoordinate.longitude)
