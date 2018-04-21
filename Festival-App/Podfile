@@ -9,6 +9,9 @@ target 'Festival-App' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Socket.IO-Client-Swift'
+  pod 'AWSCore'
+  pod 'AWSCognito'
+  pod 'AWSS3'
 
   target 'Festival-AppTests' do
     inherit! :search_paths

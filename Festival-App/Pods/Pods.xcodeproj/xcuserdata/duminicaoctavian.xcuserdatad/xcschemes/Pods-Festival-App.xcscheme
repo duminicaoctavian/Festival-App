@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1286A097AFABE6A5CC2ACF344B9B103"
+               BlueprintIdentifier = "009F84CD59F1C3A020427082378B5F6E"
                BuildableName = "Pods_Festival_App.framework"
                BlueprintName = "Pods-Festival-App"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F1286A097AFABE6A5CC2ACF344B9B103"
+            BlueprintIdentifier = "009F84CD59F1C3A020427082378B5F6E"
             BuildableName = "Pods_Festival_App.framework"
             BlueprintName = "Pods-Festival-App"
             ReferencedContainer = "container:Pods.xcodeproj">
