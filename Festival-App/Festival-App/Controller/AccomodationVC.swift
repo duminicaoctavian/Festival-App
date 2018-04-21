@@ -64,6 +64,9 @@ class AccomodationVC: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        LocationService.instance.clearLocation()
+    }
 }
 
 extension AccomodationVC : MKMapViewDelegate {
