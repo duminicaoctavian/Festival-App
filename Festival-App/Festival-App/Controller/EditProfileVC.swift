@@ -48,16 +48,23 @@ class EditProfileVC: UIViewController {
         let passwordInput = passwordTxtField.text!
         UserDataService.instance.editUser(username: usernameInput, password: passwordInput) { (success) in
             if success {
-                //self.uploadFile(with: "camera", type: "png")
+                let imgName = self.randomString(length: 20)
+                self.uploadFile(imgName: imgName)
                 self.dismiss(animated: true, completion: nil)
             }
         }
     }
     
-    func uploadFile(with resource: String, type: String) {
-        let key = "\(resource).\(type)"
-        let localImagePath = Bundle.main.path(forResource: resource, ofType: type)!
-        let localImageUrl = URL(fileURLWithPath: localImagePath)
+    func uploadFile(imgName: String) {
+        let image = profileImgView.image!
+        let fileManager = FileManager.default
+        
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(imgName).jpg")
+        let imageData = UIImageJPEGRepresentation(image, 0)
+        fileManager.createFile(atPath: path as String, contents: imageData, attributes: nil)
+    
+        let key = "\(imgName).jpg"
+        let localImageUrl = URL(fileURLWithPath: path)
         
         let request = AWSS3TransferManagerUploadRequest()!
         request.bucket = bucketName
@@ -76,6 +83,22 @@ class EditProfileVC: UIViewController {
             
             return nil
         }
+    }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
     }
     
     
