@@ -105,7 +105,6 @@ class ChatWindowVC: UIViewController {
     func onLoginGetMessages() {
         MessageService.instance.findAllChannels { (success) in
             if success {
-                self.startSpinner()
                 if MessageService.instance.channels.count > 0 {
                     MessageService.instance.selectedChannel = MessageService.instance.channels[0] //set first channel as selected one
                     self.updateWithChannel()
@@ -131,16 +130,43 @@ class ChatWindowVC: UIViewController {
     }
     
     func getMessages() {
+        startSpinner()
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
             if success {
-                self.stopSpinner()
-                self.tableView.reloadData()
-                if MessageService.instance.messages.count > 0 {
-                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
-                }
+                self.getUsers(completion: { (success) in
+                    if success {
+                        self.stopSpinner()
+                        self.tableView.reloadData()
+                        if MessageService.instance.messages.count > 0 {
+                            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
+                        }
+                    } else {
+                        self.stopSpinner()
+                        self.tableView.reloadData()
+                    }
+                })
+                
             }
+        }
+    }
+    
+    func getUsers(completion: @escaping CompletionHandler) {
+        var count = 0
+        if MessageService.instance.usersForChannel.count == 0 {
+            completion(false)
+        }
+        MessageService.instance.usersForChannel.forEach { (key: String, value: User) in
+            AuthService.instance.findUserById(id: key, completion: { (user) in
+                if user._id != nil {
+                    MessageService.instance.usersForChannel.updateValue(user, forKey: key)
+                    count = count + 1
+                }
+                if count == MessageService.instance.usersForChannel.count {
+                    completion(true)
+                }
+            })
         }
     }
     

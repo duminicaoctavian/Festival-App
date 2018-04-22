@@ -76,58 +76,51 @@ class MessageCell: UITableViewCell {
             otherUsernameLbl.text = nil
             otherTimeStampLbl.text = nil
             
-            
-            
             let userId = message.userId!
+            let user = MessageService.instance.usersForChannel[userId]!
             
-            AuthService.instance.findUserById(id: userId) { (user) in    
-                self.otherUsernameLbl.text = user.userName
-                self.otherMessageBodyLbl.text = message.message
+            self.otherUsernameLbl.text = user.userName
+            self.otherMessageBodyLbl.text = message.message
+            
+            // 2017-07-13T21:49:25.590Z
+            guard var isoDate = message.timeStamp else { return }
+            let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
+            isoDate = String(isoDate[..<end])
+            
+            let isoFormatter = ISO8601DateFormatter()
+            let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
+            
+            let newFormatter = DateFormatter()
+            newFormatter.dateFormat = "MMM d, h:mm a"
+            
+            if let finalDate = chatDate {
+                let finalDate = newFormatter.string(from: finalDate)
+                self.otherTimeStampLbl.text = finalDate
+            }
+            
+            self.imageUrlString = user.imageUrl
+            
+            let imageUrl = URL(string: user.imageUrl)!
+            
+            if let imageFromCache = globalCache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
+                self.otherImageView.image = imageFromCache
+                return
+            }
+            
+            // Start background thread so that image loading does not make app unresponsive
+            DispatchQueue.global(qos: .userInitiated).async {
                 
-                // 2017-07-13T21:49:25.590Z
-                guard var isoDate = message.timeStamp else { return }
-                let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
-                isoDate = String(isoDate[..<end])
+                let imageData = NSData(contentsOf: imageUrl)!
                 
-                let isoFormatter = ISO8601DateFormatter()
-                let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
-                
-                let newFormatter = DateFormatter()
-                newFormatter.dateFormat = "MMM d, h:mm a"
-                
-                if let finalDate = chatDate {
-                    let finalDate = newFormatter.string(from: finalDate)
-                    self.otherTimeStampLbl.text = finalDate
-                }
-                
-                self.imageUrlString = user.imageUrl
-                
-                let imageUrl = URL(string: user.imageUrl)!
-                
-                
-                
-                if let imageFromCache = globalCache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
-                    self.otherImageView.image = imageFromCache
-                    print("IT WAS CACHED")
-                    return
-                }
-                
-                // Start background thread so that image loading does not make app unresponsive
-                DispatchQueue.global(qos: .userInitiated).async {
+                // When from background thread, UI needs to be updated on main_queue
+                DispatchQueue.main.async {
+                    let imageToCache = UIImage(data: imageData as Data)
                     
-                    let imageData = NSData(contentsOf: imageUrl)!
-                    
-                    // When from background thread, UI needs to be updated on main_queue
-                    DispatchQueue.main.async {
-                        let imageToCache = UIImage(data: imageData as Data)
-                        
-                        if self.imageUrlString! == user.imageUrl {
-                            print("IT WAS NOT CACHED")
-                            self.otherImageView.image = imageToCache
-                        }
-                        
-                        globalCache.setObject(imageToCache!, forKey: user.imageUrl as AnyObject)
+                    if self.imageUrlString! == user.imageUrl {
+                        self.otherImageView.image = imageToCache
                     }
+                    
+                    globalCache.setObject(imageToCache!, forKey: user.imageUrl as AnyObject)
                 }
             }
         }

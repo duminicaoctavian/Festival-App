@@ -16,6 +16,9 @@ class MessageService {
     var channels = [Channel]()
     var messages = [Message]()
     var unreadChannels = [String]()
+
+    var usersForChannel = [String: User]()
+    
     var selectedChannel : Channel?
     
     func findAllChannels(completion: @escaping CompletionHandler) {
@@ -53,6 +56,7 @@ class MessageService {
             
             if response.result.error == nil {
                 self.clearMessages()
+                self.clearUsersForChannel()
                 guard let data = response.data else { return }
                 do {
                     if let json = try JSON(data: data).array {
@@ -65,6 +69,7 @@ class MessageService {
                             let userId = item["userId"].stringValue
                             let message = Message(message: messageBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp, userId: userId)
                             self.messages.append(message)
+                            self.usersForChannel.updateValue(User(), forKey: userId)
                         }
                         completion(true)
                     }
@@ -84,5 +89,9 @@ class MessageService {
     
     func clearChannels() {
         channels.removeAll()
+    }
+    
+    func clearUsersForChannel() {
+        usersForChannel.removeAll()
     }
 }
