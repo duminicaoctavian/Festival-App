@@ -21,12 +21,26 @@ class ProfileVC: UIViewController {
         
         usernameLbl.text = AuthService.instance.userName
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.userDataDidChange(_:)), name: NOTIF_USER_EDITED, object: nil)
+
         if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
             //self.artistImageView.image = imageFromCache
             profileImgView.image = imageFromCache
             return
         }
     }
+    
+    @objc func userDataDidChange(_ notif: Notification) {
+        usernameLbl.text = AuthService.instance.userName
+        
+        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+            //self.artistImageView.image = imageFromCache
+            profileImgView.image = imageFromCache
+            return
+        }
+    }
+    
+    
     
     func setUpSWRevealViewController() {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)

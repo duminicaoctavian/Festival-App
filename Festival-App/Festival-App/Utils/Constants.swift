@@ -47,6 +47,7 @@ let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
 let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 let NOTIF_WEBVIEWS_LOADED = Notification.Name("webViewsLoaded")
+let NOTIF_USER_EDITED = Notification.Name("userEdited")
 
 // Segues
 let LOGOUT_SEGUE = "logoutSegue"

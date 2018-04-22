@@ -61,6 +61,7 @@ class EditProfileVC: UIViewController {
                     if success {
                         self.downloadFile(completion: { (success) in
                             if success {
+                                NotificationCenter.default.post(name: NOTIF_USER_EDITED, object: nil)
                                 self.dismiss(animated: true, completion: nil)
                             }
                         })
@@ -115,9 +116,10 @@ class EditProfileVC: UIViewController {
                 let imageToCache = UIImage(data: imageData as Data)
                 
                 globalCache.setObject(imageToCache!, forKey: AuthService.instance.imageUrl as AnyObject)
+                
+                completion(true)
             }
         }
-        completion(true)
     }
     
     func randomString(length: Int) -> String {

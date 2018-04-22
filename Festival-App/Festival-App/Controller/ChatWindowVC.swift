@@ -149,7 +149,7 @@ class ChatWindowVC: UIViewController {
             guard let channedId = MessageService.instance.selectedChannel?.id else { return }
             guard let message = messageTextBox.text else { return }
             
-            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channedId, completion: { (success) in
+            SocketService.instance.addMessage(messageBody: message, userId: AuthService.instance.id, channelId: channedId, completion: { (success) in
                 if success {
                     self.messageTextBox.text = ""
                     self.messageTextBox.resignFirstResponder()

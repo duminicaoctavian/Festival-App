@@ -62,6 +62,7 @@
 		DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC02203DE43B0001B7BA /* Assets.xcassets */; };
 		DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */; };
 		DECDBC11203DE43B0001B7BA /* Festival_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */; };
+		DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF8CB208CA9FB006AD857 /* User.swift */; };
 		DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */; };
 		DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */; };
 		DEE34C9D205E91AE006C7B55 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9C205E91AE006C7B55 /* SocketService.swift */; };
@@ -148,6 +149,7 @@
 		DECDBC0C203DE43B0001B7BA /* Festival-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Festival-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival_AppTests.swift; sourceTree = "<group>"; };
 		DECDBC12203DE43B0001B7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEDCF8CB208CA9FB006AD857 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
 		DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowVC.swift; sourceTree = "<group>"; };
 		DEE34C9C205E91AE006C7B55 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				DEE34C9F205E91DE006C7B55 /* Message.swift */,
 				DE241F702069069400F07C33 /* News.swift */,
 				DE84F440208B69F400CE35FA /* Location.swift */,
+				DEDCF8CB208CA9FB006AD857 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */,
+				DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */,
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
 				DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */,
 				DEAA648B2083497300C53E58 /* EditProfileVC.swift in Sources */,

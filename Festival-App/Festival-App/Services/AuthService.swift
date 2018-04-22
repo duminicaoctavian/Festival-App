@@ -167,6 +167,32 @@ class AuthService {
         }
     }
     
+    func findUserById(id: String, completion: @escaping (_ newUser: User) -> Void) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                do {
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let email = json["email"].stringValue
+                    let username = json["username"].stringValue
+                    let imageUrl = json["imageUrl"].stringValue
+                    
+                    let newUser = User(_id: id, userName: username, email: email, imageUrl: imageUrl)
+                    
+                    completion(newUser)
+                } catch {
+                    debugPrint(error)
+                }
+                
+            } else {
+                completion(User())
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
     func findUserByEmail(completion: @escaping CompletionHandler) {
         Alamofire.request("\(URL_USER_BY_EMAIL)/\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             

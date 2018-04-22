@@ -9,7 +9,7 @@
 import UIKit
 
 class MessageCell: UITableViewCell {
-
+    
     // Outlets
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var timeStampLbl: UILabel!
@@ -19,6 +19,8 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var otherImageView: UIImageView!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var otherMessageBodyLbl: UILabel!
+    
+    var imageUrlString: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,7 +72,6 @@ class MessageCell: UITableViewCell {
             otherMessageBodyLbl.isHidden = false
             
             otherMessageBodyLbl.text = message.message
-            otherUsernameLbl.text = message.userName
             
             // 2017-07-13T21:49:25.590Z
             guard var isoDate = message.timeStamp else { return }
@@ -86,6 +87,40 @@ class MessageCell: UITableViewCell {
             if let finalDate = chatDate {
                 let finalDate = newFormatter.string(from: finalDate)
                 otherTimeStampLbl.text = finalDate
+            }
+            
+            let userId = message.userId!
+            
+            AuthService.instance.findUserById(id: userId) { (user) in
+                self.otherUsernameLbl.text = user.userName
+                
+                self.imageUrlString = user.imageUrl
+                
+                let imageUrl = URL(string: user.imageUrl)!
+                
+                self.otherImageView.image = nil
+                
+                if let imageFromCache = cache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
+                    self.otherImageView.image = imageFromCache
+                    return
+                }
+                
+                // Start background thread so that image loading does not make app unresponsive
+                DispatchQueue.global(qos: .userInitiated).async {
+                    
+                    let imageData = NSData(contentsOf: imageUrl)!
+                    
+                    // When from background thread, UI needs to be updated on main_queue
+                    DispatchQueue.main.async {
+                        let imageToCache = UIImage(data: imageData as Data)
+                        
+                        if self.imageUrlString == user.imageUrl {
+                            self.otherImageView.image = imageToCache
+                        }
+                        
+                        globalCache.setObject(imageToCache!, forKey: user.imageUrl as AnyObject)
+                    }
+                }
             }
         }
     }

@@ -50,8 +50,6 @@ class UserDataService {
                         AuthService.instance.imageUrl = json["imageUrl"].stringValue
                         let id = json["_id"].stringValue
                         
-                        print(AuthService.instance.imageUrl)
-                        
                         UserDataService.instance.setUserData(id: id, email: AuthService.instance.userEmail, name: AuthService.instance.userName)
                     } catch {
                         debugPrint(error)
