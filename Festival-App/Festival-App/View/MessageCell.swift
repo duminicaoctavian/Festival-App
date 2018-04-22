@@ -71,37 +71,44 @@ class MessageCell: UITableViewCell {
             myImageView.isHidden = true
             otherMessageBodyLbl.isHidden = false
             
-            otherMessageBodyLbl.text = message.message
+            otherImageView.image = nil
+            otherMessageBodyLbl.text = nil
+            otherUsernameLbl.text = nil
+            otherTimeStampLbl.text = nil
             
-            // 2017-07-13T21:49:25.590Z
-            guard var isoDate = message.timeStamp else { return }
-            let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
-            isoDate = String(isoDate[..<end])
             
-            let isoFormatter = ISO8601DateFormatter()
-            let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
-            
-            let newFormatter = DateFormatter()
-            newFormatter.dateFormat = "MMM d, h:mm a"
-            
-            if let finalDate = chatDate {
-                let finalDate = newFormatter.string(from: finalDate)
-                otherTimeStampLbl.text = finalDate
-            }
             
             let userId = message.userId!
             
-            AuthService.instance.findUserById(id: userId) { (user) in
+            AuthService.instance.findUserById(id: userId) { (user) in    
                 self.otherUsernameLbl.text = user.userName
+                self.otherMessageBodyLbl.text = message.message
+                
+                // 2017-07-13T21:49:25.590Z
+                guard var isoDate = message.timeStamp else { return }
+                let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
+                isoDate = String(isoDate[..<end])
+                
+                let isoFormatter = ISO8601DateFormatter()
+                let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
+                
+                let newFormatter = DateFormatter()
+                newFormatter.dateFormat = "MMM d, h:mm a"
+                
+                if let finalDate = chatDate {
+                    let finalDate = newFormatter.string(from: finalDate)
+                    self.otherTimeStampLbl.text = finalDate
+                }
                 
                 self.imageUrlString = user.imageUrl
                 
                 let imageUrl = URL(string: user.imageUrl)!
                 
-                self.otherImageView.image = nil
                 
-                if let imageFromCache = cache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
+                
+                if let imageFromCache = globalCache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
                     self.otherImageView.image = imageFromCache
+                    print("IT WAS CACHED")
                     return
                 }
                 
@@ -114,7 +121,8 @@ class MessageCell: UITableViewCell {
                     DispatchQueue.main.async {
                         let imageToCache = UIImage(data: imageData as Data)
                         
-                        if self.imageUrlString == user.imageUrl {
+                        if self.imageUrlString! == user.imageUrl {
+                            print("IT WAS NOT CACHED")
                             self.otherImageView.image = imageToCache
                         }
                         
