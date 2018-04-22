@@ -23,9 +23,9 @@ class ProfileVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.userDataDidChange(_:)), name: NOTIF_USER_EDITED, object: nil)
 
-        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
+        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
             //self.artistImageView.image = imageFromCache
-            profileImgView.image = imageFromCache
+            profileImgView.image = UIImage(data: imageData as Data)
             return
         }
     }
@@ -33,9 +33,8 @@ class ProfileVC: UIViewController {
     @objc func userDataDidChange(_ notif: Notification) {
         usernameLbl.text = AuthService.instance.userName
         
-        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
-            //self.artistImageView.image = imageFromCache
-            profileImgView.image = imageFromCache
+        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
+            profileImgView.image = UIImage(data: imageData as Data)
             return
         }
     }

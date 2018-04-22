@@ -25,9 +25,9 @@ class UserMenuVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
-            //self.artistImageView.image = imageFromCache
-            profileImgView.image = imageFromCache
+        
+        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
+            profileImgView.image = UIImage(data: imageData as Data)
         }
     }
     

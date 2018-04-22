@@ -63,6 +63,7 @@ let USER_EMAIL = "userEmail"
 let USER_NAME = "userName"
 let USER_ID = "userId"
 let USER_IMAGE_URL = "userImageUrl"
+let USER_PROFILE_IMG = "userProfileImg"
 
 // Headers
 let HEADER = [

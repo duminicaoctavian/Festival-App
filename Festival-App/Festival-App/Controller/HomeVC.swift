@@ -19,27 +19,23 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setUpSWRevealViewController()
         
-        if AuthService.instance.imageUrl != "" {
-
-            let imageUrl = URL(string: AuthService.instance.imageUrl)!
-
-
-            if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
-                //self.artistImageView.image = imageFromCache
-                print("Already in Cache")
-                return
-            }
-
-            // Start background thread so that image loading does not make app unresponsive
-            DispatchQueue.global(qos: .userInitiated).async {
-
-                let imageData = NSData(contentsOf: imageUrl)!
-
-                // When from background thread, UI needs to be updated on main_queue
-                DispatchQueue.main.async {
-                    let imageToCache = UIImage(data: imageData as Data)
-
-                    globalCache.setObject(imageToCache!, forKey: AuthService.instance.imageUrl as AnyObject)
+        if let _ = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
+            print("Image is persistent")
+        } else {
+            if AuthService.instance.imageUrl != "" {
+                
+                let imageUrl = URL(string: AuthService.instance.imageUrl)!
+                
+                // Start background thread so that image loading does not make app unresponsive
+                DispatchQueue.global(qos: .userInitiated).async {
+                    
+                    let imageData = NSData(contentsOf: imageUrl)!
+                    
+                    // When from background thread, UI needs to be updated on main_queue
+                    DispatchQueue.main.async {
+                        
+                        UserDefaults.standard.set(imageData, forKey: USER_PROFILE_IMG)
+                    }
                 }
             }
         }

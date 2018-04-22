@@ -31,10 +31,8 @@ class EditProfileVC: UIViewController {
         
         view.addGestureRecognizer(tap)
         
-        if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
-            //self.artistImageView.image = imageFromCache
-            profileImgView.image = imageFromCache
-            
+        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
+            profileImgView.image = UIImage(data: imageData as Data)
         }
         
         // Initialize the Amazon Cognito credentials provider
@@ -105,21 +103,12 @@ class EditProfileVC: UIViewController {
     
     func downloadFile(completion: @escaping CompletionHandler) {
         let imageUrl = URL(string: AuthService.instance.imageUrl)!
-        
-        // Start background thread so that image loading does not make app unresponsive
-        DispatchQueue.global(qos: .userInitiated).async {
             
-            let imageData = NSData(contentsOf: imageUrl)!
+        let imageData = NSData(contentsOf: imageUrl)!
             
-            // When from background thread, UI needs to be updated on main_queue
-            DispatchQueue.main.async {
-                let imageToCache = UIImage(data: imageData as Data)
-                
-                globalCache.setObject(imageToCache!, forKey: AuthService.instance.imageUrl as AnyObject)
-                
-                completion(true)
-            }
-        }
+        UserDefaults.standard.set(imageData, forKey: USER_PROFILE_IMG)
+            
+        completion(true)
     }
     
     func randomString(length: Int) -> String {

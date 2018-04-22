@@ -159,6 +159,7 @@ class AuthService {
                 self.userName = ""
                 self.imageUrl = ""
                 self.id = ""
+                UserDefaults.standard.set(nil, forKey: USER_PROFILE_IMG)
                 completion(true)
             } else {
                 completion(false)
@@ -203,6 +204,7 @@ class AuthService {
                     let id = json["_id"].stringValue
                     let email = json["email"].stringValue
                     let username = json["username"].stringValue
+                    
                     
                     UserDataService.instance.setUserData(id: id, email: email, name: username)
                     completion(true)

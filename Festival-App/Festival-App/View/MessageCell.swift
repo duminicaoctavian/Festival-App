@@ -57,9 +57,8 @@ class MessageCell: UITableViewCell {
                 timeStampLbl.text = finalDate
             }
             
-            if let imageFromCache = globalCache.object(forKey: AuthService.instance.imageUrl as AnyObject) as? UIImage {
-                //self.artistImageView.image = imageFromCache
-                myImageView.image = imageFromCache
+            if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
+                myImageView.image = UIImage(data: imageData as Data)
             }
         } else {
             otherImageView.isHidden = false
