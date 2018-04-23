@@ -34,7 +34,7 @@ class LocationService {
                         let address = item["address"].stringValue
                         let imageArray = item["images"].arrayValue
                         for i in imageArray {
-                            let image = i["image"].stringValue
+                            let image = i.stringValue
                             images.append(image)
                         }
                         let location = Location(_id: _id, latitude: latitude, longitude: longitude, userId: userId, title: title, address: address, description: description, images: images)

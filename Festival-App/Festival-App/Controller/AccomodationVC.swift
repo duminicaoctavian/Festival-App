@@ -30,7 +30,30 @@ class AccomodationVC: UIViewController {
         configureLocationServices()
         centerMapOnUserLocation()
         
-        //addTap()
+        addTap()
+        
+        SocketService.instance.getMapLocation { (newLocation) in
+            if newLocation._id != nil {
+                LocationService.instance.findAllLocations { (success) in
+                    if success {
+                        LocationService.instance.locations.forEach({ (location) in
+                            let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude)!, longitude: Double(location.longitude)!)
+                            
+                            let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title!, locationAddress: location.address!, locationDescription: location.description!, locationImages: location.images!)
+                            
+                            
+                            if self.mapView.annotations.contains(where: { $0.coordinate.latitude == annotation.coordinate.latitude && $0.coordinate.longitude == annotation.coordinate.longitude}) {
+                                print("ALREADY ON MAP")
+                            } else {
+                                self.mapView.addAnnotation(annotation)
+                                print("NOT ON MAP")
+                            }
+                        })
+                    }
+                }
+                
+            }
+        }
         
         LocationService.instance.findAllLocations { (success) in
             if success {
@@ -55,6 +78,7 @@ class AccomodationVC: UIViewController {
     
     func addTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender: )))
+        tap.numberOfTapsRequired = 2
         mapView.addGestureRecognizer(tap)
     }
     
@@ -104,8 +128,14 @@ extension AccomodationVC : MKMapViewDelegate {
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
-//        let annotation = MapPin(coordinate: touchCoordinate, identifier: "droppablePin")
-//        mapView.addAnnotation(annotation)
+        let annotation = MapPin(coordinate: touchCoordinate, identifier: "mapPin", locationTitle: "BLA", locationAddress: "BLA", locationDescription: "BLA", locationImages: [])
+        mapView.addAnnotation(annotation)
+        
+        SocketService.instance.addLocation(latitude: String(touchCoordinate.latitude), longitude: String(touchCoordinate.longitude), userId: AuthService.instance.id, title: "Good place for rent!", address: "Str. Placeholder nr. 24", description: "This is a placeholder", images: ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]) { (success) in
+            if success {
+                print("SENT LOCATION TO SERVER")
+            }
+        }
         
         print(touchCoordinate.latitude)
         print(touchCoordinate.longitude)

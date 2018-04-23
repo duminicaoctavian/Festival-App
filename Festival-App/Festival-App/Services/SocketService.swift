@@ -67,6 +67,29 @@ class SocketService: NSObject {
         }
     }
     
+    func addLocation(latitude: String, longitude: String, userId: String, title: String, address: String, description: String, images: [String], completion: @escaping CompletionHandler) {
+        
+        socket.emit("newLocation", latitude, longitude, userId, title, address, description, images)
+        completion(true)
+    }
+    
+    func getMapLocation(completion: @escaping (_ newLocation: Location) -> Void) {
+        socket.on("locationCreated") { (dataArray, ack) in
+            guard let id = dataArray[0] as? String else { return }
+            guard let latitude = dataArray[1] as? String else { return }
+            guard let longitude = dataArray[2] as? String else { return }
+            guard let userId = dataArray[3] as? String else { return }
+            guard let title = dataArray[4] as? String else { return }
+            guard let address = dataArray[5] as? String else {return }
+            guard let description = dataArray[6] as? String else { return }
+            guard let images = dataArray[7] as? [String] else {return }
+            
+            let newLocation = Location(_id: id, latitude: latitude, longitude: longitude, userId: userId, title: title, address: address, description: description, images: images)
+            
+            completion(newLocation)
+        }
+    }
+    
     func disableGetChatListener() {
         socket.off("messageCreated")
     }
