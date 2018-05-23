@@ -15,6 +15,9 @@ enum Stages: String {
     case Oasis = "Oasis"
 }
 
+// generate class diagram
+// ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
+
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accomodation", "Merch"]

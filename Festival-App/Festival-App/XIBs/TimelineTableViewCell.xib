@@ -42,13 +42,26 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-Da-gLm">
+                        <rect key="frame" x="241" y="29" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="DFk-P5-3g4"/>
+                            <constraint firstAttribute="height" constant="30" id="eV4-9V-JLd"/>
+                        </constraints>
+                        <state key="normal" image="addChannelButton"/>
+                        <connections>
+                            <action selector="onAddPressed:" destination="mx5-YM-BCr" eventType="touchUpInside" id="L0x-em-tHP"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="leading" secondItem="aFP-zW-cVP" secondAttribute="trailing" constant="55" id="C6E-Yg-n1d"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="top" secondItem="4Od-hl-ENS" secondAttribute="bottom" id="Gm9-KX-fDV"/>
+                    <constraint firstItem="QbF-Da-gLm" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="topMargin" constant="18" id="JHo-Wx-FoX"/>
                     <constraint firstItem="LWm-f0-Lj3" firstAttribute="trailing" secondItem="HxZ-h8-hOq" secondAttribute="trailingMargin" id="cCo-hF-VaH"/>
                     <constraint firstItem="aFP-zW-cVP" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" constant="10" id="cLw-Qc-bz7"/>
                     <constraint firstAttribute="bottomMargin" secondItem="aFP-zW-cVP" secondAttribute="bottom" constant="30" id="dN6-hL-AyS"/>
+                    <constraint firstItem="QbF-Da-gLm" firstAttribute="leading" secondItem="aFP-zW-cVP" secondAttribute="trailing" constant="135" id="dw9-xV-VQ1"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="aFP-zW-cVP" secondAttribute="trailing" constant="65" id="e5O-Eu-ZHD"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LWm-f0-Lj3" secondAttribute="bottom" constant="10" id="hYp-AS-DqZ"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="trailing" secondItem="HxZ-h8-hOq" secondAttribute="trailingMargin" id="nbe-pV-zdj"/>
@@ -65,4 +78,7 @@
             <point key="canvasLocation" x="29.5" y="125"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="addChannelButton" width="22" height="22"/>
+    </resources>
 </document>

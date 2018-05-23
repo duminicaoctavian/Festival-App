@@ -13,6 +13,7 @@ import SwiftyJSON
 class ArtistService {
     static let instance = ArtistService()
     
+
     var artists = [Artist]()
     
     func findAllArtistsForStage(stage: String, completion: @escaping CompletionHandler) {
@@ -32,7 +33,7 @@ class ArtistService {
                         let day = item["day"].stringValue
                         let time = item["time"].stringValue
                         let artistImage = item["artistImage"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage)
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage, isOnUserTimeline: false)
                         self.artists.append(artist)
                     }
                     completion(true)
@@ -63,7 +64,7 @@ class ArtistService {
                         let day = item["day"].stringValue
                         let time = item["time"].stringValue
                         let artistImage = item["artistImage"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage)
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage, isOnUserTimeline: false)
                         self.artists.append(artist)
                     }
                     completion(true)

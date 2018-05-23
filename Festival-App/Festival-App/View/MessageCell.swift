@@ -41,6 +41,8 @@ class MessageCell: UITableViewCell {
             messageBodyLbl.text = message.message
             usernameLbl.text = AuthService.instance.userName
             
+            
+            
             // 2017-07-13T21:49:25.590Z
             guard var isoDate = message.timeStamp else { return }
             let end = isoDate.index(isoDate.endIndex, offsetBy: -5)

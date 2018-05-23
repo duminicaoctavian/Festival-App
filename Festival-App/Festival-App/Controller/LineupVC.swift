@@ -207,6 +207,11 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
+        cell.didRequestToAddToOwnTimeline = { (cell) in
+            
+            print(description)
+        }
+        
         return cell
     }
     
