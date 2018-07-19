@@ -16,7 +16,7 @@ class LocationService {
     var locations = [Location]()
     
     func findAllLocations(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_LOCATIONS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_GET_LOCATIONS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -26,9 +26,9 @@ class LocationService {
                     for item in array {
                         var images = [String]()
                         let _id = item["_id"].stringValue
-                        let latitude = item["latitude"].stringValue
-                        let longitude = item["longitude"].stringValue
-                        let userId = item["userId"].stringValue
+                        let latitude = item["latitude"].double
+                        let longitude = item["longitude"].double
+                        let userId = item["userID"].stringValue
                         let title = item["title"].stringValue
                         let description = item["description"].stringValue
                         let address = item["address"].stringValue
@@ -37,7 +37,7 @@ class LocationService {
                             let image = i.stringValue
                             images.append(image)
                         }
-                        let location = Location(_id: _id, latitude: latitude, longitude: longitude, userId: userId, title: title, address: address, description: description, images: images)
+                        let location = Location(_id: _id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, images: images)
                         self.locations.append(location)
                     }
                     completion(true)

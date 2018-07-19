@@ -18,7 +18,7 @@ class NewsService {
     var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_NEWS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_GET_NEWS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
                 do {
@@ -27,9 +27,9 @@ class NewsService {
                     for item in array {
                         let _id = item["_id"].stringValue
                         let title = item["title"].stringValue
-                        let timeStamp = item["timeStamp"].stringValue
+                        let timeStamp = item["date"].stringValue
                         let description = item["description"].stringValue
-                        let url = item["url"].stringValue
+                        let url = item["URL"].stringValue
                         let news = News(_id: _id, title: title, date: timeStamp, description: description, url: url)
                         self.news.append(news)
                     }

@@ -24,13 +24,13 @@ class ArtistCell: UITableViewCell {
         artistNameLbl.text = artist.name
         //artistImageView.image = UIImage(named: "\(artist.name!)")
         
-        imageUrlString = artist.artistImage
+        imageUrlString = artist.artistImageURL
         
-        let imageUrl = URL(string: artist.artistImage)!
+        let imageUrl = URL(string: artist.artistImageURL)!
         
         self.artistImageView.image = nil
         
-        if let imageFromCache = cache.object(forKey: artist.artistImage as AnyObject) as? UIImage {
+        if let imageFromCache = cache.object(forKey: artist.artistImageURL as AnyObject) as? UIImage {
             self.artistImageView.image = imageFromCache
             return
         }
@@ -44,11 +44,11 @@ class ArtistCell: UITableViewCell {
             DispatchQueue.main.async {
                 let imageToCache = UIImage(data: imageData as Data)
                 
-                if self.imageUrlString == artist.artistImage {
+                if self.imageUrlString == artist.artistImageURL {
                     self.artistImageView.image = imageToCache
                 }
                 
-                cache.setObject(imageToCache!, forKey: artist.artistImage as AnyObject)
+                cache.setObject(imageToCache!, forKey: artist.artistImageURL as AnyObject)
             }
         }
     }

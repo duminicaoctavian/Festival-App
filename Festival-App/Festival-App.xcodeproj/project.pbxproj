@@ -196,14 +196,14 @@
 		DE0FCD56203F1CC800FE29BB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DEE34CAA205E93B7006C7B55 /* UserDataService.swift */,
 				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
-				DE16484F2041F56100EB371B /* ProductService.swift */,
 				DE3B2CF62043300C00C4E49D /* AuthService.swift */,
-				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
-				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
-				DE241F7220690A7400F07C33 /* NewsService.swift */,
 				DE84F43E208B69C600CE35FA /* LocationService.swift */,
+				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
+				DE241F7220690A7400F07C33 /* NewsService.swift */,
+				DE16484F2041F56100EB371B /* ProductService.swift */,
+				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
+				DEE34CAA205E93B7006C7B55 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */,
-				DE19FC6A2071A7A400316199 /* TimelineTableViewCell.xib */,
-				DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */,
 				DE84EBC2208BDBEF008016FE /* EditProfileVC.xib */,
+				DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */,
+				DE19FC6A2071A7A400316199 /* TimelineTableViewCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -232,25 +232,25 @@
 		DE5A8113203DE5B800D8A7FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
-				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
-				DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */,
-				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
-				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
-				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
-				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
-				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
-				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
-				DE1648592042134000EB371B /* MerchVC.swift */,
-				DE742A102044963A000CF48F /* LoginVC.swift */,
-				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
+				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
 				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
-				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
-				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
 				DEAA64892083497300C53E58 /* EditProfileVC.swift */,
+				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
+				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
+				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
+				DE742A102044963A000CF48F /* LoginVC.swift */,
+				DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */,
+				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
+				DE1648592042134000EB371B /* MerchVC.swift */,
+				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
+				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
 				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
+				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
+				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
+				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
+				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,21 +258,21 @@
 		DE5A8114203DE5C400D8A7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DEC8D07B2083EFC300127695 /* MapPin.swift */,
+				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
 				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
-				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
-				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
-				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
 				DEA915B5205F882400A276E5 /* CircleImage.swift */,
 				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
-				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
-				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
-				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
+				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
+				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
+				DEC8D07B2083EFC300127695 /* MapPin.swift */,
+				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
 				DE4DF1672041C1720083A8F1 /* NewsCell.swift */,
 				DE1648512041F9E500EB371B /* ProductCategoryCell.swift */,
-				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
 				DE16485D204219DE00EB371B /* ProductCell.swift */,
+				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
 				DE1648612042350400EB371B /* RoundedImage.swift */,
+				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
+				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,11 +281,11 @@
 			isa = PBXGroup;
 			children = (
 				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
-				DE16485B2042191700EB371B /* Product.swift */,
 				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
+				DE84F440208B69F400CE35FA /* Location.swift */,
 				DEE34C9F205E91DE006C7B55 /* Message.swift */,
 				DE241F702069069400F07C33 /* News.swift */,
-				DE84F440208B69F400CE35FA /* Location.swift */,
+				DE16485B2042191700EB371B /* Product.swift */,
 				DEDCF8CB208CA9FB006AD857 /* User.swift */,
 			);
 			path = Model;
@@ -295,9 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				DE5A811F203E1DF200D8A7FA /* Constants.swift */,
+				DEC8D0792083B9DC00127695 /* Extensions.swift */,
 				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
 				DE19FC6E2071A7CB00316199 /* TimelinePoint.swift */,
-				DEC8D0792083B9DC00127695 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -374,7 +374,6 @@
 				DECDBBF2203DE43B0001B7BA /* Frameworks */,
 				DECDBBF3203DE43B0001B7BA /* Resources */,
 				0A19E9D2D35C0E0F9D3EDD5F /* [CP] Embed Pods Frameworks */,
-				62B4ABD7D34CB92D87D17E8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,8 +392,6 @@
 				DECDBC08203DE43B0001B7BA /* Sources */,
 				DECDBC09203DE43B0001B7BA /* Frameworks */,
 				DECDBC0A203DE43B0001B7BA /* Resources */,
-				80E7387B92DA4FC726901B95 /* [CP] Embed Pods Frameworks */,
-				5C7498B0B43278D8AC04504A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,36 +517,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C7498B0B43278D8AC04504A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62B4ABD7D34CB92D87D17E8C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		70A723DB019D3999C21B80D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,21 +533,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80E7387B92DA4FC726901B95 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

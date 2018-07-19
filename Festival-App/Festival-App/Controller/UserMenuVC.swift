@@ -66,7 +66,7 @@ extension UserMenuVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let modelName = UIDevice.current.modelName
-        if modelName == "iPhone 5s" {
+        if modelName == "iPhone 5s" || modelName == "iPhone SE" {
             return UIScreen.main.bounds.size.height/10;
         }
         return UIScreen.main.bounds.size.height/9;

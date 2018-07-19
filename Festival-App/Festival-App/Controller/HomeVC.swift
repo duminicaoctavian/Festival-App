@@ -19,6 +19,13 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setUpSWRevealViewController()
         
+        print(AuthService.instance.isLoggedIn)
+        print(AuthService.instance.userEmail)
+        print(AuthService.instance.authToken)
+        print(AuthService.instance.imageUrl)
+        print(AuthService.instance.userName)
+        print(AuthService.instance.id)
+        
         if let _ = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
             print("Image is persistent")
         } else {

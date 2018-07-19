@@ -57,6 +57,7 @@ class EditProfileVC: UIViewController {
             if success {
                 self.uploadFile(imgUrl: imgUrl, completion: { (success) in
                     if success {
+                        AuthService.instance.imageUrl = imgUrl
                         self.downloadFile(completion: { (success) in
                             if success {
                                 NotificationCenter.default.post(name: NOTIF_USER_EDITED, object: nil)
@@ -102,6 +103,7 @@ class EditProfileVC: UIViewController {
     }
     
     func downloadFile(completion: @escaping CompletionHandler) {
+        print(AuthService.instance.imageUrl)
         let imageUrl = URL(string: AuthService.instance.imageUrl)!
             
         let imageData = NSData(contentsOf: imageUrl)!

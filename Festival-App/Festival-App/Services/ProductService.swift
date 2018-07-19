@@ -28,7 +28,7 @@ class ProductService {
                         let name = item["name"].stringValue
                         let price = item["price"].stringValue
                         let category = item["category"].stringValue
-                        let productImage = item["productImage"].stringValue
+                        let productImage = item["imageURL"].stringValue
                         let product = Product(_id: _id, name: name, price: price, productImage: productImage, category: category)
                         self.products.append(product)
                     }

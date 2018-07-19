@@ -10,9 +10,9 @@ import Foundation
 
 struct Location {
     public private(set) var _id: String!
-    public private(set) var latitude: String!
-    public private(set) var longitude: String!
-    public private(set) var userId: String!
+    public private(set) var latitude: Double!
+    public private(set) var longitude: Double!
+    public private(set) var userID: String!
     public private(set) var title: String!
     public private(set) var address: String!
     public private(set) var description: String!

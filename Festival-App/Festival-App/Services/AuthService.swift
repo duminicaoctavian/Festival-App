@@ -90,9 +90,9 @@ class AuthService {
                         self.userEmail = json["email"].stringValue
                         self.userName = json["username"].stringValue
                         self.id = json["_id"].stringValue
-                        self.imageUrl = json["imageUrl"].stringValue
-                        if response.response?.allHeaderFields["X-Auth"] != nil {
-                            self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                        self.imageUrl = json["imageURL"].stringValue
+                        if response.response?.allHeaderFields["Access-Client"] != nil {
+                            self.authToken = (response.response?.allHeaderFields["Access-Client"] as? String)!
                         }
                         
                         UserDataService.instance.setUserData(id: self.id, email: self.userEmail, name: self.userName)
@@ -128,8 +128,8 @@ class AuthService {
                     self.userEmail = json["email"].stringValue
                     self.userName = json["username"].stringValue
                     self.id = json["_id"].stringValue
-                    self.imageUrl = json["imageUrl"].stringValue
-                    self.authToken = (response.response?.allHeaderFields["X-Auth"] as? String)!
+                    self.imageUrl = json["imageURL"].stringValue
+                    self.authToken = (response.response?.allHeaderFields["Access-Client"] as? String)!
                     
                     UserDataService.instance.setUserData(id: self.id, email: self.userEmail, name: self.userName)
                 } catch {
@@ -147,7 +147,7 @@ class AuthService {
     
     func logoutUser(completion: @escaping CompletionHandler) {
         BEARER_HEADER = [
-            "X-Auth": "\(AuthService.instance.authToken)"
+            "Access-Client": "\(AuthService.instance.authToken)"
         ]
         
         Alamofire.request(URL_LOGOUT_USER, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -178,7 +178,7 @@ class AuthService {
                     let id = json["_id"].stringValue
                     let email = json["email"].stringValue
                     let username = json["username"].stringValue
-                    let imageUrl = json["imageUrl"].stringValue
+                    let imageUrl = json["imageURL"].stringValue
                     
                     let newUser = User(_id: id, userName: username, email: email, imageUrl: imageUrl)
                     

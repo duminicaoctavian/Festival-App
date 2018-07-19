@@ -54,16 +54,16 @@ class LineupVC: UIViewController {
                     let artist = ArtistService.instance.artists[index]
                     
                     if index == ArtistService.instance.artists.count - 1 {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), backColor: UIColor.clear, artist.time, artist.name, artist.artistImage))
+                        self.data[artist.day]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.date, artist.artistImageURL))
                         break
                     }
                     
-                    let keyExists = self.data[Int(artist.day)!] != nil
+                    let keyExists = self.data[Int(artist.day)] != nil
                     
                     if keyExists {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), UIColor.lightGray, artist.time, artist.name, artist.artistImage))
+                        self.data[artist.day]?.append((TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL))
                     } else {
-                        self.data[Int(artist.day)!] = [(TimelinePoint(), UIColor.lightGray, artist.time, artist.name, artist.artistImage)]
+                        self.data[artist.day] = [(TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL)]
                     }
                     
                 }

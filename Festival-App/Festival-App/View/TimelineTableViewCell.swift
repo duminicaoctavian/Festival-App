@@ -98,6 +98,7 @@ open class TimelineTableViewCell: UITableViewCell {
         
         self.contentView.layer.insertSublayer(shapeLayer, below: titleLabel.layer)
     }
+    
     var didRequestToAddToOwnTimeline: ((_ cell:UITableViewCell) -> ())?
     
     @IBAction func onAddPressed(_ sender: Any) {

@@ -13,16 +13,15 @@ import SwiftyJSON
 class ArtistService {
     static let instance = ArtistService()
     
-
     var artists = [Artist]()
     
     func findAllArtistsForStage(stage: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
-            
+        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
                 do {
                     let json = try JSON(data: data)
+                    print(json)
                     let array = json["artists"].arrayValue
                     for item in array {
                         let _id = item["_id"].stringValue
@@ -30,10 +29,10 @@ class ArtistService {
                         let genre = item["genre"].stringValue
                         let description = item["description"].stringValue
                         let stageItem = item["stage"].stringValue
-                        let day = item["day"].stringValue
-                        let time = item["time"].stringValue
-                        let artistImage = item["artistImage"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage, isOnUserTimeline: false)
+                        let day = item["day"].int
+                        let date = item["date"].stringValue
+                        let artistImageURL = item["artistImageURL"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, date: date, artistImageURL: artistImageURL, isOnUserTimeline: false)
                         self.artists.append(artist)
                     }
                     completion(true)
@@ -48,7 +47,7 @@ class ArtistService {
     }
     
     func getFilteredArtists(stage: String, day: Int, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)/\(day)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_GET_ARTISTS)/\(stage)/\(day)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
         
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -61,10 +60,10 @@ class ArtistService {
                         let genre = item["genre"].stringValue
                         let description = item["description"].stringValue
                         let stageItem = item["stage"].stringValue
-                        let day = item["day"].stringValue
-                        let time = item["time"].stringValue
-                        let artistImage = item["artistImage"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, time: time, artistImage: artistImage, isOnUserTimeline: false)
+                        let day = item["day"].int
+                        let date = item["date"].stringValue
+                        let artistImageURL = item["artistImageURL"].stringValue
+                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, date: date, artistImageURL: artistImageURL, isOnUserTimeline: false)
                         self.artists.append(artist)
                     }
                     completion(true)

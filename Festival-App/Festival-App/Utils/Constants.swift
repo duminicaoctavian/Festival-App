@@ -74,5 +74,5 @@ let HEADER = [
 ]
 
 var BEARER_HEADER = [
-    "X-Auth": "\(AuthService.instance.authToken)"
+    "Access-Client": "\(AuthService.instance.authToken)"
 ]

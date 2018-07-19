@@ -34,31 +34,18 @@ class AccomodationVC: UIViewController {
         
         SocketService.instance.getMapLocation { (newLocation) in
             if newLocation._id != nil {
-                LocationService.instance.findAllLocations { (success) in
-                    if success {
-                        LocationService.instance.locations.forEach({ (location) in
-                            let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude)!, longitude: Double(location.longitude)!)
-                            
-                            let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title!, locationAddress: location.address!, locationDescription: location.description!, locationImages: location.images!)
-                            
-                            
-                            if self.mapView.annotations.contains(where: { $0.coordinate.latitude == annotation.coordinate.latitude && $0.coordinate.longitude == annotation.coordinate.longitude}) {
-                                print("ALREADY ON MAP")
-                            } else {
-                                self.mapView.addAnnotation(annotation)
-                                print("NOT ON MAP")
-                            }
-                        })
-                    }
-                }
+                let locCoord = CLLocationCoordinate2D(latitude: Double(newLocation.latitude), longitude: Double(newLocation.longitude))
                 
+                let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: newLocation.title, locationAddress: newLocation.address, locationDescription: newLocation.description, locationImages: newLocation.images)
+                
+                self.mapView.addAnnotation(annotation)
             }
         }
         
         LocationService.instance.findAllLocations { (success) in
             if success {
                 LocationService.instance.locations.forEach({ (location) in
-                    let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude)!, longitude: Double(location.longitude)!)
+                    let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     
                     let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title!, locationAddress: location.address!, locationDescription: location.description, locationImages: location.images!)
                     self.mapView.addAnnotation(annotation)
@@ -117,7 +104,7 @@ extension AccomodationVC : MKMapViewDelegate {
         self.present(pinDetailsVC, animated: true, completion: nil)
     }
     
-    func centerMapOnUserLocation() {
+    func centerMapOnUserLocation() {    
         guard let coordinate = locationManager.location?.coordinate else { return } //if there is no value, return
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius*2, regionRadius*2)
         mapView.setRegion(coordinateRegion, animated: true)
@@ -127,9 +114,6 @@ extension AccomodationVC : MKMapViewDelegate {
         
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
-        let annotation = MapPin(coordinate: touchCoordinate, identifier: "mapPin", locationTitle: "BLA", locationAddress: "BLA", locationDescription: "BLA", locationImages: [])
-        mapView.addAnnotation(annotation)
         
         SocketService.instance.addLocation(latitude: String(touchCoordinate.latitude), longitude: String(touchCoordinate.longitude), userId: AuthService.instance.id, title: "Good place for rent!", address: "Str. Placeholder nr. 24", description: "This is a placeholder", images: ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]) { (success) in
             if success {

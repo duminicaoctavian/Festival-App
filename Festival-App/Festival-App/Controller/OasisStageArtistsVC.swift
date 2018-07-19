@@ -65,7 +65,7 @@ extension OasisStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
                 detailsVC.name = artist.name
                 detailsVC.genre = artist.genre
                 detailsVC.artistDescription = artist.description
-                detailsVC.artistImage = artist.artistImage
+                detailsVC.artistImage = artist.artistImageURL
                 detailsVC.modalPresentationStyle = .custom
                 self.present(detailsVC, animated: true, completion: nil)
             }

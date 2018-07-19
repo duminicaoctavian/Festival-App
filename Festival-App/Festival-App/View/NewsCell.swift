@@ -62,6 +62,7 @@ class NewsCell: UITableViewCell {
                 
                 self.simpleDateLabel.isHidden = false;
                 self.simpleTextLabel.isHidden = false;
+                
                 self.simpleTitleLabel.isHidden = false;
                 
                 self.simpleTitleLabel.text = news.title

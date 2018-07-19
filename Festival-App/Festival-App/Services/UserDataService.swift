@@ -29,10 +29,10 @@ class UserDataService {
         let body: [String: Any] = [
             "username": username,
             "password": password,
-            "imageUrl": imageUrl
+            "imageURL": imageUrl
         ]
         
-        Alamofire.request("\(URL_PATCH_USER)/\(AuthService.instance.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_PATCH_USER)/\(AuthService.instance.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             print(self.id)
             if response.result.error == nil {
@@ -47,7 +47,7 @@ class UserDataService {
                         let json = try JSON(data: data)
                         AuthService.instance.userEmail = json["email"].stringValue
                         AuthService.instance.userName = json["username"].stringValue
-                        AuthService.instance.imageUrl = json["imageUrl"].stringValue
+                        AuthService.instance.imageUrl = json["imageURL"].stringValue
                         let id = json["_id"].stringValue
                         
                         UserDataService.instance.setUserData(id: id, email: AuthService.instance.userEmail, name: AuthService.instance.userName)

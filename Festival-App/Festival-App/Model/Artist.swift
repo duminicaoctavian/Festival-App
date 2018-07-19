@@ -14,8 +14,8 @@ struct Artist {
     public private(set) var genre: String!
     public private(set) var description: String!
     public private(set) var stage: String!
-    public private(set) var day: String!
-    public private(set) var time: String!
-    public private(set) var artistImage: String!
+    public private(set) var day: Int!
+    public private(set) var date: String!
+    public private(set) var artistImageURL: String!
     public private(set) var isOnUserTimeline: Bool!
 }
