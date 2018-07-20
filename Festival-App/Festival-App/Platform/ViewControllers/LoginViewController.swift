@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  LoginViewController.swift
 //  Festival-App
 //
 //  Created by Duminica Octavian on 26/02/2018.
@@ -8,9 +8,12 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
+    
+    lazy var presenter: LoginPresenter = {
+        return LoginPresenter(view: self)
+    }()
 
-   
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,7 +22,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         spinner.isHidden = true
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
         
         view.addGestureRecognizer(tap)
     }
@@ -57,5 +60,31 @@ class LoginVC: UIViewController {
     }
     @IBAction func onRegisterPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_REGISTER, sender: self)
+    }
+}
+
+extension LoginViewController: LoginView {
+    func displayLoginFailedAlert() {
+        
+    }
+    
+    func navigateToHomeScreen() {
+    
+    }
+    
+    func navigateToCreateAccountScreen() {
+        
+    }
+    
+    func roundLoginButton() {
+        
+    }
+    
+    func startActivityIndicator() {
+        
+    }
+    
+    func stopActivityIndicator() {
+        
     }
 }

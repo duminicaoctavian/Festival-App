@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ERD-VW-7ye">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AccomodationVC-->
+        <scene sceneID="AkJ-g1-zz1">
+            <objects>
+                <viewController id="ERD-VW-7ye" customClass="AccomodationVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZA-yt-bze"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEZ-9q-5vW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uZc-jR-RZ6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcj-KY-cRi" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-r5-0br">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="19A-Om-uQh"/>
+                                            <constraint firstAttribute="width" constant="24" id="Rfk-uc-jan"/>
+                                        </constraints>
+                                        <state key="normal" image="menuStack"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accomodation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2m-17-Fg5">
+                                        <rect key="frame" x="125.5" y="43.5" width="125.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="o2m-17-Fg5" firstAttribute="centerX" secondItem="Mcj-KY-cRi" secondAttribute="centerX" id="5sf-Q3-7PI"/>
+                                    <constraint firstItem="o2m-17-Fg5" firstAttribute="centerY" secondItem="uPc-r5-0br" secondAttribute="centerY" id="c0b-Wv-O1c"/>
+                                    <constraint firstAttribute="bottom" secondItem="uPc-r5-0br" secondAttribute="bottom" constant="12" id="gIg-8i-yNM"/>
+                                    <constraint firstAttribute="height" constant="77" id="ssW-Fd-xdH"/>
+                                    <constraint firstItem="uPc-r5-0br" firstAttribute="leading" secondItem="Mcj-KY-cRi" secondAttribute="leading" constant="12" id="tuL-zl-EjP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.21796020760000001" green="0.079810581780000001" blue="0.37307731379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X21-N5-oMj" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbR-iR-WHU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-ZT-k9C">
+                                        <rect key="frame" x="300" y="515" width="67" height="67"/>
+                                        <state key="normal" image="locationButton"/>
+                                        <connections>
+                                            <action selector="centerBtnWasPressed:" destination="ERD-VW-7ye" eventType="touchUpInside" id="pEI-N6-Ty1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bRR-ZT-k9C" secondAttribute="trailing" constant="8" id="S5I-v7-HDA"/>
+                                    <constraint firstItem="EbR-iR-WHU" firstAttribute="top" secondItem="X21-N5-oMj" secondAttribute="top" id="VHh-y1-2ov"/>
+                                    <constraint firstAttribute="trailing" secondItem="EbR-iR-WHU" secondAttribute="trailing" id="Wy9-dK-l6p"/>
+                                    <constraint firstAttribute="bottom" secondItem="bRR-ZT-k9C" secondAttribute="bottom" constant="8" id="ghl-4f-BCa"/>
+                                    <constraint firstItem="EbR-iR-WHU" firstAttribute="leading" secondItem="X21-N5-oMj" secondAttribute="leading" id="u3b-l8-0v9"/>
+                                    <constraint firstAttribute="bottom" secondItem="EbR-iR-WHU" secondAttribute="bottom" id="ycJ-OJ-uwP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.00046930917709999998" green="0.15181804660000001" blue="0.2134067358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mcj-KY-cRi" firstAttribute="leading" secondItem="uZc-jR-RZ6" secondAttribute="leading" id="4Zc-b3-ZI0"/>
+                            <constraint firstItem="DEZ-9q-5vW" firstAttribute="top" secondItem="X21-N5-oMj" secondAttribute="bottom" id="5ZI-Nv-4fp"/>
+                            <constraint firstAttribute="trailing" secondItem="Mcj-KY-cRi" secondAttribute="trailing" id="6TG-YL-Ejc"/>
+                            <constraint firstItem="X21-N5-oMj" firstAttribute="top" secondItem="Mcj-KY-cRi" secondAttribute="bottom" id="7fm-6R-Bvd"/>
+                            <constraint firstAttribute="trailing" secondItem="X21-N5-oMj" secondAttribute="trailing" id="Cuh-e3-VMY"/>
+                            <constraint firstItem="X21-N5-oMj" firstAttribute="top" secondItem="Mcj-KY-cRi" secondAttribute="bottom" id="Dl1-cS-Mlf"/>
+                            <constraint firstItem="X21-N5-oMj" firstAttribute="leading" secondItem="uZc-jR-RZ6" secondAttribute="leading" id="Hb9-Wa-cK5"/>
+                            <constraint firstItem="X21-N5-oMj" firstAttribute="top" secondItem="Mcj-KY-cRi" secondAttribute="bottom" id="ZSm-Tr-Raj"/>
+                            <constraint firstItem="Mcj-KY-cRi" firstAttribute="top" secondItem="uZc-jR-RZ6" secondAttribute="top" id="u9W-wE-ocm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="EbR-iR-WHU" id="9cG-Ce-1YZ"/>
+                        <outlet property="menuBtn" destination="uPc-r5-0br" id="tvH-Vu-qFz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07S-0Y-HBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-648.79999999999995" y="-1255.3223388305848"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="locationButton" width="67" height="67"/>
+        <image name="menuStack" width="40" height="40"/>
+    </resources>
+</document>

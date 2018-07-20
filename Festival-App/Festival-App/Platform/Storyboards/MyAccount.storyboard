@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ProfileVC-->
+        <scene sceneID="nB1-IW-SUE">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" id="s9V-d6-1hR" customClass="ProfileVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2t7-ff-QF4"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZE-Ix-fpH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pj2-bo-P63">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-rq-tNU" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1N-mf-gna">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="CSS-dJ-MO8"/>
+                                            <constraint firstAttribute="height" constant="18" id="t6h-zL-8mO"/>
+                                        </constraints>
+                                        <state key="normal" image="menuStack"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-eg-LeV">
+                                        <rect key="frame" x="160" y="43.5" width="55.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="U1N-mf-gna" secondAttribute="bottom" constant="12" id="Awx-YR-brv"/>
+                                    <constraint firstItem="gsn-eg-LeV" firstAttribute="centerY" secondItem="U1N-mf-gna" secondAttribute="centerY" id="BAs-uq-AHg"/>
+                                    <constraint firstAttribute="height" constant="77" id="HKw-YW-T1G"/>
+                                    <constraint firstItem="U1N-mf-gna" firstAttribute="leading" secondItem="wx9-rq-tNU" secondAttribute="leading" constant="12" id="U2b-SR-BuK"/>
+                                    <constraint firstItem="gsn-eg-LeV" firstAttribute="centerX" secondItem="wx9-rq-tNU" secondAttribute="centerX" id="bAB-6Z-5P8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.21796020760000001" green="0.079810581780000001" blue="0.37307731379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-HL-5jb" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="G76-Ep-6jI" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="87" y="35" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Bvw-7K-cXN"/>
+                                            <constraint firstAttribute="height" constant="200" id="D0r-RY-r1j"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaJ-aj-wLa">
+                                        <rect key="frame" x="187" y="253" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-sy-ieL">
+                                        <rect key="frame" x="65" y="415" width="245" height="115"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-6a-hAr" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="245" height="50"/>
+                                                <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ads-Cn-4w1"/>
+                                                    <constraint firstAttribute="width" constant="245" id="kSz-Y0-Bfr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                <state key="normal" title="View Order History">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onViewOrderPressed:" destination="s9V-d6-1hR" eventType="touchUpInside" id="dsX-wg-5Gl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMF-75-IqK" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="65" width="245" height="50"/>
+                                                <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="GhS-mR-yp9"/>
+                                                    <constraint firstAttribute="width" constant="245" id="yLw-tP-zEG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                <state key="normal" title="Edit Profile">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onEditProfilePressed:" destination="s9V-d6-1hR" eventType="touchUpInside" id="BOC-iJ-hzQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c0G-sy-ieL" firstAttribute="centerX" secondItem="VTd-HL-5jb" secondAttribute="centerX" id="0tm-xG-vo0"/>
+                                    <constraint firstItem="G76-Ep-6jI" firstAttribute="centerX" secondItem="VTd-HL-5jb" secondAttribute="centerX" id="4ip-Gu-bfQ"/>
+                                    <constraint firstItem="GaJ-aj-wLa" firstAttribute="centerX" secondItem="VTd-HL-5jb" secondAttribute="centerX" id="J1T-Dp-tif"/>
+                                    <constraint firstAttribute="bottom" secondItem="c0G-sy-ieL" secondAttribute="bottom" constant="60" id="K7M-i4-7jS"/>
+                                    <constraint firstItem="G76-Ep-6jI" firstAttribute="top" secondItem="VTd-HL-5jb" secondAttribute="top" constant="35" id="Wkv-OS-gI4"/>
+                                    <constraint firstItem="GaJ-aj-wLa" firstAttribute="top" secondItem="G76-Ep-6jI" secondAttribute="bottom" constant="18" id="tHd-vW-UXj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.00046930917709999998" green="0.15181804660000001" blue="0.2134067358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wx9-rq-tNU" firstAttribute="top" secondItem="Pj2-bo-P63" secondAttribute="top" id="7gr-0Q-AYT"/>
+                            <constraint firstItem="BZE-Ix-fpH" firstAttribute="top" secondItem="VTd-HL-5jb" secondAttribute="bottom" id="9We-AQ-3DV"/>
+                            <constraint firstItem="VTd-HL-5jb" firstAttribute="leading" secondItem="Pj2-bo-P63" secondAttribute="leading" id="B18-HY-SmM"/>
+                            <constraint firstAttribute="trailing" secondItem="VTd-HL-5jb" secondAttribute="trailing" id="Dt5-da-lpS"/>
+                            <constraint firstItem="VTd-HL-5jb" firstAttribute="top" secondItem="wx9-rq-tNU" secondAttribute="bottom" id="RaN-Tu-PFt"/>
+                            <constraint firstAttribute="trailing" secondItem="wx9-rq-tNU" secondAttribute="trailing" id="a1L-qL-iL1"/>
+                            <constraint firstItem="wx9-rq-tNU" firstAttribute="leading" secondItem="Pj2-bo-P63" secondAttribute="leading" id="aaG-Qi-G5B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuBtn" destination="U1N-mf-gna" id="lvf-JG-XN1"/>
+                        <outlet property="profileImgView" destination="G76-Ep-6jI" id="MT0-sW-OKz"/>
+                        <outlet property="usernameLbl" destination="GaJ-aj-wLa" id="E7p-EB-Xb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exx-cZ-p4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.5999999999999" y="80.50974512743629"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuStack" width="40" height="40"/>
+        <image name="profileDefault" width="192" height="192"/>
+    </resources>
+</document>

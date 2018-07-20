@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CA2101BF6400B301B7 /* LoginView.swift */; };
+		8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */; };
+		8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674CE2101C36C00B301B7 /* News.storyboard */; };
+		8A3674D12101C38F00B301B7 /* Lineup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D02101C38F00B301B7 /* Lineup.storyboard */; };
+		8A3674D32101C3B200B301B7 /* Merch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D22101C3B200B301B7 /* Merch.storyboard */; };
+		8A3674D52101C3D200B301B7 /* Accomodation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D42101C3D200B301B7 /* Accomodation.storyboard */; };
+		8A3674D72101C40C00B301B7 /* Artists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D62101C40C00B301B7 /* Artists.storyboard */; };
+		8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D82101C43000B301B7 /* Chat.storyboard */; };
+		8A3674DB2101C45200B301B7 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674DA2101C45200B301B7 /* MyAccount.storyboard */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -43,7 +52,7 @@
 		DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */; };
 		DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811F203E1DF200D8A7FA /* Constants.swift */; };
 		DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */; };
-		DE742A112044963A000CF48F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginVC.swift */; };
+		DE742A112044963A000CF48F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginViewController.swift */; };
 		DE84EBC3208BDBEF008016FE /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84EBC2208BDBEF008016FE /* EditProfileVC.xib */; };
 		DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */; };
 		DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */; };
@@ -89,6 +98,15 @@
 		5E44282287E3E04EB4FAB17B /* Pods-Festival-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC0DB20DDEF4341F89F1 /* Pods-Festival-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.debug.xcconfig"; sourceTree = "<group>"; };
+		8A3674CA2101BF6400B301B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8A3674CE2101C36C00B301B7 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		8A3674D02101C38F00B301B7 /* Lineup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lineup.storyboard; sourceTree = "<group>"; };
+		8A3674D22101C3B200B301B7 /* Merch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Merch.storyboard; sourceTree = "<group>"; };
+		8A3674D42101C3D200B301B7 /* Accomodation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accomodation.storyboard; sourceTree = "<group>"; };
+		8A3674D62101C40C00B301B7 /* Artists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Artists.storyboard; sourceTree = "<group>"; };
+		8A3674D82101C43000B301B7 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		8A3674DA2101C45200B301B7 /* MyAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -126,7 +144,7 @@
 		DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		DE5A811F203E1DF200D8A7FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuCell.swift; sourceTree = "<group>"; };
-		DE742A102044963A000CF48F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DE742A102044963A000CF48F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE84EBC2208BDBEF008016FE /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailsVC.swift; sourceTree = "<group>"; };
 		DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinDetailsVC.xib; sourceTree = "<group>"; };
@@ -209,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3674C22101BB9100B301B7 /* CollectionViewCells */,
+				8A3674C92101BD0300B301B7 /* Storyboards */,
 				8A3674C02101BB8100B301B7 /* TableViewCells */,
 				8A3674C12101BB8900B301B7 /* UIViews */,
 				8A3674C32101BB9A00B301B7 /* ViewControllers */,
@@ -313,7 +332,7 @@
 				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
 				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
-				DE742A102044963A000CF48F /* LoginVC.swift */,
+				DE742A102044963A000CF48F /* LoginViewController.swift */,
 				DE0FCD5C203F20CB00FE29BB /* MainStageArtistsVC.swift */,
 				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE1648592042134000EB371B /* MerchVC.swift */,
@@ -331,6 +350,7 @@
 		8A3674C42101BBB300B301B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +358,7 @@
 		8A3674C62101BBBF00B301B7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -350,6 +371,22 @@
 				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A3674C92101BD0300B301B7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8A3674DA2101C45200B301B7 /* MyAccount.storyboard */,
+				8A3674D82101C43000B301B7 /* Chat.storyboard */,
+				8A3674D62101C40C00B301B7 /* Artists.storyboard */,
+				8A3674D42101C3D200B301B7 /* Accomodation.storyboard */,
+				8A3674D22101C3B200B301B7 /* Merch.storyboard */,
+				8A3674D02101C38F00B301B7 /* Lineup.storyboard */,
+				8A3674CE2101C36C00B301B7 /* News.storyboard */,
+				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
+				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BC2A6BA8F44BBF55AB86511B /* Frameworks */ = {
@@ -388,8 +425,6 @@
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
 				DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */,
 				DECDBC07203DE43B0001B7BA /* Info.plist */,
-				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
-				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
 				8A3674BC2101BB3700B301B7 /* Networking */,
 				8A3674BB2101BB2F00B301B7 /* Platform */,
 				8A3674B92101B95D00B301B7 /* Presentation */,
@@ -505,12 +540,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3674DB2101C45200B301B7 /* MyAccount.storyboard in Resources */,
 				DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */,
 				DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */,
 				DE84EBC3208BDBEF008016FE /* EditProfileVC.xib in Resources */,
+				8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */,
+				8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */,
 				DE19FC6B2071A7A400316199 /* TimelineTableViewCell.xib in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsVC.xib in Resources */,
+				8A3674D12101C38F00B301B7 /* Lineup.storyboard in Resources */,
+				8A3674D72101C40C00B301B7 /* Artists.storyboard in Resources */,
 				DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */,
+				8A3674D52101C3D200B301B7 /* Accomodation.storyboard in Resources */,
+				8A3674D32101C3B200B301B7 /* Merch.storyboard in Resources */,
 				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,6 +658,7 @@
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
 				DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
+				8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */,
 				DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */,
@@ -635,7 +678,7 @@
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
-				DE742A112044963A000CF48F /* LoginVC.swift in Sources */,
+				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
 				DE241F7320690A7400F07C33 /* NewsService.swift in Sources */,
@@ -652,6 +695,7 @@
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
+				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,
 			);
@@ -814,7 +858,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Octavian.Festival-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Supporting Files/Festival-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Utils/Supporting Files/Festival-App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,7 +877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Octavian.Festival-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Supporting Files/Festival-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Festival-App/Utils/Supporting Files/Festival-App-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

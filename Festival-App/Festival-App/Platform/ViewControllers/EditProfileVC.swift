@@ -27,7 +27,7 @@ class EditProfileVC: UIViewController {
         chageProfileBtn.setTitle("Change Image", for: .normal)
         chageProfileBtn.sizeToFit()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
         
         view.addGestureRecognizer(tap)
         
