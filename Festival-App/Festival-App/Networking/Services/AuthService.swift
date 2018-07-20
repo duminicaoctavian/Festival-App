@@ -146,9 +146,6 @@ class AuthService {
     }
     
     func logoutUser(completion: @escaping CompletionHandler) {
-        BEARER_HEADER = [
-            "Access-Client": "\(AuthService.instance.authToken)"
-        ]
         
         Alamofire.request(URL_LOGOUT_USER, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             

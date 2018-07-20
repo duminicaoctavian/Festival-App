@@ -184,16 +184,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC2A6BA8F44BBF55AB86511B /* Frameworks */ = {
+		8A3674B92101B95D00B301B7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */,
-				71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */,
+				8A3674C62101BBBF00B301B7 /* Presenters */,
+				8A3674C42101BBB300B301B7 /* Views */,
 			);
-			name = Frameworks;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
-		DE0FCD56203F1CC800FE29BB /* Services */ = {
+		8A3674BA2101BB2A00B301B7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A811F203E1DF200D8A7FA /* Constants.swift */,
+				DEC8D0792083B9DC00127695 /* Extensions.swift */,
+				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
+				DE19FC6E2071A7CB00316199 /* TimelinePoint.swift */,
+				8A3674C82101BBE500B301B7 /* Supporting Files */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A3674BB2101BB2F00B301B7 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				8A3674C22101BB9100B301B7 /* CollectionViewCells */,
+				8A3674C02101BB8100B301B7 /* TableViewCells */,
+				8A3674C12101BB8900B301B7 /* UIViews */,
+				8A3674C32101BB9A00B301B7 /* ViewControllers */,
+				8A3674BF2101BB7A00B301B7 /* XIBs */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		8A3674BC2101BB3700B301B7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8A3674BD2101BB6000B301B7 /* Model */,
+				8A3674BE2101BB6500B301B7 /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8A3674BD2101BB6000B301B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
+				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
+				DE84F440208B69F400CE35FA /* Location.swift */,
+				DEE34C9F205E91DE006C7B55 /* Message.swift */,
+				DE241F702069069400F07C33 /* News.swift */,
+				DE16485B2042191700EB371B /* Product.swift */,
+				DEDCF8CB208CA9FB006AD857 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A3674BE2101BB6500B301B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
@@ -208,7 +255,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		DE0FCD68203F740E00FE29BB /* XIBs */ = {
+		8A3674BF2101BB7A00B301B7 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
 				DE0FCD6A203F747900FE29BB /* ArtistDetailsVC.xib */,
@@ -219,17 +266,43 @@
 			path = XIBs;
 			sourceTree = "<group>";
 		};
-		DE5A810E203DE50C00D8A7FA /* Supporting Files */ = {
+		8A3674C02101BB8100B301B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */,
-				DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */,
-				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
+				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
+				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
+				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
+				DE4DF1672041C1720083A8F1 /* NewsCell.swift */,
+				DE1648512041F9E500EB371B /* ProductCategoryCell.swift */,
+				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
+				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
 			);
-			path = "Supporting Files";
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
-		DE5A8113203DE5B800D8A7FA /* Controller */ = {
+		8A3674C12101BB8900B301B7 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				DEA915B5205F882400A276E5 /* CircleImage.swift */,
+				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
+				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
+				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
+				DEC8D07B2083EFC300127695 /* MapPin.swift */,
+				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
+				DE1648612042350400EB371B /* RoundedImage.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		8A3674C22101BB9100B301B7 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DE16485D204219DE00EB371B /* ProductCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		8A3674C32101BB9A00B301B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
@@ -252,54 +325,40 @@
 				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
 				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
 			);
-			path = Controller;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		DE5A8114203DE5C400D8A7FA /* View */ = {
+		8A3674C42101BBB300B301B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
-				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
-				DEA915B5205F882400A276E5 /* CircleImage.swift */,
-				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
-				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
-				DEE34CA2205E91EE006C7B55 /* KeyboardBoundView.swift */,
-				DEC8D07B2083EFC300127695 /* MapPin.swift */,
-				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
-				DE4DF1672041C1720083A8F1 /* NewsCell.swift */,
-				DE1648512041F9E500EB371B /* ProductCategoryCell.swift */,
-				DE16485D204219DE00EB371B /* ProductCell.swift */,
-				DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */,
-				DE1648612042350400EB371B /* RoundedImage.swift */,
-				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
-				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		DE5A8115203DE5CB00D8A7FA /* Model */ = {
+		8A3674C62101BBBF00B301B7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				DE0FCD5A203F1F1300FE29BB /* Artist.swift */,
-				DEE34C9E205E91DE006C7B55 /* Channel.swift */,
-				DE84F440208B69F400CE35FA /* Location.swift */,
-				DEE34C9F205E91DE006C7B55 /* Message.swift */,
-				DE241F702069069400F07C33 /* News.swift */,
-				DE16485B2042191700EB371B /* Product.swift */,
-				DEDCF8CB208CA9FB006AD857 /* User.swift */,
 			);
-			path = Model;
+			path = Presenters;
 			sourceTree = "<group>";
 		};
-		DE5A811E203E1DDB00D8A7FA /* Utils */ = {
+		8A3674C82101BBE500B301B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DE5A811F203E1DF200D8A7FA /* Constants.swift */,
-				DEC8D0792083B9DC00127695 /* Extensions.swift */,
-				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
-				DE19FC6E2071A7CB00316199 /* TimelinePoint.swift */,
+				DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */,
+				DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */,
+				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
 			);
-			path = Utils;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC2A6BA8F44BBF55AB86511B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */,
+				71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DECDBBEC203DE43B0001B7BA = {
@@ -307,9 +366,9 @@
 			children = (
 				DECDBBF7203DE43B0001B7BA /* Festival-App */,
 				DECDBC0F203DE43B0001B7BA /* Festival-AppTests */,
-				DECDBBF6203DE43B0001B7BA /* Products */,
-				FBAB8CCE48C60091F4787321 /* Pods */,
 				BC2A6BA8F44BBF55AB86511B /* Frameworks */,
+				FBAB8CCE48C60091F4787321 /* Pods */,
+				DECDBBF6203DE43B0001B7BA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,19 +384,16 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
-				DE0FCD68203F740E00FE29BB /* XIBs */,
-				DE0FCD56203F1CC800FE29BB /* Services */,
-				DE5A811E203E1DDB00D8A7FA /* Utils */,
-				DE5A8115203DE5CB00D8A7FA /* Model */,
-				DE5A8114203DE5C400D8A7FA /* View */,
-				DE5A8113203DE5B800D8A7FA /* Controller */,
-				DE5A810E203DE50C00D8A7FA /* Supporting Files */,
 				DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */,
-				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
-				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
-				DECDBC07203DE43B0001B7BA /* Info.plist */,
 				DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */,
+				DECDBC07203DE43B0001B7BA /* Info.plist */,
+				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
+				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
+				8A3674BC2101BB3700B301B7 /* Networking */,
+				8A3674BB2101BB2F00B301B7 /* Platform */,
+				8A3674B92101B95D00B301B7 /* Presentation */,
+				8A3674BA2101BB2A00B301B7 /* Utils */,
 			);
 			path = "Festival-App";
 			sourceTree = "<group>";
@@ -410,7 +466,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Duminica Octavian";
 				TargetAttributes = {
 					DECDBBF4203DE43B0001B7BA = {
@@ -687,7 +743,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -738,7 +794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

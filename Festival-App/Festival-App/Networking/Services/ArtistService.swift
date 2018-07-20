@@ -21,7 +21,6 @@ class ArtistService {
                 guard let data = response.data else { return }
                 do {
                     let json = try JSON(data: data)
-                    print(json)
                     let array = json["artists"].arrayValue
                     for item in array {
                         let _id = item["_id"].stringValue
