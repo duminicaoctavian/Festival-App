@@ -12,6 +12,7 @@ target 'Festival-App' do
   pod 'AWSCore'
   pod 'AWSCognito'
   pod 'AWSS3'
+  pod 'NVActivityIndicatorView'
 
   target 'Festival-AppTests' do
     inherit! :search_paths

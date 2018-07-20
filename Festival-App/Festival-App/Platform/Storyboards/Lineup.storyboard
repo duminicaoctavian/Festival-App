@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O6W-XD-lSn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="42a-u4-jHS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ffE-ja-Ize">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4p-CH-UjS" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -179,14 +183,14 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-uu-ESC">
-                                                <rect key="frame" x="64.5" y="8" width="35.5" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-uu-ESC">
+                                                <rect key="frame" x="68" y="8" width="28.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkm-OQ-dBD">
-                                                <rect key="frame" x="267" y="8" width="49" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkm-OQ-dBD">
+                                                <rect key="frame" x="270.5" y="8" width="42" height="22"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -236,9 +240,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zls-am-RrL">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -246,9 +247,7 @@
                             <constraint firstAttribute="trailing" secondItem="U4B-VN-evY" secondAttribute="trailing" id="M0A-PQ-c5U"/>
                             <constraint firstItem="U4p-CH-UjS" firstAttribute="top" secondItem="ffE-ja-Ize" secondAttribute="top" id="S93-K3-VRX"/>
                             <constraint firstItem="U4p-CH-UjS" firstAttribute="leading" secondItem="ffE-ja-Ize" secondAttribute="leading" id="YBt-tc-j8p"/>
-                            <constraint firstItem="Zls-am-RrL" firstAttribute="centerX" secondItem="ffE-ja-Ize" secondAttribute="centerX" id="YX0-35-X5x"/>
                             <constraint firstItem="U4B-VN-evY" firstAttribute="top" secondItem="U4p-CH-UjS" secondAttribute="bottom" id="cIY-ds-ykL"/>
-                            <constraint firstItem="Zls-am-RrL" firstAttribute="centerY" secondItem="ffE-ja-Ize" secondAttribute="centerY" id="jfk-p7-ZC4"/>
                             <constraint firstItem="U4B-VN-evY" firstAttribute="leading" secondItem="ffE-ja-Ize" secondAttribute="leading" id="prQ-o2-hYf"/>
                             <constraint firstAttribute="trailing" secondItem="U4p-CH-UjS" secondAttribute="trailing" id="vYD-8s-voS"/>
                         </constraints>
@@ -263,7 +262,6 @@
                         <outlet property="menuBtn" destination="QQw-tV-6Gj" id="N0h-zW-lUo"/>
                         <outlet property="oasisStageBtn" destination="Vdz-C8-F0k" id="MRA-8h-1KA"/>
                         <outlet property="resistanceStageBtn" destination="frL-I8-itU" id="DEy-3N-fLJ"/>
-                        <outlet property="spinner" destination="Zls-am-RrL" id="9dd-AL-3fv"/>
                         <outlet property="tableView" destination="sRC-Gu-UBr" id="1vB-Ej-Ujs"/>
                     </connections>
                 </viewController>

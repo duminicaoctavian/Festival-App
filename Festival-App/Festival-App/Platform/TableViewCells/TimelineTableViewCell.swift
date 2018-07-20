@@ -13,8 +13,6 @@ open class TimelineTableViewCell: UITableViewCell {
     
     @IBOutlet weak open var titleLabel: UILabel!
     @IBOutlet weak open var descriptionLabel: UILabel!
-    @IBOutlet weak open var lineInfoLabel: UILabel!
-    @IBOutlet weak open var thumbnailImageView: UIImageView!
     @IBOutlet weak open var illustrationImageView: UIImageView!
     
     open var timelinePoint = TimelinePoint() {
@@ -60,10 +58,7 @@ open class TimelineTableViewCell: UITableViewCell {
             }
         }
         
-        titleLabel.sizeToFit()
-        descriptionLabel.sizeToFit()
-        
-        timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: titleLabel.frame.origin.y + titleLabel.intrinsicContentSize.height / 2 - timelinePoint.diameter / 2)
+        timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: titleLabel.frame.origin.y + 15)
 
         timeline.start = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: 0)
         timeline.middle = CGPoint(x: timeline.start.x, y: timelinePoint.position.y)
@@ -81,7 +76,7 @@ open class TimelineTableViewCell: UITableViewCell {
         let offset: CGFloat = 16
         let bubbleRect = CGRect(
             x: titleLabel.frame.origin.x - offset / 2,
-            y: titleLabel.frame.origin.y - offset / 2,
+            y: titleLabel.frame.origin.y,
             width: titleLabel.intrinsicContentSize.width + offset,
             height: titleLabel.intrinsicContentSize.height + offset)
         

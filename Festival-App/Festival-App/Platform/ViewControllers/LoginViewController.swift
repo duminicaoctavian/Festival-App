@@ -13,14 +13,20 @@ class LoginViewController: UIViewController {
     lazy var presenter: LoginPresenter = {
         return LoginPresenter(view: self)
     }()
-
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        spinner.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
         
@@ -32,27 +38,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLoginPressed(_ sender: Any) {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        startActivityIndicator()
         let emailInput = emailTextField.text!
         let passwordInput = passwordTextField.text!
         AuthService.instance.loginUser(email: emailInput, password: passwordInput) { (success) in
             if (success) {
-                self.spinner.isHidden = true
-                self.spinner.stopAnimating()
+                self.stopActivityIndicator()
                 self.performSegue(withIdentifier: TO_HOME_FROM_LOGIN, sender: self)
             } else {
-                self.spinner.isHidden = true
-                self.spinner.stopAnimating()
+                self.stopActivityIndicator()
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 
                 let alertController = UIAlertController(title: "Login Failed", message: "Please try again.", preferredStyle: .alert)
                 //We add buttons to the alert controller by creating UIAlertActions:
-                let actionOk = UIAlertAction(title: "OK",
-                                             style: .default,
-                                             handler: nil) //You can use a block here to handle a press on this button
-                
+                let actionOk = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    self.visualEffectView.removeFromSuperview()
+                })
                 alertController.addAction(actionOk)
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -81,10 +83,11 @@ extension LoginViewController: LoginView {
     }
     
     func startActivityIndicator() {
-        
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
     }
     
     func stopActivityIndicator() {
-        
+        LoadingView.stopLoading()
     }
 }

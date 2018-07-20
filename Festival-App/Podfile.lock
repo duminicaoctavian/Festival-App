@@ -5,6 +5,9 @@ PODS:
   - AWSCore (2.6.12)
   - AWSS3 (2.6.12):
     - AWSCore (= 2.6.12)
+  - NVActivityIndicatorView (4.3.0):
+    - NVActivityIndicatorView/Presenter (= 4.3.0)
+  - NVActivityIndicatorView/Presenter (4.3.0)
   - Socket.IO-Client-Swift (13.1.1):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.4)
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - AWSCognito
   - AWSCore
   - AWSS3
+  - NVActivityIndicatorView
   - Socket.IO-Client-Swift
   - SwiftyJSON
 
@@ -24,6 +28,7 @@ SPEC REPOS:
     - AWSCognito
     - AWSCore
     - AWSS3
+    - NVActivityIndicatorView
     - Socket.IO-Client-Swift
     - Starscream
     - SwiftyJSON
@@ -33,10 +38,11 @@ SPEC CHECKSUMS:
   AWSCognito: c69d91501b460c8abe22e224a0d5c3277486a21b
   AWSCore: d0d6e4f6831754aaf98058d2306a016ae71510fe
   AWSS3: c35608e0cdd5172f9e1d943221fd5fde01c5f749
+  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
   Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: e8578f34c2561ef57dca61edf51e8c7499b6a71c
+PODFILE CHECKSUM: 2729455dac0a8f81f9ab5c3d74ea0ae1e2936f50
 
 COCOAPODS: 1.5.3

@@ -166,17 +166,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-Qm-Mi7">
-                                <rect key="frame" x="169" y="205" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vhX-Qm-Mi7" firstAttribute="centerY" secondItem="3BS-Ri-J5Y" secondAttribute="centerY" constant="-110" id="BvW-iZ-NRO"/>
                             <constraint firstAttribute="trailing" secondItem="UZQ-da-fZu" secondAttribute="trailing" id="CKK-Mq-dWb"/>
                             <constraint firstItem="Lsp-5f-FHS" firstAttribute="leading" secondItem="3BS-Ri-J5Y" secondAttribute="leading" id="CoX-65-bUs"/>
                             <constraint firstItem="UZQ-da-fZu" firstAttribute="top" secondItem="3BS-Ri-J5Y" secondAttribute="top" id="EXx-qB-VqO"/>
-                            <constraint firstItem="vhX-Qm-Mi7" firstAttribute="centerX" secondItem="3BS-Ri-J5Y" secondAttribute="centerX" id="fkR-EG-NBQ"/>
                             <constraint firstItem="rwg-rT-dtG" firstAttribute="top" secondItem="Lsp-5f-FHS" secondAttribute="bottom" id="pn0-hI-ddF"/>
                             <constraint firstAttribute="trailing" secondItem="Lsp-5f-FHS" secondAttribute="trailing" id="qKB-qj-g5I"/>
                             <constraint firstItem="Lsp-5f-FHS" firstAttribute="top" secondItem="UZQ-da-fZu" secondAttribute="bottom" id="tKc-Hu-jIR"/>
@@ -186,7 +181,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="eVs-Tu-CKa" id="qUx-a8-smN"/>
                         <outlet property="passwordTextField" destination="tKr-rJ-5HB" id="R70-dz-pFo"/>
-                        <outlet property="spinner" destination="vhX-Qm-Mi7" id="JYV-A3-r1K"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toHomeFromLogin" id="hgO-G5-ZHv"/>
                         <segue destination="sxg-ta-Z2E" kind="show" identifier="toRegister" id="wsn-kW-jQ2"/>
                     </connections>
@@ -714,7 +708,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-fq-ce6">
-                                                            <rect key="frame" x="8" y="18.5" width="90" height="38.5"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -894,6 +888,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SfX-aN-LVd"/>
-        <segue reference="Bb2-sH-5zi"/>
+        <segue reference="hgO-G5-ZHv"/>
     </inferredMetricsTieBreakers>
 </document>

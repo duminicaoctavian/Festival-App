@@ -101,10 +101,7 @@ extension NewsCell: UIWebViewDelegate {
             print(NewsService.instance.count)
         }
         
-        // hardcoded
-        if(NewsService.instance.count >= 3 && NewsService.instance.loaded == false) {
-            NotificationCenter.default.post(name: NOTIF_WEBVIEWS_LOADED, object: nil)
-        }
+        NotificationCenter.default.post(name: NOTIF_WEBVIEWS_LOADED, object: nil)
     }
 }
 

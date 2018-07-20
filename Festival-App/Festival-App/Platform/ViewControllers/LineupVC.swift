@@ -20,7 +20,6 @@ class LineupVC: UIViewController {
     @IBOutlet weak var dayTwoBtn: UIButton!
     @IBOutlet weak var dayThreeBtn: UIButton!
     @IBOutlet weak var dayFourBtn: UIButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var data = [Int: [(TimelinePoint, UIColor, String, String, String)]]()
     var day: Int!
@@ -44,17 +43,18 @@ class LineupVC: UIViewController {
     }
     
     func getFilteredArtists(stage: String, day: Int) {
-        startSpinner()
+        LoadingView.startLoading()
         ArtistService.instance.clearArtists()
         data.removeAll()
         tableView.reloadData()
         ArtistService.instance.getFilteredArtists(stage: stage, day: day) { (success) in
             if (success) {
+                print(ArtistService.instance.artists)
                 for index in 0..<ArtistService.instance.artists.count {
                     let artist = ArtistService.instance.artists[index]
                     
                     if index == ArtistService.instance.artists.count - 1 {
-                        self.data[artist.day]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.date, artist.artistImageURL))
+                        self.data[artist.day]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.name, artist.artistImageURL))
                         break
                     }
                     
@@ -67,7 +67,7 @@ class LineupVC: UIViewController {
                     }
                     
                 }
-                self.stopSpinner()
+                LoadingView.stopLoading()
                 self.tableView.reloadData()
             }
         }
@@ -138,16 +138,6 @@ class LineupVC: UIViewController {
         btn2.alpha = 0.3
         btn3.alpha = 0.3
     }
-    
-    func startSpinner() {
-        spinner.isHidden = false
-        spinner.startAnimating()
-    }
-    
-    func stopSpinner() {
-        spinner.isHidden = true
-        spinner.stopAnimating()
-    }
 }
 
 extension LineupVC: UITableViewDataSource, UITableViewDelegate {
@@ -173,15 +163,26 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         if (indexPath.row > 0) {
             timelineFrontColor = sectionData[indexPath.row - 1].1
         }
-        let date = title.split(separator: " ")
-        let time = date[1]
         cell.timelinePoint = timelinePoint
         cell.timeline.frontColor = timelineFrontColor
         cell.timeline.backColor = timelineBackColor
-        cell.titleLabel.text = String(time)
+        
+        var isoDate = title
+        let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
+        isoDate = String(isoDate[..<end])
+        
+        let isoFormatter = ISO8601DateFormatter()
+        let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
+        
+        let newFormatter = DateFormatter()
+        newFormatter.dateFormat = "HH:mm"
+        
+        if let finalDate = chatDate {
+            let finalDate = newFormatter.string(from: finalDate)
+            cell.titleLabel.text = finalDate
+        }
+
         cell.descriptionLabel.text = description
-        //cell.illustrationImageView.image = UIImage(named: description)
-        print(imageLink)
         
         let imageUrl = URL(string: imageLink)!
         
@@ -208,7 +209,6 @@ extension LineupVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.didRequestToAddToOwnTimeline = { (cell) in
-            
             print(description)
         }
         
