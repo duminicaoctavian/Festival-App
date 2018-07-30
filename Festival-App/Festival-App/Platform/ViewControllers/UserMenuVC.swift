@@ -32,7 +32,7 @@ class UserMenuVC: UIViewController {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! UINavigationController
         self.revealViewController().pushFrontViewController(profileVC, animated: true)
     }
     

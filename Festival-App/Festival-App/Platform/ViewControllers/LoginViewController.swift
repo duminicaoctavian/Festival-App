@@ -28,8 +28,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
+        navigationController?.navigationBar.isHidden = true
         
+        addGestures()
+    }
+    
+    private func addGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
     }
     
@@ -60,6 +65,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func onRegisterPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_REGISTER, sender: self)
     }

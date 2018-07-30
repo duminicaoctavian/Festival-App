@@ -15,12 +15,24 @@ class MerchCategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     func setUpSWRevealViewController() {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMerch" {
+            if let destinationVC = segue.destination as? MerchVC {
+                if let category = sender as? String {
+                    destinationVC.category = category
+                }
+            }
+        }
     }
 }
 
@@ -40,9 +52,7 @@ extension MerchCategoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let merchVC = storyboard?.instantiateViewController(withIdentifier: PRODUCT_VC_IDENTIFIER) as? MerchVC else { return }
-        merchVC.category = PRODUCT_CATEGORIES[indexPath.row]
-        present(merchVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "toMerch", sender: PRODUCT_CATEGORIES[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

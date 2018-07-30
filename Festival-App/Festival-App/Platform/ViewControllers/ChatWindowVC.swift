@@ -14,24 +14,22 @@ class ChatWindowVC: UIViewController {
     @IBOutlet weak var chatBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var typingLbl: UILabel!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var messageTextBox: UITextField!
     
     //Variables
     var isTyping = false
     
-    @IBOutlet weak var messageTextBox: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bindToKeyboard()
+    
+        messageTextBox.delegate = self
         
         setUpSWRevealViewController()
     
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
-        sendBtn.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatWindowVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -57,6 +55,7 @@ class ChatWindowVC: UIViewController {
             var names = ""//the names of who are typing
             var numberOfTypers = 0
             
+            print(typingUsers)
             for (typingUser, channel) in typingUsers {
                 if typingUser != UserDataService.instance.name && channel == channelId {
                     if names == "" {
@@ -73,6 +72,7 @@ class ChatWindowVC: UIViewController {
                     verb = "are"
                 }
                 self.typingLbl.text = "\(names) \(verb) typing a message ..."
+                
             } else {
                 self.typingLbl.text = ""
             }
@@ -83,6 +83,12 @@ class ChatWindowVC: UIViewController {
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MessageService.instance.messages.removeAll()
+        tableView.reloadData()
     }
     
     func setUpSWRevealViewController() {
@@ -130,6 +136,8 @@ class ChatWindowVC: UIViewController {
     }
     
     func getMessages() {
+        MessageService.instance.messages.removeAll()
+        tableView.reloadData()
         startSpinner()
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
@@ -190,11 +198,9 @@ class ChatWindowVC: UIViewController {
         guard let channedId = MessageService.instance.selectedChannel?.id else { return }
         if messageTextBox.text == "" {
             isTyping = false
-            sendBtn.isHidden = true
             SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channedId)
         } else {
             if isTyping == false {
-                sendBtn.isHidden = false
                 SocketService.instance.socket.emit("startType", UserDataService.instance.name, channedId)
             }
             isTyping = true
@@ -202,17 +208,15 @@ class ChatWindowVC: UIViewController {
     }
     
     @IBAction func onBackPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func startSpinner() {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        LoadingView.startLoading()
     }
     
     func stopSpinner() {
-        spinner.isHidden = true
-        spinner.stopAnimating()
+        LoadingView.stopLoading()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -234,6 +238,12 @@ extension ChatWindowVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.messages.count
+    }
+}
+
+extension ChatWindowVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
 }
 

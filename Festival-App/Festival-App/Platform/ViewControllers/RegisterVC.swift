@@ -9,15 +9,21 @@
 import UIKit
 
 class RegisterVC: UIViewController {
-
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        spinner.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterVC.handleTap))
         
@@ -29,7 +35,7 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func onBackPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onSignUpPressed(_ sender: Any) {
@@ -37,30 +43,37 @@ class RegisterVC: UIViewController {
         let passwordInput = passwordTextField.text!
         let usernameInput = usernameTextField.text!
             
-        spinner.isHidden = false
-        spinner.startAnimating()
+        startActivityIndicator()
         
         AuthService.instance.registerUser(username: usernameInput, email: emailInput, password: passwordInput, completion: { (success) in
             if (success) {
+                self.stopActivityIndicator()
                 self.performSegue(withIdentifier: TO_HOME_FROM_REGISTER, sender: self)
             } else {
                 self.passwordTextField.text = ""
                 self.emailTextField.text = ""
                 self.usernameTextField.text = ""
                 
-                self.spinner.isHidden = true
-                self.spinner.stopAnimating()
+                self.stopActivityIndicator()
                 
                 let alertController = UIAlertController(title: "Registration Failed", message: "Invalid input data.", preferredStyle: .alert)
                 //We add buttons to the alert controller by creating UIAlertActions:
-                let actionOk = UIAlertAction(title: "OK",
-                                             style: .default,
-                                             handler: nil) //You can use a block here to handle a press on this button
-                
+                let actionOk = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    self.visualEffectView.removeFromSuperview()
+                })
                 alertController.addAction(actionOk)
                 self.present(alertController, animated: true, completion: nil)
             }
         })
     }
-        
+    
+    
+    func startActivityIndicator() {
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        LoadingView.stopLoading()
+    }
 }

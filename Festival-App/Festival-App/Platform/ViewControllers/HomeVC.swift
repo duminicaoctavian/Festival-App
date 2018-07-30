@@ -19,6 +19,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setUpSWRevealViewController()
         
+        navigationController?.navigationBar.isHidden = true
+        
         print(AuthService.instance.isLoggedIn)
         print(AuthService.instance.userEmail)
         print(AuthService.instance.authToken)

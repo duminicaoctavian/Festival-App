@@ -12,7 +12,6 @@ class NewsVC: UIViewController {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +49,11 @@ class NewsVC: UIViewController {
     }
     
     func startSpinner() {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        LoadingView.startLoading()
     }
     
     func stopSpinner() {
-        spinner.isHidden = true
-        spinner.stopAnimating()
+        LoadingView.stopLoading()
     }
 }
 

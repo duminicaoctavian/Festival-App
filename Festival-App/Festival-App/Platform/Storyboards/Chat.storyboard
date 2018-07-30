@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -16,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3aw-IJ-3V9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n1o-1B-iPO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INc-HA-Z2s" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -40,7 +44,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvF-kp-Vvi">
-                                                            <rect key="frame" x="508" y="9.5" width="72" height="25"/>
+                                                            <rect key="frame" x="283" y="9.5" width="72" height="25"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -119,10 +123,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iPa-8E-Gqo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dm3-iu-8ub">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c4b-qK-rm4"/>
                     <connections>
                         <segue destination="ajF-8x-yZf" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="ZFS-FJ-Fd5"/>
                         <segue destination="sTM-Zz-30O" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="HcZ-mW-yG0"/>
@@ -130,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-Q1-KW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1232"/>
+            <point key="canvasLocation" x="1804" y="1231.9340329835084"/>
         </scene>
         <!--Chat WindowVC-->
         <scene sceneID="N3o-v0-oou">
@@ -141,7 +146,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vTx-4I-EfV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jgI-J4-WrI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub0-IJ-gDf" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -244,32 +249,32 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:33 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-DH-ZBX">
-                                                            <rect key="frame" x="242" y="13" width="350" height="20"/>
+                                                            <rect key="frame" x="242" y="13" width="125" height="20"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csd-tG-6Yn">
-                                                            <rect key="frame" x="70" y="35" width="507" height="18"/>
+                                                            <rect key="frame" x="70" y="35" width="282" height="18"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Roli" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-Bu-Nfm" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
-                                                            <rect key="frame" x="542" y="11" width="50" height="50"/>
+                                                            <rect key="frame" x="317" y="11" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="N3a-m4-x8B"/>
                                                                 <constraint firstAttribute="width" constant="50" id="eTb-pJ-1wL"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:33 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="636-g8-RAm">
-                                                            <rect key="frame" x="180" y="13" width="354" height="20"/>
+                                                            <rect key="frame" x="180" y="13" width="129" height="20"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrh-uE-BJm">
-                                                            <rect key="frame" x="8" y="35" width="522" height="18"/>
+                                                            <rect key="frame" x="8" y="35" width="297" height="18"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -399,18 +404,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Vjz-lh-bH7">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vTx-4I-EfV" firstAttribute="top" secondItem="etj-LF-bW3" secondAttribute="bottom" id="57k-eh-dF2"/>
-                            <constraint firstItem="Vjz-lh-bH7" firstAttribute="centerX" secondItem="jgI-J4-WrI" secondAttribute="centerX" id="ErK-ao-0S3"/>
                             <constraint firstItem="etj-LF-bW3" firstAttribute="top" secondItem="Ub0-IJ-gDf" secondAttribute="bottom" id="FbI-VX-q0c"/>
                             <constraint firstItem="Ub0-IJ-gDf" firstAttribute="top" secondItem="jgI-J4-WrI" secondAttribute="top" id="IYA-cL-kVb"/>
                             <constraint firstAttribute="trailing" secondItem="etj-LF-bW3" secondAttribute="trailing" id="Msn-a4-Jab"/>
-                            <constraint firstItem="Vjz-lh-bH7" firstAttribute="centerY" secondItem="jgI-J4-WrI" secondAttribute="centerY" id="ZWG-SL-ZFo"/>
                             <constraint firstAttribute="trailing" secondItem="Ub0-IJ-gDf" secondAttribute="trailing" id="bDp-ah-suO"/>
                             <constraint firstItem="Ub0-IJ-gDf" firstAttribute="leading" secondItem="jgI-J4-WrI" secondAttribute="leading" id="odk-Xc-TR8"/>
                             <constraint firstItem="etj-LF-bW3" firstAttribute="leading" secondItem="jgI-J4-WrI" secondAttribute="leading" id="qvz-Xf-MoK"/>
@@ -420,8 +420,6 @@
                         <outlet property="channelNameLbl" destination="iqq-4e-5ir" id="PWr-ci-qQR"/>
                         <outlet property="chatBtn" destination="JhK-ZN-Atx" id="pcH-rK-56X"/>
                         <outlet property="messageTextBox" destination="WfA-fR-S3P" id="7hE-QR-xzD"/>
-                        <outlet property="sendBtn" destination="yCe-jM-wPf" id="OZw-Qm-Xi8"/>
-                        <outlet property="spinner" destination="Vjz-lh-bH7" id="0fP-uJ-eZ4"/>
                         <outlet property="tableView" destination="swF-Ea-0rW" id="8vI-it-DPN"/>
                         <outlet property="typingLbl" destination="X9F-Cl-zc0" id="Qx7-sg-Khh"/>
                     </connections>

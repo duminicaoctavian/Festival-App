@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9ft-Cj-sl1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pYU-Lc-P7j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gqn-jp-L4f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzV-qV-n0k" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -99,7 +103,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fAH-4N-cg8">
-                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -164,28 +168,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XDb-Dk-9eE">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pYU-Lc-P7j" firstAttribute="top" secondItem="ZlX-3x-6VH" secondAttribute="bottom" id="DUj-Ii-MVU"/>
-                            <constraint firstItem="XDb-Dk-9eE" firstAttribute="centerY" secondItem="gqn-jp-L4f" secondAttribute="centerY" id="Nb4-j4-kc9"/>
                             <constraint firstAttribute="trailing" secondItem="ZlX-3x-6VH" secondAttribute="trailing" id="dcI-XB-E71"/>
                             <constraint firstAttribute="trailing" secondItem="nzV-qV-n0k" secondAttribute="trailing" id="gag-NE-aor"/>
                             <constraint firstItem="nzV-qV-n0k" firstAttribute="top" secondItem="gqn-jp-L4f" secondAttribute="top" id="i9t-HZ-uGf"/>
                             <constraint firstItem="ZlX-3x-6VH" firstAttribute="leading" secondItem="gqn-jp-L4f" secondAttribute="leading" id="qEP-yK-Tlp"/>
                             <constraint firstItem="ZlX-3x-6VH" firstAttribute="top" secondItem="nzV-qV-n0k" secondAttribute="bottom" id="rPa-BF-WjO"/>
                             <constraint firstItem="nzV-qV-n0k" firstAttribute="leading" secondItem="gqn-jp-L4f" secondAttribute="leading" id="wmd-93-bun"/>
-                            <constraint firstItem="XDb-Dk-9eE" firstAttribute="centerX" secondItem="gqn-jp-L4f" secondAttribute="centerX" id="xb8-Cu-Dqp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="Main" id="wDa-Im-fmi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuBtn" destination="sTw-e5-fXw" id="cbn-sO-aI2"/>
-                        <outlet property="spinner" destination="XDb-Dk-9eE" id="zPK-zJ-grU"/>
                         <outlet property="tableView" destination="na9-9Y-dpf" id="7w5-uK-87q"/>
                     </connections>
                 </viewController>
@@ -202,7 +200,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Gdh-xT-Bxj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9n6-bz-kLE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neg-At-Sib" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -286,7 +284,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bkK-d5-tAg">
-                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -351,20 +349,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FYO-2y-7oc">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Neg-At-Sib" firstAttribute="leading" secondItem="9n6-bz-kLE" secondAttribute="leading" id="DRt-T5-bAb"/>
                             <constraint firstItem="vWl-dB-Ijd" firstAttribute="leading" secondItem="9n6-bz-kLE" secondAttribute="leading" id="NxQ-84-K1C"/>
-                            <constraint firstItem="FYO-2y-7oc" firstAttribute="centerX" secondItem="9n6-bz-kLE" secondAttribute="centerX" id="RJI-tQ-csF"/>
                             <constraint firstAttribute="trailing" secondItem="vWl-dB-Ijd" secondAttribute="trailing" id="den-vv-c9T"/>
                             <constraint firstItem="Gdh-xT-Bxj" firstAttribute="top" secondItem="vWl-dB-Ijd" secondAttribute="bottom" id="hA1-GU-3Zl"/>
                             <constraint firstItem="vWl-dB-Ijd" firstAttribute="top" secondItem="Neg-At-Sib" secondAttribute="bottom" id="kHO-8P-wws"/>
                             <constraint firstItem="Neg-At-Sib" firstAttribute="top" secondItem="9n6-bz-kLE" secondAttribute="top" id="l6s-6o-kul"/>
-                            <constraint firstItem="FYO-2y-7oc" firstAttribute="centerY" secondItem="9n6-bz-kLE" secondAttribute="centerY" id="tMB-Kh-XOy"/>
                             <constraint firstAttribute="trailing" secondItem="Neg-At-Sib" secondAttribute="trailing" id="zUr-16-wMa"/>
                         </constraints>
                     </view>
@@ -372,7 +365,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuBtn" destination="vTo-e9-uiL" id="abc-6F-Xoe"/>
-                        <outlet property="spinner" destination="FYO-2y-7oc" id="Jyi-cE-wgU"/>
                         <outlet property="tableView" destination="eve-Gf-HSa" id="CpH-fr-cuY"/>
                     </connections>
                 </viewController>
@@ -389,7 +381,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sKe-HP-6o1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kWz-G8-Lec">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFc-XD-Sos" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -473,7 +465,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-nu-lxv">
-                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -538,9 +530,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-ni-pVT">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -548,8 +537,6 @@
                             <constraint firstItem="cFc-XD-Sos" firstAttribute="top" secondItem="kWz-G8-Lec" secondAttribute="top" id="XXF-zY-bBQ"/>
                             <constraint firstItem="cMG-JM-qAT" firstAttribute="leading" secondItem="kWz-G8-Lec" secondAttribute="leading" id="ayr-C1-s6O"/>
                             <constraint firstItem="cFc-XD-Sos" firstAttribute="leading" secondItem="kWz-G8-Lec" secondAttribute="leading" id="bsw-9t-Uxb"/>
-                            <constraint firstItem="6nf-ni-pVT" firstAttribute="centerY" secondItem="kWz-G8-Lec" secondAttribute="centerY" id="i4k-cz-Sd4"/>
-                            <constraint firstItem="6nf-ni-pVT" firstAttribute="centerX" secondItem="kWz-G8-Lec" secondAttribute="centerX" id="jsR-QE-5zI"/>
                             <constraint firstItem="sKe-HP-6o1" firstAttribute="top" secondItem="cMG-JM-qAT" secondAttribute="bottom" id="om2-53-TQx"/>
                             <constraint firstItem="cMG-JM-qAT" firstAttribute="top" secondItem="cFc-XD-Sos" secondAttribute="bottom" id="wTJ-Cw-NSu"/>
                             <constraint firstAttribute="trailing" secondItem="cFc-XD-Sos" secondAttribute="trailing" id="wbC-IV-vSh"/>
@@ -558,7 +545,6 @@
                     <tabBarItem key="tabBarItem" title="Live" image="Live" id="N7M-kD-1BR"/>
                     <connections>
                         <outlet property="menuBtn" destination="6L2-Ua-rEm" id="Ejh-g6-iYN"/>
-                        <outlet property="spinner" destination="6nf-ni-pVT" id="zFy-q7-zuc"/>
                         <outlet property="tableView" destination="nuM-iu-Ma5" id="NKN-cy-itb"/>
                     </connections>
                 </viewController>
@@ -575,7 +561,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NJb-0P-hGu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VtX-3I-yox">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baK-l3-CO1" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -659,7 +645,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oW2-BO-b1g">
-                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -724,19 +710,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-hM-HQi">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="O6F-Mb-ePO" firstAttribute="leading" secondItem="VtX-3I-yox" secondAttribute="leading" id="735-Hj-PUO"/>
                             <constraint firstAttribute="trailing" secondItem="O6F-Mb-ePO" secondAttribute="trailing" id="Dao-5F-MZa"/>
-                            <constraint firstItem="Ata-hM-HQi" firstAttribute="centerX" secondItem="VtX-3I-yox" secondAttribute="centerX" id="PAt-39-Ynv"/>
                             <constraint firstItem="NJb-0P-hGu" firstAttribute="top" secondItem="O6F-Mb-ePO" secondAttribute="bottom" id="VEb-lg-Xap"/>
                             <constraint firstItem="O6F-Mb-ePO" firstAttribute="top" secondItem="baK-l3-CO1" secondAttribute="bottom" id="WLc-T6-eJU"/>
                             <constraint firstAttribute="trailing" secondItem="baK-l3-CO1" secondAttribute="trailing" id="YJ7-z6-OPd"/>
-                            <constraint firstItem="Ata-hM-HQi" firstAttribute="centerY" secondItem="VtX-3I-yox" secondAttribute="centerY" id="aSY-0Y-hg5"/>
                             <constraint firstItem="baK-l3-CO1" firstAttribute="leading" secondItem="VtX-3I-yox" secondAttribute="leading" id="fps-xG-tpB"/>
                             <constraint firstItem="baK-l3-CO1" firstAttribute="top" secondItem="VtX-3I-yox" secondAttribute="top" id="vsC-mR-4pl"/>
                         </constraints>
@@ -744,7 +725,6 @@
                     <tabBarItem key="tabBarItem" title="Resistance" image="Resistance" id="6Qs-KK-t2A"/>
                     <connections>
                         <outlet property="menuBtn" destination="ysY-24-hDE" id="L45-0b-JQc"/>
-                        <outlet property="spinner" destination="Ata-hM-HQi" id="vF0-If-llb"/>
                         <outlet property="tableView" destination="q3S-fB-hOd" id="KOC-xF-DBe"/>
                     </connections>
                 </viewController>

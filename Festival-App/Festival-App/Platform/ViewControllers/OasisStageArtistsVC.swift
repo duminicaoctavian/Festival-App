@@ -12,7 +12,6 @@ class OasisStageArtistsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +34,11 @@ class OasisStageArtistsVC: UIViewController {
     }
     
     func startSpinner() {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        LoadingView.startLoading()
     }
     
     func stopSpinner() {
-        spinner.isHidden = true
-        spinner.stopAnimating()
+        LoadingView.stopLoading()
     }
     
     func setUpSWRevealViewController() {

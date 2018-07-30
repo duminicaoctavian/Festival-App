@@ -58,6 +58,7 @@ let TO_HOME_FROM_LOGIN = "toHomeFromLogin"
 let TO_REGISTER = "toRegister"
 let TO_HOME_FROM_REGISTER = "toHomeFromRegister"
 let TO_CHAT = "toChat"
+let TO_MERCH = "toMerch"
 
 // User Defaults
 let TOKEN_KEY = "token"

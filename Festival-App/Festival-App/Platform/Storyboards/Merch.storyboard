@@ -176,36 +176,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SJf-WC-gL1">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5xn-MT-2Y3" firstAttribute="leading" secondItem="fF2-RL-wo9" secondAttribute="leading" id="7zn-ay-zxK"/>
-                            <constraint firstItem="SJf-WC-gL1" firstAttribute="centerX" secondItem="fF2-RL-wo9" secondAttribute="centerX" id="FQl-9I-Eaz"/>
                             <constraint firstItem="CPV-sA-zVG" firstAttribute="top" secondItem="5xn-MT-2Y3" secondAttribute="bottom" id="NTT-o6-NZJ"/>
                             <constraint firstItem="8AX-qO-63B" firstAttribute="top" secondItem="fF2-RL-wo9" secondAttribute="top" id="PDd-P8-cgB"/>
                             <constraint firstAttribute="trailing" secondItem="5xn-MT-2Y3" secondAttribute="trailing" id="RZO-Di-iVP"/>
                             <constraint firstAttribute="trailing" secondItem="8AX-qO-63B" secondAttribute="trailing" id="Vn6-m2-tzP"/>
                             <constraint firstItem="8AX-qO-63B" firstAttribute="leading" secondItem="fF2-RL-wo9" secondAttribute="leading" id="fkm-0d-ADN"/>
-                            <constraint firstItem="SJf-WC-gL1" firstAttribute="centerY" secondItem="fF2-RL-wo9" secondAttribute="centerY" id="rrl-MK-Rfk"/>
                             <constraint firstItem="5xn-MT-2Y3" firstAttribute="top" secondItem="8AX-qO-63B" secondAttribute="bottom" id="vgC-Or-Jhi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="jut-1z-Uip" id="sAb-ul-13f"/>
-                        <outlet property="spinner" destination="SJf-WC-gL1" id="ENQ-pf-jd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzG-nD-rhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98.400000000000006" y="-1951.5742128935533"/>
+            <point key="canvasLocation" x="1938" y="-1254"/>
         </scene>
         <!--Merch CategoryVC-->
         <scene sceneID="4yh-QI-Vj5">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-qZT-9J-b10" id="qZT-9J-b10" customClass="MerchCategoryVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qZT-9J-b10" customClass="MerchCategoryVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQL-R6-gU7"/>
                         <viewControllerLayoutGuide type="bottom" id="9WT-ke-DEz"/>
@@ -365,11 +359,31 @@
                             <constraint firstAttribute="trailing" secondItem="APS-kl-ZHh" secondAttribute="trailing" id="vYI-YT-p6S"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SCZ-XB-rgR"/>
                     <connections>
                         <outlet property="menuBtn" destination="rxJ-Jh-hpt" id="Xv6-Us-O7B"/>
+                        <segue destination="N6t-JO-TWf" kind="show" identifier="toMerch" id="ZkQ-0G-hQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bF-Sz-gm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="-1253.5232383808097"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hKb-Vs-r1J">
+            <objects>
+                <navigationController storyboardIdentifier="merch" automaticallyAdjustsScrollViewInsets="NO" id="iNx-wV-Gc0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XHu-4R-JPN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qZT-9J-b10" kind="relationship" relationship="rootViewController" id="Ii0-U3-7Co"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-sc-dXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.59999999999999" y="-1253.5232383808097"/>
         </scene>

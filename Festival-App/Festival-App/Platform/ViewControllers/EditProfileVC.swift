@@ -22,6 +22,7 @@ class EditProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageName = randomString(length: 20)
         
         chageProfileBtn.setTitle("Change Image", for: .normal)

@@ -11,7 +11,7 @@ import UIKit
 class MerchVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var category: String!
 
     override func viewDidLoad() {
@@ -34,17 +34,15 @@ class MerchVC: UIViewController {
     }
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func startSpinner() {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        LoadingView.startLoading()
     }
     
     func stopSpinner() {
-        spinner.isHidden = true
-        spinner.stopAnimating()
+        LoadingView.stopLoading()
     }
 }
 
