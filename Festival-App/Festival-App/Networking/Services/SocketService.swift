@@ -67,9 +67,9 @@ class SocketService: NSObject {
         }
     }
     
-    func addLocation(latitude: String, longitude: String, userId: String, title: String, address: String, description: String, images: [String], completion: @escaping CompletionHandler) {
-        
-        socket.emit("newLocation", latitude, longitude, userId, title, address, description, images)
+    func addLocation(location: Location, completion: @escaping CompletionHandler) {
+        print(location)
+        socket.emit("newLocation", location.latitude, location.longitude, location.userID, location.title, location.address, location.description, location.images)
         completion(true)
     }
     
@@ -84,7 +84,7 @@ class SocketService: NSObject {
             guard let description = dataArray[6] as? String else { return }
             guard let images = dataArray[7] as? [String] else {return }
             
-            let newLocation = Location(_id: id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, images: images)
+            let newLocation = Location(_id: id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, price: 25, images: images)
             
             completion(newLocation)
         }

@@ -37,7 +37,7 @@ class LocationService {
                             let image = i.stringValue
                             images.append(image)
                         }
-                        let location = Location(_id: _id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, images: images)
+                        let location = Location(_id: _id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, price: 25, images: images)
                         self.locations.append(location)
                     }
                     completion(true)

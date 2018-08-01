@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A10E049211049A300021478 /* AddAccommodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10E048211049A300021478 /* AddAccommodationVC.swift */; };
+		8A10E04C21105D9100021478 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10E04B21105D9100021478 /* ViewControllerExtensions.swift */; };
 		8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CA2101BF6400B301B7 /* LoginView.swift */; };
 		8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */; };
 		8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674CE2101C36C00B301B7 /* News.storyboard */; };
@@ -99,6 +101,8 @@
 		5E44282287E3E04EB4FAB17B /* Pods-Festival-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC0DB20DDEF4341F89F1 /* Pods-Festival-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.debug.xcconfig"; sourceTree = "<group>"; };
+		8A10E048211049A300021478 /* AddAccommodationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccommodationVC.swift; sourceTree = "<group>"; };
+		8A10E04B21105D9100021478 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8A3674CA2101BF6400B301B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8A3674CE2101C36C00B301B7 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
@@ -204,6 +208,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A10E04A21105D8200021478 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A10E04B21105D9100021478 /* ViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8A3674B92101B95D00B301B7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,9 +276,9 @@
 		8A3674BE2101BB6500B301B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
 				DE3B2CF62043300C00C4E49D /* AuthService.swift */,
 				DE84F43E208B69C600CE35FA /* LocationService.swift */,
+				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
 				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
 				DE241F7220690A7400F07C33 /* NewsService.swift */,
 				DE16484F2041F56100EB371B /* ProductService.swift */,
@@ -328,7 +340,9 @@
 		8A3674C32101BB9A00B301B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8A10E04A21105D8200021478 /* Extensions */,
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
+				8A10E048211049A300021478 /* AddAccommodationVC.swift */,
 				DE0FCD69203F747900FE29BB /* ArtistDetailsVC.swift */,
 				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
@@ -380,15 +394,15 @@
 		8A3674C92101BD0300B301B7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				8A3674DA2101C45200B301B7 /* MyAccount.storyboard */,
-				8A3674D82101C43000B301B7 /* Chat.storyboard */,
-				8A3674D62101C40C00B301B7 /* Artists.storyboard */,
 				8A3674D42101C3D200B301B7 /* Accomodation.storyboard */,
-				8A3674D22101C3B200B301B7 /* Merch.storyboard */,
-				8A3674D02101C38F00B301B7 /* Lineup.storyboard */,
-				8A3674CE2101C36C00B301B7 /* News.storyboard */,
+				8A3674D62101C40C00B301B7 /* Artists.storyboard */,
+				8A3674D82101C43000B301B7 /* Chat.storyboard */,
 				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
+				8A3674D02101C38F00B301B7 /* Lineup.storyboard */,
 				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
+				8A3674D22101C3B200B301B7 /* Merch.storyboard */,
+				8A3674DA2101C45200B301B7 /* MyAccount.storyboard */,
+				8A3674CE2101C36C00B301B7 /* News.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -704,7 +718,9 @@
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
 				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
+				8A10E049211049A300021478 /* AddAccommodationVC.swift in Sources */,
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
+				8A10E04C21105D9100021478 /* ViewControllerExtensions.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,

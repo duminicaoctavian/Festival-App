@@ -23,14 +23,13 @@ class AccomodationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        navigationController?.navigationBar.isHidden = true
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         mapView.showsUserLocation = true
         configureLocationServices()
         centerMapOnUserLocation()
-        
-        addTap()
         
         SocketService.instance.getMapLocation { (newLocation) in
             if newLocation._id != nil {
@@ -61,14 +60,6 @@ class AccomodationVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
-    
-    
-    func addTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender: )))
-        tap.numberOfTapsRequired = 2
-        mapView.addGestureRecognizer(tap)
-    }
-    
     @IBAction func centerBtnWasPressed(_ sender: Any) {
         if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
             centerMapOnUserLocation()
@@ -87,9 +78,8 @@ extension AccomodationVC : MKMapViewDelegate {
             return nil
         }
         
-        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
-        pinAnnotation.pinTintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        pinAnnotation.animatesDrop = true
+        let pinAnnotation = MKAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
+        pinAnnotation.image = UIImage(named: "pinSmall")
         return pinAnnotation
     }
     
@@ -101,6 +91,7 @@ extension AccomodationVC : MKMapViewDelegate {
         pinDetailsVC.locationDescription = location.locationDescription
         pinDetailsVC.locationImages = location.locationImages
         pinDetailsVC.modalPresentationStyle = .custom
+        mapView.deselectAnnotation(location, animated: false)
         self.present(pinDetailsVC, animated: true, completion: nil)
     }
     
@@ -108,22 +99,6 @@ extension AccomodationVC : MKMapViewDelegate {
         guard let coordinate = locationManager.location?.coordinate else { return } //if there is no value, return
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius*2, regionRadius*2)
         mapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    @objc func dropPin(sender: UITapGestureRecognizer) {
-        
-        let touchPoint = sender.location(in: mapView)
-        let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
-        SocketService.instance.addLocation(latitude: String(touchCoordinate.latitude), longitude: String(touchCoordinate.longitude), userId: AuthService.instance.id, title: "Good place for rent!", address: "Str. Placeholder nr. 24", description: "This is a placeholder", images: ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]) { (success) in
-            if success {
-                print("SENT LOCATION TO SERVER")
-            }
-        }
-        
-        print(touchCoordinate.latitude)
-        print(touchCoordinate.longitude)
-        
     }
 }
 

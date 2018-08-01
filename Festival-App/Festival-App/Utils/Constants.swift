@@ -20,7 +20,7 @@ enum Stages: String {
 
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
-let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accomodation", "Merch"]
+let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accommodation", "Merch"]
 let PRODUCT_CATEGORIES = ["Men", "Women", "Accesories", "Music"]
 let USER_MENU_CELL_IDENTIFIER = "userMenuCell"
 let ARTIST_CELL_IDENTIFIER = "artistCell"

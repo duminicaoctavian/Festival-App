@@ -661,7 +661,7 @@
                                                     <segue destination="3lr-lJ-whm" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="tP9-Sr-pyr"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accomodation" id="tLb-OA-f0Q" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accommodation" id="tLb-OA-f0Q" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="328" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tLb-OA-f0Q" id="P69-ag-uaq">
@@ -918,7 +918,7 @@
         <image name="ultraTextWhite" width="700" height="181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SfX-aN-LVd"/>
+        <segue reference="COe-lv-7BE"/>
         <segue reference="Bb2-sH-5zi"/>
     </inferredMetricsTieBreakers>
 </document>

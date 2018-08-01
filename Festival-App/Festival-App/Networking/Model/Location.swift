@@ -8,13 +8,36 @@
 
 import Foundation
 
+private struct LocationKey {
+    static let latitude = "latitude"
+    static let longitude = "longitude"
+    static let userID = "userID"
+    static let title = "title"
+    static let address = "address"
+    static let description = "description"
+    static let images = "images"
+}
+
 struct Location {
-    public private(set) var _id: String!
-    public private(set) var latitude: Double!
-    public private(set) var longitude: Double!
-    public private(set) var userID: String!
-    public private(set) var title: String!
-    public private(set) var address: String!
-    public private(set) var description: String!
-    public private(set) var images: [String]!
+    public var _id: String!
+    public var latitude: Double!
+    public var longitude: Double!
+    public var userID: String!
+    public var title: String!
+    public var address: String!
+    public var description: String!
+    public var price: Int!
+    public var images: [String]!
+    
+    var dictionaryRepresentation: [String: AnyObject] {
+        return [
+            LocationKey.latitude: latitude as AnyObject,
+            LocationKey.longitude: longitude as AnyObject,
+            LocationKey.userID: userID as AnyObject,
+            LocationKey.title: title as AnyObject,
+            LocationKey.address: address as AnyObject,
+            LocationKey.description: description as AnyObject,
+            LocationKey.images: images as AnyObject
+        ]
+    }
 }
