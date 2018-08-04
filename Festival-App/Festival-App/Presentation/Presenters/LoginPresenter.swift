@@ -29,6 +29,14 @@ class LoginPresenter {
     func login() {
         guard let email = email, let password = password else { return }
         
+        do {
+            try Validator.validateEmail(email)
+            try Validator.validatePassword(password)
+        } catch {
+            view?.presentLoginFailedFeedback(forError: error)
+            return
+        }
+        
         AuthService.instance.loginUser(email: email, password: password) { [weak self] (success) in
             guard let weakSelf = self else { return }
             weakSelf.view?.stopActivityIndicator()
@@ -36,8 +44,7 @@ class LoginPresenter {
             if (success) {
                 weakSelf.view?.navigateToHomeScreen()
             } else {
-                weakSelf.view?.resetPasswordTextField()
-                weakSelf.view?.displayLoginFailedAlert()
+                weakSelf.view?.presentLoginFailedFeedback(forError: nil)
             }
         }
     }

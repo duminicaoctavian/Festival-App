@@ -13,6 +13,5 @@ protocol RegisterView: class {
     func stopActivityIndicator()
     func navigateToLoginScreen()
     func navigateToHomeScreen()
-    func displayRegisterFailedAlert()
-    func resetTextFields()
+    func presentRegisterFailedFeedback(forError error: Error?)
 }

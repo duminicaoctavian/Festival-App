@@ -22,6 +22,10 @@
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
+		8AD7FABB21160D3400B8320C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FABA21160D3400B8320C /* HomeView.swift */; };
+		8AD7FABD21160D3E00B8320C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FABC21160D3E00B8320C /* HomePresenter.swift */; };
+		8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FABF2116135400B8320C /* UIColorExtensions.swift */; };
+		8AD7FAC321161B2F00B8320C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAC221161B2F00B8320C /* Validator.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -53,7 +57,7 @@
 		DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
-		DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeVC.swift */; };
+		DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */; };
 		DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811A203DEA3300D8A7FA /* GradientView.swift */; };
 		DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */; };
 		DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811F203E1DF200D8A7FA /* Constants.swift */; };
@@ -118,6 +122,10 @@
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8AD7FABA21160D3400B8320C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8AD7FABC21160D3E00B8320C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8AD7FABF2116135400B8320C /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		8AD7FAC221161B2F00B8320C /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -150,7 +158,7 @@
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuVC.swift; sourceTree = "<group>"; };
-		DE5A8118203DE80D00D8A7FA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE5A811A203DEA3300D8A7FA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		DE5A811F203E1DF200D8A7FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 		8A3674BA2101BB2A00B301B7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8AD7FAC221161B2F00B8320C /* Validator.swift */,
 				DE5A811F203E1DF200D8A7FA /* Constants.swift */,
 				DEC8D0792083B9DC00127695 /* Extensions.swift */,
 				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
@@ -244,6 +253,7 @@
 		8A3674BB2101BB2F00B301B7 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				8AD7FABE2116134400B8320C /* Extensions */,
 				8A3674C22101BB9100B301B7 /* CollectionViewCells */,
 				8A3674C92101BD0300B301B7 /* Storyboards */,
 				8A3674C02101BB8100B301B7 /* TableViewCells */,
@@ -350,7 +360,7 @@
 				DEE34C95205E7ADD006C7B55 /* ChannelsVC.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
 				DEAA64892083497300C53E58 /* EditProfileVC.swift */,
-				DE5A8118203DE80D00D8A7FA /* HomeVC.swift */,
+				DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
 				DE0FCD62203F6D7D00FE29BB /* LiveStageArtistsVC.swift */,
 				DE742A102044963A000CF48F /* LoginViewController.swift */,
@@ -371,6 +381,7 @@
 		8A3674C42101BBB300B301B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8AD7FABA21160D3400B8320C /* HomeView.swift */,
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
 				8AD7FAB82116081800B8320C /* RegisterView.swift */,
 			);
@@ -382,6 +393,7 @@
 			children = (
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
 				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
+				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -416,6 +428,14 @@
 			isa = PBXGroup;
 			children = (
 				8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8AD7FABE2116134400B8320C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8AD7FABF2116135400B8320C /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,12 +706,13 @@
 				DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */,
 				DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */,
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
+				8AD7FABB21160D3400B8320C /* HomeView.swift in Sources */,
 				DE84F441208B69F400CE35FA /* Location.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* TimelineTableViewCell.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
 				DE0FCD63203F6D7D00FE29BB /* LiveStageArtistsVC.swift in Sources */,
-				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
+				DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */,
 				8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */,
@@ -711,6 +732,7 @@
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				DE0FCD65203F6D9300FE29BB /* OasisStageArtistsVC.swift in Sources */,
+				8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
@@ -720,6 +742,7 @@
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */,
 				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
+				8AD7FABD21160D3E00B8320C /* HomePresenter.swift in Sources */,
 				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
 				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
@@ -734,6 +757,7 @@
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
+				8AD7FAC321161B2F00B8320C /* Validator.swift in Sources */,
 				8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,
 			);

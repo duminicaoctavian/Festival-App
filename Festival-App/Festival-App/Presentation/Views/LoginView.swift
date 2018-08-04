@@ -9,11 +9,10 @@
 import Foundation
 
 protocol LoginView: class {
-    func displayLoginFailedAlert()
     func navigateToHomeScreen()
     func navigateToRegisterScreen()
     func startActivityIndicator()
     func stopActivityIndicator()
     func hideNavigationBar()
-    func resetPasswordTextField()
+    func presentLoginFailedFeedback(forError error: Error?)
 }

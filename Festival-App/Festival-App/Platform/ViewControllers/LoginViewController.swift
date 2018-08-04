@@ -38,35 +38,42 @@ class LoginViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
-    @IBAction func onLoginPressed(_ sender: Any) {
+    @IBAction func onLoginTapped(_ sender: Any) {
         startActivityIndicator()
         presenter.emailChanged(emailTextField.text)
         presenter.passwordChanged(passwordTextField.text)
         presenter.login()
     }
     
-    @IBAction func onRegisterPressed(_ sender: Any) {
+    @IBAction func onRegisterTapped(_ sender: Any) {
         navigateToRegisterScreen()
     }
-}
-
-extension LoginViewController: LoginView {
-    func resetPasswordTextField() {
-        passwordTextField.text = ""
-    }
     
-    func hideNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    func displayLoginFailedAlert() {
-        let alert = UIAlertController(title: Constants.alertTitle, message: Constants.alertMessage, preferredStyle: .alert)
+    private func displayLoginFailedAlert(forError error: Error?) {
+        let message = error != nil ? error?.localizedDescription : Constants.alertMessage
+        let alert = UIAlertController(title: Constants.alertTitle, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Constants.okActionTitle, style: .default, handler: { [weak self] (action) in
             guard let weakSelf = self else { return }
             weakSelf.visualEffectView.removeFromSuperview()
         })
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func resetPasswordTextField() {
+        passwordTextField.text = ""
+    }
+}
+
+extension LoginViewController: LoginView {
+    func presentLoginFailedFeedback(forError error: Error?) {
+        stopActivityIndicator()
+        resetPasswordTextField()
+        displayLoginFailedAlert(forError: error)
+    }
+    
+    func hideNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
     }
     
     func navigateToHomeScreen() {

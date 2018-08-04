@@ -23,6 +23,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     lazy var visualEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
@@ -38,16 +39,35 @@ class RegisterViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
 
-    @IBAction func onBackPressed(_ sender: Any) {
+    @IBAction func onBackTapped(_ sender: Any) {
         navigateToLoginScreen()
     }
     
-    @IBAction func onSignUpPressed(_ sender: Any) {
+    @IBAction func onSignUpTapped(_ sender: Any) {
         startActivityIndicator()
-        presenter.emailChanged(emailTextField.text)
         presenter.usernameChanged(usernameTextField.text)
+        presenter.emailChanged(emailTextField.text)
         presenter.passwordChanged(passwordTextField.text)
+        presenter.confirmPasswordChanged(confirmPasswordTextField.text)
         presenter.register()
+    }
+    
+    private func displayRegisterFailedAlert(forError error: Error?) {
+        let message = error != nil ? error?.localizedDescription : Constants.alertMessage
+        let alert = UIAlertController(title: Constants.alertTitle, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Constants.okActionTitle, style: .default, handler: { [weak self] (action) in
+            guard let weakSelf = self else { return }
+            weakSelf.visualEffectView.removeFromSuperview()
+        })
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func resetTextFields() {
+        emailTextField.text = ""
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        confirmPasswordTextField.text = ""
     }
 }
 
@@ -69,19 +89,9 @@ extension RegisterViewController: RegisterView {
         performSegue(withIdentifier: Segue.toHomeFromRegister, sender: self)
     }
     
-    func displayRegisterFailedAlert() {
-        let alert = UIAlertController(title: Constants.alertTitle, message: Constants.alertMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constants.okActionTitle, style: .default, handler: { [weak self] (action) in
-            guard let weakSelf = self else { return }
-            weakSelf.visualEffectView.removeFromSuperview()
-        })
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func resetTextFields() {
-        emailTextField.text = ""
-        usernameTextField.text = ""
-        passwordTextField.text = ""
+    func presentRegisterFailedFeedback(forError error: Error?) {
+        stopActivityIndicator()
+        resetTextFields()
+        displayRegisterFailedAlert(forError: error)
     }
 }

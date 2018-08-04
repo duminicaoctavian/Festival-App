@@ -18,6 +18,7 @@ class RegisterPresenter {
     private var email: String?
     private var username: String?
     private var password: String?
+    private var confirmPassword: String?
     
     func emailChanged(_ newValue: String?) {
         email = newValue
@@ -31,18 +32,31 @@ class RegisterPresenter {
         password = newValue
     }
     
+    func confirmPasswordChanged(_ newValue: String?) {
+        confirmPassword = newValue
+    }
+    
     func register() {
-        guard let email = email, let username = username, let password = password else { return }
+        guard let email = email, let username = username,
+            let password = password, let confirmPassword = confirmPassword else { view?.presentRegisterFailedFeedback(forError: nil); return }
+        
+        do {
+            try Validator.validateUsername(username)
+            try Validator.validateEmail(email)
+            try Validator.validatePasswordMatching(password: password, confirmPassword: confirmPassword)
+        } catch {
+            view?.presentRegisterFailedFeedback(forError: error)
+            return
+        }
         
         AuthService.instance.registerUser(username: username, email: email, password: password, completion: { [weak self] (success) in
             guard let weakSelf = self else { return }
-            weakSelf.view?.stopActivityIndicator()
             
             if (success) {
+                weakSelf.view?.stopActivityIndicator()
                 weakSelf.view?.navigateToHomeScreen()
             } else {
-                weakSelf.view?.resetTextFields()
-                weakSelf.view?.displayRegisterFailedAlert()
+                weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
             }
         })
     }
