@@ -26,15 +26,6 @@ struct Message {
     public private(set) var username: String
     public private(set) var timestamp: String
     
-    init(id: String = "", userID: String = "", channelID: String = "", body: String = "", username: String = "", timestamp: String = "") {
-        self.id = id
-        self.userID = userID
-        self.channelID = channelID
-        self.body = body
-        self.username = username
-        self.timestamp = timestamp
-    }
-    
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
         self.userID = json[SerializationKey.userID].stringValue

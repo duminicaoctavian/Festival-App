@@ -11,8 +11,9 @@ import Foundation
 protocol LoginView: class {
     func displayLoginFailedAlert()
     func navigateToHomeScreen()
-    func navigateToCreateAccountScreen()
-    func roundLoginButton()
+    func navigateToRegisterScreen()
     func startActivityIndicator()
     func stopActivityIndicator()
+    func hideNavigationBar()
+    func resetPasswordTextField()
 }

@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         
-        print(AuthService.instance.user)
+        print(AuthService.instance.user.id, AuthService.instance.user.email, AuthService.instance.user.username, AuthService.instance.user.imageURL, AuthService.instance.authToken, AuthService.instance.isLoggedIn)
     }
     
     func setUpSWRevealViewController() {

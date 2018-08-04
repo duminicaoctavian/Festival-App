@@ -19,6 +19,9 @@
 		8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D82101C43000B301B7 /* Chat.storyboard */; };
 		8A3674DB2101C45200B301B7 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674DA2101C45200B301B7 /* MyAccount.storyboard */; };
 		8A3674DE2101C5FA00B301B7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674DD2101C5FA00B301B7 /* LoadingView.swift */; };
+		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
+		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
+		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -61,7 +64,7 @@
 		DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */; };
 		DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F43E208B69C600CE35FA /* LocationService.swift */; };
 		DE84F441208B69F400CE35FA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F440208B69F400CE35FA /* Location.swift */; };
-		DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterVC.swift */; };
+		DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterViewController.swift */; };
 		DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B5205F882400A276E5 /* CircleImage.swift */; };
 		DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsVC.swift */; };
 		DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA6487208334B700C53E58 /* ProfileVC.swift */; };
@@ -112,6 +115,9 @@
 		8A3674D82101C43000B301B7 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8A3674DA2101C45200B301B7 /* MyAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		8A3674DD2101C5FA00B301B7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -155,7 +161,7 @@
 		DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinDetailsVC.xib; sourceTree = "<group>"; };
 		DE84F43E208B69C600CE35FA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DE84F440208B69F400CE35FA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		DEA52116204B3EDE00ED285A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		DEA52116204B3EDE00ED285A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DEA915B5205F882400A276E5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DEA915B7205FBBD000A276E5 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		DEAA6487208334B700C53E58 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -313,7 +319,7 @@
 		8A3674C12101BB8900B301B7 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
-				8A3674DC2101C5E600B301B7 /* Extensions */,
+				8AD7FAB32115FE9A00B8320C /* Extensions */,
 				DEA915B5205F882400A276E5 /* CircleImage.swift */,
 				DE5A811A203DEA3300D8A7FA /* GradientView.swift */,
 				DE1648552042006F00EB371B /* HalfRoundedView.swift */,
@@ -355,7 +361,7 @@
 				DE0FCD64203F6D9300FE29BB /* OasisStageArtistsVC.swift */,
 				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
 				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
-				DEA52116204B3EDE00ED285A /* RegisterVC.swift */,
+				DEA52116204B3EDE00ED285A /* RegisterViewController.swift */,
 				DE0FCD60203F6D6200FE29BB /* ResistanceStageArtistsVC.swift */,
 				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
 			);
@@ -366,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
+				8AD7FAB82116081800B8320C /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
+				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -404,9 +412,10 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		8A3674DC2101C5E600B301B7 /* Extensions */ = {
+		8AD7FAB32115FE9A00B8320C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -685,7 +694,7 @@
 				DE5A8119203DE80D00D8A7FA /* HomeVC.swift in Sources */,
 				8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
-				DEA52117204B3EDE00ED285A /* RegisterVC.swift in Sources */,
+				DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */,
 				DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */,
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
 				DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */,
@@ -709,6 +718,7 @@
 				DE241F7320690A7400F07C33 /* NewsService.swift in Sources */,
 				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
+				8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */,
 				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
 				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
@@ -719,10 +729,12 @@
 				8A10E04C21105D9100021478 /* ViewControllerExtensions.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
+				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,
 				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
+				8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

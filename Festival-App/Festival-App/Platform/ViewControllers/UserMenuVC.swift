@@ -43,6 +43,8 @@ class UserMenuVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        profileImgView.loadImageUsingCache(withURLString: AuthService.instance.user.imageURL)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {

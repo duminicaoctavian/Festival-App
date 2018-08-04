@@ -31,18 +31,16 @@ struct Location {
     public var price: Double
     public var images: [String]
     
-    init(id: String = "", userID: String = "", latitude: Double = 0.0, longitude: Double = 0.0,
-         title: String = "", address: String = "", description: String = "", price: Double = 25.0,
-         images: [String] = [String]()) {
-        self.id = id
-        self.userID = userID
-        self.latitude = latitude
-        self.longitude = longitude
-        self.title = title
-        self.address = address
-        self.description = description
-        self.price = price
-        self.images = images
+    init() {
+        self.id = ""
+        self.userID = ""
+        self.latitude = 0.0
+        self.longitude = 0.0
+        self.title = ""
+        self.address = ""
+        self.description = ""
+        self.price = 0.0
+        self.images = [String]()
     }
     
     init(json: JSON) {

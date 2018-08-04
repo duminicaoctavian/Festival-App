@@ -177,15 +177,13 @@ class ChatWindowVC: UIViewController {
             guard let channedId = MessageService.instance.selectedChannel?.id else { return }
             guard let text = messageTextBox.text else { return }
             
-            let message = Message(userID: AuthService.instance.user.id, channelID: channedId, body: text, username: AuthService.instance.user.username)
-            
-            SocketService.instance.addMessage(message, completion: { (success) in
+            SocketService.instance.addMessage(body: text, userID: AuthService.instance.user.id, channelID: channedId, username: AuthService.instance.user.username) { (success) in
                 if success {
                     self.messageTextBox.text = ""
                     self.messageTextBox.resignFirstResponder()
-                    SocketService.instance.socket?.emit("stopType", AuthService.instance.user.username, channedId)
+                    SocketService.instance.socket.emit("stopType", AuthService.instance.user.username, channedId)
                 }
-            })
+            }
         }
     }
     
@@ -194,10 +192,10 @@ class ChatWindowVC: UIViewController {
         guard let channedId = MessageService.instance.selectedChannel?.id else { return }
         if messageTextBox.text == "" {
             isTyping = false
-            SocketService.instance.socket?.emit("stopType", AuthService.instance.user.username, channedId)
+            SocketService.instance.socket.emit("stopType", AuthService.instance.user.username, channedId)
         } else {
             if isTyping == false {
-                SocketService.instance.socket?.emit("startType", AuthService.instance.user.username, channedId)
+                SocketService.instance.socket.emit("startType", AuthService.instance.user.username, channedId)
             }
             isTyping = true
         }

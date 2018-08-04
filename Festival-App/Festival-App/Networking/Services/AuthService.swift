@@ -35,11 +35,28 @@ class AuthService {
     
     var user: User {
         get {
-            return defaults.value(forKey: UserDefaultsKey.user) as? User ?? User()
+            return getUserFromDefaults() ?? User()
         }
         set {
-            defaults.set(newValue, forKey: UserDefaultsKey.user)
+            saveUserToDefauls(user: newValue)
         }
+    }
+    
+    private func getUserFromDefaults() -> User? {
+        if let data = UserDefaults.standard.data(forKey: UserDefaultsKey.user) {
+            if let user = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
+                return user
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    private func saveUserToDefauls(user: User) {
+        let data = NSKeyedArchiver.archivedData(withRootObject: user)
+        UserDefaults.standard.set(data, forKey: UserDefaultsKey.user)
     }
     
     func registerUser(username: String, email: String, password: String, completion: @escaping CompletionHandler) {
@@ -92,7 +109,7 @@ class AuthService {
 
         Alamofire.request(Route.loginUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Header.header).responseJSON { [weak self] (response) in
             
-            guard let weakSelf = self else { return }
+            guard let weakSelf = self else { completion(false); return }
             
             if response.result.error == nil {
                 guard let data = response.data else { completion(false); return }

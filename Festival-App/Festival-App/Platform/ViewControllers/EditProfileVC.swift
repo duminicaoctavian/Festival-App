@@ -27,11 +27,7 @@ class EditProfileVC: UIViewController {
         
         chageProfileBtn.setTitle("Change Image", for: .normal)
         chageProfileBtn.sizeToFit()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
-        
-        view.addGestureRecognizer(tap)
-        
+
         // Initialize the Amazon Cognito credentials provider
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.EUCentral1,
