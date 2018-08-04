@@ -10,6 +10,8 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
     
+    static let identifier = "productCell"
+    
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productImageView: UIImageView!

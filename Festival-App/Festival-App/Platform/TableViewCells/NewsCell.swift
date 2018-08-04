@@ -9,6 +9,9 @@
 import UIKit
 
 class NewsCell: UITableViewCell {
+    
+    static let identifier = "newsCell"
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var webView: UIWebView!

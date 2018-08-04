@@ -11,6 +11,8 @@ import UIKit
 let cache = NSCache<AnyObject, AnyObject>()
 
 class ArtistCell: UITableViewCell {
+    
+    static let identifier = "artistCell"
 
     @IBOutlet weak var artistNameLbl: UILabel!
     @IBOutlet weak var artistImageView: UIImageView!

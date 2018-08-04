@@ -11,8 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 class ArtistService {
-    static let instance = ArtistService()
     
+    let artistsSerializationKey = "artists"
+    
+    static let instance = ArtistService()
     var artists = [Artist]()
     
     func findAllArtistsForStage(stage: String, completion: @escaping CompletionHandler) {
@@ -23,15 +25,7 @@ class ArtistService {
                     let json = try JSON(data: data)
                     let array = json["artists"].arrayValue
                     for item in array {
-                        let _id = item["_id"].stringValue
-                        let name = item["name"].stringValue
-                        let genre = item["genre"].stringValue
-                        let description = item["description"].stringValue
-                        let stageItem = item["stage"].stringValue
-                        let day = item["day"].int
-                        let date = item["date"].stringValue
-                        let artistImageURL = item["artistImageURL"].stringValue
-                        let artist = Artist(_id: _id, name: name, genre: genre, description: description, stage: stageItem, day: day, date: date, artistImageURL: artistImageURL, isOnUserTimeline: false)
+                        let artist = Artist(json: item)
                         self.artists.append(artist)
                     }
                     completion(true)

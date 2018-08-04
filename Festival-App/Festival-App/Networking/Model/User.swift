@@ -8,9 +8,24 @@
 
 import Foundation
 
-struct User {
-    public private(set) var _id: String!
-    public private(set) var userName: String!
-    public private(set) var email: String!
-    public private(set) var imageUrl: String!
+class User: NSObject {
+    
+    public private(set) var _id: String
+    public private(set) var username: String
+    public private(set) var email: String
+    public private(set) var imageURL: String
+    
+    init(_id: String, username: String, email: String, imageURL: String) {
+        self._id = _id
+        self.username = username
+        self.email = email
+        self.imageURL = imageURL
+    }
+    
+    
+}
+
+extension User: NSCoding {
+    func encode(with aCoder
+    
 }

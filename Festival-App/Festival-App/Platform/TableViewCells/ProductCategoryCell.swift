@@ -10,6 +10,8 @@ import UIKit
 
 class ProductCategoryCell: UITableViewCell {
     
+    static let identifier = "productCategoryCell"
+    
     @IBOutlet weak var customView: HalfRoundedView!
     @IBOutlet weak var productCategoryLbl: UILabel!
     @IBOutlet weak var productCategoryImageView: UIImageView!

@@ -8,6 +8,11 @@
 
 import Foundation
 
+// generate class diagram
+// ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
+
+typealias CompletionHandler = (_ Success: Bool) -> ()
+
 enum Stages: String {
     case Main = "Main"
     case Resistance = "Resistance"
@@ -15,51 +20,53 @@ enum Stages: String {
     case Oasis = "Oasis"
 }
 
-// generate class diagram
-// ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
+enum UserMenuOptions: String {
+    case home = "Home"
+    case news = "News"
+    case artists = "Artists"
+    case lineup = "Lineup"
+    case accommodation = "Accommodation"
+    case merch = "Merch"
+}
 
-typealias CompletionHandler = (_ Success: Bool) -> ()
+private let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
+private let baseLocalURL = "http://localhost:3000"
 
-let USER_MENU_OPTIONS = ["Home", "News", "Artists", "Lineup", "Accommodation", "Merch"]
-let PRODUCT_CATEGORIES = ["Men", "Women", "Accesories", "Music"]
-let USER_MENU_CELL_IDENTIFIER = "userMenuCell"
-let ARTIST_CELL_IDENTIFIER = "artistCell"
-let PRODUCT_CATEGORY_CELL_IDENTIFIER = "productCategoryCell"
-let NEWS_CELL_IDENTIFIER = "newsCell"
-let PRODUCT_CELL_IDENTIFIER = "productCell"
-let PRODUCT_VC_IDENTIFIER = "MerchVC"
+struct Route {
+    static let baseAWS = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket"
+    static let artists = "\(baseURL)/artists"
+    static let products = "\(baseURL)/products"
+    static let users = "\(baseURL)/users"
+    static let channels = "\(baseURL)/channels"
+    static let messages = "\(baseURL)/messages"
+    static let news = "\(baseURL)/news"
+    static let locations = "\(baseURL)/locations"
+    static let loginUser = "\(baseURL)/users/login"
+    static let logoutUser = "\(baseURL)/users/me/token"
+}
 
-// URL Constants
-// let BASE_URL = "http://localhost:3000"
-let BASE_URL = "https://pacific-anchorage-10639.herokuapp.com"
-let BASE_AWS = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket"
-let URL_GET_ARTISTS = "\(BASE_URL)/artists"
-let URL_GET_PRODUCTS = "\(BASE_URL)/products"
-let URL_REGISTER_USER = "\(BASE_URL)/users" 
-let URL_LOGIN_USER = "\(BASE_URL)/users/login"
-let URL_LOGOUT_USER = "\(BASE_URL)/users/me/token"
-let URL_GET_CHANNELS = "\(BASE_URL)/channels"
-let URL_GET_MESSAGES = "\(BASE_URL)/messages"
-let URL_USER_BY_EMAIL = "\(BASE_URL)/users"
-let URL_GET_NEWS = "\(BASE_URL)/news"
-let URL_PATCH_USER = "\(BASE_URL)/users"
-let URL_GET_LOCATIONS = "\(BASE_URL)/locations"
+struct NotificationName {
+    static let userDataDidChange = Notification.Name("userDataDidChange")
+    static let channelsLoaded = Notification.Name("channelsLoaded")
+    static let channelSelected = Notification.Name("channelSelected")
+    static let webviewsLoaded = Notification.Name("webviewsLoaded")
+    static let userEdited = Notification.Name("userEdited")
+}
 
-// Notification constant
-let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
-let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
-let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
-let NOTIF_WEBVIEWS_LOADED = Notification.Name("webViewsLoaded")
-let NOTIF_USER_EDITED = Notification.Name("userEdited")
+struct Segue {
+    static let logout = "logoutSegue"
+    static let toHomeFromLogin = "toHomeFromLogin"
+    static let toRegister = "toRegister"
+    static let toHomeFromRegister = "toHomeFromRegister"
+    static let toChat = "toChat"
+    static let toMerch = "toMerch"
+}
 
-// Segues
-let LOGOUT_SEGUE = "logoutSegue"
-let TO_HOME_FROM_LOGIN = "toHomeFromLogin"
-let TO_REGISTER = "toRegister"
-let TO_HOME_FROM_REGISTER = "toHomeFromRegister"
-let TO_CHAT = "toChat"
-let TO_MERCH = "toMerch"
-
+struct UserDefaultsKey {
+    static let token = "token"
+    static let loggenIn = "loggedIn"
+    static let user = "user"
+}
 // User Defaults
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
