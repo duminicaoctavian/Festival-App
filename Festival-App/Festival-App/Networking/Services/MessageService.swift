@@ -1,6 +1,6 @@
 //
 //  MessageService.swift
-//  Smack
+//  Festival-App
 //
 //  Created by Octavian on 07/01/2018.
 //  Copyright © 2018 Octavian. All rights reserved.
@@ -21,64 +21,65 @@ class MessageService {
     
     var selectedChannel : Channel?
     
-    func findAllChannels(completion: @escaping CompletionHandler) {
-        Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+    func getAllChannels(completion: @escaping CompletionHandler) {
+        Alamofire.request(Route.channels, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { completion(false); return }
             
             if response.result.error == nil {
-                self.clearChannels()
-                guard let data = response.data else { return }
+                weakSelf.clearChannels()
+                guard let data = response.data else { completion(false); return }
 
                 do {
                     if let json = try JSON(data: data).array {
                         for item in json {
-                            let name = item["name"].stringValue
-                            let channelDescription = item["description"].stringValue
-                            let id = item["_id"].stringValue
-                            let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
-                            self.channels.append(channel)
+                            let channel = Channel(json: item)
+                            weakSelf.channels.append(channel)
                             
                         }
-                        NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                        NotificationCenter.default.post(name: NotificationName.channelsLoaded, object: nil)
                         completion(true)
                     }
                 } catch {
                     debugPrint(error)
+                    completion(false)
+                    return
                 }
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
+                return
             }
         }
     }
     
-    func findAllMessagesForChannel(channelId: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_MESSAGES)/\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+    func getAllMessagesForChannel(withId id: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(Route.messages)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { completion(false); return }
             
             if response.result.error == nil {
-                self.clearMessages()
-                self.clearUsersForChannel()
-                guard let data = response.data else { return }
+                weakSelf.clearMessages()
+                weakSelf.clearUsersForChannel()
+                guard let data = response.data else { completion(false); return }
                 do {
                     if let json = try JSON(data: data).array {
                         for item in json {
-                            let messageBody = item["body"].stringValue
-                            let channelID = item["channelID"].stringValue
-                            let id = item["_id"].stringValue
-                            let userName = item["username"].stringValue
-                            let date = item["date"].stringValue
-                            let userID = item["userID"].stringValue
-                            let message = Message(message: messageBody, userName: userName, channelId: channelID, id: id, timeStamp: date, userId: userID)
-                            self.messages.append(message)
-                            self.usersForChannel.updateValue(User(), forKey: userID)
+                            let message = Message(json: item)
+                            weakSelf.messages.append(message)
+                            weakSelf.usersForChannel.updateValue(User(), forKey: message.userID)
                         }
                         completion(true)
                     }
                 } catch {
                     debugPrint(error)
+                    completion(false)
+                    return
                 }
             } else {
                 debugPrint(response.result.error as Any)
                 completion(false)
+                return
             }
         }
     }

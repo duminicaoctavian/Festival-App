@@ -31,22 +31,22 @@ class AccomodationVC: UIViewController {
         configureLocationServices()
         centerMapOnUserLocation()
         
-        SocketService.instance.getMapLocation { (newLocation) in
-            if newLocation._id != nil {
-                let locCoord = CLLocationCoordinate2D(latitude: Double(newLocation.latitude), longitude: Double(newLocation.longitude))
+        SocketService.instance.getLocation { (newLocation) in
+            if newLocation?.id != nil {
+                let locCoord = CLLocationCoordinate2D(latitude: Double((newLocation?.latitude)!), longitude: Double((newLocation?.longitude)!))
                 
-                let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: newLocation.title, locationAddress: newLocation.address, locationDescription: newLocation.description, locationImages: newLocation.images)
+                let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: (newLocation?.title)!, locationAddress: (newLocation?.address)!, locationDescription: (newLocation?.description)!, locationImages: (newLocation?.images)!)
                 
                 self.mapView.addAnnotation(annotation)
             }
         }
         
-        LocationService.instance.findAllLocations { (success) in
+        LocationService.instance.getAllLocations { (success) in
             if success {
                 LocationService.instance.locations.forEach({ (location) in
                     let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     
-                    let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title!, locationAddress: location.address!, locationDescription: location.description, locationImages: location.images!)
+                    let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title, locationAddress: location.address, locationDescription: location.description, locationImages: location.images)
                     self.mapView.addAnnotation(annotation)
                 })
             }

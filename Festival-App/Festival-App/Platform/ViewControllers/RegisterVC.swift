@@ -48,7 +48,7 @@ class RegisterVC: UIViewController {
         AuthService.instance.registerUser(username: usernameInput, email: emailInput, password: passwordInput, completion: { (success) in
             if (success) {
                 self.stopActivityIndicator()
-                self.performSegue(withIdentifier: TO_HOME_FROM_REGISTER, sender: self)
+                self.performSegue(withIdentifier: Segue.toHomeFromRegister, sender: self)
             } else {
                 self.passwordTextField.text = ""
                 self.emailTextField.text = ""

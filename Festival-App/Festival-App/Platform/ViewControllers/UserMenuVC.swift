@@ -8,6 +8,24 @@
 
 import UIKit
 
+enum UserMenuOption: String {
+    case home = "Home"
+    case news = "News"
+    case artists = "Artists"
+    case lineup = "Lineup"
+    case accommodation = "Accommodation"
+    case merch = "Merch"
+    
+    static func getRawValues() -> [String] {
+        let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .merch]
+        var rawValues = [String]()
+        options.forEach { (option) in
+            rawValues.append(option.rawValue)
+        }
+        return rawValues
+    }
+}
+
 class UserMenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,10 +43,6 @@ class UserMenuVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-            profileImgView.image = UIImage(data: imageData as Data)
-        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -43,7 +57,7 @@ class UserMenuVC: UIViewController {
     @IBAction func onUserButtonPressed(_ sender: Any) {
         AuthService.instance.logoutUser { (success) in
             if success {
-                self.performSegue(withIdentifier: LOGOUT_SEGUE, sender: self)
+                self.performSegue(withIdentifier: Segue.logout, sender: self)
             }
         }
     }
@@ -51,12 +65,12 @@ class UserMenuVC: UIViewController {
 
 extension UserMenuVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return USER_MENU_OPTIONS.count
+        return UserMenuOption.getRawValues().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: USER_MENU_OPTIONS[indexPath.row], for: indexPath) as? UserMenuCell {
-            let option = USER_MENU_OPTIONS[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UserMenuOption.getRawValues()[indexPath.row], for: indexPath) as? UserMenuCell {
+            let option = UserMenuOption.getRawValues()[indexPath.row]
             cell.configureCell(optionName: option)
             return cell
         } else {

@@ -47,23 +47,23 @@ class LineupVC: UIViewController {
         ArtistService.instance.clearArtists()
         data.removeAll()
         tableView.reloadData()
-        ArtistService.instance.getFilteredArtists(stage: stage, day: day) { (success) in
+        ArtistService.instance.getFilteredArtists(forStage: stage, and: day) { (success) in
             if (success) {
                 print(ArtistService.instance.artists)
                 for index in 0..<ArtistService.instance.artists.count {
                     let artist = ArtistService.instance.artists[index]
                     
                     if index == ArtistService.instance.artists.count - 1 {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.name, artist.artistImageURL))
+                        self.data[Int(artist.day)]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.name, artist.artistImageURL))
                         break
                     }
                     
-                    let keyExists = self.data[Int(artist.day)!] != nil
+                    let keyExists = self.data[Int(artist.day)] != nil
                     
                     if keyExists {
-                        self.data[Int(artist.day)!]?.append((TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL))
+                        self.data[Int(artist.day)]?.append((TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL))
                     } else {
-                        self.data[Int(artist.day)!] = [(TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL)]
+                        self.data[Int(artist.day)] = [(TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL)]
                     }
                     
                 }

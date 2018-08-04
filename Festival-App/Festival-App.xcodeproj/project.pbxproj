@@ -84,7 +84,6 @@
 		DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA4205E9208006C7B55 /* ChannelCell.swift */; };
 		DEE34CA7205E9208006C7B55 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA5205E9208006C7B55 /* MessageCell.swift */; };
 		DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CA8205E923E006C7B55 /* MessageService.swift */; };
-		DEE34CAB205E93B7006C7B55 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34CAA205E93B7006C7B55 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,7 +182,6 @@
 		DEE34CA4205E9208006C7B55 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		DEE34CA5205E9208006C7B55 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		DEE34CA8205E923E006C7B55 /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
-		DEE34CAA205E93B7006C7B55 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		E0C2CB2CEAB042BFC7EA6144 /* Pods-Festival-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App.release.xcconfig"; sourceTree = "<group>"; };
 		E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festival_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -283,7 +281,6 @@
 				DE241F7220690A7400F07C33 /* NewsService.swift */,
 				DE16484F2041F56100EB371B /* ProductService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
-				DEE34CAA205E93B7006C7B55 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -712,7 +709,6 @@
 				DE241F7320690A7400F07C33 /* NewsService.swift in Sources */,
 				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
-				DEE34CAB205E93B7006C7B55 /* UserDataService.swift in Sources */,
 				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
 				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,

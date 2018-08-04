@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+private struct Constants {
+    static let newsSerializationKey = "news"
+}
+
 class NewsService {
     static let instance = NewsService()
     
@@ -18,33 +22,32 @@ class NewsService {
     var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_NEWS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request(Route.news, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { completion(false); return }
+            
             if response.result.error == nil {
-                guard let data = response.data else { return }
+                guard let data = response.data else { completion(false); return }
                 do {
                     let json = try JSON(data: data)
-                    let array = json["news"].arrayValue
+                    let array = json[Constants.newsSerializationKey].arrayValue
                     for item in array {
-                        let _id = item["_id"].stringValue
-                        let title = item["title"].stringValue
-                        let timeStamp = item["date"].stringValue
-                        let description = item["description"].stringValue
-                        let url = item["URL"].stringValue
-                        let news = News(_id: _id, title: title, date: timeStamp, description: description, url: url)
-                        self.news.append(news)
+                        let news = News(json: item)
+                        weakSelf.news.append(news)
                     }
                     completion(true)
                 } catch {
                     debugPrint(error)
+                    completion(false)
+                    return
                 }
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
+                return
             }
         }
     }
-    
-    
     
     func clearNews() {
         news.removeAll()

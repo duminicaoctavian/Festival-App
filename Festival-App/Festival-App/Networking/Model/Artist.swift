@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-private struct ArtistSerializationKey {
+private struct SerializationKey {
     static let id = "_id"
     static let name = "name"
     static let genre = "genre"
@@ -21,25 +21,25 @@ private struct ArtistSerializationKey {
 }
 
 struct Artist {
-    public private(set) var _id: String
+    public private(set) var id: String
     public private(set) var name: String
     public private(set) var genre: String
     public private(set) var description: String
     public private(set) var stage: String
-    public private(set) var day: String
+    public private(set) var day: Int
     public private(set) var date: String
     public private(set) var artistImageURL: String
     public private(set) var isOnUserTimeline: Bool
     
     init(json: JSON) {
-        self._id = json[ArtistSerializationKey.id].stringValue
-        self.name = json[ArtistSerializationKey.name].stringValue
-        self.genre = json[ArtistSerializationKey.genre].stringValue
-        self.description = json[ArtistSerializationKey.description].stringValue
-        self.stage = json[ArtistSerializationKey.stage].stringValue
-        self.day = json[ArtistSerializationKey.day].stringValue
-        self.date = json[ArtistSerializationKey.date].stringValue
-        self.artistImageURL = json[ArtistSerializationKey.imageURL].stringValue
+        self.id = json[SerializationKey.id].stringValue
+        self.name = json[SerializationKey.name].stringValue
+        self.genre = json[SerializationKey.genre].stringValue
+        self.description = json[SerializationKey.description].stringValue
+        self.stage = json[SerializationKey.stage].stringValue
+        self.day = json[SerializationKey.day].int ?? 1
+        self.date = json[SerializationKey.date].stringValue
+        self.artistImageURL = json[SerializationKey.imageURL].stringValue
         self.isOnUserTimeline = false
     }
 }

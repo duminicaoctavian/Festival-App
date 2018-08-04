@@ -10,43 +10,39 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+private struct Constants {
+    static let locationsSerializationKey = "locations"
+}
+
 class LocationService {
-    static let instance = LocationService()
     
+    static let instance = LocationService()
     var locations = [Location]()
     
-    func findAllLocations(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_LOCATIONS)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+    func getAllLocations(completion: @escaping CompletionHandler) {
+        Alamofire.request(Route.locations, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { return }
             
             if response.result.error == nil {
-                guard let data = response.data else { return }
+                guard let data = response.data else { completion(false); return }
                 do {
                     let json = try JSON(data: data)
-                    let array = json["locations"].arrayValue
+                    let array = json[Constants.locationsSerializationKey].arrayValue
                     for item in array {
-                        var images = [String]()
-                        let _id = item["_id"].stringValue
-                        let latitude = item["latitude"].double
-                        let longitude = item["longitude"].double
-                        let userId = item["userID"].stringValue
-                        let title = item["title"].stringValue
-                        let description = item["description"].stringValue
-                        let address = item["address"].stringValue
-                        let imageArray = item["images"].arrayValue
-                        for i in imageArray {
-                            let image = i.stringValue
-                            images.append(image)
-                        }
-                        let location = Location(_id: _id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, price: 25, images: images)
-                        self.locations.append(location)
+                        let location = Location(json: item)
+                        weakSelf.locations.append(location)
                     }
                     completion(true)
                 } catch {
                     debugPrint(error)
+                    completion(false)
+                    return
                 }
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
+                return
             }
         }
     }

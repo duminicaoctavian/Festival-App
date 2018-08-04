@@ -10,35 +10,39 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+private struct Constants {
+    static let productsSerializationKey = "products"
+}
+
 class ProductService {
     static let instance = ProductService()
     
     var products = [Product]()
     
-    func findAllProductsForCategory(category: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_PRODUCTS)/\(category)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+    func getAllProducts(forCategory category: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(Route.products)/\(category)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { completion(false); return }
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
                 do {
                     let json = try JSON(data: data)
-                    let array = json["products"].arrayValue
+                    let array = json[Constants.productsSerializationKey].arrayValue
                     for item in array {
-                        let _id = item["_id"].stringValue
-                        let name = item["name"].stringValue
-                        let price = item["price"].stringValue
-                        let category = item["category"].stringValue
-                        let productImage = item["imageURL"].stringValue
-                        let product = Product(_id: _id, name: name, price: price, productImage: productImage, category: category)
-                        self.products.append(product)
+                        let product = Product(json: item)
+                        weakSelf.products.append(product)
                     }
                     completion(true)
                 } catch {
                     debugPrint(error)
+                    completion(false)
+                    return
                 }
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
+                return
             }
         }
     }

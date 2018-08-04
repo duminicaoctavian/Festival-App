@@ -20,10 +20,10 @@ class ProductCell: UICollectionViewCell {
     
     func configureCell(product: Product) {
         
-        productNameLbl.text = product.name!
-        productPriceLbl.text = "$\(product.price!)"
+        productNameLbl.text = product.name
+        productPriceLbl.text = "$\(product.price)"
 
-        let imageUrl = URL(string: product.productImage)!
+        let imageUrl = URL(string: product.imageURL)!
         
         // Start background thread so that image loading does not make app unresponsive
         // DispatchQueue.global(qos: .userInitiated).async {

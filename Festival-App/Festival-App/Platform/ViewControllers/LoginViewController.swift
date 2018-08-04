@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         AuthService.instance.loginUser(email: emailInput, password: passwordInput) { (success) in
             if (success) {
                 self.stopActivityIndicator()
-                self.performSegue(withIdentifier: TO_HOME_FROM_LOGIN, sender: self)
+                self.performSegue(withIdentifier: Segue.toHomeFromLogin, sender: self)
             } else {
                 self.stopActivityIndicator()
                 self.emailTextField.text = ""
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onRegisterPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_REGISTER, sender: self)
+        performSegue(withIdentifier: Segue.toRegister, sender: self)
     }
 }
 

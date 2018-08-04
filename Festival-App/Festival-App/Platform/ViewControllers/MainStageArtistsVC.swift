@@ -21,7 +21,7 @@ class MainStageArtistsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ArtistService.instance.clearArtists()
         startSpinner()
-        ArtistService.instance.findAllArtistsForStage(stage: Stages.Main.rawValue) { (success) in
+        ArtistService.instance.getAllArtists(forStage: Stage.main.rawValue) { (success) in
             self.stopSpinner()
             self.tableView.reloadData()
         }
@@ -54,7 +54,7 @@ extension MainStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ARTIST_CELL_IDENTIFIER, for: indexPath) as? ArtistCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ArtistCell.identifier, for: indexPath) as? ArtistCell {
             let artist = ArtistService.instance.artists[indexPath.row]
             cell.configureCell(artist: artist)
             cell.didRequestToShowDetails = { (cell) in

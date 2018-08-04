@@ -28,7 +28,7 @@ class NewsCell: UITableViewCell {
     
     func configureCell(news: News) {
         
-        if (news.url != "none") {
+        if (news.URL != "none") {
             
             DispatchQueue.main.async {
                 self.titleLabel.isHidden = false;
@@ -36,7 +36,7 @@ class NewsCell: UITableViewCell {
                 self.newsTextLabel.isHidden = false;
                 self.webView.isHidden = false;    
                 
-                let videoId = self.getYoutubeId(youtubeUrl: news.url)
+                let videoId = self.getYoutubeId(youtubeUrl: news.URL)
                 let urlString = "http://www.youtube.com/embed/\(videoId!)"
                 let url = URL(string: urlString)
                 let request = URLRequest(url: url!)
@@ -45,7 +45,7 @@ class NewsCell: UITableViewCell {
                 self.titleLabel.text = news.title
                 self.newsTextLabel.text = news.description
                 
-                guard var isoDate = news.date else { return }
+                var isoDate = news.date
                 let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
                 isoDate = String(isoDate[..<end])
                 
@@ -71,7 +71,7 @@ class NewsCell: UITableViewCell {
                 self.simpleTitleLabel.text = news.title
                 self.simpleTextLabel.text = news.description;
                 
-                guard var isoDate = news.date else { return }
+                var isoDate = news.date
                 let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
                 isoDate = String(isoDate[..<end])
                 
@@ -104,7 +104,7 @@ extension NewsCell: UIWebViewDelegate {
             print(NewsService.instance.count)
         }
         
-        NotificationCenter.default.post(name: NOTIF_WEBVIEWS_LOADED, object: nil)
+        NotificationCenter.default.post(name: NotificationName.webviewsLoaded, object: nil)
     }
 }
 

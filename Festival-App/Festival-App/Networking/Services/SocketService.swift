@@ -11,94 +11,115 @@ import SocketIO
 
 class SocketService: NSObject {
     static let instance = SocketService()
-    let manager = SocketManager(socketURL: URL(string: BASE_URL)!)
-    var socket: SocketIOClient
+    
+    var socket: SocketIOClient?
     
     override init() {
-        socket = manager.defaultSocket
         super.init()
-    }
-
-    func establishConnection() {
-        socket.connect()
-    }
-    
-    func closeConnection() {
-        socket.disconnect()
+        guard let URL = URL(string: baseURL) else { return }
+        let manager = SocketManager(socketURL: URL)
+        self.socket = manager.defaultSocket
     }
     
-    func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
-        socket.emit("newChannel", channelName, channelDescription)
+    func addChannel(_ channel: Channel, completion: @escaping CompletionHandler) {
+        socket?.emit(Event.newChannel.rawValue, channel.name, channel.description)
         completion(true)
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
-        socket.on("channelCreated") { (dataArray, ack) in
-            guard let channelName = dataArray[0] as? String else { return }
-            guard let channelDesc = dataArray[1] as? String else { return }
-            guard let channelId = dataArray[2] as? String else { return }
-            
-            let newChannel = Channel(channelTitle: channelName, channelDescription: channelDesc, id: channelId)
-            
-            MessageService.instance.channels.append(newChannel)
-            completion(true)
-        }
-    }
-    
-    func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
-        let userName = AuthService.instance.userName
         
-        socket.emit("newMessage", messageBody, userId, channelId, userName)
+        socket?.on(Event.channelCreated.rawValue) { [weak self] (dataArray, ack) in
+            
+            guard let _ = self else { completion(false); return }
+            
+            if let channel = Channel(dataArray) {
+                MessageService.instance.channels.append(channel)
+                completion(true)
+            } else {
+                completion(false)
+                return
+            }
+        }
+    }
+    
+    func addMessage(_ message: Message, completion: @escaping CompletionHandler) {
+        socket?.emit(Event.newMessage.rawValue, message.body, message.userID,
+                     message.channelID, message.username)
         completion(true)
     }
     
-    func getChatMessage(completion: @escaping (_ newMessage: Message) -> Void) {
-        socket.on("messageCreated") { (dataArray, ack) in
-            guard let msgBody = dataArray[0] as? String else { return }
-            guard let userId = dataArray[1] as? String else { return }
-            guard let channelId = dataArray[2] as? String else { return }
-            guard let userName = dataArray[3] as? String else { return }
-            guard let id = dataArray[4] as? String else { return }
-            guard let timeStamp = dataArray[5] as? String else { return }
+    func getMessage(completion: @escaping (_ message: Message?) -> Void) {
+        socket?.on(Event.messageCreated.rawValue) { [weak self] (dataArray, ack) in
             
-            let newMessage = Message(message: msgBody, userName: userName, channelId: channelId, id: id, timeStamp: timeStamp, userId: userId)
+            guard let _ = self else { completion(nil); return }
             
-            completion(newMessage)
+            if let message = Message(dataArray) {
+                completion(message)
+            } else {
+                completion(nil)
+                return
+            }
         }
     }
     
-    func addLocation(location: Location, completion: @escaping CompletionHandler) {
-        print(location)
-        socket.emit("newLocation", location.latitude, location.longitude, location.userID, location.title, location.address, location.description, location.images)
+    func addLocation(_ location: Location, completion: @escaping CompletionHandler) {
+        
+        socket?.emit(Event.newLocation.rawValue, location.latitude, location.longitude, location.userID,
+                     location.title, location.address, location.description, location.images)
         completion(true)
     }
     
-    func getMapLocation(completion: @escaping (_ newLocation: Location) -> Void) {
-        socket.on("locationCreated") { (dataArray, ack) in
-            guard let id = dataArray[0] as? String else { return }
-            guard let latitude = dataArray[1] as? Double else { return }
-            guard let longitude = dataArray[2] as? Double else { return }
-            guard let userId = dataArray[3] as? String else { return }
-            guard let title = dataArray[4] as? String else { return }
-            guard let address = dataArray[5] as? String else {return }
-            guard let description = dataArray[6] as? String else { return }
-            guard let images = dataArray[7] as? [String] else {return }
+    func getLocation(completion: @escaping (_ location: Location?) -> Void) {
+        socket?.on(Event.locationCreated.rawValue) { [weak self] (dataArray, ack) in
             
-            let newLocation = Location(_id: id, latitude: latitude, longitude: longitude, userID: userId, title: title, address: address, description: description, price: 25, images: images)
+            guard let _ = self else { completion(nil); return }
             
-            completion(newLocation)
+            if let location = Location(dataArray) {
+                completion(location)
+            } else {
+                completion(nil)
+                return
+            }
         }
     }
     
-    func disableGetChatListener() {
-        socket.off("messageCreated")
+    func removeListener(forEvent event: Event) {
+        switch event {
+        case .newChannel:
+            socket?.off(Event.newChannel.rawValue)
+        case .newMessage:
+            socket?.off(Event.newMessage.rawValue)
+        case .newLocation:
+            socket?.off(Event.newLocation.rawValue)
+        case .channelCreated:
+            socket?.off(Event.channelCreated.rawValue)
+        case .messageCreated:
+            socket?.off(Event.messageCreated.rawValue)
+        case .locationCreated:
+            socket?.off(Event.locationCreated.rawValue)
+        case .userTypingUpdate:
+            socket?.off(Event.userTypingUpdate.rawValue)
+        }
     }
     
-    func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String: String]) -> Void) {
-        socket.on("userTypingUpdate") { (dataArray, ack) in
-            print(dataArray)
-            guard let typingUsers = dataArray[0] as? [String: String] else { return }
-            completionHandler(typingUsers)
+    func getTypingUsers(_ completion: @escaping (_ typingUsers: [String: String]?) -> Void) {
+        socket?.on(Event.userTypingUpdate.rawValue) { [weak self] (dataArray, ack) in
+         
+            guard let _ = self else { completion(nil); return }
+            
+            if let typingUsers = dataArray[0] as? [String: String] {
+                completion(typingUsers)
+            } else {
+                completion(nil)
+            }
         }
+    }
+
+    func establishConnection() {
+        socket?.connect()
+    }
+    
+    func closeConnection() {
+        socket?.disconnect()
     }
 }

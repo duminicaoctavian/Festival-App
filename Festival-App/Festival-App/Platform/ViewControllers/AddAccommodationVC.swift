@@ -159,13 +159,13 @@ class AddAccommodationVC: UIViewController {
     }
     
     @IBAction func onPostTapped(_ sender: Any) {
-        location?.title = offerTitleTextField.text
-        location?.address = addressTextField.text
+        location?.title = offerTitleTextField.text!
+        location?.address = addressTextField.text!
         location?.description = descriptionTextView.text
-        location?.price = Int(priceTextField.text!)
+        location?.price = Double(priceTextField.text!)!
         location?.images = ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]
-        location?.userID = UserDefaults.standard.string(forKey: USER_ID)
-        SocketService.instance.addLocation(location: location!) { (success) in
+        location?.userID = ""
+        SocketService.instance.addLocation(location!) { (success) in
             print("Location sent to server")
         }
     }

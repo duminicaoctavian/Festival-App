@@ -21,7 +21,7 @@ class NewsVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.isHidden = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(NewsVC.webViewsFinishedLoading(_:)), name: NOTIF_WEBVIEWS_LOADED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewsVC.webViewsFinishedLoading(_:)), name: NotificationName.webviewsLoaded, object: nil)
     }
     
     @objc func webViewsFinishedLoading(_ notif: Notification) {
@@ -63,7 +63,7 @@ extension NewsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: NEWS_CELL_IDENTIFIER, for: indexPath) as? NewsCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.identifier, for: indexPath) as? NewsCell {
             let news = NewsService.instance.news[indexPath.row]
             cell.configureCell(news: news)
             return cell

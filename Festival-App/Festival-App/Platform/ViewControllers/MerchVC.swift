@@ -21,7 +21,7 @@ class MerchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ProductService.instance.clearProducts()
         startSpinner()
-        ProductService.instance.findAllProductsForCategory(category: category) { (success) in
+        ProductService.instance.getAllProducts(forCategory: category) { (success) in
             self.stopSpinner()
             self.collectionView.reloadData()
         }
@@ -52,7 +52,7 @@ extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PRODUCT_CELL_IDENTIFIER, for: indexPath) as? ProductCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell {
             let product = ProductService.instance.products[indexPath.row]
             cell.configureCell(product: product)
             return cell

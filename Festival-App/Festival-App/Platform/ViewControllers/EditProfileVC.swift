@@ -32,10 +32,6 @@ class EditProfileVC: UIViewController {
         
         view.addGestureRecognizer(tap)
         
-        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-            profileImgView.image = UIImage(data: imageData as Data)
-        }
-        
         // Initialize the Amazon Cognito credentials provider
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.EUCentral1,
@@ -53,15 +49,15 @@ class EditProfileVC: UIViewController {
     @IBAction func onSavePressed(_ sender: Any) {
         let usernameInput = usernameTxtField.text!
         let passwordInput = passwordTxtField.text!
-        let imgUrl = "\(BASE_AWS)/\(imageName!).jpg"
-        UserDataService.instance.editUser(username: usernameInput, password: passwordInput, imageUrl: imgUrl) { (success) in
+        let imgUrl = "\(Route.baseAWS)/\(imageName!).jpg"
+        AuthService.instance.editUser(username: usernameInput, password: passwordInput, imageURL: imgUrl) { (success) in
             if success {
                 self.uploadFile(imgUrl: imgUrl, completion: { (success) in
                     if success {
-                        AuthService.instance.imageUrl = imgUrl
+                        //AuthService.instance.user.imageURL = imgUrl
                         self.downloadFile(completion: { (success) in
                             if success {
-                                NotificationCenter.default.post(name: NOTIF_USER_EDITED, object: nil)
+                                NotificationCenter.default.post(name: NotificationName.userEdited, object: nil)
                                 self.dismiss(animated: true, completion: nil)
                             }
                         })
@@ -104,12 +100,10 @@ class EditProfileVC: UIViewController {
     }
     
     func downloadFile(completion: @escaping CompletionHandler) {
-        print(AuthService.instance.imageUrl)
-        let imageUrl = URL(string: AuthService.instance.imageUrl)!
+        let imageUrl = URL(string: AuthService.instance.user.imageURL)!
             
         let imageData = NSData(contentsOf: imageUrl)!
-            
-        UserDefaults.standard.set(imageData, forKey: USER_PROFILE_IMG)
+        
             
         completion(true)
     }

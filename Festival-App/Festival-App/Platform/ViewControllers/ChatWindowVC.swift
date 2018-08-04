@@ -34,13 +34,12 @@ class ChatWindowVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatWindowVC.handleTap))
         view.addGestureRecognizer(tap)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ChatWindowVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChatWindowVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatWindowVC.channelSelected(_:)), name: NotificationName.channelSelected, object: nil)
         
-        SocketService.instance.getChatMessage { (newMessage) in
+        SocketService.instance.getMessage { (newMessage) in
             
-            if newMessage.channelId == MessageService.instance.selectedChannel!.id && AuthService.instance.isLoggedIn {
-                MessageService.instance.messages.append(newMessage)
+            if newMessage?.channelID == MessageService.instance.selectedChannel!.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage!)
                 
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
@@ -54,10 +53,9 @@ class ChatWindowVC: UIViewController {
             guard let channelId = MessageService.instance.selectedChannel?.id else { return }
             var names = ""//the names of who are typing
             var numberOfTypers = 0
-            
-            print(typingUsers)
-            for (typingUser, channel) in typingUsers {
-                if typingUser != UserDataService.instance.name && channel == channelId {
+        
+            for (typingUser, channel) in typingUsers! {
+                if typingUser != AuthService.instance.user.username && channel == channelId {
                     if names == "" {
                         names = typingUser
                     } else {
@@ -76,12 +74,6 @@ class ChatWindowVC: UIViewController {
             } else {
                 self.typingLbl.text = ""
             }
-        }
-        
-        if AuthService.instance.isLoggedIn {
-            AuthService.instance.findUserByEmail(completion: { (success) in
-                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-            })
         }
     }
     
@@ -109,7 +101,7 @@ class ChatWindowVC: UIViewController {
     }
     
     func onLoginGetMessages() {
-        MessageService.instance.findAllChannels { (success) in
+        MessageService.instance.getAllChannels { (success) in
             if success {
                 if MessageService.instance.channels.count > 0 {
                     MessageService.instance.selectedChannel = MessageService.instance.channels[0] //set first channel as selected one
@@ -130,7 +122,7 @@ class ChatWindowVC: UIViewController {
     }
     
     func updateWithChannel() {
-        let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
+        let channelName = MessageService.instance.selectedChannel?.name ?? ""
         channelNameLbl.text = "#\(channelName)"
         getMessages()
     }
@@ -140,7 +132,7 @@ class ChatWindowVC: UIViewController {
         tableView.reloadData()
         startSpinner()
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
-        MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
+        MessageService.instance.getAllMessagesForChannel(withId: channelId) { (success) in
             if success {
                 self.getUsers(completion: { (success) in
                     if success {
@@ -165,10 +157,12 @@ class ChatWindowVC: UIViewController {
         if MessageService.instance.usersForChannel.count == 0 {
             completion(false)
         }
-        MessageService.instance.usersForChannel.forEach { (key: String, value: User) in
-            AuthService.instance.findUserById(id: key, completion: { (user) in
-                if user._id != nil {
-                    MessageService.instance.usersForChannel.updateValue(user, forKey: key)
+        MessageService.instance.usersForChannel.forEach { (arg: (key: String, value: User)) in
+            
+            let (key, value) = arg
+            AuthService.instance.findUserByID(id: key, completion: { (user) in
+                if user?.id != nil {
+                    MessageService.instance.usersForChannel.updateValue(user!, forKey: key)
                     count = count + 1
                 }
                 if count == MessageService.instance.usersForChannel.count {
@@ -181,13 +175,15 @@ class ChatWindowVC: UIViewController {
     @IBAction func sendMessagePressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             guard let channedId = MessageService.instance.selectedChannel?.id else { return }
-            guard let message = messageTextBox.text else { return }
+            guard let text = messageTextBox.text else { return }
             
-            SocketService.instance.addMessage(messageBody: message, userId: AuthService.instance.id, channelId: channedId, completion: { (success) in
+            let message = Message(userID: AuthService.instance.user.id, channelID: channedId, body: text, username: AuthService.instance.user.username)
+            
+            SocketService.instance.addMessage(message, completion: { (success) in
                 if success {
                     self.messageTextBox.text = ""
                     self.messageTextBox.resignFirstResponder()
-                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channedId)
+                    SocketService.instance.socket?.emit("stopType", AuthService.instance.user.username, channedId)
                 }
             })
         }
@@ -198,10 +194,10 @@ class ChatWindowVC: UIViewController {
         guard let channedId = MessageService.instance.selectedChannel?.id else { return }
         if messageTextBox.text == "" {
             isTyping = false
-            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channedId)
+            SocketService.instance.socket?.emit("stopType", AuthService.instance.user.username, channedId)
         } else {
             if isTyping == false {
-                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channedId)
+                SocketService.instance.socket?.emit("startType", AuthService.instance.user.username, channedId)
             }
             isTyping = true
         }
@@ -220,14 +216,14 @@ class ChatWindowVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        SocketService.instance.disableGetChatListener()
+        SocketService.instance.removeListener(forEvent: Event.messageCreated)
     }
 }
 
 extension ChatWindowVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as? MessageCell {
             let message = MessageService.instance.messages[indexPath.row]
             cell.configureCell(message: message)
             return cell

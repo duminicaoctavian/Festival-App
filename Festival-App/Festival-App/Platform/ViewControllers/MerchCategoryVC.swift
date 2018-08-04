@@ -8,6 +8,22 @@
 
 import UIKit
 
+private enum ProductCategory: String {
+    case men = "Men"
+    case women = "Women"
+    case accessories = "Accesories"
+    case music = "Music"
+    
+    static func getRawValues() -> [String] {
+        let categories: [ProductCategory] = [.men, .women, .accessories, .music]
+        var rawValues = [String]()
+        categories.forEach { (category) in
+            rawValues.append(category.rawValue)
+        }
+        return rawValues
+    }
+}
+
 class MerchCategoryVC: UIViewController {
 
     @IBOutlet weak var menuBtn: UIButton!
@@ -26,7 +42,7 @@ class MerchCategoryVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMerch" {
+        if segue.identifier == Segue.toMerch {
             if let destinationVC = segue.destination as? MerchVC {
                 if let category = sender as? String {
                     destinationVC.category = category
@@ -38,12 +54,12 @@ class MerchCategoryVC: UIViewController {
 
 extension MerchCategoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PRODUCT_CATEGORIES.count
+        return ProductCategory.getRawValues().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: PRODUCT_CATEGORY_CELL_IDENTIFIER, for: indexPath) as? ProductCategoryCell {
-            let category = PRODUCT_CATEGORIES[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ProductCategoryCell.identifier, for: indexPath) as? ProductCategoryCell {
+            let category = ProductCategory.getRawValues()[indexPath.row]
             cell.configureCell(category: category)
             return cell
         } else {
@@ -52,7 +68,7 @@ extension MerchCategoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toMerch", sender: PRODUCT_CATEGORIES[indexPath.row])
+        performSegue(withIdentifier: Segue.toMerch, sender: ProductCategory.getRawValues()[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

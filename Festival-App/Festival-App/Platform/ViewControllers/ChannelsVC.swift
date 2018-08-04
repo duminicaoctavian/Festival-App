@@ -17,8 +17,7 @@ class ChannelsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelsVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelsVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelsVC.channelsLoaded(_:)), name: NotificationName.channelsLoaded, object: nil)
         
         SocketService.instance.getChannel { (success) in
             if success {
@@ -26,9 +25,9 @@ class ChannelsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        SocketService.instance.getChatMessage { (newMessage) in
-            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
-                MessageService.instance.unreadChannels.append(newMessage.channelId)
+        SocketService.instance.getMessage { (newMessage) in
+            if newMessage?.channelID != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.unreadChannels.append((newMessage?.channelID)!)
                 self.tableView.reloadData()
             }
         }
@@ -79,7 +78,7 @@ class ChannelsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.reloadRows(at: [index], with: .none)
         tableView.selectRow(at: index, animated: false, scrollPosition: .none)
         
-        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        NotificationCenter.default.post(name: NotificationName.channelSelected, object: nil)
         
         self.revealViewController().revealToggle(animated: true)
     }

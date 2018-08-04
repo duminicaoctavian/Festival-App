@@ -21,27 +21,14 @@ class ProfileVC: UIViewController {
 
         setUpSWRevealViewController()
         
-        usernameLbl.text = AuthService.instance.userName
+        usernameLbl.text = AuthService.instance.user.username
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.userDataDidChange(_:)), name: NOTIF_USER_EDITED, object: nil)
-
-        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-            //self.artistImageView.image = imageFromCache
-            profileImgView.image = UIImage(data: imageData as Data)
-            return
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.userDataDidChange(_:)), name: NotificationName.userEdited, object: nil)
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
-        usernameLbl.text = AuthService.instance.userName
-        
-        if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-            profileImgView.image = UIImage(data: imageData as Data)
-            return
-        }
+        usernameLbl.text = AuthService.instance.user.username
     }
-    
-    
     
     func setUpSWRevealViewController() {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)

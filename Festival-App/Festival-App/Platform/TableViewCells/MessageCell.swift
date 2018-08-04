@@ -10,6 +10,8 @@ import UIKit
 
 class MessageCell: UITableViewCell {
     
+    static let identifier = "MessageCell"
+    
     // Outlets
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var timeStampLbl: UILabel!
@@ -28,7 +30,7 @@ class MessageCell: UITableViewCell {
     }
     
     func configureCell(message: Message) {
-        if message.userId == AuthService.instance.id {
+        if message.userID == AuthService.instance.user.id {
             otherImageView.isHidden = true
             otherTimeStampLbl.isHidden = true
             otherUsernameLbl.isHidden = true
@@ -38,13 +40,13 @@ class MessageCell: UITableViewCell {
             myImageView.isHidden = false
             otherMessageBodyLbl.isHidden = true
             
-            messageBodyLbl.text = message.message
-            usernameLbl.text = AuthService.instance.userName
+            messageBodyLbl.text = message.body
+            usernameLbl.text = AuthService.instance.user.username
             
             
             
             // 2017-07-13T21:49:25.590Z
-            guard var isoDate = message.timeStamp else { return }
+            var isoDate = message.timestamp
             let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
             isoDate = String(isoDate[..<end])
             
@@ -57,10 +59,6 @@ class MessageCell: UITableViewCell {
             if let finalDate = chatDate {
                 let finalDate = newFormatter.string(from: finalDate)
                 timeStampLbl.text = finalDate
-            }
-            
-            if let imageData = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-                myImageView.image = UIImage(data: imageData as Data)
             }
         } else {
             otherImageView.isHidden = false
@@ -77,14 +75,14 @@ class MessageCell: UITableViewCell {
             otherUsernameLbl.text = nil
             otherTimeStampLbl.text = nil
             
-            let userId = message.userId!
+            let userId = message.userID
             let user = MessageService.instance.usersForChannel[userId]!
             
-            self.otherUsernameLbl.text = user.userName
-            self.otherMessageBodyLbl.text = message.message
+            self.otherUsernameLbl.text = user.username
+            self.otherMessageBodyLbl.text = message.body
             
             // 2017-07-13T21:49:25.590Z
-            guard var isoDate = message.timeStamp else { return }
+            var isoDate = message.timestamp
             let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
             isoDate = String(isoDate[..<end])
             
@@ -99,11 +97,11 @@ class MessageCell: UITableViewCell {
                 self.otherTimeStampLbl.text = finalDate
             }
             
-            self.imageUrlString = user.imageUrl
+            self.imageUrlString = user.imageURL
             
-            let imageUrl = URL(string: user.imageUrl)!
+            let imageUrl = URL(string: user.imageURL)!
             
-            if let imageFromCache = globalCache.object(forKey: user.imageUrl as AnyObject) as? UIImage {
+            if let imageFromCache = globalCache.object(forKey: user.imageURL as AnyObject) as? UIImage {
                 self.otherImageView.image = imageFromCache
                 return
             }
@@ -117,11 +115,11 @@ class MessageCell: UITableViewCell {
                 DispatchQueue.main.async {
                     let imageToCache = UIImage(data: imageData as Data)
                     
-                    if self.imageUrlString! == user.imageUrl {
+                    if self.imageUrlString! == user.imageURL {
                         self.otherImageView.image = imageToCache
                     }
                     
-                    globalCache.setObject(imageToCache!, forKey: user.imageUrl as AnyObject)
+                    globalCache.setObject(imageToCache!, forKey: user.imageURL as AnyObject)
                 }
             }
         }

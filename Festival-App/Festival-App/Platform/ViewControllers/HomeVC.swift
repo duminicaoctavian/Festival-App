@@ -21,33 +21,7 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         
-        print(AuthService.instance.isLoggedIn)
-        print(AuthService.instance.userEmail)
-        print(AuthService.instance.authToken)
-        print(AuthService.instance.imageUrl)
-        print(AuthService.instance.userName)
-        print(AuthService.instance.id)
-        
-        if let _ = UserDefaults.standard.object(forKey: USER_PROFILE_IMG) as? NSData {
-            print("Image is persistent")
-        } else {
-            if AuthService.instance.imageUrl != "" {
-                
-                let imageUrl = URL(string: AuthService.instance.imageUrl)!
-                
-                // Start background thread so that image loading does not make app unresponsive
-                DispatchQueue.global(qos: .userInitiated).async {
-                    
-                    let imageData = NSData(contentsOf: imageUrl)!
-                    
-                    // When from background thread, UI needs to be updated on main_queue
-                    DispatchQueue.main.async {
-                        
-                        UserDefaults.standard.set(imageData, forKey: USER_PROFILE_IMG)
-                    }
-                }
-            }
-        }
+        print(AuthService.instance.user)
     }
     
     func setUpSWRevealViewController() {
@@ -57,7 +31,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func onChatPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_CHAT, sender: self)
+        performSegue(withIdentifier: Segue.toChat, sender: self)
     }
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
