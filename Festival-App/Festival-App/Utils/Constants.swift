@@ -72,3 +72,18 @@ struct Header {
     static let bearerHeader = ["Access-Client": "\(AuthService.instance.authToken)"]
     static let bearerHeaderTitle = "Access-Client"
 }
+
+struct AnimationParameter {
+    static let xStartScale: CGFloat = 0.95
+    static let yStartScale: CGFloat = 0.95
+    static let zStartScale: CGFloat = 1.0
+    static let xEndScale: CGFloat = 1.0
+    static let yEndScale: CGFloat = 1.0
+    static let zEndScale: CGFloat = 1.0
+    static let duration = 0.3
+}
+
+enum Alpha {
+    static let highlighted: CGFloat = 1.0
+    static let unhighlighted: CGFloat = 0.3
+}

@@ -13,26 +13,26 @@ class ArtistsViewController: UIViewController {
     lazy var presenter: ArtistsPresenter = {
         return ArtistsPresenter(view: self)
     }()
+    
+    var selectedOption: Stage = .main
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuButton: UIButton!
-    
-    lazy var visualEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return blurEffectView
-    }()
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var resistanceButton: UIButton!
+    @IBOutlet weak var liveButton: UIButton!
+    @IBOutlet weak var oasisButton: UIButton!
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var resistanceLabel: UILabel!
+    @IBOutlet weak var liveLabel: UILabel!
+    @IBOutlet weak var oasisLabel: UILabel!
+    @IBOutlet weak var gradientView: GradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlideMenu()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        highlightItem(button: mainButton, label: mainLabel)
+        presenter.viewDidLoad()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,11 +43,45 @@ class ArtistsViewController: UIViewController {
     @objc func onDetailsTapped(sender: UIButton) {
         navigateToArtistDetailsScreen(fromIndex: sender.tag)
     }
+    
+    @IBAction func onStageButtonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            presenter.loadArtists(forStage: .main)
+            highlightItem(button: mainButton, label: mainLabel)
+            unHighlightItems(buttons: [resistanceButton, liveButton, oasisButton],
+                             labels: [resistanceLabel, liveLabel, oasisLabel])
+            gradientView.bottomColor = UIColor.backgroundBlue
+        case 1:
+            presenter.loadArtists(forStage: .resistance)
+            highlightItem(button: resistanceButton, label: resistanceLabel)
+            unHighlightItems(buttons: [mainButton, liveButton, oasisButton],
+                             labels: [mainLabel, liveLabel, oasisLabel])
+            gradientView.bottomColor = UIColor.backgroundRed
+        case 2:
+            presenter.loadArtists(forStage: .live)
+            highlightItem(button: liveButton, label: liveLabel)
+            unHighlightItems(buttons: [mainButton, resistanceButton, oasisButton],
+                             labels: [mainLabel, resistanceLabel, oasisLabel])
+            gradientView.bottomColor = UIColor.backgroundYellow
+        case 3:
+            presenter.loadArtists(forStage: .oasis)
+            highlightItem(button: oasisButton, label: oasisLabel)
+            unHighlightItems(buttons: [mainButton, resistanceButton, liveButton],
+                             labels: [mainLabel, resistanceLabel, liveLabel])
+            gradientView.bottomColor = UIColor.backgroundGreen
+        default:
+            presenter.loadArtists(forStage: .main)
+            highlightItem(button: mainButton, label: mainLabel)
+            unHighlightItems(buttons: [resistanceButton, liveButton, oasisButton],
+                             labels: [resistanceLabel, liveLabel, oasisLabel])
+            gradientView.bottomColor = UIColor.backgroundBlue
+        }
+    }
 }
 
 extension ArtistsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO - move to presenter
         return ArtistService.instance.artists.count
     }
     
@@ -63,10 +97,14 @@ extension ArtistsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layer.transform = CATransform3DMakeScale(0.95, 0.95, 1)
+        cell.layer.transform = CATransform3DMakeScale(AnimationParameter.xStartScale,
+                                                      AnimationParameter.yStartScale,
+                                                      AnimationParameter.zStartScale)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        UIView.animate(withDuration: AnimationParameter.duration, animations: {
+            cell.layer.transform = CATransform3DMakeScale(AnimationParameter.xEndScale,
+                                                          AnimationParameter.yEndScale,
+                                                          AnimationParameter.zEndScale)
         }, completion: nil)
     }
 }
@@ -98,6 +136,20 @@ extension ArtistsViewController: ArtistsView {
         presenter.handleDetailsTapped(forIndex: index, withPresenter: detailsPresenter)
         detailsViewController.modalPresentationStyle = .custom
         present(detailsViewController, animated: true, completion: nil)
+    }
+    
+    func highlightItem(button: Highlightable, label: Highlightable) {
+        button.highlight()
+        label.highlight()
+    }
+    
+    func unHighlightItems(buttons: [Highlightable], labels: [Highlightable]) {
+        buttons.forEach { (button) in
+            button.unHighlight()
+        }
+        labels.forEach { (label) in
+            label.unHighlight()
+        }
     }
 }
 

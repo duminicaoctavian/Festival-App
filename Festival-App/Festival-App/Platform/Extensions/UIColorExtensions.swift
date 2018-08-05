@@ -25,6 +25,12 @@ extension UIColor {
         }
     }
     
+    static var tabBarColor: UIColor {
+        get {
+            return UIColor.init(red: 0, green: 39, blue: 54)
+        }
+    }
+    
     static var backgroundBlue: UIColor {
         get {
             return UIColor.init(red: 0, green: 39, blue: 54)

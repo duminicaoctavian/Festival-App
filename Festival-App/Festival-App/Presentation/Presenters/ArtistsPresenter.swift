@@ -15,11 +15,16 @@ class ArtistsPresenter {
         self.view = view
     }
     
-    func viewWillAppear() {
+    func viewDidLoad() {
+        loadArtists(forStage: .main)
+    }
+    
+    func loadArtists(forStage stage: Stage) {
         ArtistService.instance.clearArtists()
+        view?.reloadData()
         
         view?.startActivityIndicator()
-        ArtistService.instance.getAllArtists(forStage: Stage.main.rawValue) { [weak self] (success) in
+        ArtistService.instance.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {

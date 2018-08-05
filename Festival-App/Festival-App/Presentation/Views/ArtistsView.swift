@@ -14,4 +14,6 @@ protocol ArtistsView: class {
     func setupSlideMenu()
     func reloadData()
     func navigateToArtistDetailsScreen(fromIndex index: Int)
+    func highlightItem(button: Highlightable, label: Highlightable)
+    func unHighlightItems(buttons: [Highlightable], labels: [Highlightable])
 }
