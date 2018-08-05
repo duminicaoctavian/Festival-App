@@ -55,17 +55,17 @@ extension ResistanceStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ArtistCell.identifier, for: indexPath) as? ArtistCell {
-            let artist = ArtistService.instance.artists[indexPath.row]
-            cell.configureCell(artist: artist)
-            cell.didRequestToShowDetails = { (cell) in
-                let detailsVC = ArtistDetailsViewController()
-                detailsVC.presenter.nameChanged(artist.name)
-                detailsVC.presenter.genreChanged(artist.genre)
-                detailsVC.presenter.descriptionChanged(artist.description)
-                detailsVC.presenter.imageURLChanged(artist.artistImageURL)
-                detailsVC.modalPresentationStyle = .custom
-                self.present(detailsVC, animated: true, completion: nil)
-            }
+//            let artist = ArtistService.instance.artists[indexPath.row]
+//            cell.configureCell(artist: artist)
+//            cell.didRequestToShowDetails = { (cell) in
+//                let detailsVC = ArtistDetailsViewController()
+//                detailsVC.presenter.nameChanged(artist.name)
+//                detailsVC.presenter.genreChanged(artist.genre)
+//                detailsVC.presenter.descriptionChanged(artist.description)
+//                detailsVC.presenter.imageURLChanged(artist.artistImageURL)
+//                detailsVC.modalPresentationStyle = .custom
+//                self.present(detailsVC, animated: true, completion: nil)
+//            }
             return cell
         } else {
             return UITableViewCell()

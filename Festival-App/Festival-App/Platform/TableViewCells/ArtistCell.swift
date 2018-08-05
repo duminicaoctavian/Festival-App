@@ -8,56 +8,25 @@
 
 import UIKit
 
-let cache = NSCache<AnyObject, AnyObject>()
-
 class ArtistCell: UITableViewCell {
     
     static let identifier = "artistCell"
 
-    @IBOutlet weak var artistNameLbl: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistImageView: UIImageView!
-    var imageUrlString: String?
+    @IBOutlet weak var detailsButton: RoundedButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    func configureCell(artist: Artist) {
-        artistNameLbl.text = artist.name
-        //artistImageView.image = UIImage(named: "\(artist.name!)")
-        
-        imageUrlString = artist.artistImageURL
-        
-        let imageUrl = URL(string: artist.artistImageURL)!
-        
-        self.artistImageView.image = nil
-        
-        if let imageFromCache = cache.object(forKey: artist.artistImageURL as AnyObject) as? UIImage {
-            self.artistImageView.image = imageFromCache
-            return
-        }
-        
-        // Start background thread so that image loading does not make app unresponsive
-        DispatchQueue.global(qos: .userInitiated).async {
-        
-            let imageData = NSData(contentsOf: imageUrl)!
-        
-            // When from background thread, UI needs to be updated on main_queue
-            DispatchQueue.main.async {
-                let imageToCache = UIImage(data: imageData as Data)
-                
-                if self.imageUrlString == artist.artistImageURL {
-                    self.artistImageView.image = imageToCache
-                }
-                
-                cache.setObject(imageToCache!, forKey: artist.artistImageURL as AnyObject)
-            }
-        }
+}
+
+extension ArtistCell: ArtistItemView {
+    func displayName(_ name: String) {
+        artistNameLabel.text = name
     }
     
-    var didRequestToShowDetails: ((_ cell:UITableViewCell) -> ())?
-    
-    @IBAction func onDetailsPressed(_ sender: Any) {
-        self.didRequestToShowDetails?(self)
+    func displayArtistImage(_ URLString: String) {
+        artistImageView.loadImageUsingCache(withURLString: URLString)
     }
 }

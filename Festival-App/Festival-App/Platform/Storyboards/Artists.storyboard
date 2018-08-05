@@ -13,7 +13,7 @@
         <!--Main-->
         <scene sceneID="S8e-AB-tKq">
             <objects>
-                <viewController id="c8n-lj-eya" customClass="MainStageArtistsVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c8n-lj-eya" customClass="ArtistsViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F3X-LB-jFh"/>
                         <viewControllerLayoutGuide type="bottom" id="pYU-Lc-P7j"/>
@@ -98,12 +98,9 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="onDetailsPressed:" destination="IAf-Yk-c3M" eventType="touchUpInside" id="2X9-a3-R3V"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fAH-4N-cg8">
-                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -131,7 +128,8 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="artistImageView" destination="Tjs-AM-Za6" id="WAn-rk-IQY"/>
-                                                    <outlet property="artistNameLbl" destination="fAH-4N-cg8" id="QaM-gw-r0X"/>
+                                                    <outlet property="artistNameLabel" destination="fAH-4N-cg8" id="QaM-gw-r0X"/>
+                                                    <outlet property="detailsButton" destination="JsY-MF-cIZ" id="hsr-co-S7h"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -183,7 +181,7 @@
                     <tabBarItem key="tabBarItem" title="Main" image="Main" id="wDa-Im-fmi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="menuBtn" destination="sTw-e5-fXw" id="cbn-sO-aI2"/>
+                        <outlet property="menuButton" destination="sTw-e5-fXw" id="cbn-sO-aI2"/>
                         <outlet property="tableView" destination="na9-9Y-dpf" id="7w5-uK-87q"/>
                     </connections>
                 </viewController>
@@ -279,12 +277,9 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="onDetailsPressed:" destination="iOl-eq-ae9" eventType="touchUpInside" id="SUr-JI-FBF"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bkK-d5-tAg">
-                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -312,7 +307,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="artistImageView" destination="kZj-Hu-Pea" id="F33-hK-Hr0"/>
-                                                    <outlet property="artistNameLbl" destination="bkK-d5-tAg" id="0UU-sQ-fg2"/>
+                                                    <outlet property="artistNameLabel" destination="bkK-d5-tAg" id="0UU-sQ-fg2"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -460,12 +455,9 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="onDetailsPressed:" destination="mSi-G2-8RW" eventType="touchUpInside" id="6HI-6H-maa"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-nu-lxv">
-                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -493,7 +485,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="artistImageView" destination="3y8-4c-XgO" id="lZS-ex-2Hk"/>
-                                                    <outlet property="artistNameLbl" destination="Hgp-nu-lxv" id="StW-X1-LVc"/>
+                                                    <outlet property="artistNameLabel" destination="Hgp-nu-lxv" id="StW-X1-LVc"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -640,12 +632,9 @@
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="onDetailsPressed:" destination="zvT-C9-RgH" eventType="touchUpInside" id="Ete-XX-fVT"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oW2-BO-b1g">
-                                                            <rect key="frame" x="113" y="4" width="247" height="46"/>
+                                                            <rect key="frame" x="113" y="4" width="472" height="46"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                                                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -673,7 +662,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="artistImageView" destination="0fO-Lx-r2b" id="WD0-JU-Vln"/>
-                                                    <outlet property="artistNameLbl" destination="oW2-BO-b1g" id="v08-Da-D47"/>
+                                                    <outlet property="artistNameLabel" destination="oW2-BO-b1g" id="v08-Da-D47"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
