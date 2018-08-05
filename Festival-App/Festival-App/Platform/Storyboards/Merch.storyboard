@@ -268,9 +268,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXM-lu-1HV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXM-lu-1HV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJi-Vm-qji" customClass="HalfRoundedView" customModule="Festival_App" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="40" width="130" height="60"/>
@@ -302,6 +301,10 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="SJi-Vm-qji" firstAttribute="leading" secondItem="pko-TC-Rl8" secondAttribute="leading" id="HbA-YH-91w"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KXM-lu-1HV" secondAttribute="bottom" id="NBJ-P3-Kte"/>
+                                                        <constraint firstItem="KXM-lu-1HV" firstAttribute="top" secondItem="pko-TC-Rl8" secondAttribute="top" id="NVC-Zz-9Ls"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KXM-lu-1HV" secondAttribute="trailing" id="TZc-fk-1B1"/>
+                                                        <constraint firstItem="KXM-lu-1HV" firstAttribute="leading" secondItem="pko-TC-Rl8" secondAttribute="leading" id="cKj-gS-UQV"/>
                                                         <constraint firstItem="SJi-Vm-qji" firstAttribute="top" secondItem="pko-TC-Rl8" secondAttribute="top" constant="40" id="l0n-U1-3fC"/>
                                                     </constraints>
                                                 </tableViewCellContentView>

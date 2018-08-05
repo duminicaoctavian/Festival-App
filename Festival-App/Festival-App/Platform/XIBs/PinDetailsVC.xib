@@ -24,9 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.40000000596046448" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-jB-axZ" userLabel="bgView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-jB-axZ" userLabel="bgView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78I-e3-PB5" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
@@ -163,7 +162,11 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="78I-e3-PB5" secondAttribute="bottom" id="8y4-LH-0vr"/>
                 <constraint firstAttribute="trailing" secondItem="78I-e3-PB5" secondAttribute="trailing" id="HAr-fs-8vP"/>
+                <constraint firstItem="kZz-jB-axZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XI9-ao-dRH"/>
+                <constraint firstItem="kZz-jB-axZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="a04-Vd-z6Y"/>
+                <constraint firstAttribute="trailing" secondItem="kZz-jB-axZ" secondAttribute="trailing" id="bKX-P3-YMb"/>
                 <constraint firstItem="78I-e3-PB5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxE-TD-r2A"/>
+                <constraint firstAttribute="bottom" secondItem="kZz-jB-axZ" secondAttribute="bottom" id="qzZ-VC-3CO"/>
                 <constraint firstItem="78I-e3-PB5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="sLL-tz-rPe"/>
             </constraints>
             <point key="canvasLocation" x="33" y="56"/>

@@ -59,11 +59,11 @@ extension LiveStageArtistsVC: UITableViewDataSource, UITableViewDelegate {
             let artist = ArtistService.instance.artists[indexPath.row]
             cell.configureCell(artist: artist)
             cell.didRequestToShowDetails = { (cell) in
-                let detailsVC = ArtistDetailsVC()
-                detailsVC.name = artist.name
-                detailsVC.genre = artist.genre
-                detailsVC.artistDescription = artist.description
-                detailsVC.artistImage = artist.artistImageURL
+                let detailsVC = ArtistDetailsViewController()
+                detailsVC.presenter.nameChanged(artist.name)
+                detailsVC.presenter.genreChanged(artist.genre)
+                detailsVC.presenter.descriptionChanged(artist.description)
+                detailsVC.presenter.imageURLChanged(artist.artistImageURL)
                 detailsVC.modalPresentationStyle = .custom
                 self.present(detailsVC, animated: true, completion: nil)
             }

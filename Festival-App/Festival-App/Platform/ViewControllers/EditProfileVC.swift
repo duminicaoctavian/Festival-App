@@ -25,6 +25,8 @@ class EditProfileVC: UIViewController {
         
         imageName = randomString(length: 20)
         
+        profileImgView.loadImageUsingCache(withURLString: AuthService.instance.user.imageURL)
+        
         chageProfileBtn.setTitle("Change Image", for: .normal)
         chageProfileBtn.sizeToFit()
 

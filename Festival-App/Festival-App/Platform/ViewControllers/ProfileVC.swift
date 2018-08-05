@@ -26,6 +26,11 @@ class ProfileVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.userDataDidChange(_:)), name: NotificationName.userEdited, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        profileImgView.loadImageUsingCache(withURLString: AuthService.instance.user.imageURL)
+    }
+    
     @objc func userDataDidChange(_ notif: Notification) {
         usernameLbl.text = AuthService.instance.user.username
     }

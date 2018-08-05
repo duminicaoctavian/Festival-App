@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,14 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistDetailsVC" customModule="Festival_App" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistDetailsViewController" customModule="Festival_App" customModuleProvider="target">
             <connections>
-                <outlet property="closeBtn" destination="5R5-Xs-cpf" id="TFM-Bf-xqI"/>
+                <outlet property="artistImageView" destination="A2w-Da-ad2" id="Wjf-kn-ebK"/>
+                <outlet property="closeButton" destination="5R5-Xs-cpf" id="TFM-Bf-xqI"/>
                 <outlet property="descriptionTextView" destination="mR2-mq-WBk" id="Ca0-fq-KO9"/>
-                <outlet property="genreLbl" destination="QkO-KQ-ET8" id="yhX-g7-GMS"/>
-                <outlet property="imageView" destination="A2w-Da-ad2" id="Wjf-kn-ebK"/>
+                <outlet property="genreLabel" destination="QkO-KQ-ET8" id="yhX-g7-GMS"/>
                 <outlet property="innerView" destination="0Eh-mr-h8i" id="LJq-fI-SuG"/>
-                <outlet property="nameLbl" destination="AI8-UZ-fAK" id="t5R-N8-ZSf"/>
+                <outlet property="nameLabel" destination="AI8-UZ-fAK" id="t5R-N8-ZSf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +30,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-mr-h8i" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                    <rect key="frame" x="10" y="77" width="355" height="541"/>
+                    <rect key="frame" x="0.0" y="77" width="375" height="541"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-Da-ad2">
                             <rect key="frame" x="8" y="8" width="100" height="100"/>
@@ -39,28 +39,27 @@
                                 <constraint firstAttribute="width" constant="100" id="ua1-Ui-k6e"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borgore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-UZ-fAK">
-                            <rect key="frame" x="122" y="26" width="225" height="41"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-UZ-fAK">
+                            <rect key="frame" x="122" y="26" width="245" height="0.0"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre: Dubstep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-KQ-ET8">
-                            <rect key="frame" x="122" y="69" width="101.5" height="19.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-KQ-ET8">
+                            <rect key="frame" x="122" y="28" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                             <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-mq-WBk">
-                            <rect key="frame" x="8" y="116" width="339" height="379"/>
+                            <rect key="frame" x="8" y="116" width="359" height="379"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R5-Xs-cpf" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                            <rect key="frame" x="137.5" y="503" width="80" height="30"/>
+                            <rect key="frame" x="147.5" y="503" width="80" height="30"/>
                             <color key="backgroundColor" red="0.23921568627450979" green="0.086274509803921567" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="2t3-2T-46G"/>
@@ -76,7 +75,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="onClosePressed:" destination="-1" eventType="touchUpInside" id="87e-5i-Aq0"/>
+                                <action selector="onCloseTapped:" destination="-1" eventType="touchUpInside" id="87e-5i-Aq0"/>
                             </connections>
                         </button>
                     </subviews>
@@ -121,12 +120,12 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="E1E-Bf-GpI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7CW-Uo-veR"/>
-                <constraint firstAttribute="trailing" secondItem="0Eh-mr-h8i" secondAttribute="trailing" constant="10" id="CjE-wz-pWl"/>
+                <constraint firstAttribute="trailing" secondItem="0Eh-mr-h8i" secondAttribute="trailing" id="CjE-wz-pWl"/>
                 <constraint firstAttribute="bottom" secondItem="0Eh-mr-h8i" secondAttribute="bottom" constant="49" id="DYi-xb-EA2"/>
                 <constraint firstAttribute="trailing" secondItem="E1E-Bf-GpI" secondAttribute="trailing" id="IVn-6A-AiP"/>
                 <constraint firstItem="E1E-Bf-GpI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wkl-lS-Sb7"/>
                 <constraint firstAttribute="bottom" secondItem="E1E-Bf-GpI" secondAttribute="bottom" id="ZIN-cd-cEh"/>
-                <constraint firstItem="0Eh-mr-h8i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="bWe-72-mdB"/>
+                <constraint firstItem="0Eh-mr-h8i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bWe-72-mdB"/>
                 <constraint firstItem="0Eh-mr-h8i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="bhv-Vj-pr1"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>
