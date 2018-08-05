@@ -40,7 +40,6 @@ class NewsPresenter {
             
             if (success) {
                 weakSelf.view?.reloadData()
-                NewsService.instance.count = 0
                 NewsService.instance.loaded = false
             } else {
                 // TODO
@@ -52,7 +51,7 @@ class NewsPresenter {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func configure(_ itemView: NewsItemView, at index: Int) {
+    func configure(_ itemView: VideoNewsItemView, at index: Int) {
         let news = NewsService.instance.news[index]
         itemView.displayTitle(news.title)
         itemView.displayNewsText(news.description)
@@ -60,13 +59,23 @@ class NewsPresenter {
         guard let date = news.date.convertFromISODate(toFormat: DateFormat.ddMMYYYYhhmm.rawValue) else { return }
         itemView.displayDate(date)
         
-        guard let request = generateRequest(from: news.URL) else { return }
+        guard let request = generateRequest(from: news.videoURL!) else { return }
         itemView.displayYoutubeThumbnail(request)
+    }
+    
+    func configure(_ itemView: PictureNewsItemView, at index: Int) {
+        let news = NewsService.instance.news[index]
+        itemView.displayTitle(news.title)
+        itemView.displayNewsText(news.description)
+        
+        guard let date = news.date.convertFromISODate(toFormat: DateFormat.ddMMYYYYhhmm.rawValue) else { return }
+        itemView.displayDate(date)
+        
+        itemView.displayNewsImage(news.imageURL!)
     }
     
     func handleLoadingOfWebViews() {
         if NewsService.instance.loaded == false {
-            NewsService.instance.count = NewsService.instance.count + 1
             NotificationCenter.default.post(name: NotificationName.webViewsLoaded, object: nil)
         }
     }

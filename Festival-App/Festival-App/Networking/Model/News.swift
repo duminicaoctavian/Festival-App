@@ -14,7 +14,8 @@ private struct SerializationKey {
     static let title = "title"
     static let date = "date"
     static let description = "description"
-    static let URL = "URL"
+    static let videoURL = "videoURL"
+    static let imageURL = "imageURL"
 }
 
 struct News {
@@ -22,13 +23,19 @@ struct News {
     public private(set) var title: String
     public private(set) var date: String
     public private(set) var description: String
-    public private(set) var URL: String
+    public private(set) var videoURL: String?
+    public private(set) var imageURL: String?
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
         self.title = json[SerializationKey.title].stringValue
         self.date = json[SerializationKey.date].stringValue
         self.description = json[SerializationKey.description].stringValue
-        self.URL = json[SerializationKey.URL].stringValue
+        if let videoURL = json[SerializationKey.videoURL].string {
+            self.videoURL = videoURL
+        }
+        if let imageURL = json[SerializationKey.imageURL].string {
+            self.imageURL = imageURL
+        }
     }
 }

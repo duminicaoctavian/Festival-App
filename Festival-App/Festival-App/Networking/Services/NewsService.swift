@@ -18,7 +18,6 @@ class NewsService {
     static let instance = NewsService()
     
     var news = [News]()
-    var count = 0
     var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {

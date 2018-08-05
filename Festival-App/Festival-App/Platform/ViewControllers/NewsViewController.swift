@@ -47,11 +47,22 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.identifier, for: indexPath) as? NewsCell else { return UITableViewCell() }
-        
-        presenter.configure(cell, at: indexPath.row)
-
-        return cell
+        let item = NewsService.instance.news[indexPath.row]
+        if let _ = item.imageURL {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PictureNewsCell.identifier, for: indexPath) as? PictureNewsCell else { return UITableViewCell() }
+            
+            presenter.configure(cell, at: indexPath.row)
+            
+            return cell
+        }
+        if let _ = item.videoURL {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoNewsCell.identifier, for: indexPath) as? VideoNewsCell else { return UITableViewCell() }
+            
+            presenter.configure(cell, at: indexPath.row)
+            
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

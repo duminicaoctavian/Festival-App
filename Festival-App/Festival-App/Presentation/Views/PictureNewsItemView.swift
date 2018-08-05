@@ -1,5 +1,5 @@
 //
-//  NewsItemView.swift
+//  PictureNewsItemView.swift
 //  Festival-App
 //
 //  Created by Octavian Duminica on 05/08/2018.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol NewsItemView {
+protocol PictureNewsItemView {
     func displayTitle(_ title: String)
     func displayNewsText(_ text: String)
+    func displayNewsImage(_ URLString: String)
     func displayDate(_ date: String)
 }
