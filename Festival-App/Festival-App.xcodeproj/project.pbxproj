@@ -28,6 +28,9 @@
 		8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674D82101C43000B301B7 /* Chat.storyboard */; };
 		8A3674DB2101C45200B301B7 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674DA2101C45200B301B7 /* MyAccount.storyboard */; };
 		8A3674DE2101C5FA00B301B7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674DD2101C5FA00B301B7 /* LoadingView.swift */; };
+		8A3E6AFB211757F8004CA677 /* UserMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */; };
+		8A3E6AFD211758E8004CA677 /* UserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFC211758E8004CA677 /* UserMenuView.swift */; };
+		8A3E6AFF211758F4004CA677 /* UserMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */; };
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
@@ -61,7 +64,7 @@
 		DE4DF16C2041CB4E0083A8F1 /* MerchCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */; };
 		DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
-		DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */; };
+		DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */; };
 		DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */; };
 		DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811A203DEA3300D8A7FA /* GradientView.swift */; };
 		DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */; };
@@ -133,6 +136,9 @@
 		8A3674D82101C43000B301B7 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8A3674DA2101C45200B301B7 /* MyAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		8A3674DD2101C5FA00B301B7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuItemView.swift; sourceTree = "<group>"; };
+		8A3E6AFC211758E8004CA677 /* UserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuView.swift; sourceTree = "<group>"; };
+		8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -167,7 +173,7 @@
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuVC.swift; sourceTree = "<group>"; };
+		DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE5A811A203DEA3300D8A7FA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DE5A811C203DF95B00D8A7FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -389,7 +395,7 @@
 				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
 				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterViewController.swift */,
-				DE5A8116203DE7C700D8A7FA /* UserMenuVC.swift */,
+				DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,6 +409,8 @@
 				8AD7FABA21160D3400B8320C /* HomeView.swift */,
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
 				8AD7FAB82116081800B8320C /* RegisterView.swift */,
+				8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */,
+				8A3E6AFC211758E8004CA677 /* UserMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,6 +423,7 @@
 				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
 				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
+				8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -738,8 +747,10 @@
 				8A121D962116DD1B0050EDBB /* ArtistDetailsPresenter.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
+				8A3E6AFD211758E8004CA677 /* UserMenuView.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */,
 				8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */,
+				8A3E6AFF211758F4004CA677 /* UserMenuPresenter.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */,
 				8A121DA721171DEA0050EDBB /* Highlightable.swift in Sources */,
@@ -771,7 +782,7 @@
 				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
 				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
-				DE5A8117203DE7C700D8A7FA /* UserMenuVC.swift in Sources */,
+				DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */,
 				8A10E049211049A300021478 /* AddAccommodationVC.swift in Sources */,
 				8A121DA221171BFE0050EDBB /* UIButtonExtensions.swift in Sources */,
 				DE1648522041F9E500EB371B /* ProductCategoryCell.swift in Sources */,
@@ -784,6 +795,7 @@
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
 				8AD7FAC321161B2F00B8320C /* Validator.swift in Sources */,
+				8A3E6AFB211757F8004CA677 /* UserMenuItemView.swift in Sources */,
 				8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */,
 				8A121D982116DD270050EDBB /* ArtistDetailsView.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,

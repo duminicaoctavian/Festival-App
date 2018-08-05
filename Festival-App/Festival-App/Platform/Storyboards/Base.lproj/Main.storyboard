@@ -206,7 +206,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F7-8q-EeI">
-                                        <rect key="frame" x="171.66666666666666" y="43.666666666666664" width="71.666666666666657" height="25.999999999999993"/>
+                                        <rect key="frame" x="172" y="43.666666666666664" width="71.666666666666686" height="25.999999999999993"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -402,7 +402,7 @@
                                         <state key="normal" image="menuStack"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-w7-plN">
-                                        <rect key="frame" x="181.33333333333334" y="43.666666666666664" width="52.333333333333343" height="25.999999999999993"/>
+                                        <rect key="frame" x="181.66666666666666" y="43.666666666666664" width="52" height="25.999999999999993"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -535,10 +535,10 @@
             </objects>
             <point key="canvasLocation" x="2916" y="-638.2308845577212"/>
         </scene>
-        <!--User MenuVC-->
+        <!--User Menu View Controller-->
         <scene sceneID="PR4-9P-hHd">
             <objects>
-                <viewController id="CmV-eH-Uik" customClass="UserMenuVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CmV-eH-Uik" customClass="UserMenuViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WFg-Ng-DbP"/>
                         <viewControllerLayoutGuide type="bottom" id="EnW-TD-TYK"/>
@@ -562,7 +562,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLI-aj-yFQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y81-mI-VHa">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -584,7 +584,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="qLI-aj-yFQ" id="0aQ-nQ-ULc"/>
-                                                    <outlet property="optionLbl" destination="Y81-mI-VHa" id="enF-6o-UEd"/>
+                                                    <outlet property="optionLabel" destination="Y81-mI-VHa" id="enF-6o-UEd"/>
                                                     <segue destination="K3f-Rx-D9K" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="COe-lv-7BE"/>
                                                 </connections>
                                             </tableViewCell>
@@ -596,7 +596,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-y0-BtH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-Wr-2hQ">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -618,7 +618,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="qqN-y0-BtH" id="Cm0-AV-wJx"/>
-                                                    <outlet property="optionLbl" destination="TC0-Wr-2hQ" id="IYd-LO-txU"/>
+                                                    <outlet property="optionLabel" destination="TC0-Wr-2hQ" id="IYd-LO-txU"/>
                                                     <segue destination="njP-bd-rwh" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="zZx-Zm-XEE"/>
                                                 </connections>
                                             </tableViewCell>
@@ -630,7 +630,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-ae-gYa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-Hu-IfG">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -652,7 +652,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="Pt6-ae-gYa" id="Nor-09-C3o"/>
-                                                    <outlet property="optionLbl" destination="WaI-Hu-IfG" id="QOb-gF-rap"/>
+                                                    <outlet property="optionLabel" destination="WaI-Hu-IfG" id="QOb-gF-rap"/>
                                                     <segue destination="zJQ-VW-F7V" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="3dr-uv-OE0"/>
                                                 </connections>
                                             </tableViewCell>
@@ -664,7 +664,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-a3-IuB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-9L-aVY">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -686,7 +686,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="oGV-a3-IuB" id="tKU-74-Pml"/>
-                                                    <outlet property="optionLbl" destination="cnB-9L-aVY" id="Ptw-rT-ok7"/>
+                                                    <outlet property="optionLabel" destination="cnB-9L-aVY" id="Ptw-rT-ok7"/>
                                                     <segue destination="3lr-lJ-whm" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="tP9-Sr-pyr"/>
                                                 </connections>
                                             </tableViewCell>
@@ -698,7 +698,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iD-43-w3B">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-dR-if3">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -720,7 +720,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="2iD-43-w3B" id="ZHA-Tg-Wgg"/>
-                                                    <outlet property="optionLbl" destination="Ftg-dR-if3" id="X3e-fJ-Bdw"/>
+                                                    <outlet property="optionLabel" destination="Ftg-dR-if3" id="X3e-fJ-Bdw"/>
                                                     <segue destination="d6g-37-B0y" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KgJ-MX-Gh2"/>
                                                 </connections>
                                             </tableViewCell>
@@ -732,10 +732,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-8B-U62">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75.333333333333329"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-fq-ce6">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="8" y="18.666666666666668" width="90" height="38.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -754,7 +754,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="optionImageView" destination="tWn-8B-U62" id="G0G-7b-HSh"/>
-                                                    <outlet property="optionLbl" destination="kCS-fq-ce6" id="E5Z-2p-2Rx"/>
+                                                    <outlet property="optionLabel" destination="kCS-fq-ce6" id="E5Z-2p-2Rx"/>
                                                     <segue destination="Mx6-gS-x1m" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="jmj-ZE-ahq"/>
                                                 </connections>
                                             </tableViewCell>
@@ -777,7 +777,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="onUserButtonPressed:" destination="CmV-eH-Uik" eventType="touchUpInside" id="VWi-1t-3At"/>
+                                            <action selector="onLogoutButtonTapped:" destination="CmV-eH-Uik" eventType="touchUpInside" id="VWi-1t-3At"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-6H-3Ww" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
@@ -836,9 +836,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="profileImgView" destination="v3h-6H-3Ww" id="Bs6-Ds-qDV"/>
+                        <outlet property="logoutButton" destination="kPV-J1-jag" id="XL4-9V-vKu"/>
+                        <outlet property="profileImageView" destination="v3h-6H-3Ww" id="Bs6-Ds-qDV"/>
                         <outlet property="tableView" destination="ajL-R2-Y5z" id="s0T-Tb-2wG"/>
-                        <outlet property="userBtn" destination="kPV-J1-jag" id="XL4-9V-vKu"/>
                         <segue destination="lew-ya-ZdD" kind="custom" identifier="logoutSegue" customClass="SWRevealViewControllerSeguePushController" id="MAS-s7-NtX"/>
                         <segue destination="E6Z-zw-pMN" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="XBJ-sN-Zfs"/>
                     </connections>
@@ -903,10 +903,10 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="-163.71814092953525"/>
         </scene>
-        <!--ProfileVC-->
+        <!--Profile-->
         <scene sceneID="o0Z-Hh-oEB">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProfileVC" storyboardName="MyAccount" referencedIdentifier="ProfileVC" id="E6Z-zw-pMN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="MyAccount" referencedIdentifier="Profile" id="E6Z-zw-pMN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7g-FT-eaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-761" y="-1294"/>

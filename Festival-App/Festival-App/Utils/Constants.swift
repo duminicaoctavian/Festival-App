@@ -15,6 +15,10 @@ typealias CompletionHandler = (_ success: Bool) -> ()
 let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
 let baseLocalURL = "http://localhost:3000"
 
+struct StoryboardID {
+    static let profileViewController = "Profile"
+}
+
 enum Stage: String {
     case main = "Main"
     case resistance = "Resistance"
@@ -86,4 +90,24 @@ struct AnimationParameter {
 enum Alpha {
     static let highlighted: CGFloat = 1.0
     static let unhighlighted: CGFloat = 0.3
+}
+
+enum UserMenuOption: String {
+    case home = "Home"
+    case news = "News"
+    case artists = "Artists"
+    case lineup = "Lineup"
+    case accommodation = "Accommodation"
+    case merch = "Merch"
+    
+    static var rawValues: [String] {
+        get {
+            let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .merch]
+            var rawValues = [String]()
+            options.forEach { (option) in
+                rawValues.append(option.rawValue)
+            }
+            return rawValues
+        }
+    }
 }

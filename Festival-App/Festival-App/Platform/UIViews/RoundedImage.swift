@@ -8,11 +8,10 @@
 
 import UIKit
 
-//@IBDesignable
 class RoundedImage: UIImageView {
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
         didSet {
-            self.layer.cornerRadius = cornerRadius
+            layer.cornerRadius = cornerRadius
         }
     }
     
@@ -21,11 +20,6 @@ class RoundedImage: UIImageView {
     }
     
     func setUpView() {
-        self.layer.cornerRadius = cornerRadius
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setUpView()
+        layer.cornerRadius = cornerRadius
     }
 }

@@ -12,15 +12,20 @@ class UserMenuCell: UITableViewCell {
     
     static let identifier = "userMenuCell"
     
-    @IBOutlet weak var optionLbl: UILabel!
+    @IBOutlet weak var optionLabel: UILabel!
     @IBOutlet weak var optionImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+}
+
+extension UserMenuCell: UserMenuItemView {
+    func displayOptionName(_ name: String) {
+        optionLabel.text = name
+    }
     
-    func configureCell(optionName: String) {
-        optionLbl.text = optionName
-        optionImageView.image = UIImage(named: "\(optionName)")
+    func displayOptionImage(_ imageName: String) {
+        optionImageView.image = UIImage(named: imageName)
     }
 }

@@ -7,27 +7,22 @@
 //
 
 import UIKit
-//@IBDesignable
+
 class HalfRoundedView: UIView {
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
         didSet {
-            self.layer.cornerRadius = cornerRadius
+            layer.cornerRadius = cornerRadius
         }
     }
     
     override func awakeFromNib() {
-        self.setUpView()
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        self.setUpView()
+        setUpView()
     }
     
     func setUpView() {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = cornerRadius
-        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
 }
 
