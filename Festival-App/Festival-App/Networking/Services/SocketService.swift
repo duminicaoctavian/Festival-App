@@ -28,6 +28,7 @@ class SocketService: NSObject {
     func getChannel(completion: @escaping CompletionHandler) {
         
         socket.on(Event.channelCreated.rawValue) { [weak self] (dataArray, ack) in
+            print(dataArray)
             
             guard let _ = self else { completion(false); return }
             

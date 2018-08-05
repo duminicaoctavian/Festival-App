@@ -23,6 +23,14 @@ class ChatWindowVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bindToKeyboard()
+        
+        if AuthService.instance.isLoggedIn {
+            // get channels
+            onLoginGetMessages()
+        } else {
+            channelNameLbl.text = "Please Log In"
+            tableView.reloadData()
+        }
     
         messageTextBox.delegate = self
         
@@ -88,16 +96,6 @@ class ChatWindowVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
-    }
-    
-    @objc func userDataDidChange(_ notif: Notification) {
-        if AuthService.instance.isLoggedIn {
-            // get channels
-            onLoginGetMessages()
-        } else {
-            channelNameLbl.text = "Please Log In"
-            tableView.reloadData()
-        }
     }
     
     func onLoginGetMessages() {

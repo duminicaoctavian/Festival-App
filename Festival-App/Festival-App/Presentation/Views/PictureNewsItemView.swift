@@ -11,6 +11,6 @@ import Foundation
 protocol PictureNewsItemView {
     func displayTitle(_ title: String)
     func displayNewsText(_ text: String)
-    func displayNewsImage(_ URLString: String)
     func displayDate(_ date: String)
+    func displayNewsImage(_ URLString: String)
 }

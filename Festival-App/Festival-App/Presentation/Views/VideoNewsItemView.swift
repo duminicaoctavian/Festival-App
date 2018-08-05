@@ -11,6 +11,6 @@ import Foundation
 protocol VideoNewsItemView {
     func displayTitle(_ title: String)
     func displayNewsText(_ text: String)
-    func displayYoutubeThumbnail(_ URLRequest: URLRequest)
     func displayDate(_ date: String)
+    func displayYoutubeThumbnail(_ URLRequest: URLRequest)
 }

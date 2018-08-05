@@ -51,6 +51,17 @@ class NewsPresenter {
         NotificationCenter.default.removeObserver(self)
     }
     
+    func handleItem(at index: Int) -> NewsCellType {
+        let item = NewsService.instance.news[index]
+        if let _ = item.imageURL {
+            return .image
+        }
+        if let _ = item.videoURL {
+            return .video
+        }
+        return .plain
+    }
+    
     func configure(_ itemView: VideoNewsItemView, at index: Int) {
         let news = NewsService.instance.news[index]
         itemView.displayTitle(news.title)

@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum NewsCellType {
+    case video
+    case image
+    case plain
+}
+
 private struct Constants {
     static let tableViewEstimatedRowHeight: CGFloat = 250.0
 }
@@ -47,22 +53,24 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = NewsService.instance.news[indexPath.row]
-        if let _ = item.imageURL {
+        let cellType = presenter.handleItem(at: indexPath.row)
+        
+        switch cellType {
+        case .image:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PictureNewsCell.identifier, for: indexPath) as? PictureNewsCell else { return UITableViewCell() }
             
             presenter.configure(cell, at: indexPath.row)
-            
             return cell
-        }
-        if let _ = item.videoURL {
+            
+        case .video:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoNewsCell.identifier, for: indexPath) as? VideoNewsCell else { return UITableViewCell() }
             
             presenter.configure(cell, at: indexPath.row)
-            
             return cell
+            
+        case .plain:
+            return UITableViewCell()
         }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

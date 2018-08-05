@@ -60,6 +60,8 @@ class MessageCell: UITableViewCell {
                 let finalDate = newFormatter.string(from: finalDate)
                 timeStampLbl.text = finalDate
             }
+            
+            myImageView.loadImageUsingCache(withURLString: AuthService.instance.user.imageURL)
         } else {
             otherImageView.isHidden = false
             otherTimeStampLbl.isHidden = false
@@ -97,31 +99,7 @@ class MessageCell: UITableViewCell {
                 self.otherTimeStampLbl.text = finalDate
             }
             
-            self.imageUrlString = user.imageURL
-            
-            let imageUrl = URL(string: user.imageURL)!
-            
-//            if let imageFromCache = globalCache.object(forKey: user.imageURL as AnyObject) as? UIImage {
-//                self.otherImageView.image = imageFromCache
-//                return
-//            }
-            
-            // Start background thread so that image loading does not make app unresponsive
-//            DispatchQueue.global(qos: .userInitiated).async {
-//
-//                let imageData = NSData(contentsOf: imageUrl)!
-//
-//                // When from background thread, UI needs to be updated on main_queue
-//                DispatchQueue.main.async {
-//                    let imageToCache = UIImage(data: imageData as Data)
-//
-//                    if self.imageUrlString! == user.imageURL {
-//                        self.otherImageView.image = imageToCache
-//                    }
-//
-//                    globalCache.setObject(imageToCache!, forKey: user.imageURL as AnyObject)
-//                }
-//            }
+            otherImageView.loadImageUsingCache(withURLString: user.imageURL)
         }
     }
 }
