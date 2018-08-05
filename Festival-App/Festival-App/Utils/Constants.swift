@@ -52,7 +52,7 @@ struct Route {
 struct NotificationName {
     static let channelsLoaded = Notification.Name("channelsLoaded")
     static let channelSelected = Notification.Name("channelSelected")
-    static let webviewsLoaded = Notification.Name("webviewsLoaded")
+    static let webViewsLoaded = Notification.Name("webviewsLoaded")
     static let userEdited = Notification.Name("userEdited")
 }
 
@@ -110,4 +110,8 @@ enum UserMenuOption: String {
             return rawValues
         }
     }
+}
+
+enum DateFormat: String {
+    case ddMMYYYYhhmm = "dd.MM.YYYY hh:mm"
 }

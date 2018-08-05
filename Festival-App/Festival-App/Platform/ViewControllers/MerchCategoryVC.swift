@@ -72,10 +72,6 @@ extension MerchCategoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let modelName = UIDevice.current.modelName
-        if modelName == "iPhone 5s" {
-            return UIScreen.main.bounds.size.height/4.6;
-        }
         return UIScreen.main.bounds.size.height/4.5;
     }
 }

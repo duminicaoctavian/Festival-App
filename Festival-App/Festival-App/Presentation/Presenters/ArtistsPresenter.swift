@@ -15,6 +15,12 @@ class ArtistsPresenter {
         self.view = view
     }
     
+    var artistsCount: Int {
+        get {
+            return ArtistService.instance.artists.count
+        }
+    }
+    
     func viewDidLoad() {
         loadArtists(forStage: .main)
     }

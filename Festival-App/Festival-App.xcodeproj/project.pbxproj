@@ -31,6 +31,9 @@
 		8A3E6AFB211757F8004CA677 /* UserMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */; };
 		8A3E6AFD211758E8004CA677 /* UserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFC211758E8004CA677 /* UserMenuView.swift */; };
 		8A3E6AFF211758F4004CA677 /* UserMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */; };
+		8A3E6B0121176150004CA677 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0021176150004CA677 /* NewsPresenter.swift */; };
+		8A3E6B0321176163004CA677 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0221176163004CA677 /* NewsView.swift */; };
+		8A3E6B05211765BE004CA677 /* NewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B04211765BE004CA677 /* NewsItemView.swift */; };
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
@@ -78,7 +81,7 @@
 		DE84F441208B69F400CE35FA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F440208B69F400CE35FA /* Location.swift */; };
 		DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterViewController.swift */; };
 		DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B5205F882400A276E5 /* CircleImage.swift */; };
-		DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsVC.swift */; };
+		DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA915B7205FBBD000A276E5 /* NewsViewController.swift */; };
 		DEAA6488208334B700C53E58 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA6487208334B700C53E58 /* ProfileVC.swift */; };
 		DEAA648B2083497300C53E58 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA64892083497300C53E58 /* EditProfileVC.swift */; };
 		DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D0792083B9DC00127695 /* Extensions.swift */; };
@@ -139,6 +142,9 @@
 		8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuItemView.swift; sourceTree = "<group>"; };
 		8A3E6AFC211758E8004CA677 /* UserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuView.swift; sourceTree = "<group>"; };
 		8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuPresenter.swift; sourceTree = "<group>"; };
+		8A3E6B0021176150004CA677 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
+		8A3E6B0221176163004CA677 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		8A3E6B04211765BE004CA677 /* NewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemView.swift; sourceTree = "<group>"; };
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -187,7 +193,7 @@
 		DE84F440208B69F400CE35FA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DEA52116204B3EDE00ED285A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DEA915B5205F882400A276E5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		DEA915B7205FBBD000A276E5 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		DEA915B7205FBBD000A276E5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DEAA6487208334B700C53E58 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DEAA64892083497300C53E58 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		DEC8D0792083B9DC00127695 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -391,11 +397,11 @@
 				DE742A102044963A000CF48F /* LoginViewController.swift */,
 				DE4DF16B2041CB4E0083A8F1 /* MerchCategoryVC.swift */,
 				DE1648592042134000EB371B /* MerchVC.swift */,
-				DEA915B7205FBBD000A276E5 /* NewsVC.swift */,
 				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
 				DEAA6487208334B700C53E58 /* ProfileVC.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterViewController.swift */,
 				DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */,
+				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -411,6 +417,8 @@
 				8AD7FAB82116081800B8320C /* RegisterView.swift */,
 				8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */,
 				8A3E6AFC211758E8004CA677 /* UserMenuView.swift */,
+				8A3E6B0221176163004CA677 /* NewsView.swift */,
+				8A3E6B04211765BE004CA677 /* NewsItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +430,7 @@
 				8A121D992116F2F70050EDBB /* ArtistsPresenter.swift */,
 				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
+				8A3E6B0021176150004CA677 /* NewsPresenter.swift */,
 				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
 				8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */,
 			);
@@ -748,6 +757,7 @@
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
 				8A3E6AFD211758E8004CA677 /* UserMenuView.swift in Sources */,
+				8A3E6B0121176150004CA677 /* NewsPresenter.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */,
 				8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */,
 				8A3E6AFF211758F4004CA677 /* UserMenuPresenter.swift in Sources */,
@@ -762,17 +772,19 @@
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
 				DE16485A2042134000EB371B /* MerchVC.swift in Sources */,
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsViewController.swift in Sources */,
-				DEA915B8205FBBD000A276E5 /* NewsVC.swift in Sources */,
+				DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* NewsCell.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
+				8A3E6B0321176163004CA677 /* NewsView.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
 				DE241F7320690A7400F07C33 /* NewsService.swift in Sources */,
+				8A3E6B05211765BE004CA677 /* NewsItemView.swift in Sources */,
 				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
 				8A121D9A2116F2F70050EDBB /* ArtistsPresenter.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,

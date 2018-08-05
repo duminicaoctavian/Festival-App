@@ -82,7 +82,7 @@ class ArtistsViewController: UIViewController {
 
 extension ArtistsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ArtistService.instance.artists.count
+        return presenter.artistsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
