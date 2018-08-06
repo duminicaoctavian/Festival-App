@@ -98,14 +98,32 @@ enum UserMenuOption: String {
     case artists = "Artists"
     case lineup = "Lineup"
     case accommodation = "Accommodation"
-    case merch = "Merch"
+    case shop = "Shop"
     
     static var rawValues: [String] {
         get {
-            let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .merch]
+            let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .shop]
             var rawValues = [String]()
             options.forEach { (option) in
                 rawValues.append(option.rawValue)
+            }
+            return rawValues
+        }
+    }
+}
+
+enum ProductCategory: String {
+    case men = "Men"
+    case women = "Women"
+    case accessories = "Accesories"
+    case music = "Music"
+    
+    static var rawValues: [String] {
+        get {
+            let categories: [ProductCategory] = [.men, .women, .accessories, .music]
+            var rawValues = [String]()
+            categories.forEach { (category) in
+                rawValues.append(category.rawValue)
             }
             return rawValues
         }

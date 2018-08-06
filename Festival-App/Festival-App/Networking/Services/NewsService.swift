@@ -17,7 +17,7 @@ private struct Constants {
 class NewsService {
     static let instance = NewsService()
     
-    var news = [News]()
+    var newsItems = [NewsViewModelItem]()
     var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {
@@ -32,7 +32,10 @@ class NewsService {
                     let array = json[Constants.newsSerializationKey].arrayValue
                     for item in array {
                         let news = News(json: item)
-                        weakSelf.news.append(news)
+                        
+                        weakSelf.handleVideoItem(news)
+                        weakSelf.handleImageItem(news)
+
                     }
                     completion(true)
                 } catch {
@@ -49,6 +52,22 @@ class NewsService {
     }
     
     func clearNews() {
-        news.removeAll()
+        newsItems.removeAll()
+    }
+    
+    private func handleVideoItem(_ news: News) {
+        guard let videoURL = news.videoURL else { return }
+        if let videoItem = NewsVideoViewModelItem(title: news.title, text: news.description,
+                                                  timestamp: news.date, videoURL: videoURL) {
+            newsItems.append(videoItem)
+        }
+    }
+    
+    private func handleImageItem(_ news: News) {
+        guard let imageURL = news.imageURL else { return }
+        if let imageItem = NewsImageViewModelItem(title: news.title, text: news.description,
+                                                  timestamp: news.date, imageURL: imageURL) {
+            newsItems.append(imageItem)
+        }
     }
 }

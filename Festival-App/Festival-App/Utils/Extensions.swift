@@ -31,4 +31,11 @@ extension String {
             return nil
         }
     }
+    
+    func generateRequest() -> URLRequest? {
+        guard let videoID = self.getYoutubeID() else { return nil }
+        let URLString = "http://www.youtube.com/embed/\(videoID)"
+        guard let URL = URL(string: URLString) else { return nil }
+        return URLRequest(url: URL)
+    }
 }

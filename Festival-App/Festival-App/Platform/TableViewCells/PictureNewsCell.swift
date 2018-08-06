@@ -20,22 +20,33 @@ class PictureNewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-}
-
-extension PictureNewsCell: PictureNewsItemView {
-    func displayTitle(_ title: String) {
-        titleLabel.text = title
-    }
     
-    func displayNewsText(_ text: String) {
-        newsTextLabel.text = text
-    }
-    
-    func displayNewsImage(_ URLString: String) {
-        newsImageView.loadImageUsingCache(withURLString: URLString)
-    }
-    
-    func displayDate(_ date: String) {
-        dateLabel.text = date
+    var item: NewsViewModelItem? {
+        didSet {
+            guard let item = item as? NewsImageViewModelItem else { return }
+            
+            titleLabel.text = item.title
+            newsTextLabel.text = item.text
+            dateLabel.text = item.date
+            newsImageView.loadImageUsingCache(withURLString: item.imageURL)
+        }
     }
 }
+//
+//extension PictureNewsCell: PictureNewsItemView {
+//    func displayTitle(_ title: String) {
+//        titleLabel.text = title
+//    }
+//
+//    func displayNewsText(_ text: String) {
+//        newsTextLabel.text = text
+//    }
+//
+//    func displayNewsImage(_ URLString: String) {
+//        newsImageView.loadImageUsingCache(withURLString: URLString)
+//    }
+//
+//    func displayDate(_ date: String) {
+//        dateLabel.text = date
+//    }
+//}

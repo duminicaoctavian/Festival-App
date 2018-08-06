@@ -13,16 +13,16 @@ class ProductCategoryCell: UITableViewCell {
     static let identifier = "productCategoryCell"
     
     @IBOutlet weak var customView: HalfRoundedView!
-    @IBOutlet weak var productCategoryLbl: UILabel!
-    @IBOutlet weak var productCategoryImageView: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func configureCell(category: String) {
-        productCategoryLbl.text = category
-        productCategoryImageView.image = UIImage(named: "\(category)")
+        categoryLabel.text = category
+        categoryImageView.image = UIImage(named: "\(category)")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

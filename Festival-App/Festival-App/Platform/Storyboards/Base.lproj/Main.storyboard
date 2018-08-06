@@ -562,7 +562,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLI-aj-yFQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y81-mI-VHa">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -596,7 +596,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-y0-BtH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-Wr-2hQ">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -630,7 +630,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-ae-gYa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-Hu-IfG">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -664,7 +664,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-a3-IuB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-9L-aVY">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -698,7 +698,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iD-43-w3B">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-dR-if3">
                                                             <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
@@ -724,7 +724,7 @@
                                                     <segue destination="d6g-37-B0y" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KgJ-MX-Gh2"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Merch" id="u5a-oA-ZjG" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Shop" id="u5a-oA-ZjG" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="403" width="414" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5a-oA-ZjG" id="9tJ-fX-V1P">
@@ -732,10 +732,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-8B-U62">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.333333333333329"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-fq-ce6">
-                                                            <rect key="frame" x="8" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -863,10 +863,10 @@
             </objects>
             <point key="canvasLocation" x="-774" y="-1425"/>
         </scene>
-        <!--merch-->
+        <!--Shop-->
         <scene sceneID="BpQ-Hp-572">
             <objects>
-                <viewControllerPlaceholder storyboardName="Merch" referencedIdentifier="merch" id="Mx6-gS-x1m" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Shop" referencedIdentifier="Shop" id="Mx6-gS-x1m" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brm-nY-P3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-777" y="-1468"/>

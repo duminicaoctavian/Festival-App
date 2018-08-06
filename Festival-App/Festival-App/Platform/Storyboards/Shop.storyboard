@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1938" y="-1254"/>
         </scene>
-        <!--Merch CategoryVC-->
+        <!--Shop Category View Controller-->
         <scene sceneID="4yh-QI-Vj5">
             <objects>
-                <viewController id="qZT-9J-b10" customClass="MerchCategoryVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qZT-9J-b10" customClass="ShopCategoryViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQL-R6-gU7"/>
                         <viewControllerLayoutGuide type="bottom" id="9WT-ke-DEz"/>
@@ -219,8 +219,8 @@
                                         </constraints>
                                         <state key="normal" image="menuStack"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merch Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAD-fy-M8p">
-                                        <rect key="frame" x="110.5" y="43.5" width="154" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAD-fy-M8p">
+                                        <rect key="frame" x="165.5" y="43.5" width="44.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -269,7 +269,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXM-lu-1HV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="147"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJi-Vm-qji" customClass="HalfRoundedView" customModule="Festival_App" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="40" width="130" height="60"/>
@@ -310,9 +310,9 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="categoryImageView" destination="KXM-lu-1HV" id="s9K-cT-C0u"/>
+                                                    <outlet property="categoryLabel" destination="bor-mO-ps4" id="QhY-JS-AWf"/>
                                                     <outlet property="customView" destination="SJi-Vm-qji" id="0Zp-ba-lOY"/>
-                                                    <outlet property="productCategoryImageView" destination="KXM-lu-1HV" id="s9K-cT-C0u"/>
-                                                    <outlet property="productCategoryLbl" destination="bor-mO-ps4" id="QhY-JS-AWf"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -364,7 +364,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SCZ-XB-rgR"/>
                     <connections>
-                        <outlet property="menuBtn" destination="rxJ-Jh-hpt" id="Xv6-Us-O7B"/>
+                        <outlet property="menuButton" destination="rxJ-Jh-hpt" id="Xv6-Us-O7B"/>
                         <segue destination="N6t-JO-TWf" kind="show" identifier="toMerch" id="ZkQ-0G-hQE"/>
                     </connections>
                 </viewController>
@@ -375,7 +375,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hKb-Vs-r1J">
             <objects>
-                <navigationController storyboardIdentifier="merch" automaticallyAdjustsScrollViewInsets="NO" id="iNx-wV-Gc0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Shop" automaticallyAdjustsScrollViewInsets="NO" id="iNx-wV-Gc0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XHu-4R-JPN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

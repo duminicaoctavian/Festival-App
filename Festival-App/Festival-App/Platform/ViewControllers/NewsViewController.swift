@@ -24,11 +24,16 @@ class NewsViewController: UIViewController {
         return NewsPresenter(view: self)
     }()
     
+    lazy var viewModel: NewsViewModel = {
+        return NewsViewModel()
+    }()
+    
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = viewModel
         setupSlideMenu()
         hideTableView()
         setupTableViewAutomaticCellDimension()
@@ -47,31 +52,7 @@ class NewsViewController: UIViewController {
     }
 }
 
-extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.newsCount
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellType = presenter.handleItem(at: indexPath.row)
-        
-        switch cellType {
-        case .image:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PictureNewsCell.identifier, for: indexPath) as? PictureNewsCell else { return UITableViewCell() }
-            
-            presenter.configure(cell, at: indexPath.row)
-            return cell
-            
-        case .video:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoNewsCell.identifier, for: indexPath) as? VideoNewsCell else { return UITableViewCell() }
-            
-            presenter.configure(cell, at: indexPath.row)
-            return cell
-            
-        case .plain:
-            return UITableViewCell()
-        }
-    }
+extension NewsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.layer.transform = CATransform3DMakeScale(AnimationParameter.xStartScale,

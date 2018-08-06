@@ -15,12 +15,6 @@ class NewsPresenter {
         self.view = view
     }
     
-    var newsCount: Int {
-        get {
-            return NewsService.instance.news.count
-        }
-    }
-    
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(webViewsFinishedLoading(_:)), name: NotificationName.webViewsLoaded, object: nil)
     }
@@ -51,50 +45,9 @@ class NewsPresenter {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func handleItem(at index: Int) -> NewsCellType {
-        let item = NewsService.instance.news[index]
-        if let _ = item.imageURL {
-            return .image
-        }
-        if let _ = item.videoURL {
-            return .video
-        }
-        return .plain
-    }
-    
-    func configure(_ itemView: VideoNewsItemView, at index: Int) {
-        let news = NewsService.instance.news[index]
-        itemView.displayTitle(news.title)
-        itemView.displayNewsText(news.description)
-        
-        guard let date = news.date.convertFromISODate(toFormat: DateFormat.ddMMYYYYhhmm.rawValue) else { return }
-        itemView.displayDate(date)
-        
-        guard let request = generateRequest(from: news.videoURL!) else { return }
-        itemView.displayYoutubeThumbnail(request)
-    }
-    
-    func configure(_ itemView: PictureNewsItemView, at index: Int) {
-        let news = NewsService.instance.news[index]
-        itemView.displayTitle(news.title)
-        itemView.displayNewsText(news.description)
-        
-        guard let date = news.date.convertFromISODate(toFormat: DateFormat.ddMMYYYYhhmm.rawValue) else { return }
-        itemView.displayDate(date)
-        
-        itemView.displayNewsImage(news.imageURL!)
-    }
-    
     func handleLoadingOfWebViews() {
         if NewsService.instance.loaded == false {
             NotificationCenter.default.post(name: NotificationName.webViewsLoaded, object: nil)
         }
-    }
-    
-    private func generateRequest(from URLString: String) -> URLRequest? {
-        guard let videoID = URLString.getYoutubeID() else { return nil }
-        let URLString = "http://www.youtube.com/embed/\(videoID)"
-        guard let URL = URL(string: URLString) else { return nil }
-        return URLRequest(url: URL)
     }
 }

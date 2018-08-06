@@ -20,23 +20,34 @@ class VideoNewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    var item: NewsViewModelItem? {
+        didSet {
+            guard let item = item as? NewsVideoViewModelItem else { return }
+            
+            titleLabel.text = item.title
+            newsTextLabel.text = item.text
+            dateLabel.text = item.date
+            webView.loadRequest(item.request)
+        }
+    }
 }
 
-extension VideoNewsCell: VideoNewsItemView {
-    func displayTitle(_ title: String) {
-        titleLabel.text = title
-    }
-    
-    func displayNewsText(_ text: String) {
-        newsTextLabel.text = text
-    }
-    
-    func displayYoutubeThumbnail(_ URLRequest: URLRequest) {
-        webView.loadRequest(URLRequest)
-    }
-    
-    func displayDate(_ date: String) {
-        dateLabel.text = date
-    }
-}
+//extension VideoNewsCell: VideoNewsItemView {
+//    func displayTitle(_ title: String) {
+//        titleLabel.text = title
+//    }
+//
+//    func displayNewsText(_ text: String) {
+//        newsTextLabel.text = text
+//    }
+//
+//    func displayYoutubeThumbnail(_ URLRequest: URLRequest) {
+//        webView.loadRequest(URLRequest)
+//    }
+//
+//    func displayDate(_ date: String) {
+//        dateLabel.text = date
+//    }
+//}
 
