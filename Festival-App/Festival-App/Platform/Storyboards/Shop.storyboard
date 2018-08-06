@@ -83,7 +83,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productCell" id="6hE-c7-1Zn" customClass="ProductCell" customModule="Festival_App" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="6hE-c7-1Zn" customClass="ProductCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="280"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -261,7 +261,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCategoryCell" id="mxI-h2-nhs" customClass="ProductCategoryCell" customModule="Festival_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCategoryCell" id="mxI-h2-nhs" customClass="ShopCategoryCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mxI-h2-nhs" id="pko-TC-Rl8">
@@ -269,7 +269,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXM-lu-1HV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="147"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJi-Vm-qji" customClass="HalfRoundedView" customModule="Festival_App" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="40" width="130" height="60"/>
@@ -365,7 +365,7 @@
                     <navigationItem key="navigationItem" id="SCZ-XB-rgR"/>
                     <connections>
                         <outlet property="menuButton" destination="rxJ-Jh-hpt" id="Xv6-Us-O7B"/>
-                        <segue destination="N6t-JO-TWf" kind="show" identifier="toMerch" id="ZkQ-0G-hQE"/>
+                        <segue destination="N6t-JO-TWf" kind="show" identifier="toProducts" id="ZkQ-0G-hQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bF-Sz-gm5" userLabel="First Responder" sceneMemberID="firstResponder"/>

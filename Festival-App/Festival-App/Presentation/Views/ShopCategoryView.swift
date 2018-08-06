@@ -11,4 +11,5 @@ import Foundation
 protocol ShopCategoryView: class {
     func setupSlideMenu()
     func hideNavigationBar()
+    func navigateToProductsScreen(forCategory category: String)
 }

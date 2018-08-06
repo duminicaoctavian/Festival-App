@@ -10,8 +10,6 @@ import UIKit
 
 class PictureNewsCell: UITableViewCell {
     
-    static let identifier = "pictureNewsCell"
-    
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -32,21 +30,3 @@ class PictureNewsCell: UITableViewCell {
         }
     }
 }
-//
-//extension PictureNewsCell: PictureNewsItemView {
-//    func displayTitle(_ title: String) {
-//        titleLabel.text = title
-//    }
-//
-//    func displayNewsText(_ text: String) {
-//        newsTextLabel.text = text
-//    }
-//
-//    func displayNewsImage(_ URLString: String) {
-//        newsImageView.loadImageUsingCache(withURLString: URLString)
-//    }
-//
-//    func displayDate(_ date: String) {
-//        dateLabel.text = date
-//    }
-//}

@@ -86,7 +86,7 @@ extension ArtistsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArtistCell.identifier, for: indexPath) as? ArtistCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArtistCell.className, for: indexPath) as? ArtistCell else {
             return UITableViewCell() }
         cell.detailsButton.tag = indexPath.row
         cell.detailsButton.addTarget(self, action: #selector(onDetailsTapped(sender:)), for: .touchUpInside)

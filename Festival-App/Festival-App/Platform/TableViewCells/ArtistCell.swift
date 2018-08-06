@@ -9,8 +9,6 @@
 import UIKit
 
 class ArtistCell: UITableViewCell {
-    
-    static let identifier = "artistCell"
 
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artistImageView: UIImageView!

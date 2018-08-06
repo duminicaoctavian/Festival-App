@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ShopCategoryItemView {
-    
+    func displayCategoryName(_ name: String)
+    func displayCategoryImage(_ name: String)
+    func setRoundedViewBackgroundColor()
 }

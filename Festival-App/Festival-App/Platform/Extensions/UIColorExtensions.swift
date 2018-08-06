@@ -14,44 +14,34 @@ extension UIColor {
     }
     
     static var buttonColor: UIColor {
-        get {
-            return UIColor.init(red: 61, green: 22, blue: 104)
-        }
+        return UIColor.init(red: 61, green: 22, blue: 104)
     }
     
     static var navigationBarColor: UIColor {
-        get {
-            return UIColor.init(red: 56, green: 20, blue: 95)
-        }
+        return UIColor.init(red: 56, green: 20, blue: 95)
+    }
+    
+    static var halfRoundedViewColor: UIColor {
+        return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.7)
     }
     
     static var tabBarColor: UIColor {
-        get {
-            return UIColor.init(red: 0, green: 39, blue: 54)
-        }
+        return UIColor.init(red: 0, green: 39, blue: 54)
     }
     
     static var backgroundBlue: UIColor {
-        get {
-            return UIColor.init(red: 0, green: 39, blue: 54)
-        }
+        return UIColor.init(red: 0, green: 39, blue: 54)
     }
     
     static var backgroundRed: UIColor {
-        get {
-            return UIColor.init(red: 39, green: 0, blue: 15)
-        }
+        return UIColor.init(red: 39, green: 0, blue: 15)
     }
     
     static var backgroundYellow: UIColor {
-        get {
-            return UIColor.init(red: 45, green: 42, blue: 0)
-        }
+        return UIColor.init(red: 45, green: 42, blue: 0)
     }
     
     static var backgroundGreen: UIColor {
-        get {
-            return UIColor.init(red: 0, green: 38, blue: 19)
-        }
+        return UIColor.init(red: 0, green: 38, blue: 19)
     }
 }

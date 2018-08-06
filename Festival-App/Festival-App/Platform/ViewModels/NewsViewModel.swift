@@ -25,17 +25,16 @@ extension NewsViewModel: UITableViewDataSource {
         
         switch item.type {
         case .image:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PictureNewsCell.identifier, for: indexPath) as? PictureNewsCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: PictureNewsCell.className, for: indexPath) as? PictureNewsCell {
                 cell.item = item
                 return cell
             }
         case .video:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: VideoNewsCell.identifier, for: indexPath) as? VideoNewsCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: VideoNewsCell.className, for: indexPath) as? VideoNewsCell {
                 cell.item = item
                 return cell
             }
         }
-        
         return UITableViewCell()
     }
 }

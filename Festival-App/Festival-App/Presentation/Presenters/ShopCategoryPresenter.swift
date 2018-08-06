@@ -15,5 +15,10 @@ class ShopCategoryPresenter {
         self.view = view
     }
     
-    
+    func configure(_ itemView: ShopCategoryItemView, at index: Int) {
+        let category = ProductCategory.rawValues[index]
+        
+        itemView.displayCategoryName(category)
+        itemView.displayCategoryImage(category)
+    }
 }

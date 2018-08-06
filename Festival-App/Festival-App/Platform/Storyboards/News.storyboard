@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="923"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoNewsCell" rowHeight="180" id="BvF-oZ-dTX" customClass="VideoNewsCell" customModule="Festival_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoNewsCell" rowHeight="180" id="BvF-oZ-dTX" customClass="VideoNewsCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BvF-oZ-dTX" id="LMv-LY-uO7">
@@ -135,7 +135,7 @@
                                                     <outlet property="webView" destination="FZ8-oR-WUv" id="ZtN-zO-Znh"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pictureNewsCell" rowHeight="248" id="NZg-nf-tY8" customClass="PictureNewsCell" customModule="Festival_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PictureNewsCell" rowHeight="248" id="NZg-nf-tY8" customClass="PictureNewsCell" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="208" width="375" height="248"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NZg-nf-tY8" id="ZCm-Wd-EdB">

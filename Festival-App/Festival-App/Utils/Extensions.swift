@@ -39,3 +39,12 @@ extension String {
         return URLRequest(url: URL)
     }
 }
+
+extension NSObject {
+    static var className: String {
+        let namespacedString = NSStringFromClass(self)
+        let substrings = namespacedString.split(separator: ".")
+        let className = substrings[1]
+        return String(className)
+    }
+}

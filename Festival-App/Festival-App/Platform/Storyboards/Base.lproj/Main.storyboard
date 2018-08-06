@@ -871,14 +871,6 @@
             </objects>
             <point key="canvasLocation" x="-777" y="-1468"/>
         </scene>
-        <!--MerchVC-->
-        <scene sceneID="ySD-Ra-5LA">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MerchVC" storyboardName="Merch" referencedIdentifier="MerchVC" id="hGX-sg-0Yb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9q9-oU-z6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1466" y="-1946"/>
-        </scene>
         <!--Accomodation-->
         <scene sceneID="EZ3-yX-lQh">
             <objects>

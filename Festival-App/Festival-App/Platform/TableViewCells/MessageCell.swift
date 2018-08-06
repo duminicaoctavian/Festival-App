@@ -10,8 +10,6 @@ import UIKit
 
 class MessageCell: UITableViewCell {
     
-    static let identifier = "MessageCell"
-    
     // Outlets
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var timeStampLbl: UILabel!

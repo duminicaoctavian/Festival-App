@@ -10,8 +10,6 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
     
-    static let identifier = "productCell"
-    
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
@@ -23,19 +21,14 @@ class ProductCell: UICollectionViewCell {
         productNameLbl.text = product.name
         productPriceLbl.text = "$\(product.price)"
 
-        let imageUrl = URL(string: product.imageURL)!
-        
-        // Start background thread so that image loading does not make app unresponsive
-        // DispatchQueue.global(qos: .userInitiated).async {
-            
-            let imageData = NSData(contentsOf: imageUrl)!
+        //Start background thread so that image loading does not make app unresponsive
+        DispatchQueue.global(qos: .userInteractive).async {
             
             // When from background thread, UI needs to be updated on main_queue
             DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                self.productImageView.image = image
+                self.productImageView.loadImageUsingCache(withURLString: product.imageURL)
             }
-        // }
+        }
     }
     
     var didRequestToShowDetails: ((_ cell:UICollectionViewCell) -> ())?

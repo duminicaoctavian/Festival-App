@@ -1,5 +1,5 @@
 //
-//  ProductCategoryCell.swift
+//  ShopCategoryCell.swift
 //  Festival-App
 //
 //  Created by Duminica Octavian on 24/02/2018.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ProductCategoryCell: UITableViewCell {
-    
-    static let identifier = "productCategoryCell"
+class ShopCategoryCell: UITableViewCell {
     
     @IBOutlet weak var customView: HalfRoundedView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -20,16 +18,11 @@ class ProductCategoryCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(category: String) {
-        categoryLabel.text = category
-        categoryImageView.image = UIImage(named: "\(category)")
-    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            customView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            setRoundedViewBackgroundColor()
         }
     }
     
@@ -37,7 +30,22 @@ class ProductCategoryCell: UITableViewCell {
         super.setHighlighted(highlighted, animated: animated)
         
         if highlighted {
-             customView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+             setRoundedViewBackgroundColor()
         }
     }
 }
+
+extension ShopCategoryCell: ShopCategoryItemView {
+    func displayCategoryName(_ name: String) {
+        categoryLabel.text = name
+    }
+    
+    func displayCategoryImage(_ name: String) {
+        categoryImageView.image = UIImage(named: name)
+    }
+    
+    func setRoundedViewBackgroundColor() {
+        customView.backgroundColor = UIColor.halfRoundedViewColor
+    }
+}
+

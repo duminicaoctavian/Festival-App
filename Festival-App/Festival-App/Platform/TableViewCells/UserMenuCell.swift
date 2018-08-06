@@ -10,8 +10,6 @@ import UIKit
 
 class UserMenuCell: UITableViewCell {
     
-    static let identifier = "userMenuCell"
-    
     @IBOutlet weak var optionLabel: UILabel!
     @IBOutlet weak var optionImageView: UIImageView!
     

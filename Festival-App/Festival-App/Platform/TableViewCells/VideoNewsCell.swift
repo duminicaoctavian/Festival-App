@@ -10,8 +10,6 @@ import UIKit
 
 class VideoNewsCell: UITableViewCell {
     
-    static let identifier = "videoNewsCell"
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsTextLabel: UILabel!
@@ -32,22 +30,4 @@ class VideoNewsCell: UITableViewCell {
         }
     }
 }
-
-//extension VideoNewsCell: VideoNewsItemView {
-//    func displayTitle(_ title: String) {
-//        titleLabel.text = title
-//    }
-//
-//    func displayNewsText(_ text: String) {
-//        newsTextLabel.text = text
-//    }
-//
-//    func displayYoutubeThumbnail(_ URLRequest: URLRequest) {
-//        webView.loadRequest(URLRequest)
-//    }
-//
-//    func displayDate(_ date: String) {
-//        dateLabel.text = date
-//    }
-//}
 

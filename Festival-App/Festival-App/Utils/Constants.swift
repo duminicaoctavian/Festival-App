@@ -62,7 +62,7 @@ struct Segue {
     static let toRegister = "toRegister"
     static let toHomeFromRegister = "toHomeFromRegister"
     static let toChat = "toChat"
-    static let toMerch = "toMerch"
+    static let toProducts = "toProducts"
 }
 
 struct UserDefaultsKey {

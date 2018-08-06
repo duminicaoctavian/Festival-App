@@ -27,11 +27,10 @@ class ShopCategoryViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segue.toMerch {
-            if let destinationVC = segue.destination as? MerchVC {
-                if let category = sender as? String {
-                    destinationVC.category = category
-                }
+        if segue.identifier == Segue.toProducts {
+            guard let destinationViewController = segue.destination as? MerchVC else { return }
+            if let category = sender as? String {
+                destinationViewController.category = category
             }
         }
     }
@@ -43,18 +42,16 @@ extension ShopCategoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ProductCategoryCell.identifier, for: indexPath) as? ProductCategoryCell {
-            let category = ProductCategory.rawValues[indexPath.row]
-            cell.configureCell(category: category)
-            return cell
-        } else {
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShopCategoryCell.className, for: indexPath) as? ShopCategoryCell else { return UITableViewCell() }
+        
+        presenter.configure(cell, at: indexPath.row)
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: Segue.toMerch, sender: ProductCategory.rawValues[indexPath.row])
+        navigateToProductsScreen(forCategory: ProductCategory.rawValues[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,5 +68,9 @@ extension ShopCategoryViewController: ShopCategoryView {
     
     func hideNavigationBar() {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func navigateToProductsScreen(forCategory category: String) {
+        performSegue(withIdentifier: Segue.toProducts, sender: category)
     }
 }

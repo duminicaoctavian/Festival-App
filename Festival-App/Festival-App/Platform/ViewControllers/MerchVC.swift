@@ -52,7 +52,7 @@ extension MerchVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.className, for: indexPath) as? ProductCell {
             let product = ProductService.instance.products[indexPath.row]
             cell.configureCell(product: product)
             return cell

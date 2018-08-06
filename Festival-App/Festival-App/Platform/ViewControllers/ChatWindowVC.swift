@@ -219,7 +219,7 @@ class ChatWindowVC: UIViewController {
 extension ChatWindowVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as? MessageCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.className, for: indexPath) as? MessageCell {
             let message = MessageService.instance.messages[indexPath.row]
             cell.configureCell(message: message)
             return cell
