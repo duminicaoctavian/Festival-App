@@ -52,6 +52,6 @@ class ShopPresenter {
         
         itemView.displayName(product.name)
         itemView.displayPrice(product.price)
-        itemView.displayImage(product.imageURL)
+        itemView.displayImage(product.images[0])
     }
 }

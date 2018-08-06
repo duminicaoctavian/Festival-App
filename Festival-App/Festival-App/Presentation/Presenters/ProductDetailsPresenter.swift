@@ -15,13 +15,17 @@ class ProductDetailsPresenter {
         self.view = view
     }
     
-    var product: Product?
+    var product: Product!
     
     func viewDidLoad() {
         guard let product = product else { return }
         
+        if product.images.count == 1 {
+            view?.disableScrollingForCarousel()
+        }
+        
         view?.displayName(product.name)
         view?.displayPrice(product.price)
-        view?.displayProductImage(product.imageURL)
+        view?.displayProductImage(product.images[0])
     }
 }

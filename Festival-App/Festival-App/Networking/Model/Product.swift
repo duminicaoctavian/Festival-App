@@ -14,7 +14,7 @@ private struct SerializationKey {
     static let name = "name"
     static let price = "price"
     static let category = "category"
-    static let imageURL = "imageURL"
+    static let images = "images"
 }
 
 struct Product {
@@ -22,13 +22,20 @@ struct Product {
     public private(set) var name: String
     public private(set) var price: String
     public private(set) var category: String
-    public private(set) var imageURL: String
+    public var images: [String]
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
         self.name = json[SerializationKey.name].stringValue
         self.price = json[SerializationKey.price].stringValue
         self.category = json[SerializationKey.category].stringValue
-        self.imageURL = json[SerializationKey.imageURL].stringValue
+        
+        var images = [String]()
+        let jsonArray = json[SerializationKey.images].arrayValue
+        for item in jsonArray {
+            let image = item.stringValue
+            images.append(image)
+        }
+        self.images = images
     }
 }

@@ -13,4 +13,6 @@ protocol ProductDetailsView: class {
     func displayProductImage(_ URLString: String)
     func displayPrice(_ price: String)
     func displayName(_ name: String)
+    func displayCarousel()
+    func disableScrollingForCarousel()
 }

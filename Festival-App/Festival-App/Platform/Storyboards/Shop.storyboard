@@ -201,54 +201,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLw-Pu-JH0" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hn0-U8-lUq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-8d-riw">
-                                                <rect key="frame" x="0.0" y="0.0" width="255" height="360"/>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LaO-hc-mMf">
-                                                <rect key="frame" x="255" y="0.0" width="120" height="360"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zNN-pm-qov">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="62t-7j-CXF"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iSP-mr-vqK">
-                                                        <rect key="frame" x="0.0" y="180" width="120" height="180"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGa-wB-zwf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="360" id="ycV-Jd-PtI"/>
+                                            <constraint firstAttribute="height" constant="300" id="kfS-2F-12D"/>
                                         </constraints>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultra T-Shirt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-nv-8Ea">
-                                        <rect key="frame" x="8" y="368" width="280" height="31.5"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultra T-Shirt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-bc-JEn">
+                                        <rect key="frame" x="125.5" y="320" width="123" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$29.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ifo-in-l75">
-                                        <rect key="frame" x="318" y="368" width="49" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$29.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="C1s-kY-UjJ">
+                                        <rect key="frame" x="162.5" y="359" width="49" height="22"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-90-Xxq" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="406" width="284" height="50"/>
+                                        <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="e6o-rU-uVq"/>
+                                            <constraint firstAttribute="width" constant="284" id="uLJ-AI-egn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Add To Cart">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onAddToCartTapped:" destination="E8f-Ab-mug" eventType="touchUpInside" id="K8z-Dv-aKW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ifo-in-l75" secondAttribute="trailing" constant="8" id="3B7-fG-0p7"/>
-                                    <constraint firstItem="ktt-nv-8Ea" firstAttribute="top" secondItem="hn0-U8-lUq" secondAttribute="bottom" constant="8" id="6K6-zM-bCt"/>
-                                    <constraint firstAttribute="trailing" secondItem="hn0-U8-lUq" secondAttribute="trailing" id="B1U-Aa-cbq"/>
-                                    <constraint firstItem="hn0-U8-lUq" firstAttribute="leading" secondItem="yLw-Pu-JH0" secondAttribute="leading" id="Kdd-hA-Hxp"/>
-                                    <constraint firstItem="hn0-U8-lUq" firstAttribute="top" secondItem="yLw-Pu-JH0" secondAttribute="top" id="Ng5-rN-qyS"/>
-                                    <constraint firstItem="ifo-in-l75" firstAttribute="leading" secondItem="ktt-nv-8Ea" secondAttribute="trailing" constant="30" id="Psk-tH-Hd9"/>
-                                    <constraint firstItem="ifo-in-l75" firstAttribute="centerY" secondItem="ktt-nv-8Ea" secondAttribute="centerY" id="QXQ-iG-shq"/>
-                                    <constraint firstItem="ifo-in-l75" firstAttribute="top" secondItem="hn0-U8-lUq" secondAttribute="bottom" constant="8" id="b0O-cc-eQ5"/>
-                                    <constraint firstItem="ktt-nv-8Ea" firstAttribute="leading" secondItem="yLw-Pu-JH0" secondAttribute="leading" constant="8" id="rFJ-GW-P5m"/>
+                                    <constraint firstItem="C1s-kY-UjJ" firstAttribute="top" secondItem="KVa-bc-JEn" secondAttribute="bottom" constant="8" id="3cn-sT-5mi"/>
+                                    <constraint firstItem="KVa-bc-JEn" firstAttribute="centerX" secondItem="yLw-Pu-JH0" secondAttribute="centerX" id="5S4-dc-ffG"/>
+                                    <constraint firstItem="C1s-kY-UjJ" firstAttribute="centerX" secondItem="yLw-Pu-JH0" secondAttribute="centerX" id="By8-o4-vW0"/>
+                                    <constraint firstItem="UGa-wB-zwf" firstAttribute="top" secondItem="yLw-Pu-JH0" secondAttribute="top" id="CGS-ox-fzW"/>
+                                    <constraint firstItem="UGa-wB-zwf" firstAttribute="leading" secondItem="yLw-Pu-JH0" secondAttribute="leading" id="Isq-7D-aF8"/>
+                                    <constraint firstItem="EVv-90-Xxq" firstAttribute="centerX" secondItem="yLw-Pu-JH0" secondAttribute="centerX" id="RHg-YL-aFW"/>
+                                    <constraint firstItem="EVv-90-Xxq" firstAttribute="top" secondItem="C1s-kY-UjJ" secondAttribute="bottom" constant="25" id="TkI-mb-ayT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UGa-wB-zwf" secondAttribute="trailing" id="ZE1-Zl-Iib"/>
+                                    <constraint firstItem="KVa-bc-JEn" firstAttribute="top" secondItem="UGa-wB-zwf" secondAttribute="bottom" constant="20" id="mva-Cs-oiL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="startX">
@@ -335,11 +337,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstSecondaryImageView" destination="zNN-pm-qov" id="ZfW-hL-QCF"/>
-                        <outlet property="mainImageView" destination="nf9-8d-riw" id="daH-mz-BI0"/>
-                        <outlet property="nameLabel" destination="ktt-nv-8Ea" id="tnC-N4-Yp0"/>
-                        <outlet property="priceLabel" destination="ifo-in-l75" id="Bwn-fO-ZIb"/>
-                        <outlet property="secondSecondaryImageView" destination="iSP-mr-vqK" id="u3J-kP-pbm"/>
+                        <outlet property="carouselView" destination="UGa-wB-zwf" id="zOA-FD-h9J"/>
+                        <outlet property="nameLabel" destination="KVa-bc-JEn" id="LBQ-KN-IaH"/>
+                        <outlet property="priceLabel" destination="C1s-kY-UjJ" id="Y9i-D3-yQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lec-Xn-I1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
