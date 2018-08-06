@@ -33,6 +33,16 @@ class ShopViewController: UIViewController {
     @IBAction func backBtnWasPressed(_ sender: Any) {
         navigateToShopCategoryScreen()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.toProductDetails {
+            guard let destinationViewController = segue.destination as? ProductDetailsViewController else { return }
+            let destinationPresenter = destinationViewController.presenter
+            if let product = sender as? Product {
+                destinationPresenter.product = product
+            }
+        }
+    }
 }
 
 extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -63,6 +73,10 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                           AnimationParameter.zEndScale)
         }, completion: nil)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToProductDetailsScreen(fromIndex: indexPath.row)
+    }
 }
 
 extension ShopViewController: ShopView {
@@ -82,5 +96,9 @@ extension ShopViewController: ShopView {
     
     func navigateToShopCategoryScreen() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func navigateToProductDetailsScreen(fromIndex index: Int) {
+        performSegue(withIdentifier: Segue.toProductDetails, sender: presenter.products[index])
     }
 }

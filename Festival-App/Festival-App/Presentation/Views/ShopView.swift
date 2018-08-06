@@ -13,4 +13,5 @@ protocol ShopView: class {
     func stopActivityIndicator()
     func reloadData()
     func navigateToShopCategoryScreen()
+    func navigateToProductDetailsScreen(fromIndex index: Int)
 }

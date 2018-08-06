@@ -17,6 +17,10 @@ class ShopPresenter {
         return ProductService.instance.products.count
     }
     
+    var products: [Product] {
+        return ProductService.instance.products
+    }
+    
     init(view: ShopView) {
         self.view = view
     }
