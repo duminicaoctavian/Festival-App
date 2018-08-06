@@ -28,9 +28,10 @@ class ShopCategoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.toProducts {
-            guard let destinationViewController = segue.destination as? MerchVC else { return }
+            guard let destinationViewController = segue.destination as? ShopViewController else { return }
+            let destinationPresenter = destinationViewController.presenter
             if let category = sender as? String {
-                destinationViewController.category = category
+                destinationPresenter.category = category
             }
         }
     }

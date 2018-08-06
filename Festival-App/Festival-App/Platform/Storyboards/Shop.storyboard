@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MerchVC-->
+        <!--Shop View Controller-->
         <scene sceneID="hlw-1x-Yyd">
             <objects>
-                <viewController storyboardIdentifier="MerchVC" id="N6t-JO-TWf" customClass="MerchVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MerchVC" id="N6t-JO-TWf" customClass="ShopViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocI-Wc-8PM"/>
                         <viewControllerLayoutGuide type="bottom" id="CPV-sA-zVG"/>
@@ -35,8 +35,8 @@
                                             <action selector="backBtnWasPressed:" destination="N6t-JO-TWf" eventType="touchUpInside" id="X4Q-f3-woK"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAu-9H-abB">
-                                        <rect key="frame" x="161" y="43.5" width="54.5" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAu-9H-abB">
+                                        <rect key="frame" x="150" y="43.5" width="76.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -137,9 +137,9 @@
                                                     <constraint firstItem="mRs-yf-W8J" firstAttribute="leading" secondItem="dTK-sk-gIw" secondAttribute="trailing" constant="8" id="xj2-Uw-Wic"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="nameLabel" destination="dTK-sk-gIw" id="BjN-yf-MHG"/>
+                                                    <outlet property="priceLabel" destination="XcV-T1-Zhd" id="Xwm-OJ-KIF"/>
                                                     <outlet property="productImageView" destination="9pE-ac-2cr" id="nmN-X9-fyk"/>
-                                                    <outlet property="productNameLbl" destination="dTK-sk-gIw" id="BjN-yf-MHG"/>
-                                                    <outlet property="productPriceLbl" destination="XcV-T1-Zhd" id="Xwm-OJ-KIF"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

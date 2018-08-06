@@ -16,9 +16,7 @@ class ArtistsPresenter {
     }
     
     var artistsCount: Int {
-        get {
-            return ArtistService.instance.artists.count
-        }
+        return ArtistService.instance.artists.count
     }
     
     func viewDidLoad() {

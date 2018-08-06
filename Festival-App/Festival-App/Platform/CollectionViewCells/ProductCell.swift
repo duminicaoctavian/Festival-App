@@ -10,26 +10,29 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
     
-    @IBOutlet weak var productPriceLbl: UILabel!
-    @IBOutlet weak var productNameLbl: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     
-    var data: NSData!
-    
-    func configureCell(product: Product) {
-        
-        productNameLbl.text = product.name
-        productPriceLbl.text = "$\(product.price)"
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
 
-        //Start background thread so that image loading does not make app unresponsive
+extension ProductCell: ProductItemView {
+    func displayName(_ name: String) {
+         nameLabel.text = name
+    }
+    
+    func displayPrice(_ price: String) {
+        priceLabel.text = "$\(price)"
+    }
+
+    func displayImage(_ URLString: String) {
         DispatchQueue.global(qos: .userInteractive).async {
-            
-            // When from background thread, UI needs to be updated on main_queue
             DispatchQueue.main.async {
-                self.productImageView.loadImageUsingCache(withURLString: product.imageURL)
+                self.productImageView.loadImageUsingCache(withURLString: URLString)
             }
         }
     }
-    
-    var didRequestToShowDetails: ((_ cell:UICollectionViewCell) -> ())?
 }
