@@ -20,9 +20,9 @@ private struct SerializationKey {
 class User: NSObject {
     
     public private(set) var id: String
-    public private(set) var username: String
+    public var username: String
     public private(set) var email: String
-    public private(set) var imageURL: String
+    public var imageURL: String
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue

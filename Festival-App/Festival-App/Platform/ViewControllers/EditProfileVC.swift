@@ -11,6 +11,7 @@ import AWSS3
 import AWSCognito
 
 class EditProfileVC: UIViewController {
+    
     @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var confirmPasswordTxtField: UITextField!
@@ -52,7 +53,8 @@ class EditProfileVC: UIViewController {
             if success {
                 self.uploadFile(imgUrl: imgUrl, completion: { (success) in
                     if success {
-                        //AuthService.instance.user.imageURL = imgUrl
+                        AuthService.instance.user.imageURL = imgUrl
+                        AuthService.instance.user.username = usernameInput
                         self.downloadFile(completion: { (success) in
                             if success {
                                 NotificationCenter.default.post(name: NotificationName.userEdited, object: nil)

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ProfileVC-->
+        <!--Profile View Controller-->
         <scene sceneID="nB1-IW-SUE">
             <objects>
-                <viewController id="s9V-d6-1hR" customClass="ProfileVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s9V-d6-1hR" customClass="ProfileViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2t7-ff-QF4"/>
                         <viewControllerLayoutGuide type="bottom" id="BZE-Ix-fpH"/>
@@ -84,17 +84,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-sy-ieL">
-                                        <rect key="frame" x="65" y="415" width="245" height="115"/>
+                                        <rect key="frame" x="65" y="350" width="245" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-6a-hAr" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qil-Pe-krJ" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="245" height="50"/>
                                                 <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ads-Cn-4w1"/>
-                                                    <constraint firstAttribute="width" constant="245" id="kSz-Y0-Bfr"/>
+                                                    <constraint firstAttribute="width" constant="245" id="Br0-8x-eEM"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gR2-lw-4jC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
-                                                <state key="normal" title="View Order History">
+                                                <state key="normal" title="My Offers">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -103,11 +103,31 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onViewOrderPressed:" destination="s9V-d6-1hR" eventType="touchUpInside" id="dsX-wg-5Gl"/>
+                                                    <action selector="onMyOffersTapped:" destination="s9V-d6-1hR" eventType="touchUpInside" id="WZy-JC-z1b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-6a-hAr" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="65" width="245" height="50"/>
+                                                <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ads-Cn-4w1"/>
+                                                    <constraint firstAttribute="width" constant="245" id="kSz-Y0-Bfr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                <state key="normal" title="Order History">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onViewOrderTapped:" destination="s9V-d6-1hR" eventType="touchUpInside" id="dsX-wg-5Gl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMF-75-IqK" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="65" width="245" height="50"/>
+                                                <rect key="frame" x="0.0" y="130" width="245" height="50"/>
                                                 <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GhS-mR-yp9"/>
@@ -123,7 +143,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onEditProfilePressed:" destination="s9V-d6-1hR" eventType="touchUpInside" id="BOC-iJ-hzQ"/>
+                                                    <action selector="onEditProfileTapped:" destination="s9V-d6-1hR" eventType="touchUpInside" id="BOC-iJ-hzQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -172,9 +192,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="JDN-61-h5D"/>
                     <connections>
-                        <outlet property="menuBtn" destination="U1N-mf-gna" id="lvf-JG-XN1"/>
-                        <outlet property="profileImgView" destination="G76-Ep-6jI" id="MT0-sW-OKz"/>
-                        <outlet property="usernameLbl" destination="GaJ-aj-wLa" id="E7p-EB-Xb1"/>
+                        <outlet property="menuButton" destination="U1N-mf-gna" id="lvf-JG-XN1"/>
+                        <outlet property="profileImageView" destination="G76-Ep-6jI" id="MT0-sW-OKz"/>
+                        <outlet property="usernameLabel" destination="GaJ-aj-wLa" id="E7p-EB-Xb1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exx-cZ-p4V" userLabel="First Responder" sceneMemberID="firstResponder"/>

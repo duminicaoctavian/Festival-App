@@ -22,7 +22,7 @@ struct Product {
     public private(set) var name: String
     public private(set) var price: String
     public private(set) var category: String
-    public var images: [String]
+    public private(set) var images: [String]
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue

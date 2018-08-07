@@ -10,7 +10,6 @@ import Foundation
 import MapKit
 import CoreLocation
 
-
 private struct Constants {
     static let regionRadius: Double = 500
     static let mapHeight: CGFloat = 150

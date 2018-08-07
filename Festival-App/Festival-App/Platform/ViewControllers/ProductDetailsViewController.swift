@@ -22,10 +22,6 @@ class ProductDetailsViewController: UIViewController {
         return ProductDetailsPresenter(view: self)
     }()
     
-    var startingFrame: CGRect?
-    var blackBackgroundView: UIView?
-    var startingImageView: UIImageView?
-    
     @IBOutlet weak var carouselView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -69,6 +65,7 @@ extension ProductDetailsViewController: iCarouselDataSource, iCarouselDelegate {
             roundedImageView = makeImageView()
         }
         
+        // TODO
         roundedImageView.loadImageUsingCache(withURLString: presenter.product.images[index])
     
         return roundedImageView
