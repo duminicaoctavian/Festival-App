@@ -22,7 +22,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         hideNavigationBar()
         setupSlideMenu()
-        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +53,8 @@ extension ProfileViewController: ProfileView {
     
     func navigateToEditProfileScreen() {
         let editProfileViewController = EditProfileViewController()
+        presenter.editProfilePresenter = editProfileViewController.presenter
+        presenter.editProfilePresenter?.delegate = self.presenter
         editProfileViewController.modalPresentationStyle = .custom
         present(editProfileViewController, animated: true, completion: nil)
     }

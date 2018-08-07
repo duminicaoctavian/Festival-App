@@ -53,7 +53,6 @@ struct NotificationName {
     static let channelsLoaded = Notification.Name("channelsLoaded")
     static let channelSelected = Notification.Name("channelSelected")
     static let webViewsLoaded = Notification.Name("webviewsLoaded")
-    static let userEdited = Notification.Name("userEdited")
 }
 
 struct Segue {

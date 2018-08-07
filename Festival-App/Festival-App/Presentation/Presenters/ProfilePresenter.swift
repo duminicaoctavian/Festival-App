@@ -10,20 +10,13 @@ import Foundation
 
 class ProfilePresenter {
     weak var view: ProfileView?
+    weak var editProfilePresenter: EditProfilePresenter?
     
     init(view: ProfileView) {
         self.view = view
     }
     
-    func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(userEdited(_:)), name: NotificationName.userEdited, object: nil)
-    }
-    
     func viewWillAppear() {
-        loadData()
-    }
-    
-    @objc func userEdited(_ notification: Notification) {
         loadData()
     }
     
@@ -32,3 +25,11 @@ class ProfilePresenter {
         view?.displayProfileImage(AuthService.instance.user.imageURL)
     }
 }
+
+extension ProfilePresenter: EditProfilePresenterDelegate {
+    func userDataDidChange() {
+        loadData()
+    }
+}
+
+

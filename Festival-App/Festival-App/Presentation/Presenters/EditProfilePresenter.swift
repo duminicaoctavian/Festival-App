@@ -8,8 +8,13 @@
 
 import Foundation
 
+protocol EditProfilePresenterDelegate: class {
+    func userDataDidChange()
+}
+
 class EditProfilePresenter {
     weak var view: EditProfileView?
+    var delegate: EditProfilePresenterDelegate?
     
     init(view: EditProfileView) {
         self.view = view
@@ -48,7 +53,7 @@ class EditProfilePresenter {
             if success {
                 StorageService.instance.uploadFile(imageName: imageName, withData: imageData, completion: { (success) in
                     if success {
-                        NotificationCenter.default.post(name: NotificationName.userEdited, object: nil)
+                        weakSelf.delegate?.userDataDidChange()
                         weakSelf.view?.navigateToProfileScreen()
                     } else {
                         // TODO
