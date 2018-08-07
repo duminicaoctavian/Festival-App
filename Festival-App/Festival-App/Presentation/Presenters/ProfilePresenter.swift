@@ -20,11 +20,14 @@ class ProfilePresenter {
     }
     
     func viewWillAppear() {
-        view?.displayUsername(AuthService.instance.user.username)
-        view?.displayProfileImage(AuthService.instance.user.imageURL)
+        loadData()
     }
     
     @objc func userEdited(_ notification: Notification) {
+        loadData()
+    }
+    
+    private func loadData() {
         view?.displayUsername(AuthService.instance.user.username)
         view?.displayProfileImage(AuthService.instance.user.imageURL)
     }

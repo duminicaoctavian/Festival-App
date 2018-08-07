@@ -53,7 +53,7 @@ extension ProfileViewController: ProfileView {
     }
     
     func navigateToEditProfileScreen() {
-        let editProfileViewController = EditProfileVC()
+        let editProfileViewController = EditProfileViewController()
         editProfileViewController.modalPresentationStyle = .custom
         present(editProfileViewController, animated: true, completion: nil)
     }

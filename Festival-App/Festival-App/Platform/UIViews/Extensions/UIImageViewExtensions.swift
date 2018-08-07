@@ -37,8 +37,10 @@ extension UIImageView {
                 imageCache.setObject(downloadedImage, forKey: URLString as NSString)
                 
                 weakSelf.image = downloadedImage
+                
+                completion?(true)
             }
-            completion?(true)
+            
         }.resume()
     }
 }
