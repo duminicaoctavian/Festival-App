@@ -297,13 +297,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="euZ-Mb-n3k">
                                                         <rect key="frame" x="15" y="521.5" width="345" height="165"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="nhT-Do-g0W">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="nhT-Do-g0W">
                                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="nhT-Do-g0W" secondAttribute="height" multiplier="1:1" id="3zv-LU-kdd"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="dZb-gy-maT">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="dZb-gy-maT">
                                                                 <rect key="frame" x="180" y="0.0" width="165" height="165"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="dZb-gy-maT" secondAttribute="height" multiplier="1:1" id="Nin-Hy-DLJ"/>
@@ -323,13 +323,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VCq-FB-xLc">
                                                         <rect key="frame" x="15" y="701.5" width="345" height="165"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="hTq-jY-hFl">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="hTq-jY-hFl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="hTq-jY-hFl" secondAttribute="height" multiplier="1:1" id="ORm-I0-2Wx"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-JG-THS">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-JG-THS">
                                                                 <rect key="frame" x="180" y="0.0" width="165" height="165"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ohk-JG-THS" secondAttribute="height" multiplier="1:1" id="gcD-5D-YXn"/>
@@ -495,8 +495,8 @@
     </scenes>
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
+        <image name="addImage" width="256" height="256"/>
         <image name="backButton" width="25" height="25"/>
-        <image name="imagePlaceholder" width="128" height="128"/>
         <image name="locationButton" width="67" height="67"/>
         <image name="menuStack" width="40" height="40"/>
     </resources>

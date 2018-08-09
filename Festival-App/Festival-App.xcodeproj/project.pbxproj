@@ -55,6 +55,10 @@
 		8A8D01C22119AE9C00889197 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C12119AE9C00889197 /* EditProfileView.swift */; };
 		8A8D01C42119AEA700889197 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */; };
 		8A8D01C62119BD2B00889197 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C52119BD2B00889197 /* StorageService.swift */; };
+		8A98E1C7211C73A00009B19C /* artists.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C6211C73A00009B19C /* artists.mlmodel */; };
+		8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */; };
+		8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CB211C82790009B19C /* WinTicketsView.swift */; };
+		8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */; };
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
@@ -188,6 +192,10 @@
 		8A8D01C12119AE9C00889197 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		8A8D01C52119BD2B00889197 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		8A98E1C6211C73A00009B19C /* artists.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = artists.mlmodel; sourceTree = "<group>"; };
+		8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsViewController.swift; sourceTree = "<group>"; };
+		8A98E1CB211C82790009B19C /* WinTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsView.swift; sourceTree = "<group>"; };
+		8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -468,6 +476,7 @@
 				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
 				DE1648592042134000EB371B /* ShopViewController.swift */,
 				8A27521B21189FD700ABF57C /* ProductDetailsViewController.swift */,
+				8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -493,6 +502,7 @@
 				8A27521D2118A05200ABF57C /* ProductDetailsView.swift */,
 				8A8D01BD2119A8EA00889197 /* ProfileView.swift */,
 				8A8D01C12119AE9C00889197 /* EditProfileView.swift */,
+				8A98E1CB211C82790009B19C /* WinTicketsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +522,7 @@
 				8A27521F2118A06800ABF57C /* ProductDetailsPresenter.swift */,
 				8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */,
 				8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */,
+				8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -598,6 +609,7 @@
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
 				DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */,
 				DECDBC07203DE43B0001B7BA /* Info.plist */,
+				8A98E1C6211C73A00009B19C /* artists.mlmodel */,
 				8A3674BC2101BB3700B301B7 /* Networking */,
 				8A3674BB2101BB2F00B301B7 /* Platform */,
 				8A3674B92101B95D00B301B7 /* Presentation */,
@@ -873,6 +885,7 @@
 				8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
 				8A3E6B0321176163004CA677 /* NewsView.swift in Sources */,
+				8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
@@ -896,13 +909,16 @@
 				DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */,
 				8A10E049211049A300021478 /* AddAccommodationVC.swift in Sources */,
 				8A30579721183C8500D3AC85 /* NewsViewModel.swift in Sources */,
+				8A98E1C7211C73A00009B19C /* artists.mlmodel in Sources */,
 				8A121DA221171BFE0050EDBB /* UIButtonExtensions.swift in Sources */,
 				DE1648522041F9E500EB371B /* ShopCategoryCell.swift in Sources */,
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
+				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,
 				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,
+				8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,

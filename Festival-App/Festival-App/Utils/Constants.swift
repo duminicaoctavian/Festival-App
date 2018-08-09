@@ -63,6 +63,7 @@ struct Segue {
     static let toChat = "toChat"
     static let toProducts = "toProducts"
     static let toProductDetails = "toProductDetails"
+    static let toWinTickets = "toWinTickets"
 }
 
 struct UserDefaultsKey {

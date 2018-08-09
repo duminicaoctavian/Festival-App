@@ -32,6 +32,10 @@ class HomeViewController: UIViewController {
     @IBAction func onBuyTicketsTapped(_ sender: Any) {
         navigateToBuyTickets()
     }
+    
+    @IBAction func onWinTicketsTapped(_ sender: Any) {
+        navigateToWinTicketsScreen()
+    }
 }
 
 extension HomeViewController: HomeView {
@@ -51,5 +55,9 @@ extension HomeViewController: HomeView {
     
     func navigateToChatScreen() {
         performSegue(withIdentifier: Segue.toChat, sender: self)
+    }
+    
+    func navigateToWinTicketsScreen() {
+        performSegue(withIdentifier: Segue.toWinTickets, sender: self)
     }
 }

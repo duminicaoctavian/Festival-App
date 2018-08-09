@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lew-ya-ZdD">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kPn-Oc-BAb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -43,14 +43,14 @@
                         <viewControllerLayoutGuide type="bottom" id="rwg-rT-dtG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3BS-Ri-J5Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZQ-da-fZu" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u94-jw-xwY">
-                                        <rect key="frame" x="183.66666666666666" y="43.666666666666664" width="48" height="25.999999999999993"/>
+                                        <rect key="frame" x="164" y="43.5" width="48" height="26"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -83,10 +83,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-5f-FHS" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="77" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="553-C8-gtR">
-                                        <rect key="frame" x="110.66666666666669" y="20" width="192" height="336"/>
+                                        <rect key="frame" x="91" y="20" width="192" height="336"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="lnQ-B7-QXN">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
@@ -129,7 +129,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoL-O7-HHy">
-                                        <rect key="frame" x="115.66666666666669" y="358" width="183" height="28"/>
+                                        <rect key="frame" x="96" y="358" width="183" height="28"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="11"/>
                                         <state key="normal" title="Don't have an account? Sign up here">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -199,14 +199,14 @@
                         <viewControllerLayoutGuide type="bottom" id="sbs-7R-mKD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bPa-sn-Wev">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGm-0o-F2b" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F7-8q-EeI">
-                                        <rect key="frame" x="172" y="43.666666666666664" width="71.666666666666686" height="25.999999999999993"/>
+                                        <rect key="frame" x="152.5" y="43.5" width="71.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -252,10 +252,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caU-dm-u1f" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="77" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-Pc-lQm">
-                                        <rect key="frame" x="111.66666666666669" y="176" width="192" height="165"/>
+                                        <rect key="frame" x="92" y="176" width="192" height="165"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYt-cb-T4X">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
@@ -296,7 +296,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-bF-JMM" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                                        <rect key="frame" x="110.66666666666669" y="371" width="192" height="30"/>
+                                        <rect key="frame" x="91" y="371" width="192" height="30"/>
                                         <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0ct-RC-6IO"/>
@@ -318,7 +318,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="YU3-ir-0bv">
-                                        <rect key="frame" x="146.66666666666666" y="26" width="119.99999999999997" height="120"/>
+                                        <rect key="frame" x="127" y="26" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="8vY-gP-l6e"/>
                                             <constraint firstAttribute="height" constant="120" id="KeR-lu-PjI"/>
@@ -387,11 +387,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fca-JU-moQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LZW-nm-ysU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHN-7S-UH2" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce3-Xu-AAm">
                                         <rect key="frame" x="12" y="47" width="24" height="18"/>
@@ -402,13 +402,13 @@
                                         <state key="normal" image="menuStack"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-w7-plN">
-                                        <rect key="frame" x="181.66666666666666" y="43.666666666666664" width="52" height="25.999999999999993"/>
+                                        <rect key="frame" x="162" y="43.5" width="52" height="26"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0c-VI-wks">
-                                        <rect key="frame" x="382" y="45" width="24" height="24"/>
+                                        <rect key="frame" x="343" y="45" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="C3b-N5-yLu"/>
                                             <constraint firstAttribute="height" constant="24" id="IB4-OC-ZPd"/>
@@ -450,13 +450,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-Ct-F6i" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="77" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-UU-14G">
-                                        <rect key="frame" x="67" y="50" width="279" height="204"/>
+                                        <rect key="frame" x="67" y="50" width="240" height="204"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-QD-eR6" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                                        <rect key="frame" x="65" y="579" width="284" height="50"/>
+                                        <rect key="frame" x="65" y="510" width="245" height="50"/>
                                         <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cb8-lD-Vth"/>
@@ -475,11 +475,30 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ultraTextWhite" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-vb-7Bw">
-                                        <rect key="frame" x="67" y="262" width="279" height="106"/>
+                                        <rect key="frame" x="67" y="262" width="240" height="106"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="106" id="2GQ-Pq-Gqx"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la4-PA-R9U" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="440" width="245" height="50"/>
+                                        <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="63U-ZS-c7O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Win Tickets">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onWinTicketsTapped:" destination="WnR-pl-plV" eventType="touchUpInside" id="hzc-lS-6Fn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="FL2-UU-14G" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="67" id="54I-b2-lsm"/>
@@ -489,7 +508,10 @@
                                     <constraint firstItem="EWL-vb-7Bw" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="67" id="Hy6-6H-KZb"/>
                                     <constraint firstAttribute="trailing" secondItem="5vx-QD-eR6" secondAttribute="trailing" constant="65" id="KkK-UM-5pg"/>
                                     <constraint firstAttribute="bottom" secondItem="5vx-QD-eR6" secondAttribute="bottom" constant="30" id="OSr-ed-Z9e"/>
+                                    <constraint firstItem="5vx-QD-eR6" firstAttribute="top" secondItem="la4-PA-R9U" secondAttribute="bottom" constant="20" id="ZnQ-8T-cIM"/>
+                                    <constraint firstAttribute="trailing" secondItem="la4-PA-R9U" secondAttribute="trailing" constant="65" id="ad0-wG-F03"/>
                                     <constraint firstItem="FL2-UU-14G" firstAttribute="top" secondItem="FUY-Ct-F6i" secondAttribute="top" constant="50" id="cSa-GI-7Ck"/>
+                                    <constraint firstItem="la4-PA-R9U" firstAttribute="leading" secondItem="FUY-Ct-F6i" secondAttribute="leading" constant="65" id="coc-aR-5tp"/>
                                     <constraint firstAttribute="trailing" secondItem="EWL-vb-7Bw" secondAttribute="trailing" constant="68" id="jJ8-bj-6GK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -529,11 +551,171 @@
                     <connections>
                         <outlet property="menuBtn" destination="ce3-Xu-AAm" id="ZYI-x4-x8r"/>
                         <segue destination="LKJ-jc-yKd" kind="show" identifier="toChat" id="fna-TN-lHA"/>
+                        <segue destination="0ml-2U-FiA" kind="show" identifier="toWinTickets" id="5A9-Xb-579"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-L5-erm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2916" y="-638.2308845577212"/>
+        </scene>
+        <!--Win Tickets View Controller-->
+        <scene sceneID="7PD-HR-F5S">
+            <objects>
+                <viewController id="0ml-2U-FiA" customClass="WinTicketsViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3SK-wX-IDZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7IS-UI-6va"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pik-OV-5u0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V9-dB-wWj" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-4V-rMB">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="dyV-LB-bpU"/>
+                                            <constraint firstAttribute="height" constant="18" id="idx-1O-4zT"/>
+                                        </constraints>
+                                        <state key="normal" image="backButton"/>
+                                        <connections>
+                                            <action selector="onBackTapped:" destination="0ml-2U-FiA" eventType="touchUpInside" id="p22-xc-icn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dB-Xd-7qI">
+                                        <rect key="frame" x="138" y="43.5" width="99.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wKh-4V-rMB" secondAttribute="bottom" constant="12" id="6hd-vJ-EOJ"/>
+                                    <constraint firstAttribute="height" constant="77" id="7rn-9z-pQS"/>
+                                    <constraint firstItem="2dB-Xd-7qI" firstAttribute="centerY" secondItem="wKh-4V-rMB" secondAttribute="centerY" id="S6q-kb-SB5"/>
+                                    <constraint firstItem="2dB-Xd-7qI" firstAttribute="centerX" secondItem="3V9-dB-wWj" secondAttribute="centerX" id="blC-JV-zd3"/>
+                                    <constraint firstItem="wKh-4V-rMB" firstAttribute="leading" secondItem="3V9-dB-wWj" secondAttribute="leading" constant="12" id="dPW-dF-oeA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.21796020760000001" green="0.079810581780000001" blue="0.37307731379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-Dm-5lh" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXX-Ie-Q9D" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="510" width="245" height="50"/>
+                                        <color key="backgroundColor" red="0.23938611830000001" green="0.087656116610000001" blue="0.40975153660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="120-Vz-5lC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Check">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onBuyTicketsTapped:" destination="WnR-pl-plV" eventType="touchUpInside" id="X5a-3k-VSp"/>
+                                            <action selector="onCheckTapped:" destination="0ml-2U-FiA" eventType="touchUpInside" id="1JA-Ay-XYg"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cameraPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="mfF-Ii-03O">
+                                        <rect key="frame" x="65" y="185" width="245" height="245"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mfF-Ii-03O" secondAttribute="height" multiplier="1:1" id="P4O-M8-42p"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hux-dw-4Ax">
+                                        <rect key="frame" x="141.5" y="20" width="92" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which artist played a set of 7 hours at Untold Festival in Romania?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cii-FI-gc3">
+                                        <rect key="frame" x="65" y="59" width="245" height="82"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RXX-Ie-Q9D" firstAttribute="top" secondItem="mfF-Ii-03O" secondAttribute="bottom" constant="80" id="Icd-NN-bvC"/>
+                                    <constraint firstItem="RXX-Ie-Q9D" firstAttribute="leading" secondItem="XOo-Dm-5lh" secondAttribute="leading" constant="65" id="MgH-Z0-qBx"/>
+                                    <constraint firstItem="Hux-dw-4Ax" firstAttribute="centerX" secondItem="XOo-Dm-5lh" secondAttribute="centerX" id="OvY-5q-sv1"/>
+                                    <constraint firstAttribute="bottom" secondItem="RXX-Ie-Q9D" secondAttribute="bottom" constant="30" id="QR9-cc-8l2"/>
+                                    <constraint firstItem="cii-FI-gc3" firstAttribute="centerX" secondItem="XOo-Dm-5lh" secondAttribute="centerX" id="SYs-fa-YdC"/>
+                                    <constraint firstItem="Hux-dw-4Ax" firstAttribute="top" secondItem="XOo-Dm-5lh" secondAttribute="top" constant="20" id="TvH-a7-E50"/>
+                                    <constraint firstItem="mfF-Ii-03O" firstAttribute="width" secondItem="RXX-Ie-Q9D" secondAttribute="width" id="YU1-uM-gg7"/>
+                                    <constraint firstItem="cii-FI-gc3" firstAttribute="top" secondItem="Hux-dw-4Ax" secondAttribute="bottom" constant="8" id="ab0-9y-QhP"/>
+                                    <constraint firstAttribute="trailing" secondItem="RXX-Ie-Q9D" secondAttribute="trailing" constant="65" id="bqc-GM-bec"/>
+                                    <constraint firstItem="mfF-Ii-03O" firstAttribute="centerX" secondItem="XOo-Dm-5lh" secondAttribute="centerX" id="ncr-gN-ouJ"/>
+                                    <constraint firstItem="cii-FI-gc3" firstAttribute="width" secondItem="RXX-Ie-Q9D" secondAttribute="width" id="s1M-GZ-WhF"/>
+                                    <constraint firstItem="mfF-Ii-03O" firstAttribute="top" relation="lessThanOrEqual" secondItem="cii-FI-gc3" secondAttribute="bottom" constant="95.5" id="wwj-PL-IpS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.00046930917709999998" green="0.15181804660000001" blue="0.2134067358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3V9-dB-wWj" secondAttribute="trailing" id="Esa-h4-UHv"/>
+                            <constraint firstItem="XOo-Dm-5lh" firstAttribute="leading" secondItem="Pik-OV-5u0" secondAttribute="leading" id="Kdc-xC-vbN"/>
+                            <constraint firstAttribute="trailing" secondItem="XOo-Dm-5lh" secondAttribute="trailing" id="Lbd-EN-eST"/>
+                            <constraint firstItem="3V9-dB-wWj" firstAttribute="top" secondItem="Pik-OV-5u0" secondAttribute="top" id="PCc-GR-ma1"/>
+                            <constraint firstItem="XOo-Dm-5lh" firstAttribute="top" secondItem="3V9-dB-wWj" secondAttribute="bottom" id="azn-sP-TSW"/>
+                            <constraint firstItem="7IS-UI-6va" firstAttribute="top" secondItem="XOo-Dm-5lh" secondAttribute="bottom" id="cwc-W8-y5K"/>
+                            <constraint firstItem="3V9-dB-wWj" firstAttribute="leading" secondItem="Pik-OV-5u0" secondAttribute="leading" id="oRI-Cr-IB0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="mfF-Ii-03O" id="UN6-xW-1MQ"/>
+                        <outlet property="questionLabel" destination="cii-FI-gc3" id="AI3-5E-TT7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlE-Hs-qWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3770.4000000000001" y="-639.13043478260875"/>
         </scene>
         <!--User Menu View Controller-->
         <scene sceneID="PR4-9P-hHd">
@@ -544,28 +726,28 @@
                         <viewControllerLayoutGuide type="bottom" id="EnW-TD-TYK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kca-DZ-dc8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYS-WS-dra" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ajL-R2-Y5z">
-                                        <rect key="frame" x="0.0" y="77" width="414" height="519"/>
+                                        <rect key="frame" x="0.0" y="77" width="375" height="450"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Home" id="sDd-KN-IOu" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sDd-KN-IOu" id="F88-Xi-Xow">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLI-aj-yFQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y81-mI-VHa">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -589,17 +771,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="News" id="dWt-61-igp" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="103" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dWt-61-igp" id="XoW-qZ-CRM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-y0-BtH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-Wr-2hQ">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -623,17 +805,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Artists" id="t6Q-FW-pKB" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="178" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="178" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6Q-FW-pKB" id="5IA-Ys-bhE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-ae-gYa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-Hu-IfG">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -657,17 +839,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Lineup" id="uWS-7g-8B0" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="253" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="253" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uWS-7g-8B0" id="dbn-KE-6tp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-a3-IuB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-9L-aVY">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -691,17 +873,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accommodation" id="tLb-OA-f0Q" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="328" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="328" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tLb-OA-f0Q" id="P69-ag-uaq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iD-43-w3B">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-dR-if3">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -725,17 +907,17 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Shop" id="u5a-oA-ZjG" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="403" width="414" height="75"/>
+                                                <rect key="frame" x="0.0" y="403" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5a-oA-ZjG" id="9tJ-fX-V1P">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-8B-U62">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-fq-ce6">
-                                                            <rect key="frame" x="20" y="18.666666666666668" width="90" height="38.333333333333329"/>
+                                                            <rect key="frame" x="15" y="18.5" width="90" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -771,7 +953,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPV-J1-jag">
-                                        <rect key="frame" x="107" y="660" width="56" height="36"/>
+                                        <rect key="frame" x="107" y="591" width="56" height="36"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -781,7 +963,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-6H-3Ww" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="641" width="75" height="75"/>
+                                        <rect key="frame" x="20" y="572" width="75" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="7aS-yq-zYd"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="Hlh-8E-dWi"/>
@@ -909,7 +1091,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K3f-Rx-D9K" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XXe-Z1-X0Y">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -927,7 +1109,7 @@
                 <navigationController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" id="lew-ya-ZdD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u6p-YE-Kkc">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -942,6 +1124,7 @@
     </scenes>
     <resources>
         <image name="backButton" width="25" height="25"/>
+        <image name="cameraPlaceholder" width="256" height="256"/>
         <image name="chat" width="29" height="25"/>
         <image name="menuStack" width="40" height="40"/>
         <image name="profileDefault" width="192" height="192"/>
@@ -949,7 +1132,7 @@
         <image name="ultraTextWhite" width="700" height="181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="COe-lv-7BE"/>
+        <segue reference="SfX-aN-LVd"/>
         <segue reference="hgO-G5-ZHv"/>
     </inferredMetricsTieBreakers>
 </document>

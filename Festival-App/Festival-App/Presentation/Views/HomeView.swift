@@ -13,4 +13,5 @@ protocol HomeView: class {
     func hideNavigationBar()
     func navigateToChatScreen()
     func navigateToBuyTickets()
+    func navigateToWinTicketsScreen()
 }
