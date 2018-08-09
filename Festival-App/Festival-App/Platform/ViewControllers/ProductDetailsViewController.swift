@@ -26,6 +26,8 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    var roundedImageView: RoundedImage = RoundedImage()
+    
     lazy var carousel: iCarousel = {
         let carousel = iCarousel(frame: CGRect(x: 0, y: view.frame.height / Constants.carouselHeightDivisor, width: view.frame.width, height: Constants.carouselHeight))
         carousel.delegate = self
@@ -53,11 +55,10 @@ class ProductDetailsViewController: UIViewController {
 
 extension ProductDetailsViewController: iCarouselDataSource, iCarouselDelegate {
     func numberOfItems(in carousel: iCarousel) -> Int {
-        return presenter.product.images.count
+        return presenter.numberOfImages
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        var roundedImageView: RoundedImage
         
         if let view = view, let imageView = view as? RoundedImage {
             roundedImageView = imageView
@@ -65,8 +66,7 @@ extension ProductDetailsViewController: iCarouselDataSource, iCarouselDelegate {
             roundedImageView = makeImageView()
         }
         
-        // TODO
-        roundedImageView.loadImageUsingCache(withURLString: presenter.product.images[index])
+        displayProductImage(presenter.getImageURL(forIndex: index))
     
         return roundedImageView
     }
@@ -96,7 +96,7 @@ extension ProductDetailsViewController: ProductDetailsView {
     }
     
     func displayProductImage(_ URLString: String) {
-        
+        roundedImageView.loadImageUsingCache(withURLString: URLString)
     }
     
     func displayPrice(_ price: String) {

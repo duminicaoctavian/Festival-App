@@ -39,7 +39,7 @@ class ShopViewController: UIViewController {
             guard let destinationViewController = segue.destination as? ProductDetailsViewController else { return }
             let destinationPresenter = destinationViewController.presenter
             if let product = sender as? Product {
-                destinationPresenter.product = product
+                destinationPresenter.productDidChange(product)
             }
         }
     }

@@ -17,6 +17,18 @@ class ProductDetailsPresenter {
     
     var product: Product!
     
+    var numberOfImages: Int {
+        return product.images.count
+    }
+    
+    func getImageURL(forIndex index: Int) -> String {
+        return product.images[index]
+    }
+    
+    func productDidChange(_ product: Product) {
+        self.product = product
+    }
+    
     func viewDidLoad() {
         guard let product = product else { return }
         
