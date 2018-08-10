@@ -1108,7 +1108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rPe-30-d6B">
             <objects>
-                <navigationController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" id="lew-ya-ZdD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="lew-ya-ZdD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u6p-YE-Kkc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -14,26 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         UIApplication.shared.statusBarStyle = .lightContent
         
         if AuthService.instance.isLoggedIn {
-            
-            let rootController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-            
-            // Because self.window is an optional you should check it's value first and assign your rootViewController
+            let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
             if let window = self.window {
                 window.rootViewController = rootController
             }
         } else {
-            
-            let rootController = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-            
+            let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
             if let window = self.window {
                 window.rootViewController = rootController
             }

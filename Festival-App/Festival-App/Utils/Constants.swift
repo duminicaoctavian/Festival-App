@@ -17,6 +17,8 @@ let baseLocalURL = "http://localhost:3000"
 
 struct StoryboardID {
     static let profileViewController = "Profile"
+    static let SWRevealViewController = "SWRevealViewController"
+    static let loginViewController = "LoginViewController"
 }
 
 enum Stage: String {
