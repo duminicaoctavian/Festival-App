@@ -13,4 +13,6 @@ protocol EditProfileView: class {
     func displayImagePicker()
     func displayUsername(_ username: String)
     func displayProfileImage(_ URLString: String)
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }

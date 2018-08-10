@@ -47,8 +47,11 @@ class EditProfilePresenter {
         let imageName = NSUUID().uuidString + ".jpg"
         let imageURL = "\(Route.baseAWS)/\(imageName)"
         
+        view?.startActivityIndicator()
+        
         AuthService.instance.editUser(username: username, password: password, imageURL: imageURL) { [weak self] (success) in
             guard let weakSelf = self else { return }
+            weakSelf.view?.stopActivityIndicator()
             
             if success {
                 StorageService.instance.uploadFile(imageName: imageName, withData: imageData, completion: { (success) in

@@ -19,6 +19,14 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var profileImageView: CircleImage!
     @IBOutlet weak var changeProfileButton: UIButton!
+    
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +94,15 @@ extension EditProfileViewController : UINavigationControllerDelegate, UIImagePic
 }
 
 extension EditProfileViewController: EditProfileView {
+    func startActivityIndicator() {
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        LoadingView.stopLoading()
+    }
+    
     
     func displayProfileImage(_ URLString: String) {
         profileImageView.loadImageUsingCache(withURLString: URLString)
