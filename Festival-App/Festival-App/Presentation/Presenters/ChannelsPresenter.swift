@@ -49,6 +49,8 @@ class ChannelsPresenter {
         if numberOfChannels > 0 {
             MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter { $0 != channel.id }
         }
+        
+        delegate?.channelSelected()
     }
     
     private func observeChannelCreated() {

@@ -51,7 +51,7 @@ class MessageService {
         }
     }
     
-    func getAllMessagesForChannel(withId id: String, completion: @escaping CompletionHandler) {
+    func getAllMessagesForChannel(withID id: String, completion: @escaping CompletionHandler) {
         Alamofire.request("\(Route.messages)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }

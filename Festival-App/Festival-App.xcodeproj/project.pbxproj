@@ -23,6 +23,9 @@
 		8A148447211DD0C20012D802 /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A148446211DD0C20012D802 /* ChannelsView.swift */; };
 		8A148449211DD0D00012D802 /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A148448211DD0D00012D802 /* ChannelsPresenter.swift */; };
 		8A14844B211DD1450012D802 /* ChannelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14844A211DD1450012D802 /* ChannelItemView.swift */; };
+		8A14844D211DE8070012D802 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14844C211DE8070012D802 /* ChatLogView.swift */; };
+		8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14844E211DE8120012D802 /* ChatItemView.swift */; };
+		8A148451211DE8330012D802 /* ChatLogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A148450211DE8330012D802 /* ChatLogPresenter.swift */; };
 		8A27521621188D2D00ABF57C /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27521521188D2D00ABF57C /* ProductItemView.swift */; };
 		8A27521821188EAE00ABF57C /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27521721188EAE00ABF57C /* ShopView.swift */; };
 		8A27521A21188EB800ABF57C /* ShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27521921188EB800ABF57C /* ShopPresenter.swift */; };
@@ -126,7 +129,7 @@
 		DECDBC11203DE43B0001B7BA /* Festival_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBC10203DE43B0001B7BA /* Festival_AppTests.swift */; };
 		DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDCF8CB208CA9FB006AD857 /* User.swift */; };
 		DEE34C96205E7ADD006C7B55 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C95205E7ADD006C7B55 /* ChannelsViewController.swift */; };
-		DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */; };
+		DEE34C98205E7AED006C7B55 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C97205E7AED006C7B55 /* ChatLogViewController.swift */; };
 		DEE34C9D205E91AE006C7B55 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9C205E91AE006C7B55 /* SocketService.swift */; };
 		DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9E205E91DE006C7B55 /* Channel.swift */; };
 		DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE34C9F205E91DE006C7B55 /* Message.swift */; };
@@ -166,6 +169,9 @@
 		8A148446211DD0C20012D802 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
 		8A148448211DD0D00012D802 /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
 		8A14844A211DD1450012D802 /* ChannelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemView.swift; sourceTree = "<group>"; };
+		8A14844C211DE8070012D802 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
+		8A14844E211DE8120012D802 /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
+		8A148450211DE8330012D802 /* ChatLogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogPresenter.swift; sourceTree = "<group>"; };
 		8A27521521188D2D00ABF57C /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
 		8A27521721188EAE00ABF57C /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		8A27521921188EB800ABF57C /* ShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPresenter.swift; sourceTree = "<group>"; };
@@ -275,7 +281,7 @@
 		DECDBC12203DE43B0001B7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDCF8CB208CA9FB006AD857 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEE34C95205E7ADD006C7B55 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
-		DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowVC.swift; sourceTree = "<group>"; };
+		DEE34C97205E7AED006C7B55 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		DEE34C9C205E91AE006C7B55 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		DEE34C9E205E91DE006C7B55 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		DEE34C9F205E91DE006C7B55 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -477,7 +483,7 @@
 				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
 				8A10E048211049A300021478 /* AddAccommodationViewController.swift */,
 				DE0FCD69203F747900FE29BB /* ArtistDetailsViewController.swift */,
-				DEE34C97205E7AED006C7B55 /* ChatWindowVC.swift */,
+				DEE34C97205E7AED006C7B55 /* ChatLogViewController.swift */,
 				DEAA64892083497300C53E58 /* EditProfileViewController.swift */,
 				DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
@@ -522,6 +528,8 @@
 				8A148442211DC8D80012D802 /* AddAccommodationView.swift */,
 				8A148446211DD0C20012D802 /* ChannelsView.swift */,
 				8A14844A211DD1450012D802 /* ChannelItemView.swift */,
+				8A14844C211DE8070012D802 /* ChatLogView.swift */,
+				8A14844E211DE8120012D802 /* ChatItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -544,6 +552,7 @@
 				8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */,
 				8A148444211DC8F80012D802 /* AddAccommodationPresenter.swift */,
 				8A148448211DD0D00012D802 /* ChannelsPresenter.swift */,
+				8A148450211DE8330012D802 /* ChatLogPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -874,6 +883,7 @@
 				DE84F441208B69F400CE35FA /* Location.swift in Sources */,
 				8A30579021181FD900D3AC85 /* ShopCategoryPresenter.swift in Sources */,
 				8A8D01C42119AEA700889197 /* EditProfilePresenter.swift in Sources */,
+				8A14844D211DE8070012D802 /* ChatLogView.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* TimelineTableViewCell.swift in Sources */,
 				8A121D962116DD1B0050EDBB /* ArtistDetailsPresenter.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
@@ -902,6 +912,7 @@
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsViewController.swift in Sources */,
 				DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
+				8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* VideoNewsCell.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
@@ -909,6 +920,7 @@
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
 				8A3E6B0321176163004CA677 /* NewsView.swift in Sources */,
 				8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */,
+				8A148451211DE8330012D802 /* ChatLogPresenter.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
 				8A14844B211DD1450012D802 /* ChannelItemView.swift in Sources */,
@@ -917,7 +929,7 @@
 				8A3E6B05211765BE004CA677 /* VideoNewsItemView.swift in Sources */,
 				8A30579221181FEF00D3AC85 /* ShopCategoryView.swift in Sources */,
 				8A2752232118AD5200ABF57C /* iCarousel.m in Sources */,
-				DEE34C98205E7AED006C7B55 /* ChatWindowVC.swift in Sources */,
+				DEE34C98205E7AED006C7B55 /* ChatLogViewController.swift in Sources */,
 				8A121D9A2116F2F70050EDBB /* ArtistsPresenter.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */,
