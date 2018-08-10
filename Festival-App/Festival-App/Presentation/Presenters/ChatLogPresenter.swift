@@ -45,7 +45,6 @@ class ChatLogPresenter {
             
             if success {
                 weakSelf.view?.resetInputTextField()
-                //SocketService.instance.socket.emit("stopType", AuthService.instance.user.username, channedId)
             } else {
                 // TODO
             }

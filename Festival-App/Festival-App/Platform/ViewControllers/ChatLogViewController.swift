@@ -25,16 +25,12 @@ class ChatLogViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var textInputView: UIView!
     
-    //var isTyping = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlideMenu()
         addGestures()
         view.bindToKeyboard()
         presenter.viewDidLoad()
-        
-        //NotificationCenter.default.addObserver(self, selector: #selector(ChatLogViewController.channelSelected(_:)), name: NotificationName.channelSelected, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,11 +60,6 @@ class ChatLogViewController: UIViewController {
     @IBAction func onBackTapped(_ sender: Any) {
         navigateToHomeScreen()
     }
-    
-    //
-    //    @objc func channelSelected(_ notif: Notification) {
-    //        updateWithChannel()
-    //    }
 }
 
 extension ChatLogViewController: UITableViewDelegate, UITableViewDataSource {
@@ -151,47 +142,4 @@ extension ChatLogViewController: ChatLogView {
         channelNameLabel.text = Constants.noChannelsAvailable
     }
 }
-
-//
-//        SocketService.instance.getTypingUsers { (typingUsers) in
-//            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
-//            var names = ""//the names of who are typing
-//            var numberOfTypers = 0
-//
-//            for (typingUser, channel) in typingUsers! {
-//                if typingUser != AuthService.instance.user.username && channel == channelId {
-//                    if names == "" {
-//                        names = typingUser
-//                    } else {
-//                        names = "\(names), \(typingUser)"
-//                    }
-//                    numberOfTypers += 1
-//                }
-//            }
-//            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
-//                var verb = "is"
-//                if numberOfTypers > 1 {
-//                    verb = "are"
-//                }
-//                self.typingLbl.text = "\(names) \(verb) typing a message ..."
-//
-//            } else {
-//                self.typingLbl.text = ""
-//            }
-//        }
-
-
-//
-//    @IBAction func messageBoxEditing(_ sender: Any) {
-//        guard let channedId = MessageService.instance.selectedChannel?.id else { return }
-//        if messageTextField.text == "" {
-//            isTyping = false
-//            SocketService.instance.socket.emit("stopType", AuthService.instance.user.username, channedId)
-//        } else {
-//            if isTyping == false {
-//                SocketService.instance.socket.emit("startType", AuthService.instance.user.username, channedId)
-//            }
-//            isTyping = true
-//        }
-//    }
 
