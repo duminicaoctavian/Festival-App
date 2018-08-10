@@ -27,7 +27,10 @@ class ChatLogPresenter {
     
     func viewWillAppear() {
         MessageService.instance.messages.removeAll()
-        view?.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view?.reloadData()
+        }
     }
     
     func viewWillDisappear() {
