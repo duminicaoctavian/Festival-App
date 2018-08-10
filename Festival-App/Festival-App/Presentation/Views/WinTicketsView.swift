@@ -15,4 +15,8 @@ protocol WinTicketsView: class {
     func showWrongAnswerAlert()
     func showCorrectAnswerAlert()
     func roundImageCorners()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func hideAllContent()
+    func displayAllContent()
 }

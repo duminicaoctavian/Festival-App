@@ -655,8 +655,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which artist played a set of 7 hours at Untold Festival in Romania?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cii-FI-gc3">
-                                        <rect key="frame" x="65" y="59" width="245" height="82"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                        <rect key="frame" x="65" y="59" width="245" height="78"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -709,8 +709,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkButton" destination="RXX-Ie-Q9D" id="jCf-AQ-Q0c"/>
                         <outlet property="photoImageView" destination="mfF-Ii-03O" id="UN6-xW-1MQ"/>
                         <outlet property="questionLabel" destination="cii-FI-gc3" id="AI3-5E-TT7"/>
+                        <outlet property="questionTitleLabel" destination="Hux-dw-4Ax" id="MwS-8w-tXn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlE-Hs-qWU" userLabel="First Responder" sceneMemberID="firstResponder"/>

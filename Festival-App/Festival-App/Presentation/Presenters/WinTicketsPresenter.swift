@@ -10,11 +10,33 @@ import Foundation
 import CoreML
 import Vision
 
+private struct Constants {
+    static let classifierConfidence: Float = 90
+}
+
 class WinTicketsPresenter {
     weak var view: WinTicketsView?
     
     init(view: WinTicketsView) {
         self.view = view
+    }
+    
+    func viewDidLoad() {
+        view?.hideAllContent()
+        
+        view?.startActivityIndicator()
+        QuestionService.instance.getRandomQuestion { [weak self] (success) in
+            guard let weakSelf = self else { return }
+            weakSelf.view?.stopActivityIndicator()
+            
+            if success {
+                guard let question = QuestionService.instance.question?.question else { return }
+                weakSelf.view?.displayAllContent()
+                weakSelf.view?.displayQuestion(question)
+            } else {
+                // TODO
+            }
+        }
     }
     
     func beginRecognitionProcess(forData data: Data) {
@@ -25,16 +47,22 @@ class WinTicketsPresenter {
             
             guard let results = request.results as? [VNClassificationObservation], let topResult = results.first else { return }
             
-            DispatchQueue.main.async { [weak self] in
-                guard let weakSelf = self else { return }
-
-                if topResult.identifier == "Armin van Buuren" && topResult.confidence * 100 > 90 {
-                    weakSelf.view?.showCorrectAnswerAlert()
+                guard let question = QuestionService.instance.question else { return }
+        
+                if topResult.identifier == question.answer && topResult.confidence * 100 > Constants.classifierConfidence {
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.view?.showCorrectAnswerAlert()
+                    }
+                    
                 } else {
-                    weakSelf.view?.showWrongAnswerAlert()
+                    DispatchQueue.main.async { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.view?.showWrongAnswerAlert()
+                    }
                 }
             }
-        }
         
         guard let CIImage = CIImage(data: data) else { return }
         let handler = VNImageRequestHandler(ciImage: CIImage)

@@ -47,6 +47,7 @@ struct Route {
     static let locations = "\(baseURL)/locations"
     static let loginUser = "\(baseURL)/users/login"
     static let logoutUser = "\(baseURL)/users/me/token"
+    static let randomQuestion = "\(baseURL)/questions/random"
 }
 
 struct NotificationName {

@@ -33,11 +33,14 @@ class WinTicketsViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var questionTitleLabel: UILabel!
+    @IBOutlet weak var checkButton: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         roundImageCorners()
         addGestures()
+        presenter.viewDidLoad()
     }
     
     private func addGestures() {
@@ -47,7 +50,6 @@ class WinTicketsViewController: UIViewController {
     }
     
     @objc func imageTapped() {
-        
         presentImagePicker()
     }
     
@@ -64,6 +66,28 @@ class WinTicketsViewController: UIViewController {
 }
 
 extension WinTicketsViewController: WinTicketsView {
+    func hideAllContent() {
+        questionTitleLabel.isHidden = true
+        questionLabel.isHidden = true
+        photoImageView.isHidden = true
+        checkButton.isHidden = true
+    }
+    
+    func displayAllContent() {
+        questionTitleLabel.isHidden = false
+        questionLabel.isHidden = false
+        photoImageView.isHidden = false
+        checkButton.isHidden = false
+    }
+    
+    func startActivityIndicator() {
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        LoadingView.stopLoading()
+    }
+    
     func roundImageCorners() {
         photoImageView.layer.cornerRadius = Constants.cornerRadius
     }
@@ -78,7 +102,7 @@ extension WinTicketsViewController: WinTicketsView {
     }
     
     func displayQuestion(_ question: String) {
-        
+        questionLabel.text = question
     }
     
     func navigateToHomeScreen() {

@@ -59,6 +59,8 @@
 		8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */; };
 		8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CB211C82790009B19C /* WinTicketsView.swift */; };
 		8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */; };
+		8ACA50F7211D723E00D50CCF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA50F6211D723E00D50CCF /* Question.swift */; };
+		8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA50F8211D72EB00D50CCF /* QuestionService.swift */; };
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
@@ -196,6 +198,8 @@
 		8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsViewController.swift; sourceTree = "<group>"; };
 		8A98E1CB211C82790009B19C /* WinTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsView.swift; sourceTree = "<group>"; };
 		8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsPresenter.swift; sourceTree = "<group>"; };
+		8ACA50F6211D723E00D50CCF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8ACA50F8211D72EB00D50CCF /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -385,6 +389,7 @@
 				DE241F702069069400F07C33 /* News.swift */,
 				DE16485B2042191700EB371B /* Product.swift */,
 				DEDCF8CB208CA9FB006AD857 /* User.swift */,
+				8ACA50F6211D723E00D50CCF /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				DE16484F2041F56100EB371B /* ProductService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
 				8A8D01C52119BD2B00889197 /* StorageService.swift */,
+				8ACA50F8211D72EB00D50CCF /* QuestionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -900,6 +906,7 @@
 				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
 				8A3E6B0B21177C17004CA677 /* PictureNewsItemView.swift in Sources */,
 				8A3E6B0921177B0C004CA677 /* PictureNewsCell.swift in Sources */,
+				8ACA50F7211D723E00D50CCF /* Question.swift in Sources */,
 				8AD7FABD21160D3E00B8320C /* HomePresenter.swift in Sources */,
 				8A30579B211842C500D3AC85 /* NewsVideoViewModelItem.swift in Sources */,
 				DEE34C96205E7ADD006C7B55 /* ChannelsVC.swift in Sources */,
@@ -913,6 +920,7 @@
 				8A121DA221171BFE0050EDBB /* UIButtonExtensions.swift in Sources */,
 				DE1648522041F9E500EB371B /* ShopCategoryCell.swift in Sources */,
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
+				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
