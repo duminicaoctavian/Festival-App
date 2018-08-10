@@ -89,10 +89,7 @@ extension ShopViewController: ShopView {
     }
     
     func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.collectionView.reloadData()
-        }
+        collectionView.reloadData()
     }
     
     func navigateToShopCategoryScreen() {

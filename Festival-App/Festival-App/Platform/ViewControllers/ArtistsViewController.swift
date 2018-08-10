@@ -125,10 +125,7 @@ extension ArtistsViewController: ArtistsView {
     }
     
     func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
     
     func navigateToArtistDetailsScreen(fromIndex index: Int) {

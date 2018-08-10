@@ -769,7 +769,7 @@
                                                 <connections>
                                                     <outlet property="optionImageView" destination="qLI-aj-yFQ" id="0aQ-nQ-ULc"/>
                                                     <outlet property="optionLabel" destination="Y81-mI-VHa" id="enF-6o-UEd"/>
-                                                    <segue destination="K3f-Rx-D9K" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="COe-lv-7BE"/>
+                                                    <segue destination="K3f-Rx-D9K" kind="custom" identifier="" customClass="SWRevealViewControllerSeguePushController" id="COe-lv-7BE"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="News" id="dWt-61-igp" customClass="UserMenuCell" customModule="Festival_App" customModuleProvider="target">
@@ -1134,7 +1134,7 @@
         <image name="ultraTextWhite" width="700" height="181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SfX-aN-LVd"/>
-        <segue reference="hgO-G5-ZHv"/>
+        <segue reference="COe-lv-7BE"/>
+        <segue reference="Bb2-sH-5zi"/>
     </inferredMetricsTieBreakers>
 </document>

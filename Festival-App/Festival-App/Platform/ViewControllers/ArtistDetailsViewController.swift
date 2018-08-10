@@ -23,10 +23,13 @@ class ArtistDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter.viewDidLoad()
-        
         addGestures()
+        presenter.viewDidLoad()
+    }
+    
+    private func addGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        innerView.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
@@ -35,11 +38,6 @@ class ArtistDetailsViewController: UIViewController {
     
     @IBAction func onCloseTapped(_ sender: Any) {
         navigateToArtistsScreen()
-    }
-    
-    private func addGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ArtistDetailsViewController.handleTap(_:)))
-        innerView.addGestureRecognizer(tap)
     }
 }
 

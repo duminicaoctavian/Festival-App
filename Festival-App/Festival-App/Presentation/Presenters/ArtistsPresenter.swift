@@ -25,15 +25,22 @@ class ArtistsPresenter {
     
     func loadArtists(forStage stage: Stage) {
         ArtistService.instance.clearArtists()
-        view?.reloadData()
         
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view?.reloadData()
+        }
+       
         view?.startActivityIndicator()
         ArtistService.instance.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
                 weakSelf.view?.stopActivityIndicator()
-                weakSelf.view?.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.reloadData()
+                }
             } else {
                 // TODO
             }
@@ -42,7 +49,10 @@ class ArtistsPresenter {
     
     func viewWillDisappear() {
         ArtistService.instance.clearArtists()
-        view?.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view?.reloadData()
+        }
     }
     
     func configure(_ itemView: ArtistItemView, at index: Int) {

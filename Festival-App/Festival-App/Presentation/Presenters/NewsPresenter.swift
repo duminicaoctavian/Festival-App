@@ -30,10 +30,13 @@ class NewsPresenter {
         
         view?.startActivityIndicator()
         NewsService.instance.findAllNews(completion: { [weak self] (success) in
-            guard let weakSelf = self else { return }
+            guard let _ = self else { return }
             
             if (success) {
-                weakSelf.view?.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.reloadData()
+                }
                 NewsService.instance.loaded = false
             } else {
                 // TODO

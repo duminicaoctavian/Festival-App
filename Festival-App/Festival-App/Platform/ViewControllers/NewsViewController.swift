@@ -96,10 +96,7 @@ extension NewsViewController: NewsView {
     }
     
     func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 }
 

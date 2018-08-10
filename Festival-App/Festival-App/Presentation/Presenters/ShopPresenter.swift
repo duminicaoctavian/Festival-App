@@ -35,7 +35,10 @@ class ShopPresenter {
             
             if success {
                 weakSelf.view?.stopActivityIndicator()
-                weakSelf.view?.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.reloadData()
+                }
             } else {
                 // TODO
             }
@@ -44,7 +47,10 @@ class ShopPresenter {
     
     func viewWillDisappear() {
         ProductService.instance.clearProducts()
-        view?.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view?.reloadData()
+        }
     }
     
     func configure(_ itemView: ProductItemView, at index: Int) {

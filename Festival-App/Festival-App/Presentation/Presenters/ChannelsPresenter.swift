@@ -55,10 +55,13 @@ class ChannelsPresenter {
     
     private func observeChannelCreated() {
         SocketService.instance.getChannel { [weak self] (success) in
-            guard let weakSelf = self else { return }
+            guard let _ = self else { return }
             
             if success {
-                weakSelf.view?.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.reloadData()
+                }
             } else {
                 // TODO
             }
@@ -67,12 +70,15 @@ class ChannelsPresenter {
     
     private func observeMessageCreated() {
         SocketService.instance.getMessage { [weak self] (message) in
-            guard let weakSelf = self else { return }
+            guard let _ = self else { return }
             
             if message?.channelID != MessageService.instance.selectedChannel?.id {
                 guard let id = message?.channelID else { return }
                 MessageService.instance.unreadChannels.append(id)
-                weakSelf.view?.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.reloadData()
+                }
             }
         }
     }
