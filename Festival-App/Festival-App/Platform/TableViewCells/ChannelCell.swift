@@ -1,6 +1,6 @@
 //
 //  ChannelCell.swift
-//  Smack
+//  Festival-App
 //
 //  Created by Octavian on 07/01/2018.
 //  Copyright © 2018 Octavian. All rights reserved.
@@ -8,9 +8,16 @@
 
 import UIKit
 
+private struct Constants {
+    static let unreadChannelFontFamily = "Avenir-Heavy"
+    static let unreadChannelFontSize: CGFloat = 30.0
+    static let readChannelFontFamily = "Avenir-Medium"
+    static let readChannelFontSize: CGFloat = 18.0
+}
+
 class ChannelCell: UITableViewCell {
     
-    @IBOutlet weak var channelName: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,22 +27,34 @@ class ChannelCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         if selected {
-            self.layer.backgroundColor = UIColor(white: 1, alpha: 0.2).cgColor
+            highlightChannel()
         } else {
-            self.layer.backgroundColor = UIColor.clear.cgColor
-        }
-    }
-    
-    func configureCell(channel: Channel) {
-        let title = channel.name ?? ""
-        channelName.text = "#\(title)"
-        
-        channelName.font = UIFont(name: "Avenir-Medium", size: 18)
-        
-        for id in MessageService.instance.unreadChannels {
-            if id == channel.id {
-                channelName.font = UIFont(name: "Avenir-Heavy", size: 30)
-            }
+            unhighlightChannel()
         }
     }
 }
+
+extension ChannelCell: ChannelItemView {
+    
+    func highlightChannel() {
+        layer.backgroundColor = UIColor(white: 1, alpha: 0.2).cgColor
+    }
+    
+    func unhighlightChannel() {
+        layer.backgroundColor = UIColor.clear.cgColor
+    }
+    
+    func displayName(_ name: String) {
+        nameLabel.text = "#\(name)"
+    }
+    
+    func displayUnreadChannel() {
+        nameLabel.font = UIFont(name: Constants.unreadChannelFontFamily, size: Constants.unreadChannelFontSize)
+    }
+    
+    func displayReadChannel() {
+        nameLabel.font = UIFont(name: Constants.readChannelFontFamily, size: Constants.readChannelFontSize)
+    }
+}
+
+

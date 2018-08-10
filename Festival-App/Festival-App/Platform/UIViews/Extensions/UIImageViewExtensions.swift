@@ -24,7 +24,7 @@ extension UIImageView {
         guard let URL = URL(string: URLString) else { completion?(false); return }
 
         URLSession.shared.dataTask(with: URL) { [weak self] (data, response, error) in
-            guard let weakSelf = self else { completion?(false); return }
+            guard let _ = self else { completion?(false); return }
             
             if error != nil {
                 print(error as Any)
@@ -32,7 +32,8 @@ extension UIImageView {
                 return
             }
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let weakSelf = self else { completion?(false); return }
                 guard let data = data, let downloadedImage = UIImage(data: data) else { completion?(false); return }
                 imageCache.setObject(downloadedImage, forKey: URLString as NSString)
                 

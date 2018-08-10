@@ -1,5 +1,5 @@
 //
-//  AddAccommodationVC.swift
+//  AddAccommodationViewController.swift
 //  Festival-App
 //
 //  Created by Octavian Duminica on 31/07/2018.
@@ -20,7 +20,7 @@ private struct Constants {
     static let pinAsset = "pin"
 }
 
-class AddAccommodationVC: UIViewController {
+class AddAccommodationViewController: UIViewController {
     
     @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var offerTitleTopConstraint: NSLayoutConstraint!
@@ -46,19 +46,19 @@ class AddAccommodationVC: UIViewController {
         return longPress
     }()
     
-    func addLongPress() {
+    private func addLongPress() {
         mapView.addGestureRecognizer(longPress)
     }
     
-    func removeLongPress() {
+    private func removeLongPress() {
         mapView.removeGestureRecognizer(longPress)
     }
     
-    func removeSingleTap() {
+    private func removeSingleTap() {
         mapView.removeGestureRecognizer(singleTap)
     }
     
-    func addSingleTap() {
+    private func addSingleTap() {
         mapView.addGestureRecognizer(singleTap)
     }
     
@@ -170,7 +170,7 @@ class AddAccommodationVC: UIViewController {
     }
 }
 
-extension AddAccommodationVC: MKMapViewDelegate {
+extension AddAccommodationViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is MKPointAnnotation) {
@@ -231,7 +231,7 @@ extension AddAccommodationVC: MKMapViewDelegate {
     }
 }
 
-extension AddAccommodationVC: CLLocationManagerDelegate {
+extension AddAccommodationViewController: CLLocationManagerDelegate {
     
     func configureLocationServices() {
         if authorizationStatus == .notDetermined {
@@ -246,13 +246,13 @@ extension AddAccommodationVC: CLLocationManagerDelegate {
     }
 }
 
-extension AddAccommodationVC: UITextFieldDelegate {
+extension AddAccommodationViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         minimizeMap()
     }
 }
 
-extension AddAccommodationVC: UITextViewDelegate {
+extension AddAccommodationViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == Constants.descriptionTextViewPlaceholder {
             textView.text = ""

@@ -30,8 +30,9 @@ extension ProductCell: ProductItemView {
 
     func displayImage(_ URLString: String) {
         DispatchQueue.global(qos: .userInteractive).async {
-            DispatchQueue.main.async {
-                self.productImageView.loadImageUsingCache(withURLString: URLString)
+            DispatchQueue.main.async { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.productImageView.loadImageUsingCache(withURLString: URLString)
             }
         }
     }

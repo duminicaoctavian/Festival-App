@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="290.39999999999998" y="-1255.3223388305848"/>
         </scene>
-        <!--Add AccommodationVC-->
+        <!--Add Accommodation View Controller-->
         <scene sceneID="0x7-Se-pF7">
             <objects>
-                <viewController id="F6P-0a-Bzc" customClass="AddAccommodationVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F6P-0a-Bzc" customClass="AddAccommodationViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1wm-TU-spM"/>
                         <viewControllerLayoutGuide type="bottom" id="biX-W0-BAp"/>

@@ -35,9 +35,7 @@ class MessageService {
                         for item in json {
                             let channel = Channel(json: item)
                             weakSelf.channels.append(channel)
-                            
                         }
-                        NotificationCenter.default.post(name: NotificationName.channelsLoaded, object: nil)
                         completion(true)
                     }
                 } catch {
