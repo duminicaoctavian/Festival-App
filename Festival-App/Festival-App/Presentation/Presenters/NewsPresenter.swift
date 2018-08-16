@@ -22,14 +22,14 @@ class NewsPresenter {
     @objc func webViewsFinishedLoading(_ notif: Notification) {
         view?.stopActivityIndicator()
         view?.showTableView()
-        NewsService.instance.loaded = true
+        NewsService.shared.loaded = true
     }
     
     func viewWillAppear() {
-        NewsService.instance.clearNews()
+        NewsService.shared.clearNews()
         
         view?.startActivityIndicator()
-        NewsService.instance.findAllNews(completion: { [weak self] (success) in
+        NewsService.shared.findAllNews(completion: { [weak self] (success) in
             guard let _ = self else { return }
             
             if (success) {
@@ -37,7 +37,7 @@ class NewsPresenter {
                     guard let weakSelf = self else { return }
                     weakSelf.view?.reloadData()
                 }
-                NewsService.instance.loaded = false
+                NewsService.shared.loaded = false
             } else {
                 // TODO
             }
@@ -49,7 +49,7 @@ class NewsPresenter {
     }
     
     func handleLoadingOfWebViews() {
-        if NewsService.instance.loaded == false {
+        if NewsService.shared.loaded == false {
             NotificationCenter.default.post(name: NotificationName.webViewsLoaded, object: nil)
         }
     }

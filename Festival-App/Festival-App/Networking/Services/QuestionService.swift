@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class QuestionService {
-    static let instance = QuestionService()
+    static let shared = QuestionService()
     
     var question: Question?
     

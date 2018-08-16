@@ -75,7 +75,7 @@ struct UserDefaultsKey {
 
 struct Header {
     static let header = ["Content-Type": "application/json; charset=utf-8"]
-    static let bearerHeader = ["Access-Client": "\(AuthService.instance.authToken)"]
+    static let bearerHeader = ["Access-Client": "\(AuthService.shared.authToken)"]
     static let bearerHeaderTitle = "Access-Client"
 }
 

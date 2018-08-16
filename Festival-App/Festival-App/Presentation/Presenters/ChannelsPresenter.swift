@@ -17,7 +17,7 @@ class ChannelsPresenter {
     weak var delegate: ChannelsPresenterDelegate?
     
     var numberOfChannels: Int {
-        return MessageService.instance.channels.count
+        return MessageService.shared.channels.count
     }
     
     init(view: ChannelsView) {
@@ -30,12 +30,12 @@ class ChannelsPresenter {
     }
     
     func configure(_ itemView: ChannelItemView, at index: Int) {
-        let channel = MessageService.instance.channels[index]
+        let channel = MessageService.shared.channels[index]
         
         itemView.displayName(channel.name)
         itemView.displayReadChannel()
         
-        for id in MessageService.instance.unreadChannels {
+        for id in MessageService.shared.unreadChannels {
             if id == channel.id {
                 itemView.displayUnreadChannel()
             }
@@ -43,18 +43,18 @@ class ChannelsPresenter {
     }
     
     func handleChannelSelection(at index: Int) {
-        let channel = MessageService.instance.channels[index]
-        MessageService.instance.selectedChannel = channel
+        let channel = MessageService.shared.channels[index]
+        MessageService.shared.selectedChannel = channel
         
         if numberOfChannels > 0 {
-            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter { $0 != channel.id }
+            MessageService.shared.unreadChannels = MessageService.shared.unreadChannels.filter { $0 != channel.id }
         }
         
         delegate?.channelSelected()
     }
     
     private func observeChannelCreated() {
-        SocketService.instance.getChannel { [weak self] (success) in
+        SocketService.shared.getChannel { [weak self] (success) in
             guard let _ = self else { return }
             
             if success {
@@ -69,12 +69,12 @@ class ChannelsPresenter {
     }
     
     private func observeMessageCreated() {
-        SocketService.instance.getMessage { [weak self] (message) in
+        SocketService.shared.getMessage { [weak self] (message) in
             guard let _ = self else { return }
             
-            if message?.channelID != MessageService.instance.selectedChannel?.id {
+            if message?.channelID != MessageService.shared.selectedChannel?.id {
                 guard let id = message?.channelID else { return }
-                MessageService.instance.unreadChannels.append(id)
+                MessageService.shared.unreadChannels.append(id)
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.view?.reloadData()

@@ -16,7 +16,7 @@ private struct Constants {
 }
 
 class StorageService {
-    static let instance = StorageService()
+    static let shared = StorageService()
 
     func setupProvider() {
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.EUCentral1, identityPoolId: Constants.awsKey)

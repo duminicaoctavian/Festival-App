@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class MessageService {
-    static let instance = MessageService()
+    static let shared = MessageService()
     
     var channels = [Channel]()
     var messages = [Message]()

@@ -31,7 +31,7 @@ class AccomodationVC: UIViewController {
         configureLocationServices()
         centerMapOnUserLocation()
         
-        SocketService.instance.getLocation { (newLocation) in
+        SocketService.shared.getLocation { (newLocation) in
             if newLocation?.id != nil {
                 let locCoord = CLLocationCoordinate2D(latitude: Double((newLocation?.latitude)!), longitude: Double((newLocation?.longitude)!))
                 
@@ -41,9 +41,9 @@ class AccomodationVC: UIViewController {
             }
         }
         
-        LocationService.instance.getAllLocations { (success) in
+        LocationService.shared.getAllLocations { (success) in
             if success {
-                LocationService.instance.locations.forEach({ (location) in
+                LocationService.shared.locations.forEach({ (location) in
                     let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     
                     let annotation = MapPin(coordinate: locCoord, identifier: "locPin", locationTitle: location.title, locationAddress: location.address, locationDescription: location.description, locationImages: location.images)
@@ -67,7 +67,7 @@ class AccomodationVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        LocationService.instance.clearLocation()
+        LocationService.shared.clearLocation()
     }
 }
 

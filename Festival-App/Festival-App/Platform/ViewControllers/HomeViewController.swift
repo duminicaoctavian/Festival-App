@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         setupSlideMenu()
         hideNavigationBar()
         
-        print(AuthService.instance.user.id, AuthService.instance.user.email, AuthService.instance.user.username, AuthService.instance.user.imageURL, AuthService.instance.authToken, AuthService.instance.isLoggedIn)
+        print(AuthService.shared.user.id, AuthService.shared.user.email, AuthService.shared.user.username, AuthService.shared.user.imageURL, AuthService.shared.authToken, AuthService.shared.isLoggedIn)
     }
     
     @IBAction func onChatTapped(_ sender: Any) {

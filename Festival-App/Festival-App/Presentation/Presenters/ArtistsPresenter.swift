@@ -16,7 +16,7 @@ class ArtistsPresenter {
     }
     
     var artistsCount: Int {
-        return ArtistService.instance.artists.count
+        return ArtistService.shared.artists.count
     }
     
     func viewDidLoad() {
@@ -24,7 +24,7 @@ class ArtistsPresenter {
     }
     
     func loadArtists(forStage stage: Stage) {
-        ArtistService.instance.clearArtists()
+        ArtistService.shared.clearArtists()
         
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
@@ -32,7 +32,7 @@ class ArtistsPresenter {
         }
        
         view?.startActivityIndicator()
-        ArtistService.instance.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
+        ArtistService.shared.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
@@ -48,7 +48,7 @@ class ArtistsPresenter {
     }
     
     func viewWillDisappear() {
-        ArtistService.instance.clearArtists()
+        ArtistService.shared.clearArtists()
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.view?.reloadData()
@@ -56,13 +56,13 @@ class ArtistsPresenter {
     }
     
     func configure(_ itemView: ArtistItemView, at index: Int) {
-        let artist = ArtistService.instance.artists[index]
+        let artist = ArtistService.shared.artists[index]
         itemView.displayName(artist.name)
         itemView.displayArtistImage(artist.artistImageURL)
     }
     
     func handleDetailsTapped(forIndex index: Int, withPresenter presenter: ArtistDetailsPresenter) {
-        let artist = ArtistService.instance.artists[index]
+        let artist = ArtistService.shared.artists[index]
         presenter.nameChanged(artist.name)
         presenter.genreChanged(artist.genre)
         presenter.descriptionChanged(artist.description)

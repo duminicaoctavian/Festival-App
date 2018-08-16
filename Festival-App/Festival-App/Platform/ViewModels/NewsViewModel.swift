@@ -17,11 +17,11 @@ class NewsViewModel: NSObject {
 extension NewsViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NewsService.instance.newsItems.count
+        return NewsService.shared.newsItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = NewsService.instance.newsItems[indexPath.row]
+        let item = NewsService.shared.newsItems[indexPath.row]
         
         switch item.type {
         case .image:

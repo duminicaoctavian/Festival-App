@@ -16,7 +16,7 @@ class ChatLogPresenter {
     }
     
     var numberOfMessages: Int {
-        return MessageService.instance.messages.count
+        return MessageService.shared.messages.count
     }
     var wasFirstLoaded = false
     
@@ -26,7 +26,7 @@ class ChatLogPresenter {
     }
     
     func viewWillAppear() {
-        MessageService.instance.messages.removeAll()
+        MessageService.shared.messages.removeAll()
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.view?.reloadData()
@@ -34,13 +34,13 @@ class ChatLogPresenter {
     }
     
     func viewWillDisappear() {
-        SocketService.instance.removeListener(forEvent: Event.messageCreated)
+        SocketService.shared.removeListener(forEvent: Event.messageCreated)
     }
     
     func sendMessage(withText text: String) {
-        guard let channedID = MessageService.instance.selectedChannel?.id else { return }
+        guard let channedID = MessageService.shared.selectedChannel?.id else { return }
             
-        SocketService.instance.addMessage(body: text, userID: AuthService.instance.user.id, channelID: channedID, username: AuthService.instance.user.username) { [weak self] (success) in
+        SocketService.shared.addMessage(body: text, userID: AuthService.shared.user.id, channelID: channedID, username: AuthService.shared.user.username) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
@@ -52,12 +52,12 @@ class ChatLogPresenter {
     }
     
     private func observeNewMessages() {
-        SocketService.instance.getMessage { [weak self] (message) in
+        SocketService.shared.getMessage { [weak self] (message) in
             guard let _ = self else { return }
-            guard let message = message, let selectedChannelID = MessageService.instance.selectedChannel?.id else { return }
+            guard let message = message, let selectedChannelID = MessageService.shared.selectedChannel?.id else { return }
             
             if message.channelID == selectedChannelID {
-                MessageService.instance.messages.append(message)
+                MessageService.shared.messages.append(message)
                 
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
@@ -75,12 +75,12 @@ class ChatLogPresenter {
             view?.startActivityIndicator()
         }
         
-        MessageService.instance.getAllChannels { [weak self] (success) in
+        MessageService.shared.getAllChannels { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
-                if MessageService.instance.channels.count > 0 {
-                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                if MessageService.shared.channels.count > 0 {
+                    MessageService.shared.selectedChannel = MessageService.shared.channels[0]
                     weakSelf.updateWithChannel()
                 } else {
                     weakSelf.view?.displayNoChannelsAvailable()
@@ -98,22 +98,22 @@ class ChatLogPresenter {
         view?.hideInputView()
         wasFirstLoaded = true
         
-        guard let channelName = MessageService.instance.selectedChannel?.name else { return }
+        guard let channelName = MessageService.shared.selectedChannel?.name else { return }
         view?.displayChannelName(channelName)
         getMessages()
     }
     
     private func getMessages() {
-        MessageService.instance.messages.removeAll()
+        MessageService.shared.messages.removeAll()
         
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.view?.reloadData()
         }
         
-        guard let channelID = MessageService.instance.selectedChannel?.id else { return }
+        guard let channelID = MessageService.shared.selectedChannel?.id else { return }
         
-        MessageService.instance.getAllMessagesForChannel(withID: channelID) { [weak self] (success) in
+        MessageService.shared.getAllMessagesForChannel(withID: channelID) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
@@ -144,20 +144,20 @@ class ChatLogPresenter {
     private func getAllUsersForCurrentChannel(completion: @escaping CompletionHandler) {
         var count = 0
         
-        if MessageService.instance.usersForChannel.count == 0 {
+        if MessageService.shared.usersForChannel.count == 0 {
             completion(false)
         }
         
-        MessageService.instance.usersForChannel.forEach { (key: String, value: User) in
+        MessageService.shared.usersForChannel.forEach { (key: String, value: User) in
             
-            AuthService.instance.findUserByID(id: key, completion: { [weak self] (user) in
+            AuthService.shared.findUserByID(id: key, completion: { [weak self] (user) in
                 guard let _ = self else { return }
                 guard let user = user else { return }
 
-                MessageService.instance.usersForChannel.updateValue(user, forKey: key)
+                MessageService.shared.usersForChannel.updateValue(user, forKey: key)
                 count = count + 1
                 
-                if count == MessageService.instance.usersForChannel.count {
+                if count == MessageService.shared.usersForChannel.count {
                     completion(true)
                 }
             })

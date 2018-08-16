@@ -16,7 +16,7 @@ private struct Constants {
 
 class LocationService {
     
-    static let instance = LocationService()
+    static let shared = LocationService()
     var locations = [Location]()
     
     func getAllLocations(completion: @escaping CompletionHandler) {

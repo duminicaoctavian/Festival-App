@@ -37,9 +37,9 @@ class EditProfilePresenter {
     }
     
     func viewDidLoad() {
-        StorageService.instance.setupProvider()
-        view?.displayUsername(AuthService.instance.user.username)
-        view?.displayProfileImage(AuthService.instance.user.imageURL)
+        StorageService.shared.setupProvider()
+        view?.displayUsername(AuthService.shared.user.username)
+        view?.displayProfileImage(AuthService.shared.user.imageURL)
     }
     
     func saveData(withImageData imageData: Data) {
@@ -49,12 +49,12 @@ class EditProfilePresenter {
         
         view?.startActivityIndicator()
         
-        AuthService.instance.editUser(username: username, password: password, imageURL: imageURL) { [weak self] (success) in
+        AuthService.shared.editUser(username: username, password: password, imageURL: imageURL) { [weak self] (success) in
             guard let weakSelf = self else { return }
             weakSelf.view?.stopActivityIndicator()
             
             if success {
-                StorageService.instance.uploadFile(imageName: imageName, withData: imageData, completion: { (success) in
+                StorageService.shared.uploadFile(imageName: imageName, withData: imageData, completion: { (success) in
                     if success {
                         weakSelf.delegate?.userDataDidChange()
                         weakSelf.view?.navigateToProfileScreen()

@@ -163,8 +163,8 @@ class AddAccommodationViewController: UIViewController {
         location?.description = descriptionTextView.text
         location?.price = Double(priceTextField.text!)!
         location?.images = ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]
-        location?.userID = AuthService.instance.user.id
-        SocketService.instance.addLocation(location!) { (success) in
+        location?.userID = AuthService.shared.user.id
+        SocketService.shared.addLocation(location!) { (success) in
             print("Location sent to server")
         }
     }

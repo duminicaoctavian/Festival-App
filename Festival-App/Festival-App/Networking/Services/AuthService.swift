@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class AuthService {
-    static let instance = AuthService()
+    static let shared = AuthService()
     
     let defaults = UserDefaults.standard
 
@@ -183,7 +183,7 @@ class AuthService {
         
         let body = User.generateBody(username: username, password: password, imageURL: imageURL)
         
-        Alamofire.request("\(Route.users)/\(AuthService.instance.user.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.users)/\(AuthService.shared.user.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let _ = self else { completion(false); return }
             
@@ -198,7 +198,7 @@ class AuthService {
                         let json = try JSON(data: data)
                         let user = User(json: json)
                         
-                        AuthService.instance.user = user
+                        AuthService.shared.user = user
                     } catch {
                         debugPrint(error)
                         completion(false)

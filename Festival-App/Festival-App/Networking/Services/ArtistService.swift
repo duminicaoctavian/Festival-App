@@ -16,7 +16,7 @@ private struct Constants {
 
 class ArtistService {
     
-    static let instance = ArtistService()
+    static let shared = ArtistService()
     var artists = [Artist]()
     
     func getAllArtists(forStage stage: String, completion: @escaping CompletionHandler) {

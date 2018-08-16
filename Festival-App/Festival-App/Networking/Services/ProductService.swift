@@ -15,7 +15,7 @@ private struct Constants {
 }
 
 class ProductService {
-    static let instance = ProductService()
+    static let shared = ProductService()
     
     var products = [Product]()
     

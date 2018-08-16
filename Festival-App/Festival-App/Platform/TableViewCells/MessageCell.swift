@@ -28,7 +28,7 @@ class MessageCell: UITableViewCell {
     }
     
     func configureCell(message: Message) {
-        if message.userID == AuthService.instance.user.id {
+        if message.userID == AuthService.shared.user.id {
             otherImageView.isHidden = true
             otherTimeStampLbl.isHidden = true
             otherUsernameLbl.isHidden = true
@@ -39,7 +39,7 @@ class MessageCell: UITableViewCell {
             otherMessageBodyLbl.isHidden = true
             
             messageBodyLbl.text = message.body
-            usernameLbl.text = AuthService.instance.user.username
+            usernameLbl.text = AuthService.shared.user.username
             
             
             
@@ -59,7 +59,7 @@ class MessageCell: UITableViewCell {
                 timeStampLbl.text = finalDate
             }
             
-            myImageView.loadImageUsingCache(withURLString: AuthService.instance.user.imageURL)
+            myImageView.loadImageUsingCache(withURLString: AuthService.shared.user.imageURL)
         } else {
             otherImageView.isHidden = false
             otherTimeStampLbl.isHidden = false
@@ -76,7 +76,7 @@ class MessageCell: UITableViewCell {
             otherTimeStampLbl.text = nil
             
             let userId = message.userID
-            let user = MessageService.instance.usersForChannel[userId]!
+            let user = MessageService.shared.usersForChannel[userId]!
             
             self.otherUsernameLbl.text = user.username
             self.otherMessageBodyLbl.text = message.body

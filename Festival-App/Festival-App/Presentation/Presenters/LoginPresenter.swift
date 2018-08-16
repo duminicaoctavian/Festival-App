@@ -37,7 +37,7 @@ class LoginPresenter {
             return
         }
         
-        AuthService.instance.loginUser(email: email, password: password) { [weak self] (success) in
+        AuthService.shared.loginUser(email: email, password: password) { [weak self] (success) in
             guard let weakSelf = self else { return }
             weakSelf.view?.stopActivityIndicator()
             

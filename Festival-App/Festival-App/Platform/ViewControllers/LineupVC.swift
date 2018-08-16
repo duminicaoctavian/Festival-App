@@ -44,16 +44,16 @@ class LineupVC: UIViewController {
     
     func getFilteredArtists(stage: String, day: Int) {
         LoadingView.startLoading()
-        ArtistService.instance.clearArtists()
+        ArtistService.shared.clearArtists()
         data.removeAll()
         tableView.reloadData()
-        ArtistService.instance.getFilteredArtists(forStage: stage, and: day) { (success) in
+        ArtistService.shared.getFilteredArtists(forStage: stage, and: day) { (success) in
             if (success) {
-                print(ArtistService.instance.artists)
-                for index in 0..<ArtistService.instance.artists.count {
-                    let artist = ArtistService.instance.artists[index]
+                print(ArtistService.shared.artists)
+                for index in 0..<ArtistService.shared.artists.count {
+                    let artist = ArtistService.shared.artists[index]
                     
-                    if index == ArtistService.instance.artists.count - 1 {
+                    if index == ArtistService.shared.artists.count - 1 {
                         self.data[Int(artist.day)]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.name, artist.artistImageURL))
                         break
                     }

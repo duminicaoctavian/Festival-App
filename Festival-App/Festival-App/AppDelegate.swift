@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIApplication.shared.statusBarStyle = .lightContent
         
-        if AuthService.instance.isLoggedIn {
+        if AuthService.shared.isLoggedIn {
             let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
             if let window = self.window {
                 window.rootViewController = rootController
@@ -49,14 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        SocketService.instance.establishConnection()
+        SocketService.shared.establishConnection()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        SocketService.instance.closeConnection()
+        SocketService.shared.closeConnection()
         self.saveContext()
     }
 

@@ -10,7 +10,7 @@ import UIKit
 import SocketIO
 
 class SocketService: NSObject {
-    static let instance = SocketService()
+    static let shared = SocketService()
     
     var socket: SocketIOClient
     let manager = SocketManager(socketURL: URL(string: baseURL)!)
@@ -33,7 +33,7 @@ class SocketService: NSObject {
             guard let _ = self else { completion(false); return }
             
             if let channel = Channel(dataArray) {
-                MessageService.instance.channels.append(channel)
+                MessageService.shared.channels.append(channel)
                 completion(true)
             } else {
                 completion(false)

@@ -21,8 +21,8 @@ class ProfilePresenter {
     }
     
     private func loadData() {
-        view?.displayUsername(AuthService.instance.user.username)
-        view?.displayProfileImage(AuthService.instance.user.imageURL)
+        view?.displayUsername(AuthService.shared.user.username)
+        view?.displayProfileImage(AuthService.shared.user.imageURL)
     }
 }
 

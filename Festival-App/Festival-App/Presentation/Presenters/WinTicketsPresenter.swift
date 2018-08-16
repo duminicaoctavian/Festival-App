@@ -25,12 +25,12 @@ class WinTicketsPresenter {
         view?.hideAllContent()
         
         view?.startActivityIndicator()
-        QuestionService.instance.getRandomQuestion { [weak self] (success) in
+        QuestionService.shared.getRandomQuestion { [weak self] (success) in
             guard let weakSelf = self else { return }
             weakSelf.view?.stopActivityIndicator()
             
             if success {
-                guard let question = QuestionService.instance.question?.question else { return }
+                guard let question = QuestionService.shared.question?.question else { return }
                 weakSelf.view?.displayAllContent()
                 weakSelf.view?.displayQuestion(question)
             } else {
@@ -47,7 +47,7 @@ class WinTicketsPresenter {
             
             guard let results = request.results as? [VNClassificationObservation], let topResult = results.first else { return }
             
-                guard let question = QuestionService.instance.question else { return }
+                guard let question = QuestionService.shared.question else { return }
         
                 if topResult.identifier == question.answer && topResult.confidence * 100 > Constants.classifierConfidence {
                     

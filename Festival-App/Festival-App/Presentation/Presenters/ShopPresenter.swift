@@ -14,11 +14,11 @@ class ShopPresenter {
     var category: String?
     
     var productsCount: Int {
-        return ProductService.instance.products.count
+        return ProductService.shared.products.count
     }
     
     var products: [Product] {
-        return ProductService.instance.products
+        return ProductService.shared.products
     }
     
     init(view: ShopView) {
@@ -27,10 +27,10 @@ class ShopPresenter {
     
     func viewWillAppear() {
         guard let category = category else { return }
-        ProductService.instance.clearProducts()
+        ProductService.shared.clearProducts()
         view?.startActivityIndicator()
         
-        ProductService.instance.getAllProducts(forCategory: category) { [weak self] (success) in
+        ProductService.shared.getAllProducts(forCategory: category) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
@@ -46,7 +46,7 @@ class ShopPresenter {
     }
     
     func viewWillDisappear() {
-        ProductService.instance.clearProducts()
+        ProductService.shared.clearProducts()
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.view?.reloadData()
@@ -54,7 +54,7 @@ class ShopPresenter {
     }
     
     func configure(_ itemView: ProductItemView, at index: Int) {
-        let product = ProductService.instance.products[index]
+        let product = ProductService.shared.products[index]
         
         itemView.displayName(product.name)
         itemView.displayPrice(product.price)

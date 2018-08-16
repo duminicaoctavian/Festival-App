@@ -16,11 +16,11 @@ class UserMenuPresenter {
     }
     
     func viewWillAppear() {
-        view?.displayUserImage(AuthService.instance.user.imageURL)
+        view?.displayUserImage(AuthService.shared.user.imageURL)
     }
     
     func logout() {
-        AuthService.instance.logoutUser { [weak self] (success) in
+        AuthService.shared.logoutUser { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {

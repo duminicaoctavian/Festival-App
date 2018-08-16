@@ -15,7 +15,7 @@ private struct Constants {
 }
 
 class NewsService {
-    static let instance = NewsService()
+    static let shared = NewsService()
     
     var newsItems = [NewsViewModelItem]()
     var loaded = false
