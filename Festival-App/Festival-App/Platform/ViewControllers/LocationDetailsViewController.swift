@@ -8,53 +8,112 @@
 
 import UIKit
 
+private struct Constants {
+    static let priceViewCornerRadius: CGFloat = 10.0
+    static let offererViewCornerRadius: CGFloat = 5.0
+}
+
 class LocationDetailsViewController: UIViewController {
     
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var addressLbl: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var imageScrollView: UIScrollView!
+    lazy var presenter: LocationDetailsPresenter = {
+        return LocationDetailsPresenter(view: self)
+    }()
     
-    var locationTitle: String!
-    var locationAddress: String!
-    var locationDescription: String!
-    var locationImages: [String]!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var imageScrollView: UIScrollView!
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var offererImageView: CircleImage!
+    @IBOutlet weak var offererLabel: UILabel!
+    @IBOutlet weak var offererNameView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleLbl.text = locationTitle
-        addressLbl.text = locationAddress
-        descriptionTextView.text = locationDescription
-        
-        for i in 0..<locationImages.count {
-            let imageView = UIImageView()
-            
-            let imageUrl = URL(string: locationImages[i])!
-            
-            let imageData = NSData(contentsOf: imageUrl)!
-            
-            let imageToCache = UIImage(data: imageData as Data)
-            
-            imageView.image = imageToCache
-            imageView.contentMode = .scaleAspectFit
-            
-            let xPosition = UIScreen.main.bounds.width * CGFloat(i)
-            imageView.frame = CGRect(x: xPosition, y: imageScrollView.frame.minY, width: UIScreen.main.bounds.width, height: imageScrollView.frame.height)
-            
-            imageScrollView.contentSize.width = UIScreen.main.bounds.width * CGFloat(locationImages.count)
-            
-            imageScrollView.addSubview(imageView)
-        }
-       
+        roundPriceView()
+        roundOffererView()
+        setupPageControl()
+        presenter.viewDidLoad()
     }
 
-    @IBAction func onClosePressed(_ sender: Any) {
+    @IBAction func onCloseTapped(_ sender: Any) {
+        navigateToAccommodationScreen()
+    }
+    
+    @IBAction func onCallTapped(_ sender: Any) {
+        presenter.callNumber()
+    }
+    
+    private func makeImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }
+}
+
+extension LocationDetailsViewController: LocationDetailsView {
+    
+    func navigateToAccommodationScreen() {
         dismiss(animated: true, completion: nil)
     }
-    @IBAction func onBookPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    
+    func displayTitle(_ title: String) {
+        titleLabel.text = title
     }
-    @IBAction func onMessageSellerPressed(_ sender: Any) {
+    
+    func displayAddress(_ address: String) {
+        addressLabel.text = address
+    }
+    
+    func displayPrice(_ price: String) {
+        priceLabel.text = "$\(price)"
+    }
+    
+    func displayDescription(_ description: String) {
+        descriptionLabel.text = description
+    }
+    
+    func displayImage(_ imageURLString: String, at index: Int) {
+        let imageView = makeImageView()
+        imageView.loadImageUsingCache(withURLString: imageURLString)
+        
+        let xPosition = UIScreen.main.bounds.width * CGFloat(index)
+        imageView.frame = CGRect(x: xPosition, y: imageScrollView.frame.minY, width: UIScreen.main.bounds.width, height: imageScrollView.frame.height)
+        imageScrollView.contentSize.width = UIScreen.main.bounds.width * CGFloat(presenter.numberOfImages)
+        
+        imageScrollView.addSubview(imageView)
+    }
+    
+    func roundPriceView() {
+        priceView.clipsToBounds = true
+        priceView.layer.cornerRadius = Constants.priceViewCornerRadius
+        priceView.layer.maskedCorners = [.layerMinXMinYCorner]
+    }
+    
+    func roundOffererView() {
+        offererNameView.layer.cornerRadius = Constants.offererViewCornerRadius
+        offererNameView.clipsToBounds = true
+    }
+    
+    func setupPageControl() {
+        pageControl.numberOfPages = presenter.numberOfImages
+    }
+    
+    func displayOffererName(_ username: String) {
+        offererLabel.text = username
+    }
+    
+    func displayOferrerProfilePicture(_ URLString: String) {
+        offererImageView.loadImageUsingCache(withURLString: URLString)
+    }
+}
+
+extension LocationDetailsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
+        pageControl.currentPage = Int(pageIndex)
     }
 }

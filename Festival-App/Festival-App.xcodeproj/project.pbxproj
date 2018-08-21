@@ -116,7 +116,7 @@
 		DE742A112044963A000CF48F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginViewController.swift */; };
 		DE84EBC3208BDBEF008016FE /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84EBC2208BDBEF008016FE /* EditProfileViewController.xib */; };
 		DE84F438208B46CB00CE35FA /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */; };
-		DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */; };
+		DE84F439208B46CB00CE35FA /* LocationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* LocationDetailsViewController.xib */; };
 		DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F43E208B69C600CE35FA /* LocationService.swift */; };
 		DE84F441208B69F400CE35FA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F440208B69F400CE35FA /* Location.swift */; };
 		DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA52116204B3EDE00ED285A /* RegisterViewController.swift */; };
@@ -269,7 +269,7 @@
 		DE742A102044963A000CF48F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE84EBC2208BDBEF008016FE /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
-		DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinDetailsVC.xib; sourceTree = "<group>"; };
+		DE84F437208B46CB00CE35FA /* LocationDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationDetailsViewController.xib; sourceTree = "<group>"; };
 		DE84F43E208B69C600CE35FA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DE84F440208B69F400CE35FA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DEA52116204B3EDE00ED285A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -442,7 +442,7 @@
 			children = (
 				DE0FCD6A203F747900FE29BB /* ArtistDetailsViewController.xib */,
 				DE84EBC2208BDBEF008016FE /* EditProfileViewController.xib */,
-				DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */,
+				DE84F437208B46CB00CE35FA /* LocationDetailsViewController.xib */,
 				DE19FC6A2071A7A400316199 /* TimelineTableViewCell.xib */,
 			);
 			path = XIBs;
@@ -780,7 +780,7 @@
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsViewController.xib in Resources */,
 				8A3674D12101C38F00B301B7 /* Lineup.storyboard in Resources */,
 				8A3674D72101C40C00B301B7 /* Artists.storyboard in Resources */,
-				DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */,
+				DE84F439208B46CB00CE35FA /* LocationDetailsViewController.xib in Resources */,
 				8A3674D52101C3D200B301B7 /* Accomodation.storyboard in Resources */,
 				8A3674D32101C3B200B301B7 /* Shop.storyboard in Resources */,
 				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,

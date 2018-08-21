@@ -61,10 +61,7 @@ extension AccomodationViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let location = view.annotation as! MapPin
         let pinDetailsVC = LocationDetailsViewController()
-        pinDetailsVC.locationTitle = location.location.title
-        pinDetailsVC.locationAddress = location.location.address
-        pinDetailsVC.locationDescription = location.location.description
-        pinDetailsVC.locationImages = location.location.images
+        pinDetailsVC.presenter.locationChanged(location.location)
         pinDetailsVC.modalPresentationStyle = .custom
         mapView.deselectAnnotation(location, animated: false)
         self.present(pinDetailsVC, animated: true, completion: nil)
