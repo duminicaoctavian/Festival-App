@@ -43,6 +43,19 @@ struct Location {
         self.images = [String]()
     }
     
+    init(id: String, userID: String, latitude: Double, longitude: Double, title: String, address: String,
+         description: String, price: Double, images: [String]) {
+        self.id = id
+        self.userID = userID
+        self.latitude = latitude
+        self.longitude = longitude
+        self.title = title
+        self.address = address
+        self.description = description
+        self.price = price
+        self.images = images
+    }
+    
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
         self.userID = json[SerializationKey.userID].stringValue

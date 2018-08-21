@@ -52,7 +52,7 @@ class ChatLogPresenter {
     }
     
     private func observeNewMessages() {
-        SocketService.shared.getMessage { [weak self] (message) in
+        SocketService.shared.getCreatedMessage { [weak self] (message) in
             guard let _ = self else { return }
             guard let message = message, let selectedChannelID = MessageService.shared.selectedChannel?.id else { return }
             

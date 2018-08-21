@@ -25,7 +25,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getChannel(completion: @escaping CompletionHandler) {
+    func getCreatedChannel(completion: @escaping CompletionHandler) {
         
         socket.on(Event.channelCreated.rawValue) { [weak self] (dataArray, ack) in
             print(dataArray)
@@ -47,7 +47,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getMessage(completion: @escaping (_ message: Message?) -> Void) {
+    func getCreatedMessage(completion: @escaping (_ message: Message?) -> Void) {
         socket.on(Event.messageCreated.rawValue) { [weak self] (dataArray, ack) in
             
             guard let _ = self else { completion(nil); return }
@@ -68,8 +68,47 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getLocation(completion: @escaping (_ location: Location?) -> Void) {
+    func deleteLocationWithID(_ id: String, completion: @escaping CompletionHandler) {
+        socket.emit(Event.deleteLocation.rawValue, id)
+        completion(true)
+    }
+    
+    func updateLocationWithID(_ id: String, newLocation: Location, completion: @escaping CompletionHandler) {
+        socket.emit(Event.updateLocation.rawValue, id, newLocation.latitude, newLocation.longitude, newLocation.userID, newLocation.title,
+                    newLocation.address, newLocation.description, newLocation.images)
+        completion(true)
+    }
+    
+    func getCreatedLocation(completion: @escaping (_ location: Location?) -> Void) {
         socket.on(Event.locationCreated.rawValue) { [weak self] (dataArray, ack) in
+            
+            guard let _ = self else { completion(nil); return }
+            
+            if let location = Location(dataArray) {
+                completion(location)
+            } else {
+                completion(nil)
+                return
+            }
+        }
+    }
+    
+    func getDeletedLocation(completion: @escaping (_ location: Location?) -> Void) {
+        socket.on(Event.locationDeleted.rawValue) { [weak self] (dataArray, ack) in
+            
+            guard let _ = self else { completion(nil); return }
+            
+            if let location = Location(dataArray) {
+                completion(location)
+            } else {
+                completion(nil)
+                return
+            }
+        }
+    }
+    
+    func getUpdatedLocation(completion: @escaping (_ location: Location?) -> Void) {
+        socket.on(Event.locationUpdated.rawValue) { [weak self] (dataArray, ack) in
             
             guard let _ = self else { completion(nil); return }
             
@@ -98,6 +137,14 @@ class SocketService: NSObject {
             socket.off(Event.locationCreated.rawValue)
         case .userTypingUpdate:
             socket.off(Event.userTypingUpdate.rawValue)
+        case .deleteLocation:
+            socket.off(Event.deleteLocation.rawValue)
+        case .updateLocation:
+            socket.off(Event.updateLocation.rawValue)
+        case .locationDeleted:
+            socket.off(Event.locationDeleted.rawValue)
+        case .locationUpdated:
+            socket.off(Event.locationUpdated.rawValue)
         }
     }
     

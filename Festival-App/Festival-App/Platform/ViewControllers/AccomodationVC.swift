@@ -31,7 +31,7 @@ class AccomodationVC: UIViewController {
         configureLocationServices()
         centerMapOnUserLocation()
         
-        SocketService.shared.getLocation { (newLocation) in
+        SocketService.shared.getCreatedLocation { (newLocation) in
             if newLocation?.id != nil {
                 let locCoord = CLLocationCoordinate2D(latitude: Double((newLocation?.latitude)!), longitude: Double((newLocation?.longitude)!))
                 
@@ -41,8 +41,30 @@ class AccomodationVC: UIViewController {
             }
         }
         
+//        SocketService.shared.getDeletedLocation { (deletedLocation) in
+//            print("Deleted location", deletedLocation)
+//        }
+//
+//        SocketService.shared.getUpdatedLocation { (updatedLocation) in
+//            print("Updated location", updatedLocation)
+//        }
+        
         LocationService.shared.getAllLocations { (success) in
             if success {
+//                guard let locationToUpdate = LocationService.shared.locations.first else { return }
+//                let newLocation = Location(id: locationToUpdate.id, userID: AuthService.shared.user.id, latitude: 45, longitude: 45, title: "newTitle", address: "newAddress", description: "newDescription", price: 45, images: ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"])
+//                guard let locationToDelete = LocationService.shared.locations.last else { return }
+//                SocketService.shared.deleteLocationWithID(locationToDelete.id, completion: { (success) in
+//                    if success {
+//                        print("GOOD AT DELETE")
+//                    }
+//                })
+//                SocketService.shared.updateLocationWithID(locationToUpdate.id, newLocation: newLocation, completion: { (success) in
+//                    if success {
+//                        print("GOOD AT UPDATE")
+//                    }
+//                })
+                
                 LocationService.shared.locations.forEach({ (location) in
                     let locCoord = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     

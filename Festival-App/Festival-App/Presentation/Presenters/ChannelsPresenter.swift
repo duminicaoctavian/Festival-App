@@ -54,7 +54,7 @@ class ChannelsPresenter {
     }
     
     private func observeChannelCreated() {
-        SocketService.shared.getChannel { [weak self] (success) in
+        SocketService.shared.getCreatedChannel { [weak self] (success) in
             guard let _ = self else { return }
             
             if success {
@@ -69,7 +69,7 @@ class ChannelsPresenter {
     }
     
     private func observeMessageCreated() {
-        SocketService.shared.getMessage { [weak self] (message) in
+        SocketService.shared.getCreatedMessage { [weak self] (message) in
             guard let _ = self else { return }
             
             if message?.channelID != MessageService.shared.selectedChannel?.id {

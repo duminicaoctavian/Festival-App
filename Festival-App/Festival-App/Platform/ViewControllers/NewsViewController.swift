@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum NewsCellType {
-    case video
-    case image
-    case plain
-}
-
 private struct Constants {
     static let tableViewEstimatedRowHeight: CGFloat = 250.0
 }

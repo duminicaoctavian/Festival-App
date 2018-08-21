@@ -12,7 +12,8 @@ import Foundation
 // ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
 
 typealias CompletionHandler = (_ success: Bool) -> ()
-let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
+let baseURL = "http://localhost:3000"
+//let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
 let baseLocalURL = "http://localhost:3000"
 
 struct StoryboardID {
@@ -34,6 +35,10 @@ enum Event: String {
     case newMessage = "newMessage"
     case messageCreated = "messageCreated"
     case newLocation = "newLocation"
+    case deleteLocation = "deleteLocation"
+    case updateLocation = "updateLocation"
+    case locationDeleted = "locationDeleted"
+    case locationUpdated = "locationUpdated"
     case locationCreated = "locationCreated"
     case userTypingUpdate = "userTypingUpdate"
 }
