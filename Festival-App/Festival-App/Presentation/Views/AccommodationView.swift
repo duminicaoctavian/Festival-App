@@ -13,4 +13,5 @@ protocol AccommodationView: class {
     func hideNavigationBar()
     func centerMapOnUserLocation(withLatitude latitude: Double, andLongitude longitude: Double)
     func displayAnnotation(_ annotation: MapPin)
+    func navigateToLocationDetailsScreen(forLocation location: Location)
 }

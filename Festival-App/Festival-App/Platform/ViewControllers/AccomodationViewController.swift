@@ -57,14 +57,11 @@ extension AccomodationViewController : MKMapViewDelegate {
         return annotationView
     }
     
-    // TODO
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let location = view.annotation as! MapPin
-        let pinDetailsVC = LocationDetailsViewController()
-        pinDetailsVC.presenter.locationChanged(location.location)
-        pinDetailsVC.modalPresentationStyle = .custom
-        mapView.deselectAnnotation(location, animated: false)
-        self.present(pinDetailsVC, animated: true, completion: nil)
+        if let mapPin = view.annotation as? MapPin {
+            mapView.deselectAnnotation(mapPin, animated: false)
+            navigateToLocationDetailsScreen(forLocation: mapPin.location)
+        }
     }
 }
 
@@ -86,6 +83,13 @@ extension AccomodationViewController: AccommodationView {
     
     func displayAnnotation(_ annotation: MapPin) {
         mapView.addAnnotation(annotation)
+    }
+    
+    func navigateToLocationDetailsScreen(forLocation location: Location) {
+        let locationDetailsViewController = LocationDetailsViewController()
+        locationDetailsViewController.presenter.locationChanged(location)
+        locationDetailsViewController.modalPresentationStyle = .custom
+        present(locationDetailsViewController, animated: true, completion: nil)
     }
 }
 

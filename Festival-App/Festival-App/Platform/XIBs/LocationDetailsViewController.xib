@@ -64,10 +64,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hTw-uw-zGN">
-                                            <rect key="frame" x="40" y="521.5" width="295" height="89"/>
+                                            <rect key="frame" x="60" y="521.5" width="255" height="89"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-vT-esd" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="37"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="37"/>
                                                     <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <state key="normal" title="Call">
@@ -83,7 +83,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw5-Wu-qk7" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="52" width="295" height="37"/>
+                                                    <rect key="frame" x="0.0" y="52" width="255" height="37"/>
                                                     <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <state key="normal" title="Close">
@@ -158,13 +158,13 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="hTw-uw-zGN" firstAttribute="leading" secondItem="hnL-2q-Clr" secondAttribute="leading" constant="40" id="2YK-RA-rDC"/>
+                                        <constraint firstItem="hTw-uw-zGN" firstAttribute="leading" secondItem="hnL-2q-Clr" secondAttribute="leading" constant="60" id="2YK-RA-rDC"/>
                                         <constraint firstItem="OSj-O8-vGQ" firstAttribute="top" secondItem="sJD-Jc-ypR" secondAttribute="bottom" constant="101.5" id="2hD-Wb-USU"/>
                                         <constraint firstItem="Gsc-dg-2Qi" firstAttribute="bottom" secondItem="YxL-87-DI7" secondAttribute="bottom" id="547-zy-961"/>
                                         <constraint firstItem="OSj-O8-vGQ" firstAttribute="centerX" secondItem="hnL-2q-Clr" secondAttribute="centerX" id="5fB-h6-Z1v"/>
                                         <constraint firstItem="u5X-Lc-c72" firstAttribute="top" secondItem="sJD-Jc-ypR" secondAttribute="bottom" constant="16" id="8bq-z8-Id4"/>
                                         <constraint firstItem="hTw-uw-zGN" firstAttribute="top" secondItem="u5X-Lc-c72" secondAttribute="bottom" constant="50" id="AVz-gy-1yt"/>
-                                        <constraint firstAttribute="trailing" secondItem="hTw-uw-zGN" secondAttribute="trailing" constant="40" id="G6p-z5-N4F"/>
+                                        <constraint firstAttribute="trailing" secondItem="hTw-uw-zGN" secondAttribute="trailing" constant="60" id="G6p-z5-N4F"/>
                                         <constraint firstAttribute="trailing" secondItem="3mn-vE-cUF" secondAttribute="trailing" constant="15" id="H8C-33-50D"/>
                                         <constraint firstItem="vyC-Fp-aWi" firstAttribute="top" secondItem="YxL-87-DI7" secondAttribute="bottom" constant="8" id="Hpj-rc-Fkb"/>
                                         <constraint firstItem="vyC-Fp-aWi" firstAttribute="leading" secondItem="hnL-2q-Clr" secondAttribute="leading" constant="15" id="IHh-on-1uv"/>
