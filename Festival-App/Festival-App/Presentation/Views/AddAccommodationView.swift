@@ -9,5 +9,8 @@
 import Foundation
 
 protocol AddAccommodationView: class {
-    
+    func centerMapOnUserLocation(withLatitude latitude: Double, andLongitude longitude: Double)
+    func setupScrollView()
+    func minimizeMap()
+    func navigateToAccommodationScreen()
 }

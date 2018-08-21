@@ -6,21 +6,37 @@
 //  Copyright © 2018 Duminica Octavian. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import MapKit
-import CoreLocation
 
 private struct Constants {
-    static let regionRadius: Double = 500
+    static let span = 0.01
     static let mapHeight: CGFloat = 150
     static let offerTitleLabelTopConstraint: CGFloat = 19.5
-    static let descriptionTextViewPlaceholder = "Description"
-    static let placeholderColor = UIColor.lightGray
     static let descriptionTextFieldHeightConstraint: CGFloat = 36.5
-    static let pinAsset = "pin"
+    static let placeholderText = "Description"
+    static let pinAssetName = "pin"
+    static let placeholderColor = UIColor.lightGray
+    static let longPressDuration = 0.5
+    static let mapViewAnimationDuration = 0.3
 }
 
 class AddAccommodationViewController: UIViewController {
+    
+    lazy var presenter: AddAccommodationPresenter = {
+        return AddAccommodationPresenter(view: self)
+    }()
+    
+    lazy var singleTap: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+        return tap
+    }()
+    
+    lazy var longPress: UILongPressGestureRecognizer = {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(dropPin(sender:)))
+        longPress.minimumPressDuration = Constants.longPressDuration
+        return longPress
+    }()
     
     @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var offerTitleTopConstraint: NSLayoutConstraint!
@@ -33,68 +49,63 @@ class AddAccommodationViewController: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var mapErrorLabel: UILabel!
     
-    var location: Location!
-    
-    lazy var singleTap: UITapGestureRecognizer = {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
-        return tap
-    }()
-    
-    lazy var longPress: UILongPressGestureRecognizer = {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(dropPin(sender:)))
-        longPress.minimumPressDuration = 0.5
-        return longPress
-    }()
-    
-    private func addLongPress() {
-        mapView.addGestureRecognizer(longPress)
-    }
-    
-    private func removeLongPress() {
-        mapView.removeGestureRecognizer(longPress)
-    }
-    
-    private func removeSingleTap() {
-        mapView.removeGestureRecognizer(singleTap)
-    }
-    
-    private func addSingleTap() {
-        mapView.addGestureRecognizer(singleTap)
-    }
-    
     var isMapExpanded = false
-    var locationManager = CLLocationManager()
-    let authorizationStatus = CLLocationManager.authorizationStatus()
+    var keyboardDidScroll = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.keyboardDismissMode = .onDrag
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        mapView.showsUserLocation = true
-        
-        addSingleTap()
-        setupDelegates()
-        configureLocationServices()
         hideKeyboardWhenTappedAround()
+        addSingleTapToMapView()
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        location = Location()
         isMapExpanded = false
         setupKeyboardObservers()
+        presenter.viewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+        removeKeyboardObservers()
     }
     
-    var keyboardDidScroll = false
+    @IBAction func onBackTapped(_ sender: Any) {
+        navigateToAccommodationScreen()
+    }
+    
+    @IBAction func onPostTapped(_ sender: Any) {
+        presenter.titleChanged(offerTitleTextField.text)
+        presenter.addressChanged(addressTextField.text)
+        presenter.descriptionChanged(descriptionTextView.text)
+        presenter.priceChanged(priceTextField.text)
+        presenter.handlePost()
+    }
+    
+    private func addLongPressToMapView() {
+        mapView.addGestureRecognizer(longPress)
+    }
+    
+    private func removeLongPressFromMapView() {
+        mapView.removeGestureRecognizer(longPress)
+    }
+    
+    private func removeSingleTapFromMapView() {
+        mapView.removeGestureRecognizer(singleTap)
+    }
+    
+    private func addSingleTapToMapView() {
+        mapView.addGestureRecognizer(singleTap)
+    }
     
     private func setupKeyboardObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    private func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func handleKeyboard(view: UIView, keyboardFrame: CGRect) {
@@ -107,13 +118,26 @@ class AddAccommodationViewController: UIViewController {
         }
     }
     
-    private func setupDelegates() {
-        descriptionTextView.delegate = self
-        mapView.delegate = self
-        locationManager.delegate = self
-        offerTitleTextField.delegate = self
-        addressTextField.delegate = self
-        priceTextField.delegate = self
+    private func removeMapViewAnnotations() {
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+    }
+    
+    // TODO - Separate CoreLocation from MapKit
+    @objc func dropPin(sender: UILongPressGestureRecognizer) {
+        let point = sender.location(in: mapView)
+        let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+        
+        presenter.latitudeChanged(coordinate.latitude)
+        presenter.longitudeChanged(coordinate.longitude)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(coordinate.latitude, coordinate.longitude)
+        
+        removeMapViewAnnotations()
+        mapView.addAnnotation(annotation)
+        
+        presenter.delayMapAnimation()
     }
     
     @objc func handleKeyboardWillHide(notification: Notification) {
@@ -127,6 +151,7 @@ class AddAccommodationViewController: UIViewController {
     }
     
     @objc func handleKeyboardWillShow(notification: Notification) {
+        minimizeMap()
         guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
@@ -142,107 +167,30 @@ class AddAccommodationViewController: UIViewController {
         }
     }
     
-    @IBAction func onBackTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     @objc func handleSingleTap() {
-        addLongPress()
-        removeSingleTap()
-        isMapExpanded = true
+        addLongPressToMapView()
+        removeSingleTapFromMapView()
         mapViewHeightConstraint.constant = mapView.frame.width
+        isMapExpanded = true
+        view.endEditing(true)
         
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
-    @IBAction func onPostTapped(_ sender: Any) {
-        location?.title = offerTitleTextField.text!
-        location?.address = addressTextField.text!
-        location?.description = descriptionTextView.text
-        location?.price = Double(priceTextField.text!)!
-        location?.images = ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]
-        location?.userID = AuthService.shared.user.id
-        SocketService.shared.addLocation(location!) { (success) in
-            self.navigationController?.popViewController(animated: true)
-        }
+        UIView.animate(withDuration: Constants.mapViewAnimationDuration, delay: 0.0, options: .curveEaseIn, animations: { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view.layoutIfNeeded()
+            }, completion: nil)
     }
 }
 
 extension AddAccommodationViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if !(annotation is MKPointAnnotation) {
+        if annotation is MKUserLocation {
             return nil
         }
         
-        let annotationIdentifier = "droppablePin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
-        
-        let pinImage = UIImage(named: Constants.pinAsset)
-        annotationView?.image = pinImage
-        
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: MapPin.className)
+        annotationView.image = UIImage(named: Constants.pinAssetName)
         return annotationView
-        
-    }
-    
-    @objc func dropPin(sender: UILongPressGestureRecognizer) {
-        let touchPoint = sender.location(in: mapView)
-        let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        location?.latitude = touchCoordinate.latitude
-        location?.longitude = touchCoordinate.longitude
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(touchCoordinate.latitude, touchCoordinate.longitude)
-        annotation.title = "Your offer location"
-        
-        let annotations = mapView.annotations
-        self.mapView.removeAnnotations(annotations)
-        self.mapView.addAnnotation(annotation)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.6) {
-            self.minimizeMap()
-        }
-    }
-    
-    private func minimizeMap() {
-        isMapExpanded = false
-        mapViewHeightConstraint.constant = Constants.mapHeight
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-        addSingleTap()
-    }
-    
-    private func centerMapOnUserLocation() {
-        guard let coordinate = locationManager.location?.coordinate else { return }
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, Constants.regionRadius*2, Constants.regionRadius*2)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-}
-
-extension AddAccommodationViewController: CLLocationManagerDelegate {
-    
-    func configureLocationServices() {
-        if authorizationStatus == .notDetermined {
-            locationManager.requestAlwaysAuthorization()
-        } else {
-            return
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        centerMapOnUserLocation()
     }
 }
 
@@ -250,11 +198,15 @@ extension AddAccommodationViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         minimizeMap()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
 
 extension AddAccommodationViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == Constants.descriptionTextViewPlaceholder {
+        if textView.text == Constants.placeholderText {
             textView.text = ""
         }
         textView.textColor = .black
@@ -262,12 +214,8 @@ extension AddAccommodationViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            textView.text = Constants.descriptionTextViewPlaceholder
-            if textView.text == "Description" {
-                textView.textColor = Constants.placeholderColor
-            } else {
-                textView.textColor = .black
-            }
+            textView.text = Constants.placeholderText
+            textView.textColor = Constants.placeholderColor
         }
     }
     
@@ -278,5 +226,29 @@ extension AddAccommodationViewController: UITextViewDelegate {
     }
 }
 
-
-
+extension AddAccommodationViewController: AddAccommodationView {
+    func centerMapOnUserLocation(withLatitude latitude: Double, andLongitude longitude: Double) {
+        let region = MKCoordinateRegion(latitude: latitude, longitude: longitude, latitudeDelta: Constants.span, longitudeDelta: Constants.span)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func setupScrollView() {
+        scrollView.keyboardDismissMode = .onDrag
+    }
+    
+    func minimizeMap() {
+        isMapExpanded = false
+        mapViewHeightConstraint.constant = Constants.mapHeight
+        
+        UIView.animate(withDuration: Constants.mapViewAnimationDuration, delay: 0.0, options: .curveEaseOut, animations: { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        addSingleTapToMapView()
+    }
+    
+    func navigateToAccommodationScreen() {
+        navigationController?.popViewController(animated: true)
+    }
+}
