@@ -1,5 +1,5 @@
 //
-//  PinDetailsVC.swift
+//  LocationDetailsViewController.swift
 //  Festival-App
 //
 //  Created by Duminica Octavian on 21/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PinDetailsVC: UIViewController {
+class LocationDetailsViewController: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!

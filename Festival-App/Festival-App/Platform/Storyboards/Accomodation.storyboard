@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AccomodationVC-->
+        <!--Accomodation View Controller-->
         <scene sceneID="AkJ-g1-zz1">
             <objects>
-                <viewController id="ERD-VW-7ye" customClass="AccomodationVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ERD-VW-7ye" customClass="AccomodationViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DZA-yt-bze"/>
                         <viewControllerLayoutGuide type="bottom" id="DEZ-9q-5vW"/>
@@ -88,12 +88,15 @@
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbR-iR-WHU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ERD-VW-7ye" id="J8O-4i-Qcn"/>
+                                        </connections>
                                     </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-ZT-k9C">
                                         <rect key="frame" x="300" y="515" width="67" height="67"/>
                                         <state key="normal" image="locationButton"/>
                                         <connections>
-                                            <action selector="centerBtnWasPressed:" destination="ERD-VW-7ye" eventType="touchUpInside" id="pEI-N6-Ty1"/>
+                                            <action selector="centerButtonTapped:" destination="ERD-VW-7ye" eventType="touchUpInside" id="pEI-N6-Ty1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -143,7 +146,7 @@
                     <navigationItem key="navigationItem" id="7gU-xS-tDL"/>
                     <connections>
                         <outlet property="mapView" destination="EbR-iR-WHU" id="9cG-Ce-1YZ"/>
-                        <outlet property="menuBtn" destination="uPc-r5-0br" id="tvH-Vu-qFz"/>
+                        <outlet property="menuButton" destination="uPc-r5-0br" id="tvH-Vu-qFz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07S-0Y-HBU" userLabel="First Responder" sceneMemberID="firstResponder"/>

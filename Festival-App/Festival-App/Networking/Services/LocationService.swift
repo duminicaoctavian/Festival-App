@@ -47,7 +47,7 @@ class LocationService {
         }
     }
     
-    func clearLocation() {
+    func clearLocations() {
         locations.removeAll()
     }
 }

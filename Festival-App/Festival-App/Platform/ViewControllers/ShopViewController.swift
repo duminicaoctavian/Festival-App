@@ -25,12 +25,12 @@ class ShopViewController: UIViewController {
         presenter.viewWillAppear()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         presenter.viewWillDisappear()
     }
     
-    @IBAction func backBtnWasPressed(_ sender: Any) {
+    @IBAction func backButtonTapped(_ sender: Any) {
         navigateToShopCategoryScreen()
     }
     

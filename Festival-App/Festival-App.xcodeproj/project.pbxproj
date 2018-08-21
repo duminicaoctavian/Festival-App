@@ -76,6 +76,11 @@
 		8AD7FABD21160D3E00B8320C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FABC21160D3E00B8320C /* HomePresenter.swift */; };
 		8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FABF2116135400B8320C /* UIColorExtensions.swift */; };
 		8AD7FAC321161B2F00B8320C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAC221161B2F00B8320C /* Validator.swift */; };
+		8AD9C07A212C001300189A14 /* AccommodationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9C079212C001300189A14 /* AccommodationPresenter.swift */; };
+		8AD9C07C212C002700189A14 /* AccommodationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9C07B212C002700189A14 /* AccommodationView.swift */; };
+		8AD9C080212C279300189A14 /* MKCoordinateRegionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9C07F212C279300189A14 /* MKCoordinateRegionExtensions.swift */; };
+		8AD9C082212C2C9A00189A14 /* LocationDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9C081212C2C9A00189A14 /* LocationDetailsPresenter.swift */; };
+		8AD9C084212C2CAA00189A14 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9C083212C2CAA00189A14 /* LocationDetailsView.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -100,7 +105,7 @@
 		DE4DF1682041C1720083A8F1 /* VideoNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1672041C1720083A8F1 /* VideoNewsCell.swift */; };
 		DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF1692041CB340083A8F1 /* LineupVC.swift */; };
 		DE4DF16C2041CB4E0083A8F1 /* ShopCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16B2041CB4E0083A8F1 /* ShopCategoryViewController.swift */; };
-		DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */; };
+		DE4DF16E2041CB690083A8F1 /* AccomodationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DF16D2041CB690083A8F1 /* AccomodationViewController.swift */; };
 		DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */; };
 		DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */; };
 		DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */; };
@@ -110,7 +115,7 @@
 		DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */; };
 		DE742A112044963A000CF48F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE742A102044963A000CF48F /* LoginViewController.swift */; };
 		DE84EBC3208BDBEF008016FE /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84EBC2208BDBEF008016FE /* EditProfileViewController.xib */; };
-		DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */; };
+		DE84F438208B46CB00CE35FA /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */; };
 		DE84F439208B46CB00CE35FA /* PinDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */; };
 		DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F43E208B69C600CE35FA /* LocationService.swift */; };
 		DE84F441208B69F400CE35FA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84F440208B69F400CE35FA /* Location.swift */; };
@@ -223,6 +228,11 @@
 		8AD7FABC21160D3E00B8320C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8AD7FABF2116135400B8320C /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAC221161B2F00B8320C /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		8AD9C079212C001300189A14 /* AccommodationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationPresenter.swift; sourceTree = "<group>"; };
+		8AD9C07B212C002700189A14 /* AccommodationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationView.swift; sourceTree = "<group>"; };
+		8AD9C07F212C279300189A14 /* MKCoordinateRegionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegionExtensions.swift; sourceTree = "<group>"; };
+		8AD9C081212C2C9A00189A14 /* LocationDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsPresenter.swift; sourceTree = "<group>"; };
+		8AD9C083212C2CAA00189A14 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -246,7 +256,7 @@
 		DE4DF1672041C1720083A8F1 /* VideoNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNewsCell.swift; sourceTree = "<group>"; };
 		DE4DF1692041CB340083A8F1 /* LineupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupVC.swift; sourceTree = "<group>"; };
 		DE4DF16B2041CB4E0083A8F1 /* ShopCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCategoryViewController.swift; sourceTree = "<group>"; };
-		DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomodationVC.swift; sourceTree = "<group>"; };
+		DE4DF16D2041CB690083A8F1 /* AccomodationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomodationViewController.swift; sourceTree = "<group>"; };
 		DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Festival-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -258,7 +268,7 @@
 		DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuCell.swift; sourceTree = "<group>"; };
 		DE742A102044963A000CF48F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE84EBC2208BDBEF008016FE /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
-		DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailsVC.swift; sourceTree = "<group>"; };
+		DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		DE84F437208B46CB00CE35FA /* PinDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinDetailsVC.xib; sourceTree = "<group>"; };
 		DE84F43E208B69C600CE35FA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DE84F440208B69F400CE35FA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -317,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				8A10E04B21105D9100021478 /* UIViewControllerExtensions.swift */,
+				8AD9C07F212C279300189A14 /* MKCoordinateRegionExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,8 +415,8 @@
 				DEE34C9F205E91DE006C7B55 /* Message.swift */,
 				DE241F702069069400F07C33 /* News.swift */,
 				DE16485B2042191700EB371B /* Product.swift */,
-				DEDCF8CB208CA9FB006AD857 /* User.swift */,
 				8ACA50F6211D723E00D50CCF /* Question.swift */,
+				DEDCF8CB208CA9FB006AD857 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,15 +424,15 @@
 		8A3674BE2101BB6500B301B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
 				DE3B2CF62043300C00C4E49D /* AuthService.swift */,
 				DE84F43E208B69C600CE35FA /* LocationService.swift */,
-				DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */,
 				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
 				DE241F7220690A7400F07C33 /* NewsService.swift */,
 				DE16484F2041F56100EB371B /* ProductService.swift */,
+				8ACA50F8211D72EB00D50CCF /* QuestionService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
 				8A8D01C52119BD2B00889197 /* StorageService.swift */,
-				8ACA50F8211D72EB00D50CCF /* QuestionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -443,11 +454,11 @@
 				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
 				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
 				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
-				DE4DF1672041C1720083A8F1 /* VideoNewsCell.swift */,
+				8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */,
 				DE1648512041F9E500EB371B /* ShopCategoryCell.swift */,
 				DE19FC6C2071A7B900316199 /* TimelineTableViewCell.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
-				8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */,
+				DE4DF1672041C1720083A8F1 /* VideoNewsCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -480,25 +491,25 @@
 			isa = PBXGroup;
 			children = (
 				8A10E04A21105D8200021478 /* Extensions */,
-				DE4DF16D2041CB690083A8F1 /* AccomodationVC.swift */,
+				DE4DF16D2041CB690083A8F1 /* AccomodationViewController.swift */,
 				8A10E048211049A300021478 /* AddAccommodationViewController.swift */,
 				DE0FCD69203F747900FE29BB /* ArtistDetailsViewController.swift */,
+				8A121D9F2116F4EE0050EDBB /* ArtistsViewController.swift */,
+				DEE34C95205E7ADD006C7B55 /* ChannelsViewController.swift */,
 				DEE34C97205E7AED006C7B55 /* ChatLogViewController.swift */,
 				DEAA64892083497300C53E58 /* EditProfileViewController.swift */,
 				DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
-				8A121D9F2116F4EE0050EDBB /* ArtistsViewController.swift */,
 				DE742A102044963A000CF48F /* LoginViewController.swift */,
-				DE4DF16B2041CB4E0083A8F1 /* ShopCategoryViewController.swift */,
-				DE84F436208B46CB00CE35FA /* PinDetailsVC.swift */,
+				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
+				DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */,
+				8A27521B21189FD700ABF57C /* ProductDetailsViewController.swift */,
 				DEAA6487208334B700C53E58 /* ProfileViewController.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterViewController.swift */,
-				DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */,
-				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
+				DE4DF16B2041CB4E0083A8F1 /* ShopCategoryViewController.swift */,
 				DE1648592042134000EB371B /* ShopViewController.swift */,
-				8A27521B21189FD700ABF57C /* ProductDetailsViewController.swift */,
+				DE5A8116203DE7C700D8A7FA /* UserMenuViewController.swift */,
 				8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */,
-				DEE34C95205E7ADD006C7B55 /* ChannelsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -506,30 +517,32 @@
 		8A3674C42101BBB300B301B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8AD9C07B212C002700189A14 /* AccommodationView.swift */,
+				8A148442211DC8D80012D802 /* AddAccommodationView.swift */,
 				8A121D972116DD270050EDBB /* ArtistDetailsView.swift */,
 				8A121D9D2116F3470050EDBB /* ArtistItemView.swift */,
 				8A121D9B2116F3070050EDBB /* ArtistsView.swift */,
+				8A14844A211DD1450012D802 /* ChannelItemView.swift */,
+				8A148446211DD0C20012D802 /* ChannelsView.swift */,
+				8A14844E211DE8120012D802 /* ChatItemView.swift */,
+				8A14844C211DE8070012D802 /* ChatLogView.swift */,
+				8A8D01C12119AE9C00889197 /* EditProfileView.swift */,
 				8AD7FABA21160D3400B8320C /* HomeView.swift */,
+				8AD9C083212C2CAA00189A14 /* LocationDetailsView.swift */,
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
+				8A3E6B0221176163004CA677 /* NewsView.swift */,
+				8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */,
+				8A27521D2118A05200ABF57C /* ProductDetailsView.swift */,
+				8A27521521188D2D00ABF57C /* ProductItemView.swift */,
+				8A8D01BD2119A8EA00889197 /* ProfileView.swift */,
 				8AD7FAB82116081800B8320C /* RegisterView.swift */,
+				8A305793211823B000D3AC85 /* ShopCategoryItemView.swift */,
+				8A30579121181FEF00D3AC85 /* ShopCategoryView.swift */,
+				8A27521721188EAE00ABF57C /* ShopView.swift */,
 				8A3E6AFA211757F8004CA677 /* UserMenuItemView.swift */,
 				8A3E6AFC211758E8004CA677 /* UserMenuView.swift */,
-				8A3E6B0221176163004CA677 /* NewsView.swift */,
 				8A3E6B04211765BE004CA677 /* VideoNewsItemView.swift */,
-				8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */,
-				8A30579121181FEF00D3AC85 /* ShopCategoryView.swift */,
-				8A305793211823B000D3AC85 /* ShopCategoryItemView.swift */,
-				8A27521521188D2D00ABF57C /* ProductItemView.swift */,
-				8A27521721188EAE00ABF57C /* ShopView.swift */,
-				8A27521D2118A05200ABF57C /* ProductDetailsView.swift */,
-				8A8D01BD2119A8EA00889197 /* ProfileView.swift */,
-				8A8D01C12119AE9C00889197 /* EditProfileView.swift */,
 				8A98E1CB211C82790009B19C /* WinTicketsView.swift */,
-				8A148442211DC8D80012D802 /* AddAccommodationView.swift */,
-				8A148446211DD0C20012D802 /* ChannelsView.swift */,
-				8A14844A211DD1450012D802 /* ChannelItemView.swift */,
-				8A14844C211DE8070012D802 /* ChatLogView.swift */,
-				8A14844E211DE8120012D802 /* ChatItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,22 +550,24 @@
 		8A3674C62101BBBF00B301B7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				8AD9C079212C001300189A14 /* AccommodationPresenter.swift */,
+				8A148444211DC8F80012D802 /* AddAccommodationPresenter.swift */,
 				8A121D952116DD1B0050EDBB /* ArtistDetailsPresenter.swift */,
 				8A121D992116F2F70050EDBB /* ArtistsPresenter.swift */,
-				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
-				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
-				8A3E6B0021176150004CA677 /* NewsPresenter.swift */,
-				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
-				8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */,
-				8A30578F21181FD900D3AC85 /* ShopCategoryPresenter.swift */,
-				8A27521921188EB800ABF57C /* ShopPresenter.swift */,
-				8A27521F2118A06800ABF57C /* ProductDetailsPresenter.swift */,
-				8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */,
-				8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */,
-				8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */,
-				8A148444211DC8F80012D802 /* AddAccommodationPresenter.swift */,
 				8A148448211DD0D00012D802 /* ChannelsPresenter.swift */,
 				8A148450211DE8330012D802 /* ChatLogPresenter.swift */,
+				8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */,
+				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
+				8AD9C081212C2C9A00189A14 /* LocationDetailsPresenter.swift */,
+				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
+				8A3E6B0021176150004CA677 /* NewsPresenter.swift */,
+				8A27521F2118A06800ABF57C /* ProductDetailsPresenter.swift */,
+				8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */,
+				8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */,
+				8A30578F21181FD900D3AC85 /* ShopCategoryPresenter.swift */,
+				8A27521921188EB800ABF57C /* ShopPresenter.swift */,
+				8A3E6AFE211758F4004CA677 /* UserMenuPresenter.swift */,
+				8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -560,11 +575,11 @@
 		8A3674C82101BBE500B301B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
 				8A2752222118AD5200ABF57C /* iCarousel.h */,
 				8A2752212118AD5200ABF57C /* iCarousel.m */,
 				DE5A8110203DE56900D8A7FA /* SWRevealViewController.h */,
 				DE5A8111203DE56900D8A7FA /* SWRevealViewController.m */,
-				DE5A810F203DE56900D8A7FA /* Festival-App-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -578,9 +593,9 @@
 				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
 				8A3674D02101C38F00B301B7 /* Lineup.storyboard */,
 				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
-				8A3674D22101C3B200B301B7 /* Shop.storyboard */,
 				8A3674DA2101C45200B301B7 /* MyAccount.storyboard */,
 				8A3674CE2101C36C00B301B7 /* News.storyboard */,
+				8A3674D22101C3B200B301B7 /* Shop.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -872,6 +887,7 @@
 				8A3674DE2101C5FA00B301B7 /* LoadingView.swift in Sources */,
 				8A27521621188D2D00ABF57C /* ProductItemView.swift in Sources */,
 				DE241F712069069400F07C33 /* News.swift in Sources */,
+				8AD9C07C212C002700189A14 /* AccommodationView.swift in Sources */,
 				DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */,
 				DEAA6488208334B700C53E58 /* ProfileViewController.swift in Sources */,
 				8A121DA421171C160050EDBB /* UILabelExtensions.swift in Sources */,
@@ -898,6 +914,7 @@
 				8A30579E2118533800D3AC85 /* NewsViewModelItem.swift in Sources */,
 				DE5A811B203DEA3300D8A7FA /* GradientView.swift in Sources */,
 				DEA52117204B3EDE00ED285A /* RegisterViewController.swift in Sources */,
+				8AD9C07A212C001300189A14 /* AccommodationPresenter.swift in Sources */,
 				8A27521C21189FD700ABF57C /* ProductDetailsViewController.swift in Sources */,
 				8A148445211DC8F80012D802 /* AddAccommodationPresenter.swift in Sources */,
 				8A121DA721171DEA0050EDBB /* Highlightable.swift in Sources */,
@@ -911,11 +928,13 @@
 				DE16485A2042134000EB371B /* ShopViewController.swift in Sources */,
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsViewController.swift in Sources */,
 				DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */,
-				DE4DF16E2041CB690083A8F1 /* AccomodationVC.swift in Sources */,
+				DE4DF16E2041CB690083A8F1 /* AccomodationViewController.swift in Sources */,
 				8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */,
+				8AD9C084212C2CAA00189A14 /* LocationDetailsView.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* VideoNewsCell.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
+				8AD9C080212C279300189A14 /* MKCoordinateRegionExtensions.swift in Sources */,
 				8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
 				8A3E6B0321176163004CA677 /* NewsView.swift in Sources */,
@@ -932,6 +951,7 @@
 				DEE34C98205E7AED006C7B55 /* ChatLogViewController.swift in Sources */,
 				8A121D9A2116F2F70050EDBB /* ArtistsPresenter.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
+				8AD9C082212C2C9A00189A14 /* LocationDetailsPresenter.swift in Sources */,
 				8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */,
 				DEE34CA1205E91DE006C7B55 /* Message.swift in Sources */,
 				8A3E6B0B21177C17004CA677 /* PictureNewsItemView.swift in Sources */,
@@ -957,7 +977,7 @@
 				8A148447211DD0C20012D802 /* ChannelsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,
-				DE84F438208B46CB00CE35FA /* PinDetailsVC.swift in Sources */,
+				DE84F438208B46CB00CE35FA /* LocationDetailsViewController.swift in Sources */,
 				8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
