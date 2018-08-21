@@ -165,7 +165,7 @@ class AddAccommodationViewController: UIViewController {
         location?.images = ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]
         location?.userID = AuthService.shared.user.id
         SocketService.shared.addLocation(location!) { (success) in
-            print("Location sent to server")
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }

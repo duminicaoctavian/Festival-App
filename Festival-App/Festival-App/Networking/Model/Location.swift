@@ -17,6 +17,7 @@ private struct SerializationKey {
     static let title = "title"
     static let description = "description"
     static let address = "address"
+    static let price = "price"
     static let images = "images"
 }
 
@@ -64,7 +65,7 @@ struct Location {
         self.title = json[SerializationKey.title].stringValue
         self.description = json[SerializationKey.description].stringValue
         self.address = json[SerializationKey.address].stringValue
-        self.price = 25.0
+        self.price = json[SerializationKey.price].double ?? 0.0
         
         var images = [String]()
         let jsonArray = json[SerializationKey.images].arrayValue
@@ -83,7 +84,8 @@ struct Location {
             let title = dataArray[4] as? String,
             let address = dataArray[5] as? String,
             let description = dataArray[6] as? String,
-            let images = dataArray[7] as? [String] else { return nil }
+            let price = dataArray[7] as? Double,
+            let images = dataArray[8] as? [String] else { return nil }
         
         self.id = id
         self.userID = userID
@@ -92,7 +94,7 @@ struct Location {
         self.title = title
         self.address = address
         self.description = description
-        self.price = 25
+        self.price = price
         self.images = images
     }
 }
