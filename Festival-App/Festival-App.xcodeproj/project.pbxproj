@@ -58,6 +58,8 @@
 		8A3E6B05211765BE004CA677 /* VideoNewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B04211765BE004CA677 /* VideoNewsItemView.swift */; };
 		8A3E6B0921177B0C004CA677 /* PictureNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */; };
 		8A3E6B0B21177C17004CA677 /* PictureNewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */; };
+		8A6AB69B212D6F1800D9C9FC /* AbstractOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AB69A212D6F1800D9C9FC /* AbstractOperation.swift */; };
+		8A6AB69D212D70E200D9C9FC /* UploadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AB69C212D70E200D9C9FC /* UploadImageOperation.swift */; };
 		8A8D01BE2119A8EA00889197 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01BD2119A8EA00889197 /* ProfileView.swift */; };
 		8A8D01C02119A8F600889197 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */; };
 		8A8D01C22119AE9C00889197 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C12119AE9C00889197 /* EditProfileView.swift */; };
@@ -210,6 +212,8 @@
 		8A3E6B04211765BE004CA677 /* VideoNewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNewsItemView.swift; sourceTree = "<group>"; };
 		8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNewsCell.swift; sourceTree = "<group>"; };
 		8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNewsItemView.swift; sourceTree = "<group>"; };
+		8A6AB69A212D6F1800D9C9FC /* AbstractOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractOperation.swift; sourceTree = "<group>"; };
+		8A6AB69C212D70E200D9C9FC /* UploadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageOperation.swift; sourceTree = "<group>"; };
 		8A8D01BD2119A8EA00889197 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		8A8D01C12119AE9C00889197 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 				DE19FC6F2071A7CB00316199 /* Timeline.swift */,
 				DE19FC6E2071A7CB00316199 /* TimelinePoint.swift */,
 				8AD7FAC221161B2F00B8320C /* Validator.swift */,
+				8A6AB69A212D6F1800D9C9FC /* AbstractOperation.swift */,
+				8A6AB69C212D70E200D9C9FC /* UploadImageOperation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -894,6 +900,7 @@
 				DE4DF16A2041CB340083A8F1 /* LineupVC.swift in Sources */,
 				8A27521821188EAE00ABF57C /* ShopView.swift in Sources */,
 				8AD7FABB21160D3400B8320C /* HomeView.swift in Sources */,
+				8A6AB69D212D70E200D9C9FC /* UploadImageOperation.swift in Sources */,
 				8A121D9C2116F3070050EDBB /* ArtistsView.swift in Sources */,
 				8A27521A21188EB800ABF57C /* ShopPresenter.swift in Sources */,
 				DE84F441208B69F400CE35FA /* Location.swift in Sources */,
@@ -970,6 +977,7 @@
 				8A98E1C7211C73A00009B19C /* artists.mlmodel in Sources */,
 				8A121DA221171BFE0050EDBB /* UIButtonExtensions.swift in Sources */,
 				DE1648522041F9E500EB371B /* ShopCategoryCell.swift in Sources */,
+				8A6AB69B212D6F1800D9C9FC /* AbstractOperation.swift in Sources */,
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
 				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,

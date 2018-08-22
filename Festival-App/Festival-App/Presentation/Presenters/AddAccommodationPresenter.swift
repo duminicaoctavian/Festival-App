@@ -29,6 +29,12 @@ class AddAccommodationPresenter: NSObject {
     
     let authorizationStatus = CLLocationManager.authorizationStatus()
     
+    private lazy var queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
     init(view: AddAccommodationView) {
         self.view = view
     }
@@ -37,11 +43,9 @@ class AddAccommodationPresenter: NSObject {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
+        StorageService.shared.setupProvider()
         configureLocationServices()
         view?.centerMapOnUserLocation(withLatitude: userCoordinates.latitude, andLongitude: userCoordinates.longitude)
-    }
-    
-    func viewWillAppear() {
         location = Location()
     }
     
@@ -75,16 +79,47 @@ class AddAccommodationPresenter: NSObject {
         location?.longitude = newValue
     }
     
-    func handlePost() {
-        location?.images = ["https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room1.jpg", "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/Room2.jpg"]
-        location?.userID = AuthService.shared.user.id
+    func handlePost(withData data: [Data]) {
         
-        guard let location = location else { return }
-        
-        SocketService.shared.addLocation(location) { [weak self] (success) in
-            guard let weakSelf = self else { return }
-            weakSelf.view?.navigateToAccommodationScreen()
+        for item in data {
+            let imageName = NSUUID().uuidString + ".jpg"
+            
+            let imageUploadOperation = UploadImageOperation(imageName: imageName, imageData: item)
+            imageUploadOperation.onDidUpload = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.location?.images.append("\(Route.baseAWS)/\(imageName)")
+            }
+            
+            if let lastOperation = queue.operations.last {
+                imageUploadOperation.addDependency(lastOperation)
+            }
+            
+            queue.addOperation(imageUploadOperation)
         }
+        
+        let finishOperation = BlockOperation { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.location?.userID = AuthService.shared.user.id
+            
+            guard let location = weakSelf.location else { return }
+            
+            SocketService.shared.addLocation(location) { [weak self] (success) in
+                guard let _ = self else { return }
+                
+                if success {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.view?.navigateToAccommodationScreen()
+                    }
+                }
+            }
+        }
+        if let lastOperation = queue.operations.last {
+            finishOperation.addDependency(lastOperation)
+        }
+        queue.addOperation(finishOperation)
+        
+        queue.isSuspended = false
     }
     
     func delayMapAnimation() {

@@ -16,6 +16,7 @@ private struct Constants {
     static let descriptionTextFieldHeightConstraint: CGFloat = 36.5
     static let placeholderText = "Description"
     static let pinAssetName = "pin"
+    static let addImageAssetName = "addImage"
     static let placeholderColor = UIColor.lightGray
     static let longPressDuration = 0.5
     static let mapViewAnimationDuration = 0.3
@@ -72,7 +73,6 @@ class AddAccommodationViewController: UIViewController {
         super.viewWillAppear(animated)
         isMapExpanded = false
         setupKeyboardObservers()
-        presenter.viewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,7 +89,26 @@ class AddAccommodationViewController: UIViewController {
         presenter.addressChanged(addressTextField.text)
         presenter.descriptionChanged(descriptionTextView.text)
         presenter.priceChanged(priceTextField.text)
-        presenter.handlePost()
+        
+        var imagesData = [Data]()
+        if firstButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
+            guard let image = firstButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            imagesData.append(imageData)
+        }
+        if secondButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
+            guard let image = secondButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            imagesData.append(imageData)
+        }
+        if thirdButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
+            guard let image = thirdButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            imagesData.append(imageData)
+        }
+        if fourthButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
+            guard let image = fourthButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            imagesData.append(imageData)
+        }
+ 
+        presenter.handlePost(withData: imagesData)
     }
     
     @IBAction func onImageButtonTapped(_ sender: UIButton) {
