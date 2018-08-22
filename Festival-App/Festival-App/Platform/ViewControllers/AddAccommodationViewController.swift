@@ -61,9 +61,10 @@ class AddAccommodationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        addSingleTapToMapView()
-        roundButtons()
+        setupScrollView()
         setupButtonsImageViews()
+        roundButtons()
+        addSingleTapToMapView()
         presenter.viewDidLoad()
     }
     
