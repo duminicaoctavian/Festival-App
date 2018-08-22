@@ -64,7 +64,7 @@ class SocketService: NSObject {
     func addLocation(_ location: Location, completion: @escaping CompletionHandler) {
         
         socket.emit(Event.newLocation.rawValue, location.latitude, location.longitude, location.userID,
-                     location.title, location.address, location.description, location.price, location.images)
+                     location.title, location.address, location.description, location.price, location.phone, location.images)
         completion(true)
     }
     
@@ -75,7 +75,7 @@ class SocketService: NSObject {
     
     func updateLocationWithID(_ id: String, newLocation: Location, completion: @escaping CompletionHandler) {
         socket.emit(Event.updateLocation.rawValue, id, newLocation.latitude, newLocation.longitude, newLocation.userID, newLocation.title,
-                    newLocation.address, newLocation.description, newLocation.price, newLocation.images)
+                    newLocation.address, newLocation.description, newLocation.price, newLocation.phone, newLocation.images)
         completion(true)
     }
     

@@ -21,6 +21,7 @@ private struct Constants {
     static let longPressDuration = 0.5
     static let mapViewAnimationDuration = 0.3
     static let cornerRadius: CGFloat = 5.0
+    static let compressionQuality: CGFloat = 0.2
 }
 
 class AddAccommodationViewController: UIViewController {
@@ -40,6 +41,14 @@ class AddAccommodationViewController: UIViewController {
         return longPress
     }()
     
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
     @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var offerTitleTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
@@ -49,6 +58,7 @@ class AddAccommodationViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var mapErrorLabel: UILabel!
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
@@ -89,22 +99,23 @@ class AddAccommodationViewController: UIViewController {
         presenter.addressChanged(addressTextField.text)
         presenter.descriptionChanged(descriptionTextView.text)
         presenter.priceChanged(priceTextField.text)
+        presenter.phoneChanged(phoneTextField.text)
         
         var imagesData = [Data]()
         if firstButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = firstButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            guard let image = firstButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if secondButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = secondButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            guard let image = secondButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if thirdButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = thirdButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            guard let image = thirdButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if fourthButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = fourthButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, 0) else { return }
+            guard let image = fourthButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
  
@@ -341,4 +352,12 @@ extension AddAccommodationViewController: AddAccommodationView {
         fourthButton.imageView?.clipsToBounds = true
     }
     
+    func startActivityIndicator() {
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        LoadingView.stopLoading()
+    }
 }

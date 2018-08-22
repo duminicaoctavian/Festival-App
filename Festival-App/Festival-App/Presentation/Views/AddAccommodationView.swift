@@ -16,4 +16,6 @@ protocol AddAccommodationView: class {
     func displayImagePicker()
     func roundButtons()
     func setupButtonsImageViews()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }

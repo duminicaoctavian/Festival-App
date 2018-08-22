@@ -18,6 +18,7 @@ private struct SerializationKey {
     static let description = "description"
     static let address = "address"
     static let price = "price"
+    static let phone = "phone"
     static let images = "images"
 }
 
@@ -30,6 +31,7 @@ struct Location {
     public var address: String
     public var description: String
     public var price: Double
+    public var phone: String
     public var images: [String]
     
     init() {
@@ -41,11 +43,12 @@ struct Location {
         self.address = ""
         self.description = ""
         self.price = 0.0
+        self.phone = ""
         self.images = [String]()
     }
     
     init(id: String, userID: String, latitude: Double, longitude: Double, title: String, address: String,
-         description: String, price: Double, images: [String]) {
+         description: String, price: Double, phone: String, images: [String]) {
         self.id = id
         self.userID = userID
         self.latitude = latitude
@@ -54,6 +57,7 @@ struct Location {
         self.address = address
         self.description = description
         self.price = price
+        self.phone = phone
         self.images = images
     }
     
@@ -66,6 +70,7 @@ struct Location {
         self.description = json[SerializationKey.description].stringValue
         self.address = json[SerializationKey.address].stringValue
         self.price = json[SerializationKey.price].double ?? 0.0
+        self.phone = json[SerializationKey.phone].stringValue
         
         var images = [String]()
         let jsonArray = json[SerializationKey.images].arrayValue
@@ -85,7 +90,8 @@ struct Location {
             let address = dataArray[5] as? String,
             let description = dataArray[6] as? String,
             let price = dataArray[7] as? Double,
-            let images = dataArray[8] as? [String] else { return nil }
+            let phone = dataArray[8] as? String,
+            let images = dataArray[9] as? [String] else { return nil }
         
         self.id = id
         self.userID = userID
@@ -95,6 +101,7 @@ struct Location {
         self.address = address
         self.description = description
         self.price = price
+        self.phone = phone
         self.images = images
     }
 }

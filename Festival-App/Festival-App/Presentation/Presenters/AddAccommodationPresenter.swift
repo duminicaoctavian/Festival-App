@@ -69,6 +69,11 @@ class AddAccommodationPresenter: NSObject {
         location?.price = price
     }
     
+    func phoneChanged(_ newValue: String?) {
+        guard let newValue = newValue else { return }
+        location?.phone = newValue
+    }
+    
     func latitudeChanged(_ newValue: Double?) {
         guard let newValue = newValue else { return }
         location?.latitude = newValue
@@ -80,6 +85,7 @@ class AddAccommodationPresenter: NSObject {
     }
     
     func handlePost(withData data: [Data]) {
+        view?.startActivityIndicator()
         
         for item in data {
             let imageName = NSUUID().uuidString + ".jpg"
@@ -109,6 +115,7 @@ class AddAccommodationPresenter: NSObject {
                 if success {
                     DispatchQueue.main.async { [weak self] in
                         guard let weakSelf = self else { return }
+                        weakSelf.view?.stopActivityIndicator()
                         weakSelf.view?.navigateToAccommodationScreen()
                     }
                 }

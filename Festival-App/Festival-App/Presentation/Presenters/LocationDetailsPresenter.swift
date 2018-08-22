@@ -37,8 +37,8 @@ class LocationDetailsPresenter {
     }
     
     func callNumber() {
-        // TODO
-        if let URL = URL(string: "tel://0745047302") {
+        guard let location = location else { return }
+        if let URL = URL(string: "tel://\(location.phone)") {
             UIApplication.shared.open(URL, options: [:], completionHandler: nil)
         }
     }
