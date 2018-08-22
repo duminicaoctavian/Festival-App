@@ -19,6 +19,7 @@ private struct Constants {
     static let placeholderColor = UIColor.lightGray
     static let longPressDuration = 0.5
     static let mapViewAnimationDuration = 0.3
+    static let cornerRadius: CGFloat = 5.0
 }
 
 class AddAccommodationViewController: UIViewController {
@@ -27,7 +28,7 @@ class AddAccommodationViewController: UIViewController {
         return AddAccommodationPresenter(view: self)
     }()
     
-    lazy var singleTap: UITapGestureRecognizer = {
+    lazy var mapSingleTap: UITapGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
         return tap
     }()
@@ -48,14 +49,21 @@ class AddAccommodationViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var mapErrorLabel: UILabel!
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
     
     var isMapExpanded = false
     var keyboardDidScroll = false
+    var senderTag: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         addSingleTapToMapView()
+        roundButtons()
+        setupButtonsImageViews()
         presenter.viewDidLoad()
     }
     
@@ -83,6 +91,11 @@ class AddAccommodationViewController: UIViewController {
         presenter.handlePost()
     }
     
+    @IBAction func onImageButtonTapped(_ sender: UIButton) {
+        senderTag = sender.tag
+        displayImagePicker()
+    }
+    
     private func addLongPressToMapView() {
         mapView.addGestureRecognizer(longPress)
     }
@@ -92,11 +105,11 @@ class AddAccommodationViewController: UIViewController {
     }
     
     private func removeSingleTapFromMapView() {
-        mapView.removeGestureRecognizer(singleTap)
+        mapView.removeGestureRecognizer(mapSingleTap)
     }
     
     private func addSingleTapToMapView() {
-        mapView.addGestureRecognizer(singleTap)
+        mapView.addGestureRecognizer(mapSingleTap)
     }
     
     private func setupKeyboardObservers() {
@@ -121,6 +134,26 @@ class AddAccommodationViewController: UIViewController {
     private func removeMapViewAnnotations() {
         let annotations = mapView.annotations
         mapView.removeAnnotations(annotations)
+    }
+    
+    private func handleImageSelected(fromInfo info: [String: Any]) {
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            switch senderTag {
+            case 0: firstButton.setImage(selectedImage, for: .normal)
+            case 1: secondButton.setImage(selectedImage, for: .normal)
+            case 2: thirdButton.setImage(selectedImage, for: .normal)
+            case 3: fourthButton.setImage(selectedImage, for: .normal)
+            default: firstButton.setImage(selectedImage, for: .normal)
+            }
+        }
     }
     
     // TODO - Separate CoreLocation from MapKit
@@ -226,6 +259,13 @@ extension AddAccommodationViewController: UITextViewDelegate {
     }
 }
 
+extension AddAccommodationViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        handleImageSelected(fromInfo: info)
+        dismiss(animated:true, completion: nil)
+    }
+}
+
 extension AddAccommodationViewController: AddAccommodationView {
     func centerMapOnUserLocation(withLatitude latitude: Double, andLongitude longitude: Double) {
         let region = MKCoordinateRegion(latitude: latitude, longitude: longitude, latitudeDelta: Constants.span, longitudeDelta: Constants.span)
@@ -251,4 +291,34 @@ extension AddAccommodationViewController: AddAccommodationView {
     func navigateToAccommodationScreen() {
         navigationController?.popViewController(animated: true)
     }
+    
+    func displayImagePicker() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .photoLibrary;
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func roundButtons() {
+        firstButton.layer.cornerRadius = Constants.cornerRadius
+        secondButton.layer.cornerRadius = Constants.cornerRadius
+        thirdButton.layer.cornerRadius = Constants.cornerRadius
+        fourthButton.layer.cornerRadius = Constants.cornerRadius
+        
+    }
+    
+    func setupButtonsImageViews() {
+        firstButton.imageView?.contentMode = .scaleAspectFill
+        secondButton.imageView?.contentMode = .scaleAspectFill
+        thirdButton.imageView?.contentMode = .scaleAspectFill
+        fourthButton.imageView?.contentMode = .scaleAspectFill
+        firstButton.imageView?.clipsToBounds = true
+        secondButton.imageView?.clipsToBounds = true
+        thirdButton.imageView?.clipsToBounds = true
+        fourthButton.imageView?.clipsToBounds = true
+    }
+    
 }

@@ -13,4 +13,7 @@ protocol AddAccommodationView: class {
     func setupScrollView()
     func minimizeMap()
     func navigateToAccommodationScreen()
+    func displayImagePicker()
+    func roundButtons()
+    func setupButtonsImageViews()
 }
