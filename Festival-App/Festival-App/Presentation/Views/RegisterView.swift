@@ -14,4 +14,5 @@ protocol RegisterView: class {
     func navigateToLoginScreen()
     func navigateToHomeScreen()
     func presentRegisterFailedFeedback(forError error: Error?)
+    func playFormAnimation()
 }

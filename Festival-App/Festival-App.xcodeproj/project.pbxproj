@@ -67,6 +67,7 @@
 		8A8D01C62119BD2B00889197 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C52119BD2B00889197 /* StorageService.swift */; };
 		8A973570212E9188007D79DB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97356F212E9188007D79DB /* NotificationService.swift */; };
 		8A973580212EEF48007D79DB /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A97357F212EEF48007D79DB /* confetti.json */; };
+		8A973584212F126A007D79DB /* form.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A973583212F126A007D79DB /* form.json */; };
 		8A98E1C7211C73A00009B19C /* artists.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C6211C73A00009B19C /* artists.mlmodel */; };
 		8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */; };
 		8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CB211C82790009B19C /* WinTicketsView.swift */; };
@@ -224,6 +225,7 @@
 		8A97356E212E9116007D79DB /* Festival-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Festival-App.entitlements"; sourceTree = "<group>"; };
 		8A97356F212E9188007D79DB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		8A97357F212EEF48007D79DB /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		8A973583212F126A007D79DB /* form.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = form.json; sourceTree = "<group>"; };
 		8A98E1C6211C73A00009B19C /* artists.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = artists.mlmodel; sourceTree = "<group>"; };
 		8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsViewController.swift; sourceTree = "<group>"; };
 		8A98E1CB211C82790009B19C /* WinTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsView.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				8A97357F212EEF48007D79DB /* confetti.json */,
+				8A973583212F126A007D79DB /* form.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */,
 				DE84EBC3208BDBEF008016FE /* EditProfileViewController.xib in Resources */,
 				8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */,
+				8A973584212F126A007D79DB /* form.json in Resources */,
 				8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */,
 				DE19FC6B2071A7A400316199 /* TimelineTableViewCell.xib in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsViewController.xib in Resources */,

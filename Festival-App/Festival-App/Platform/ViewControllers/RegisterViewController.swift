@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Lottie
 
 private struct Constants {
     static let alertTitle = "Registration Failed!"
     static let alertMessage = "Invalid data!"
     static let okActionTitle = "OK"
+    static let formAnimationName = "form"
+    static let animationSpeed: CGFloat = 3.0
+    static let animationStart: CGFloat = 0.2
+    static let animationEnd: CGFloat = 1.0
 }
 
 class RegisterViewController: UIViewController {
@@ -20,6 +25,7 @@ class RegisterViewController: UIViewController {
         return RegisterPresenter(view: self)
     }()
     
+    @IBOutlet weak var animationView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -33,9 +39,18 @@ class RegisterViewController: UIViewController {
         return blurEffectView
     }()
     
+    lazy var formAnimationView: LOTAnimationView = {
+        let formAnimationView = LOTAnimationView(name: Constants.formAnimationName)
+        formAnimationView.animationSpeed = Constants.animationSpeed
+        formAnimationView.contentMode = .scaleAspectFill
+        formAnimationView.frame = animationView.bounds
+        formAnimationView.loopAnimation = false
+        return formAnimationView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        playFormAnimation()
         hideKeyboardWhenTappedAround()
     }
 
@@ -93,5 +108,10 @@ extension RegisterViewController: RegisterView {
         stopActivityIndicator()
         resetTextFields()
         displayRegisterFailedAlert(forError: error)
+    }
+    
+    func playFormAnimation() {
+        animationView.addSubview(formAnimationView)
+        formAnimationView.play(fromProgress: Constants.animationStart, toProgress: Constants.animationEnd, withCompletion: nil)
     }
 }
