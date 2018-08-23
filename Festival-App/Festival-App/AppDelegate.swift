@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window.rootViewController = rootController
             }
         }
+        
+        NotificationService.shared.authorize()
 
         return true
     }
@@ -58,6 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         SocketService.shared.closeConnection()
         self.saveContext()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Did register for notifications")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for notifications")
+        
+        print(error)
     }
 
     // MARK: - Core Data stack

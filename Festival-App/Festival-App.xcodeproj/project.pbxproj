@@ -65,6 +65,7 @@
 		8A8D01C22119AE9C00889197 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C12119AE9C00889197 /* EditProfileView.swift */; };
 		8A8D01C42119AEA700889197 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */; };
 		8A8D01C62119BD2B00889197 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01C52119BD2B00889197 /* StorageService.swift */; };
+		8A973570212E9188007D79DB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97356F212E9188007D79DB /* NotificationService.swift */; };
 		8A98E1C7211C73A00009B19C /* artists.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C6211C73A00009B19C /* artists.mlmodel */; };
 		8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */; };
 		8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CB211C82790009B19C /* WinTicketsView.swift */; };
@@ -219,6 +220,8 @@
 		8A8D01C12119AE9C00889197 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		8A8D01C32119AEA700889197 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		8A8D01C52119BD2B00889197 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		8A97356E212E9116007D79DB /* Festival-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Festival-App.entitlements"; sourceTree = "<group>"; };
+		8A97356F212E9188007D79DB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		8A98E1C6211C73A00009B19C /* artists.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = artists.mlmodel; sourceTree = "<group>"; };
 		8A98E1C8211C82680009B19C /* WinTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsViewController.swift; sourceTree = "<group>"; };
 		8A98E1CB211C82790009B19C /* WinTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsView.swift; sourceTree = "<group>"; };
@@ -435,6 +438,7 @@
 				DE84F43E208B69C600CE35FA /* LocationService.swift */,
 				DEE34CA8205E923E006C7B55 /* MessageService.swift */,
 				DE241F7220690A7400F07C33 /* NewsService.swift */,
+				8A97356F212E9188007D79DB /* NotificationService.swift */,
 				DE16484F2041F56100EB371B /* ProductService.swift */,
 				8ACA50F8211D72EB00D50CCF /* QuestionService.swift */,
 				DEE34C9C205E91AE006C7B55 /* SocketService.swift */,
@@ -656,6 +660,7 @@
 		DECDBBF7203DE43B0001B7BA /* Festival-App */ = {
 			isa = PBXGroup;
 			children = (
+				8A97356E212E9116007D79DB /* Festival-App.entitlements */,
 				DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */,
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
 				DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */,
@@ -744,6 +749,14 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					DECDBC0B203DE43B0001B7BA = {
 						CreatedOnToolsVersion = 9.2;
@@ -978,6 +991,7 @@
 				8A121DA221171BFE0050EDBB /* UIButtonExtensions.swift in Sources */,
 				DE1648522041F9E500EB371B /* ShopCategoryCell.swift in Sources */,
 				8A6AB69B212D6F1800D9C9FC /* AbstractOperation.swift in Sources */,
+				8A973570212E9188007D79DB /* NotificationService.swift in Sources */,
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
 				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
@@ -1152,6 +1166,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Festival-App/Festival-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PX5AU8YC45;
 				INFOPLIST_FILE = "Festival-App/Info.plist";
@@ -1171,6 +1186,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Festival-App/Festival-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PX5AU8YC45;
 				INFOPLIST_FILE = "Festival-App/Info.plist";
