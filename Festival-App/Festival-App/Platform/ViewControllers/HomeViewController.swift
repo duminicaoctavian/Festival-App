@@ -18,11 +18,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupSlideMenu()
         hideNavigationBar()
-        
-        print(AuthService.shared.user.id, AuthService.shared.user.email, AuthService.shared.user.username, AuthService.shared.user.imageURL, AuthService.shared.authToken, AuthService.shared.isLoggedIn)
     }
     
     @IBAction func onChatTapped(_ sender: Any) {

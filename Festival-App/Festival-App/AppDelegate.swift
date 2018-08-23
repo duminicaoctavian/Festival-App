@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+private struct Log {
+    static let didRegisterForNotifications = "didRegisterForNotifications"
+    static let didFailToRegisterForNotifications = "didFailToRegisterToNotifications"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -63,11 +68,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("Did register for notifications")
+        print(deviceToken.reduce("", {$0 + String(format: "%02X", $1)}))
+        print(Log.didRegisterForNotifications)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Failed to register for notifications")
+        print(Log.didFailToRegisterForNotifications)
         
         print(error)
     }

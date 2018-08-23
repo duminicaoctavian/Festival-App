@@ -9,29 +9,36 @@
 import Foundation
 import UserNotifications
 
+private struct Log {
+    static let noAuthorizationError = "No UserNotification authorization error"
+    static let didReceiveDelegateMethod = "didReceive"
+    static let willPresentDelegateMethod = "willPresent"
+}
+
 class NotificationService: NSObject {
     
     private override init() {}
     static let shared = NotificationService()
     
-    let unCenter = UNUserNotificationCenter.current()
+    let UNCenter = UNUserNotificationCenter.current()
     
     func authorize() {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         
-        unCenter.requestAuthorization(options: options) { (granted, error) in
-            print(error ?? "No UserNotification authorization error")
+        UNCenter.requestAuthorization(options: options) { (granted, error) in
+            print(error ?? Log.noAuthorizationError)
             
             guard granted else { return }
             
-            DispatchQueue.main.async {
-                self.configure()
+            DispatchQueue.main.async { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.configure()
             }
         }
     }
     
     func configure() {
-        unCenter.delegate = self
+        UNCenter.delegate = self
         
         let application = UIApplication.shared
         application.registerForRemoteNotifications()
@@ -41,13 +48,13 @@ class NotificationService: NSObject {
 extension NotificationService: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        print("UserNotification didReceive")
+        print(Log.didReceiveDelegateMethod)
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        print("UserNotification willPresent")
+        print(Log.willPresentDelegateMethod)
         completionHandler([.alert, .badge, .sound])
     }
 }
