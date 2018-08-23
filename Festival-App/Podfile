@@ -13,6 +13,7 @@ target 'Festival-App' do
   pod 'AWSCognito'
   pod 'AWSS3'
   pod 'NVActivityIndicatorView'
+  pod 'lottie-ios'
 
   target 'Festival-AppTests' do
     inherit! :search_paths

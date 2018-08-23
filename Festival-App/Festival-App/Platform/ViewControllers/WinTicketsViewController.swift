@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Lottie
 
 private struct Constants {
     static let wrongAnswerAlertTitle = "Oops!"
@@ -15,6 +16,7 @@ private struct Constants {
     static let correctAnswerAlertTitle = "Congratulations!"
     static let correctAnswerAlertMessage = "You answered correctly! You now have a chance to win a free ticket!"
     static let cornerRadius: CGFloat = 20.0
+    static let animationName = "confetti"
 }
 
 class WinTicketsViewController: UIViewController {
@@ -29,6 +31,14 @@ class WinTicketsViewController: UIViewController {
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return blurEffectView
+    }()
+    
+    lazy var animationView: LOTAnimationView = {
+        let animationView = LOTAnimationView(name: Constants.animationName)
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame = view.bounds
+        animationView.loopAnimation = false
+        return animationView
     }()
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -123,14 +133,20 @@ extension WinTicketsViewController: WinTicketsView {
     
     func showCorrectAnswerAlert() {
         view.addSubview(visualEffectView)
-        let alert = UIAlertController(title: Constants.correctAnswerAlertTitle, message: Constants.correctAnswerAlertMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (action) in
+        view.addSubview(animationView)
+        animationView.play { [weak self] (finished) in
             guard let weakSelf = self else { return }
-            weakSelf.visualEffectView.removeFromSuperview()
-        })
-        alert.view.tintColor = UIColor.buttonColor
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+            
+            let alert = UIAlertController(title: Constants.correctAnswerAlertTitle, message: Constants.correctAnswerAlertMessage, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (action) in
+                guard let weakSelf = self else { return }
+                weakSelf.visualEffectView.removeFromSuperview()
+                weakSelf.animationView.removeFromSuperview()
+            })
+            alert.view.tintColor = UIColor.buttonColor
+            alert.addAction(okAction)
+            weakSelf.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
