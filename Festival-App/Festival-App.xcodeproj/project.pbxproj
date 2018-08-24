@@ -74,6 +74,9 @@
 		8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */; };
 		8ACA50F7211D723E00D50CCF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA50F6211D723E00D50CCF /* Question.swift */; };
 		8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA50F8211D72EB00D50CCF /* QuestionService.swift */; };
+		8ACCB863212FFC07006CC335 /* MyLineupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB862212FFC07006CC335 /* MyLineupViewController.swift */; };
+		8ACCB865212FFC75006CC335 /* MyLineupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB864212FFC75006CC335 /* MyLineupPresenter.swift */; };
+		8ACCB867212FFC85006CC335 /* MyLineupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB866212FFC85006CC335 /* MyLineupView.swift */; };
 		8AD7FAB52115FEA900B8320C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */; };
 		8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */; };
 		8AD7FAB92116081800B8320C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7FAB82116081800B8320C /* RegisterView.swift */; };
@@ -232,6 +235,9 @@
 		8A98E1CD211C82850009B19C /* WinTicketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicketsPresenter.swift; sourceTree = "<group>"; };
 		8ACA50F6211D723E00D50CCF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		8ACA50F8211D72EB00D50CCF /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		8ACCB862212FFC07006CC335 /* MyLineupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineupViewController.swift; sourceTree = "<group>"; };
+		8ACCB864212FFC75006CC335 /* MyLineupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineupPresenter.swift; sourceTree = "<group>"; };
+		8ACCB866212FFC85006CC335 /* MyLineupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineupView.swift; sourceTree = "<group>"; };
 		8AD7FAB42115FEA900B8320C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		8AD7FAB62116080D00B8320C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8AD7FAB82116081800B8320C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -514,9 +520,10 @@
 				DEAA64892083497300C53E58 /* EditProfileViewController.swift */,
 				DE5A8118203DE80D00D8A7FA /* HomeViewController.swift */,
 				DE4DF1692041CB340083A8F1 /* LineupVC.swift */,
-				DE742A102044963A000CF48F /* LoginViewController.swift */,
-				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
 				DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */,
+				DE742A102044963A000CF48F /* LoginViewController.swift */,
+				8ACCB862212FFC07006CC335 /* MyLineupViewController.swift */,
+				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
 				8A27521B21189FD700ABF57C /* ProductDetailsViewController.swift */,
 				DEAA6487208334B700C53E58 /* ProfileViewController.swift */,
 				DEA52116204B3EDE00ED285A /* RegisterViewController.swift */,
@@ -544,6 +551,7 @@
 				8AD7FABA21160D3400B8320C /* HomeView.swift */,
 				8AD9C083212C2CAA00189A14 /* LocationDetailsView.swift */,
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
+				8ACCB866212FFC85006CC335 /* MyLineupView.swift */,
 				8A3E6B0221176163004CA677 /* NewsView.swift */,
 				8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */,
 				8A27521D2118A05200ABF57C /* ProductDetailsView.swift */,
@@ -574,6 +582,7 @@
 				8AD7FABC21160D3E00B8320C /* HomePresenter.swift */,
 				8AD9C081212C2C9A00189A14 /* LocationDetailsPresenter.swift */,
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
+				8ACCB864212FFC75006CC335 /* MyLineupPresenter.swift */,
 				8A3E6B0021176150004CA677 /* NewsPresenter.swift */,
 				8A27521F2118A06800ABF57C /* ProductDetailsPresenter.swift */,
 				8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */,
@@ -960,6 +969,7 @@
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
 				DE4DF16C2041CB4E0083A8F1 /* ShopCategoryViewController.swift in Sources */,
 				DEAA648B2083497300C53E58 /* EditProfileViewController.swift in Sources */,
+				8ACCB863212FFC07006CC335 /* MyLineupViewController.swift in Sources */,
 				DE1648502041F56100EB371B /* ProductService.swift in Sources */,
 				8A2752202118A06800ABF57C /* ProductDetailsPresenter.swift in Sources */,
 				DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */,
@@ -987,6 +997,7 @@
 				8A30579221181FEF00D3AC85 /* ShopCategoryView.swift in Sources */,
 				8A2752232118AD5200ABF57C /* iCarousel.m in Sources */,
 				DEE34C98205E7AED006C7B55 /* ChatLogViewController.swift in Sources */,
+				8ACCB865212FFC75006CC335 /* MyLineupPresenter.swift in Sources */,
 				8A121D9A2116F2F70050EDBB /* ArtistsPresenter.swift in Sources */,
 				DE16485C2042191700EB371B /* Product.swift in Sources */,
 				8AD9C082212C2C9A00189A14 /* LocationDetailsPresenter.swift in Sources */,
@@ -1014,6 +1025,7 @@
 				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
+				8ACCB867212FFC85006CC335 /* MyLineupView.swift in Sources */,
 				8A148447211DD0C20012D802 /* ChannelsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,

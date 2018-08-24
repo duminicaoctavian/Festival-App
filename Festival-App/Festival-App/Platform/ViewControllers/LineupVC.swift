@@ -31,6 +31,7 @@ class LineupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWRevealViewController()
+        navigationController?.navigationBar.isHidden = true
         day = 1
         stage = "Main"
         highlightBtn(btn: mainStageBtn)
@@ -72,6 +73,7 @@ class LineupVC: UIViewController {
             }
         }
     }
+    
     
     func setUpSWRevealViewController() {
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
