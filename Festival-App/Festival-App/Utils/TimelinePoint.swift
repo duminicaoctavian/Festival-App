@@ -1,9 +1,9 @@
 //
 //  TimelinePoint.swift
-//  TimelineTableViewCell
+//  Festival-App
 //
-//  Created by Zheng-Xiang Ke on 2016/10/20.
-//  Copyright © 2016年 Zheng-Xiang Ke. All rights reserved.
+//  Created by Duminica Octavian on 15/04/2018.
+//  Copyright © 2018 Duminica Octavian. All rights reserved.
 //
 
 import Foundation

@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LineupVC-->
+        <!--Lineup View Controller-->
         <scene sceneID="ZcR-Jv-vcA">
             <objects>
-                <viewController id="O6W-XD-lSn" customClass="LineupVC" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O6W-XD-lSn" customClass="LineupViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sU2-9j-Syl"/>
                         <viewControllerLayoutGuide type="bottom" id="42a-u4-jHS"/>
@@ -83,9 +84,68 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4B-VN-evY" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRC-Gu-UBr">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="139" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRC-Gu-UBr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LineupCell" id="cpv-97-LiV" customClass="LineupCell" customModule="Festival_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="139"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cpv-97-LiV" id="ojd-ln-eC8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRt-Tn-9bj">
+                                                            <rect key="frame" x="170" y="31" width="0.0" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="Onu-yI-pmA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkr-9C-IgV">
+                                                            <rect key="frame" x="240" y="39" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="KYH-As-HtT"/>
+                                                                <constraint firstAttribute="width" constant="30" id="s4Z-GC-jlL"/>
+                                                            </constraints>
+                                                            <state key="normal" image="addChannelButton"/>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-HG-Jye" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                                            <rect key="frame" x="25" y="19" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="4Dc-Nk-BpE"/>
+                                                                <constraint firstAttribute="height" constant="80" id="HAY-p9-iHl"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-sb-GHr">
+                                                            <rect key="frame" x="160" y="76" width="0.0" height="0.0"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="dRt-Tn-9bj" firstAttribute="centerY" secondItem="k0E-HG-Jye" secondAttribute="centerY" constant="-5" id="4Gr-1U-Ch6"/>
+                                                        <constraint firstItem="Xyc-sb-GHr" firstAttribute="top" secondItem="dRt-Tn-9bj" secondAttribute="bottom" id="I4Q-YJ-OzA"/>
+                                                        <constraint firstItem="k0E-HG-Jye" firstAttribute="top" secondItem="ojd-ln-eC8" secondAttribute="topMargin" constant="8" id="Lfm-qp-qQv"/>
+                                                        <constraint firstItem="dkr-9C-IgV" firstAttribute="top" secondItem="ojd-ln-eC8" secondAttribute="topMargin" constant="28" id="Xht-M1-tcf"/>
+                                                        <constraint firstItem="k0E-HG-Jye" firstAttribute="leading" secondItem="ojd-ln-eC8" secondAttribute="leadingMargin" constant="10" id="cEh-yx-rgw"/>
+                                                        <constraint firstItem="Xyc-sb-GHr" firstAttribute="leading" secondItem="k0E-HG-Jye" secondAttribute="trailing" constant="55" id="eoz-Wy-3Ce"/>
+                                                        <constraint firstItem="dRt-Tn-9bj" firstAttribute="leading" secondItem="k0E-HG-Jye" secondAttribute="trailing" constant="65" id="ghP-YM-WNH"/>
+                                                        <constraint firstItem="dkr-9C-IgV" firstAttribute="leading" secondItem="k0E-HG-Jye" secondAttribute="trailing" constant="135" id="pLF-0S-3Db"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="artistImageView" destination="k0E-HG-Jye" id="Hu1-zj-AzP"/>
+                                                    <outlet property="artistNameLabel" destination="Xyc-sb-GHr" id="cdI-8E-7k5"/>
+                                                    <outlet property="timestampLabel" destination="dRt-Tn-9bj" id="Oan-JX-jaQ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="O6W-XD-lSn" id="YIF-Xw-1Sm"/>
                                             <outlet property="delegate" destination="O6W-XD-lSn" id="8Qh-7U-dVo"/>
@@ -267,15 +327,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="hLb-JO-LCk"/>
                     <connections>
-                        <outlet property="dayFourBtn" destination="CE1-MA-JQY" id="l1l-L5-Y5e"/>
-                        <outlet property="dayOneBtn" destination="YNi-sZ-ig7" id="1vd-pD-RTV"/>
-                        <outlet property="dayThreeBtn" destination="Fg2-x8-Oaj" id="PG0-cP-qPg"/>
-                        <outlet property="dayTwoBtn" destination="WTm-Pl-vzq" id="vWo-sJ-XWW"/>
-                        <outlet property="liveStageBtn" destination="gJg-90-5W4" id="b5E-3z-oAx"/>
-                        <outlet property="mainStageBtn" destination="42C-K2-tfJ" id="2Xi-1K-mPo"/>
-                        <outlet property="menuBtn" destination="QQw-tV-6Gj" id="N0h-zW-lUo"/>
-                        <outlet property="oasisStageBtn" destination="Vdz-C8-F0k" id="MRA-8h-1KA"/>
-                        <outlet property="resistanceStageBtn" destination="frL-I8-itU" id="DEy-3N-fLJ"/>
+                        <outlet property="dayFourButton" destination="CE1-MA-JQY" id="l1l-L5-Y5e"/>
+                        <outlet property="dayOneButton" destination="YNi-sZ-ig7" id="1vd-pD-RTV"/>
+                        <outlet property="dayThreeButton" destination="Fg2-x8-Oaj" id="PG0-cP-qPg"/>
+                        <outlet property="dayTwoButton" destination="WTm-Pl-vzq" id="vWo-sJ-XWW"/>
+                        <outlet property="liveButton" destination="gJg-90-5W4" id="b5E-3z-oAx"/>
+                        <outlet property="mainButton" destination="42C-K2-tfJ" id="2Xi-1K-mPo"/>
+                        <outlet property="menuButton" destination="QQw-tV-6Gj" id="N0h-zW-lUo"/>
+                        <outlet property="oasisButton" destination="Vdz-C8-F0k" id="MRA-8h-1KA"/>
+                        <outlet property="resistanceButton" destination="frL-I8-itU" id="DEy-3N-fLJ"/>
                         <outlet property="tableView" destination="sRC-Gu-UBr" id="1vB-Ej-Ujs"/>
                     </connections>
                 </viewController>
@@ -427,6 +487,7 @@
         <image name="Main" width="25" height="25"/>
         <image name="Oasis" width="25" height="25"/>
         <image name="Resistance" width="25" height="25"/>
+        <image name="addChannelButton" width="22" height="22"/>
         <image name="backButton" width="25" height="25"/>
         <image name="menuStack" width="40" height="40"/>
         <image name="userTimeline" width="25" height="25"/>
