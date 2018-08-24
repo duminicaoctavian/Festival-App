@@ -16,4 +16,5 @@ protocol NewsView: class {
     func showTableView()
     func hideTableView()
     func reloadData()
+    func showStatusBar()
 }

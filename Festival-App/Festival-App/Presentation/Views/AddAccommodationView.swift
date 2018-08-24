@@ -18,4 +18,5 @@ protocol AddAccommodationView: class {
     func setupButtonsImageViews()
     func startActivityIndicator()
     func stopActivityIndicator()
+    func roundTextView()
 }

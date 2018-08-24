@@ -37,6 +37,7 @@ class NewsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        showStatusBar()
         presenter.viewWillAppear()
     }
     
@@ -91,6 +92,10 @@ extension NewsViewController: NewsView {
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func showStatusBar() {
+        UIApplication.shared.isStatusBarHidden = false
     }
 }
 

@@ -75,6 +75,7 @@ class AddAccommodationViewController: UIViewController {
         setupScrollView()
         setupButtonsImageViews()
         roundButtons()
+        roundTextView()
         addSingleTapToMapView()
         presenter.viewDidLoad()
     }
@@ -359,5 +360,10 @@ extension AddAccommodationViewController: AddAccommodationView {
     
     func stopActivityIndicator() {
         LoadingView.stopLoading()
+    }
+    
+    func roundTextView() {
+        descriptionTextView.clipsToBounds = true
+        descriptionTextView.layer.cornerRadius = Constants.cornerRadius
     }
 }
