@@ -29,6 +29,13 @@ enum Stage: String {
     case oasis = "Oasis"
 }
 
+enum Day: Int {
+    case one = 1
+    case two = 2
+    case three = 3
+    case four = 4
+}
+
 enum Event: String {
     case newChannel = "newChannel"
     case channelCreated = "channelCreated"

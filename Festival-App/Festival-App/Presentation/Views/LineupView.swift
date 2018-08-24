@@ -9,5 +9,11 @@
 import Foundation
 
 protocol LineupView: class {
-    
+    func setupSlideMenu()
+    func hideNavigationBar()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func highlightItem(button: Highlightable, label: Highlightable)
+    func unHighlightItems(buttons: [Highlightable], labels: [Highlightable])
+    func reloadData()
 }

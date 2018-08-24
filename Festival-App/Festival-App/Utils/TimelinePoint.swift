@@ -8,50 +8,21 @@
 
 import Foundation
 
-public struct TimelinePoint {
-    public var diameter: CGFloat = 6.0 {
-        didSet {
-            if (diameter < 0.0) {
-                diameter = 0.0
-            } else if (diameter > 100.0) {
-                diameter = 100.0
-            }
-        }
-    }
+private struct Constants {
+    static let diameter: CGFloat = 12.9
+    static let lineWidth: CGFloat = 4.0
+}
+
+struct TimelinePoint {
+    var diameter: CGFloat
+    var lineWidth: CGFloat
+    var color: UIColor
+    var position = CGPoint(x: 0, y: 0)
     
-    public var lineWidth: CGFloat = 2.0 {
-        didSet {
-            if (lineWidth < 0.0) {
-                lineWidth = 0.0
-            } else if(lineWidth > 20.0) {
-                lineWidth = 20.0
-            }
-        }
-    }
-    
-    public var color = #colorLiteral(red: 0, green: 0.2352941176, blue: 0.3294117647, alpha: 1)
-    
-    public var isFilled = false
-    
-    internal var position = CGPoint(x: 0, y: 0)
-    
-    public init(diameter: CGFloat, lineWidth: CGFloat, color: UIColor, filled: Bool) {
-        self.diameter = diameter
-        self.lineWidth = lineWidth
-        self.color = color
-        self.isFilled = filled
-    }
-    
-    public init(diameter: CGFloat, color: UIColor, filled: Bool) {
-        self.init(diameter: diameter, lineWidth: 4.0, color: color, filled: filled)
-    }
-    
-    public init(color: UIColor, filled: Bool) {
-        self.init(diameter: 12.0, lineWidth: 4.0, color: color, filled: filled)
-    }
-    
-    public init() {
-        self.init(diameter: 12.0, lineWidth: 4.0, color: UIColor.black, filled: false)
+    init() {
+        self.diameter = Constants.diameter
+        self.lineWidth = Constants.lineWidth
+        self.color = UIColor.black
     }
     
     public func draw(view: UIView) {
@@ -60,7 +31,7 @@ public struct TimelinePoint {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = color.cgColor
-        shapeLayer.fillColor = isFilled ? color.cgColor : UIColor.white.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
         shapeLayer.lineWidth = lineWidth
 
         view.layer.addSublayer(shapeLayer)

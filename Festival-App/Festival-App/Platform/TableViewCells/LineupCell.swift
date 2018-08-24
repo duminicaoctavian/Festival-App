@@ -41,7 +41,6 @@ class LineupCell: UITableViewCell {
     
     override open func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override open func setSelected(_ selected: Bool, animated: Bool) {
@@ -97,5 +96,19 @@ class LineupCell: UITableViewCell {
     
     @IBAction func onAddPressed(_ sender: Any) {
         self.didRequestToAddToOwnTimeline?(self)
+    }
+}
+
+extension LineupCell: LineupItemView {
+    func displayArtistImage(_ URLString: String) {
+        artistImageView.loadImageUsingCache(withURLString: URLString)
+    }
+    
+    func displayTimestamp(_ timestamp: String) {
+        timestampLabel.text = timestamp
+    }
+    
+    func displayArtistName(_ name: String) {
+        artistNameLabel.text = name
     }
 }
