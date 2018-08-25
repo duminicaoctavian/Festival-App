@@ -74,38 +74,51 @@ class LineupPresenter {
     }
     
     func addArtistToUserTimeline(withIndex index: Int) {
-        let artistToAdd = ArtistService.shared.artists[index]
-        if !artistAlreadyAdded(artistToAdd: artistToAdd) {
-            ArtistService.shared.userArtists.append(artistToAdd)
-            sortUserArtistsByDate()
-            print(ArtistService.shared.userArtists.count)
+        let artist = ArtistService.shared.artists[index]
+        
+        if !artistAlreadyAdded(artistToAdd: artist, forDay: artist.day - 1) {
+            let artists = ArtistService.shared.userArtists[artist.day - 1]
+            
+            if artists != nil {
+                guard var artists = artists else { return }
+                artists.append(artist)
+                ArtistService.shared.userArtists.updateValue(artists, forKey: artist.day - 1)
+                sortUserArtistsByDate(forDay: artist.day - 1)
+            } else {
+                let artistToAdd = [artist]
+                ArtistService.shared.userArtists[artist.day - 1] = artistToAdd
+            }
         }
     }
     
-    private func artistAlreadyAdded(artistToAdd: Artist) -> Bool {
-        if ArtistService.shared.userArtists.contains(where: { [weak self] (artist) -> Bool in
-            guard let _ = self else { return false }
-            if artist.id == artistToAdd.id {
+    private func artistAlreadyAdded(artistToAdd: Artist, forDay day: Int) -> Bool {
+        let artists = ArtistService.shared.userArtists[day]
+        
+        if artists != nil {
+            guard let artists = artists else { return false }
+            
+            if artists.contains(where: { [weak self] (artist) -> Bool in
+                guard let _ = self else { return false }
+                if artist.id == artistToAdd.id {
+                    return true
+                }
+                return false
+            }) {
                 return true
             }
             return false
-        }) {
-            return true
+        } else {
+            return false
         }
-        return false
     }
     
-    private func sortUserArtistsByDate() {
-        let sortedArray = ArtistService.shared.userArtists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
+    private func sortUserArtistsByDate(forDay day: Int) {
+        guard let artists = ArtistService.shared.userArtists[day] else { return }
+        let sortedArray = artists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
             guard let _ = self else { return false }
-            
-            if artistOne.day != artistTwo.day {
-                return artistOne.day < artistTwo.day
-            } else {
-                return artistOne.date < artistTwo.date
-            }
+            return artistOne.date < artistTwo.date
         }
-        ArtistService.shared.userArtists = sortedArray
+        ArtistService.shared.userArtists[day] = sortedArray
     }
     
     private func getFilteredArtists(stage: String, day: Int) {

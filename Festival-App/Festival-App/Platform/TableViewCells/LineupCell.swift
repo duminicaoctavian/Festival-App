@@ -11,6 +11,7 @@ import UIKit
 private struct Constants {
     static let captionCornerRadius: CGFloat = 2.0
     static let captionColor = UIColor.timelineCaptionColor
+    static let tickAssetName = "tick"
 }
 
 class LineupCell: UITableViewCell {
@@ -18,6 +19,7 @@ class LineupCell: UITableViewCell {
     @IBOutlet weak var artistImageView: CircleImage!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     var timelinePoint = TimelinePoint()
     
@@ -111,5 +113,9 @@ extension LineupCell: LineupItemView {
     
     func displayArtistName(_ name: String) {
         artistNameLabel.text = name
+    }
+    
+    func changeButton() {
+        addButton.setImage(UIImage(named: Constants.tickAssetName), for: .normal)
     }
 }

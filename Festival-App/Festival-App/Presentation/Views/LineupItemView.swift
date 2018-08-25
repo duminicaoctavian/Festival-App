@@ -16,5 +16,6 @@ protocol LineupItemView {
     func displayLowerTimeline()
     func hideUpperTimeline()
     func hideLowerTimeline()
+    func changeButton()
 }
 

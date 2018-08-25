@@ -144,6 +144,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="addButton" destination="dkr-9C-IgV" id="PgE-R6-Pl0"/>
                                                     <outlet property="artistImageView" destination="k0E-HG-Jye" id="Hu1-zj-AzP"/>
                                                     <outlet property="artistNameLabel" destination="Xyc-sb-GHr" id="cdI-8E-7k5"/>
                                                     <outlet property="timestampLabel" destination="dRt-Tn-9bj" id="Oan-JX-jaQ"/>
