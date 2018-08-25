@@ -18,6 +18,7 @@ class ArtistService {
     
     static let shared = ArtistService()
     var artists = [Artist]()
+    var userArtists = [Artist]()
     
     func getAllArtists(forStage stage: String, completion: @escaping CompletionHandler) {
         Alamofire.request("\(Route.artists)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in

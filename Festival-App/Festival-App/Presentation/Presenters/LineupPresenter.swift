@@ -68,6 +68,11 @@ class LineupPresenter {
         }
     }
     
+    func addArtistToUserTimeline(withIndex index: Int) {
+        let artist = ArtistService.shared.artists[index]
+        ArtistService.shared.userArtists.append(artist)
+    }
+    
     private func getFilteredArtists(stage: String, day: Int) {
         ArtistService.shared.clearArtists()
         

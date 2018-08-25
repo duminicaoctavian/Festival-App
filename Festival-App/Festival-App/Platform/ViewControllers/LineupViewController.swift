@@ -84,8 +84,9 @@ extension LineupViewController: UITableViewDataSource, UITableViewDelegate {
         
         presenter.configure(cell, at: indexPath.row)
 
-        cell.didRequestToAddToOwnTimeline = { (cell) in
-            
+        cell.didAddToOwnTimeline = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.presenter.addArtistToUserTimeline(withIndex: indexPath.row)
         }
         
         return cell

@@ -29,7 +29,6 @@ struct Artist {
     public private(set) var day: Int
     public private(set) var date: String
     public private(set) var artistImageURL: String
-    public private(set) var isOnUserTimeline: Bool
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
@@ -40,6 +39,5 @@ struct Artist {
         self.day = json[SerializationKey.day].int ?? 1
         self.date = json[SerializationKey.date].stringValue
         self.artistImageURL = json[SerializationKey.imageURL].stringValue
-        self.isOnUserTimeline = false
     }
 }

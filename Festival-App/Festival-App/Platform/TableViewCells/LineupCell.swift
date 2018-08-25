@@ -8,95 +8,79 @@
 
 import UIKit
 
+private struct Constants {
+    static let captionCornerRadius: CGFloat = 2.0
+    static let captionColor = UIColor.timelineCaptionColor
+}
+
 class LineupCell: UITableViewCell {
     
     @IBOutlet weak var artistImageView: CircleImage!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     
-    var timelinePoint = TimelinePoint() {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
+    var timelinePoint = TimelinePoint()
     
     var timeline = Timeline() {
         didSet {
             self.setNeedsDisplay()
         }
     }
+    
+    var didAddToOwnTimeline: (() -> ())?
 
-    open var bubbleRadius: CGFloat = 2.0 {
-        didSet {
-            if (bubbleRadius < 0.0) {
-                bubbleRadius = 0.0
-            } else if (bubbleRadius > 6.0) {
-                bubbleRadius = 6.0
-            }
-            
-            self.setNeedsDisplay()
-        }
-    }
+    var captionCornerRadius = Constants.captionCornerRadius
+    var captionColor = Constants.captionColor
     
-    open var bubbleColor = UIColor(red: 56.0/255.0, green: 27.0/255.0, blue: 90.0/255.0, alpha: 1.0)
-    
-    override open func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override open func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-    override open func draw(_ rect: CGRect) {
-        for layer in self.contentView.layer.sublayers! {
+    override func draw(_ rect: CGRect) {
+        guard let sublayers = contentView.layer.sublayers else { return }
+        
+        for layer in sublayers {
             if layer is CAShapeLayer {
                 layer.removeFromSuperlayer()
             }
         }
         
         timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: timestampLabel.frame.origin.y + 15)
-
         timeline.start = CGPoint(x: timelinePoint.position.x + timelinePoint.diameter / 2, y: 0)
         timeline.middle = CGPoint(x: timeline.start.x, y: timelinePoint.position.y)
-        timeline.end = CGPoint(x: timeline.start.x, y: self.bounds.size.height)
-        timeline.draw(view: self.contentView)
+        timeline.end = CGPoint(x: timeline.start.x, y: bounds.size.height)
+        timeline.draw(view: contentView)
+        timelinePoint.draw(view: contentView)
         
-        timelinePoint.draw(view: self.contentView)
-        
-        if let title = timestampLabel.text, !title.isEmpty {
-            drawBubble()
-        }
+        drawCaption()
     }
     
-    fileprivate func drawBubble() {
+    private func drawCaption() {
         let offset: CGFloat = 16
-        let bubbleRect = CGRect(
+        
+        let captionRect = CGRect(
             x: timestampLabel.frame.origin.x - offset / 2,
             y: timestampLabel.frame.origin.y,
             width: timestampLabel.intrinsicContentSize.width + offset,
-            height: timestampLabel.intrinsicContentSize.height + offset)
+            height: timestampLabel.intrinsicContentSize.height + offset
+        )
         
-        let path = UIBezierPath(roundedRect: bubbleRect, cornerRadius: bubbleRadius)
-        let startPoint = CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 - 8)
+        let path = UIBezierPath(roundedRect: captionRect, cornerRadius: captionCornerRadius)
+        let startPoint = CGPoint(x: captionRect.origin.x, y: captionRect.origin.y + captionRect.height / 2 - 8)
         path.move(to: startPoint)
         path.addLine(to: startPoint)
-        path.addLine(to: CGPoint(x: bubbleRect.origin.x - 8, y: bubbleRect.origin.y + bubbleRect.height / 2))
-        path.addLine(to: CGPoint(x: bubbleRect.origin.x, y: bubbleRect.origin.y + bubbleRect.height / 2 + 8))
+        path.addLine(to: CGPoint(x: captionRect.origin.x - 8, y: captionRect.origin.y + captionRect.height / 2))
+        path.addLine(to: CGPoint(x: captionRect.origin.x, y: captionRect.origin.y + captionRect.height / 2 + 8))
 
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = bubbleColor.cgColor
+        shapeLayer.fillColor = captionColor.cgColor
         
-        self.contentView.layer.insertSublayer(shapeLayer, below: timestampLabel.layer)
+        contentView.layer.insertSublayer(shapeLayer, below: timestampLabel.layer)
     }
     
-    var didRequestToAddToOwnTimeline: ((_ cell:UITableViewCell) -> ())?
-    
-    @IBAction func onAddPressed(_ sender: Any) {
-        self.didRequestToAddToOwnTimeline?(self)
+    @IBAction func onAddTapped(_ sender: Any) {
+        didAddToOwnTimeline?()
     }
 }
 

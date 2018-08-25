@@ -48,4 +48,8 @@ extension UIColor {
     static var timelinePointColor: UIColor {
         return UIColor(red: 0, green: 60, blue: 84)
     }
+    
+    static var timelineCaptionColor: UIColor {
+        return UIColor(red: 56, green: 27, blue: 90)
+    }
 }
