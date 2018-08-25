@@ -14,7 +14,9 @@ class LineupPresenter {
     var selectedStage: Stage = .main
     var selectedDay: Int = 1
     
-    var data = [Int: [(TimelinePoint, UIColor, String, String, String)]]()
+    var artistCount: Int {
+        return ArtistService.shared.artists.count
+    }
     
     init(view: LineupView) {
         self.view = view
@@ -45,9 +47,29 @@ class LineupPresenter {
         getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay)
     }
     
+    func configure(_ itemView: LineupItemView, at index: Int) {
+        let artist = ArtistService.shared.artists[index]
+        guard let formattedDate = artist.date.convertFromISODate(toFormat: DateFormat.HHmm.rawValue) else { return }
+        
+        itemView.displayArtistName(artist.name)
+        itemView.displayTimestamp(formattedDate)
+        itemView.displayArtistImage(artist.artistImageURL)
+        
+        switch index {
+        case 0:
+            itemView.hideUpperTimeline()
+            itemView.displayLowerTimeline()
+        case ArtistService.shared.artists.count - 1:
+            itemView.displayUpperTimeline()
+            itemView.hideLowerTimeline()
+        default:
+            itemView.displayUpperTimeline()
+            itemView.displayLowerTimeline()
+        }
+    }
+    
     private func getFilteredArtists(stage: String, day: Int) {
         ArtistService.shared.clearArtists()
-        data.removeAll()
         
         DispatchQueue.main.async { [weak self] in
             guard let weakSelf = self else { return }
@@ -56,27 +78,9 @@ class LineupPresenter {
         }
         
         ArtistService.shared.getFilteredArtists(forStage: stage, and: day) { [weak self] (success) in
-            guard let weakSelf = self else { return }
+            guard let _ = self else { return }
             
             if (success) {
-                for index in 0..<ArtistService.shared.artists.count {
-                    let artist = ArtistService.shared.artists[index]
-                    
-                    if index == ArtistService.shared.artists.count - 1 {
-                        weakSelf.data[Int(artist.day)]?.append((TimelinePoint(), backColor: UIColor.clear, artist.date, artist.name, artist.artistImageURL))
-                        break
-                    }
-                    
-                    let keyExists = weakSelf.data[Int(artist.day)] != nil
-                    
-                    if keyExists {
-                        weakSelf.data[Int(artist.day)]?.append((TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL))
-                    } else {
-                        weakSelf.data[Int(artist.day)] = [(TimelinePoint(), UIColor.lightGray, artist.date, artist.name, artist.artistImageURL)]
-                    }
-                    
-                }
-                
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.view?.stopActivityIndicator()

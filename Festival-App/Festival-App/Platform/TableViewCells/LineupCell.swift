@@ -14,12 +14,13 @@ class LineupCell: UITableViewCell {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     
-    open var timelinePoint = TimelinePoint() {
+    var timelinePoint = TimelinePoint() {
         didSet {
             self.setNeedsDisplay()
         }
     }
-    open var timeline = Timeline() {
+    
+    var timeline = Timeline() {
         didSet {
             self.setNeedsDisplay()
         }
@@ -100,6 +101,22 @@ class LineupCell: UITableViewCell {
 }
 
 extension LineupCell: LineupItemView {
+    func displayUpperTimeline() {
+        timeline.upperColor = .lightGray
+    }
+    
+    func displayLowerTimeline() {
+        timeline.lowerColor = .lightGray
+    }
+    
+    func hideUpperTimeline() {
+        timeline.upperColor = .clear
+    }
+    
+    func hideLowerTimeline() {
+        timeline.lowerColor = .clear
+    }
+    
     func displayArtistImage(_ URLString: String) {
         artistImageView.loadImageUsingCache(withURLString: URLString)
     }

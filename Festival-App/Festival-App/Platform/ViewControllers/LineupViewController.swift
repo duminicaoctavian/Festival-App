@@ -25,8 +25,6 @@ class LineupViewController: UIViewController {
     @IBOutlet weak var dayThreeButton: UIButton!
     @IBOutlet weak var dayFourButton: UIButton!
     
-    let imageCache = NSCache<AnyObject, AnyObject>()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlideMenu()
@@ -77,73 +75,17 @@ class LineupViewController: UIViewController {
 extension LineupViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionData = presenter.data[presenter.selectedDay] else {
-            return 0
-        }
-        return sectionData.count
+        return presenter.artistCount
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LineupCell.className, for: indexPath) as! LineupCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LineupCell.className, for: indexPath) as? LineupCell else { return UITableViewCell() }
         
-        // Configure the cell...
-        guard let sectionData = presenter.data[presenter.selectedDay] else {
-            return cell
-        }
-        
-        let (timelinePoint, timelineBackColor, title, description, imageLink) = sectionData[indexPath.row]
-        var timelineFrontColor = UIColor.clear
-        if (indexPath.row > 0) {
-            timelineFrontColor = sectionData[indexPath.row - 1].1
-        }
-        cell.timelinePoint = timelinePoint
-        cell.timeline.frontColor = timelineFrontColor
-        cell.timeline.backColor = timelineBackColor
-        
-        var isoDate = title
-        let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
-        isoDate = String(isoDate[..<end])
-        
-        let isoFormatter = ISO8601DateFormatter()
-        let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
-        
-        let newFormatter = DateFormatter()
-        newFormatter.dateFormat = "HH:mm"
-        
-        if let finalDate = chatDate {
-            let finalDate = newFormatter.string(from: finalDate)
-            cell.timestampLabel.text = finalDate
-        }
+        presenter.configure(cell, at: indexPath.row)
 
-        cell.artistNameLabel.text = description
-        
-        let imageUrl = URL(string: imageLink)!
-        
-        cell.artistImageView.image = nil
-        
-        if let imageFromCache = imageCache.object(forKey: imageLink as AnyObject) as? UIImage {
-            cell.artistImageView.image = imageFromCache
-            return cell
-        }
-        
-        // Start background thread so that image loading does not make app unresponsive
-        DispatchQueue.global(qos: .userInitiated).async {
-        
-            let imageData = NSData(contentsOf: imageUrl)!
-        
-            // When from background thread, UI needs to be updated on main_queue
-            DispatchQueue.main.async {
-                let imageToCache = UIImage(data: imageData as Data)
-                
-                self.imageCache.setObject(imageToCache!, forKey: imageLink as AnyObject)
-                
-                cell.artistImageView.image = imageToCache
-            }
-        }
-        
         cell.didRequestToAddToOwnTimeline = { (cell) in
-            print(description)
+            
         }
         
         return cell

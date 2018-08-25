@@ -16,7 +16,7 @@ private struct Constants {
 struct Timeline {
     var width: CGFloat
     var leftMargin: CGFloat
-    var (frontColor, backColor) = (UIColor.black, UIColor.black)
+    var (upperColor, lowerColor) = (UIColor.black, UIColor.black)
     var (start, middle, end) = (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 0))
     
     init() {
@@ -25,8 +25,8 @@ struct Timeline {
     }
     
     func draw(view: UIView) {
-        draw(view: view, from: start, to: middle, color: frontColor)
-        draw(view: view, from: middle, to: end, color: backColor)
+        draw(view: view, from: start, to: middle, color: upperColor)
+        draw(view: view, from: middle, to: end, color: lowerColor)
     }
     
     private func draw(view: UIView, from: CGPoint, to: CGPoint, color: UIColor) {
