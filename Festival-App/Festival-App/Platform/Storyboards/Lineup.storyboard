@@ -411,9 +411,58 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgj-RX-LNM" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eik-FP-Rym">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="139" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Eik-FP-Rym">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyLineupCell" rowHeight="139" id="XWh-B5-YbU" customClass="MyLineupCell" customModule="Festival_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55.5" width="375" height="139"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XWh-B5-YbU" id="uOK-jl-Nqx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNt-Td-8hh">
+                                                            <rect key="frame" x="160" y="84" width="0.0" height="0.0"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srH-ql-ktz">
+                                                            <rect key="frame" x="170" y="31" width="0.0" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="B1B-w1-Z4H"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ome-uz-qdY" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                                            <rect key="frame" x="25" y="19" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="0Ck-Ds-gA3"/>
+                                                                <constraint firstAttribute="height" constant="80" id="YUA-BM-QHe"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wNt-Td-8hh" firstAttribute="top" secondItem="srH-ql-ktz" secondAttribute="bottom" constant="8" id="3Qz-we-tX8"/>
+                                                        <constraint firstItem="srH-ql-ktz" firstAttribute="centerY" secondItem="ome-uz-qdY" secondAttribute="centerY" constant="-5" id="Bqe-Mz-tG9"/>
+                                                        <constraint firstItem="ome-uz-qdY" firstAttribute="top" secondItem="uOK-jl-Nqx" secondAttribute="top" constant="19" id="GEG-J7-fOX"/>
+                                                        <constraint firstItem="wNt-Td-8hh" firstAttribute="leading" secondItem="ome-uz-qdY" secondAttribute="trailing" constant="55" id="Mzw-s6-P2M"/>
+                                                        <constraint firstItem="srH-ql-ktz" firstAttribute="leading" secondItem="ome-uz-qdY" secondAttribute="trailing" constant="65" id="mlB-C8-9hs"/>
+                                                        <constraint firstItem="ome-uz-qdY" firstAttribute="leading" secondItem="uOK-jl-Nqx" secondAttribute="leading" constant="25" id="ufI-13-lWY"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="artistImageView" destination="ome-uz-qdY" id="gd4-fB-0Dy"/>
+                                                    <outlet property="artistNameLabel" destination="wNt-Td-8hh" id="J0k-Tz-Fv8"/>
+                                                    <outlet property="timestampLabel" destination="srH-ql-ktz" id="fT2-3x-ZCm"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="d73-3u-9fS" id="Lec-6V-Nhc"/>
                                             <outlet property="delegate" destination="d73-3u-9fS" id="F6t-NW-XJ1"/>
@@ -465,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKr-yf-KDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="-1252"/>
+            <point key="canvasLocation" x="2600.8000000000002" y="-1252.6236881559221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wNd-RM-ors">

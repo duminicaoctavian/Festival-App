@@ -138,6 +138,6 @@ enum ProductCategory: String {
 }
 
 enum DateFormat: String {
-    case ddMMYYYYhhmm = "dd.MM.YYYY hh:mm"
+    case ddMMYYYYhhmm = "dd.MM.YYYY HH:mm"
     case HHmm = "HH:mm"
 }

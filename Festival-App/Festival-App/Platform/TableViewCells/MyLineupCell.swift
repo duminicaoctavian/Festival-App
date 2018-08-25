@@ -1,8 +1,8 @@
 //
-//  LineupCell.swift
+//  MyLineupCell.swift
 //  Festival-App
 //
-//  Created by Duminica Octavian on 15/04/2018.
+//  Created by Octavian Duminica on 25/08/2018.
 //  Copyright © 2018 Duminica Octavian. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ private struct Constants {
     static let captionColor = UIColor.timelineCaptionColor
 }
 
-class LineupCell: UITableViewCell {
+class MyLineupCell: UITableViewCell {
     
     @IBOutlet weak var artistImageView: CircleImage!
     @IBOutlet weak var timestampLabel: UILabel!
@@ -27,15 +27,13 @@ class LineupCell: UITableViewCell {
         }
     }
     
-    var didAddToOwnTimeline: (() -> ())?
-
     var captionCornerRadius = Constants.captionCornerRadius
     var captionColor = Constants.captionColor
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func draw(_ rect: CGRect) {
         guard let sublayers = contentView.layer.sublayers else { return }
         
@@ -71,20 +69,20 @@ class LineupCell: UITableViewCell {
         path.addLine(to: startPoint)
         path.addLine(to: CGPoint(x: captionRect.origin.x - 8, y: captionRect.origin.y + captionRect.height / 2))
         path.addLine(to: CGPoint(x: captionRect.origin.x, y: captionRect.origin.y + captionRect.height / 2 + 8))
-
+        
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = captionColor.cgColor
         
         contentView.layer.insertSublayer(shapeLayer, below: timestampLabel.layer)
     }
-    
-    @IBAction func onAddTapped(_ sender: Any) {
-        didAddToOwnTimeline?()
-    }
 }
 
-extension LineupCell: LineupItemView {
+extension MyLineupCell: MyLineupItemView {
+    func displayTimestampAndStage(_ timestamp: String, and stage: String) {
+        timestampLabel.text = "\(timestamp) @\(stage)"
+    }
+    
     func displayUpperTimeline() {
         timeline.upperColor = .lightGray
     }
@@ -103,10 +101,6 @@ extension LineupCell: LineupItemView {
     
     func displayArtistImage(_ URLString: String) {
         artistImageView.loadImageUsingCache(withURLString: URLString)
-    }
-    
-    func displayTimestamp(_ timestamp: String) {
-        timestampLabel.text = timestamp
     }
     
     func displayArtistName(_ name: String) {

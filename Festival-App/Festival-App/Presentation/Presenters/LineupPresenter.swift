@@ -66,11 +66,46 @@ class LineupPresenter {
             itemView.displayUpperTimeline()
             itemView.displayLowerTimeline()
         }
+        
+        if ArtistService.shared.artists.count == 1 {
+            itemView.hideUpperTimeline()
+            itemView.hideLowerTimeline()
+        }
     }
     
     func addArtistToUserTimeline(withIndex index: Int) {
-        let artist = ArtistService.shared.artists[index]
-        ArtistService.shared.userArtists.append(artist)
+        let artistToAdd = ArtistService.shared.artists[index]
+        if !artistAlreadyAdded(artistToAdd: artistToAdd) {
+            ArtistService.shared.userArtists.append(artistToAdd)
+            sortUserArtistsByDate()
+            print(ArtistService.shared.userArtists.count)
+        }
+    }
+    
+    private func artistAlreadyAdded(artistToAdd: Artist) -> Bool {
+        if ArtistService.shared.userArtists.contains(where: { [weak self] (artist) -> Bool in
+            guard let _ = self else { return false }
+            if artist.id == artistToAdd.id {
+                return true
+            }
+            return false
+        }) {
+            return true
+        }
+        return false
+    }
+    
+    private func sortUserArtistsByDate() {
+        let sortedArray = ArtistService.shared.userArtists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
+            guard let _ = self else { return false }
+            
+            if artistOne.day != artistTwo.day {
+                return artistOne.day < artistTwo.day
+            } else {
+                return artistOne.date < artistTwo.date
+            }
+        }
+        ArtistService.shared.userArtists = sortedArray
     }
     
     private func getFilteredArtists(stage: String, day: Int) {

@@ -58,6 +58,8 @@
 		8A3E6B05211765BE004CA677 /* VideoNewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B04211765BE004CA677 /* VideoNewsItemView.swift */; };
 		8A3E6B0921177B0C004CA677 /* PictureNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */; };
 		8A3E6B0B21177C17004CA677 /* PictureNewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */; };
+		8A435CD42131D22600ECF90C /* MyLineupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A435CD32131D22600ECF90C /* MyLineupCell.swift */; };
+		8A435CD62131D40900ECF90C /* MyLineupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A435CD52131D40900ECF90C /* MyLineupItemView.swift */; };
 		8A6AB69B212D6F1800D9C9FC /* AbstractOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AB69A212D6F1800D9C9FC /* AbstractOperation.swift */; };
 		8A6AB69D212D70E200D9C9FC /* UploadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AB69C212D70E200D9C9FC /* UploadImageOperation.swift */; };
 		8A8D01BE2119A8EA00889197 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D01BD2119A8EA00889197 /* ProfileView.swift */; };
@@ -220,6 +222,8 @@
 		8A3E6B04211765BE004CA677 /* VideoNewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNewsItemView.swift; sourceTree = "<group>"; };
 		8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNewsCell.swift; sourceTree = "<group>"; };
 		8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNewsItemView.swift; sourceTree = "<group>"; };
+		8A435CD32131D22600ECF90C /* MyLineupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineupCell.swift; sourceTree = "<group>"; };
+		8A435CD52131D40900ECF90C /* MyLineupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLineupItemView.swift; sourceTree = "<group>"; };
 		8A6AB69A212D6F1800D9C9FC /* AbstractOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractOperation.swift; sourceTree = "<group>"; };
 		8A6AB69C212D70E200D9C9FC /* UploadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageOperation.swift; sourceTree = "<group>"; };
 		8A8D01BD2119A8EA00889197 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -476,10 +480,11 @@
 			children = (
 				DE0FCD5E203F211F00FE29BB /* ArtistCell.swift */,
 				DEE34CA4205E9208006C7B55 /* ChannelCell.swift */,
+				DE19FC6C2071A7B900316199 /* LineupCell.swift */,
 				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
+				8A435CD32131D22600ECF90C /* MyLineupCell.swift */,
 				8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */,
 				DE1648512041F9E500EB371B /* ShopCategoryCell.swift */,
-				DE19FC6C2071A7B900316199 /* LineupCell.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
 				DE4DF1672041C1720083A8F1 /* VideoNewsCell.swift */,
 			);
@@ -556,6 +561,7 @@
 				8ACCB86821300FF4006CC335 /* LineupView.swift */,
 				8AD9C083212C2CAA00189A14 /* LocationDetailsView.swift */,
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
+				8A435CD52131D40900ECF90C /* MyLineupItemView.swift */,
 				8ACCB866212FFC85006CC335 /* MyLineupView.swift */,
 				8A3E6B0221176163004CA677 /* NewsView.swift */,
 				8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */,
@@ -955,6 +961,7 @@
 				8A8D01C42119AEA700889197 /* EditProfilePresenter.swift in Sources */,
 				8ACCB86B21301001006CC335 /* LineupPresenter.swift in Sources */,
 				8A14844D211DE8070012D802 /* ChatLogView.swift in Sources */,
+				8A435CD42131D22600ECF90C /* MyLineupCell.swift in Sources */,
 				DE19FC6D2071A7B900316199 /* LineupCell.swift in Sources */,
 				8A121D962116DD1B0050EDBB /* ArtistDetailsPresenter.swift in Sources */,
 				DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */,
@@ -1018,6 +1025,7 @@
 				8A30579B211842C500D3AC85 /* NewsVideoViewModelItem.swift in Sources */,
 				DEE34C96205E7ADD006C7B55 /* ChannelsViewController.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
+				8A435CD62131D40900ECF90C /* MyLineupItemView.swift in Sources */,
 				8A305794211823B000D3AC85 /* ShopCategoryItemView.swift in Sources */,
 				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */,
