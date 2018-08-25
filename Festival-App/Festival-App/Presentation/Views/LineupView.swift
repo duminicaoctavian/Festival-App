@@ -13,7 +13,7 @@ protocol LineupView: class {
     func hideNavigationBar()
     func startActivityIndicator()
     func stopActivityIndicator()
-    func highlightItem(button: Highlightable, label: Highlightable)
-    func unHighlightItems(buttons: [Highlightable], labels: [Highlightable])
+    func highlightItem(button: Highlightable)
+    func unHighlightItems(buttons: [Highlightable])
     func reloadData()
 }

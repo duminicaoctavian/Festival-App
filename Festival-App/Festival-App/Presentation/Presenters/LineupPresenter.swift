@@ -11,16 +11,38 @@ import Foundation
 class LineupPresenter {
     weak var view: LineupView?
     
-    var data = [Int: [(TimelinePoint, UIColor, String, String, String)]]()
     var selectedStage: Stage = .main
-    var selectedDay: Day = .one
+    var selectedDay: Int = 1
+    
+    var data = [Int: [(TimelinePoint, UIColor, String, String, String)]]()
     
     init(view: LineupView) {
         self.view = view
     }
     
     func viewDidLoad() {
-        getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay.rawValue)
+        getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay)
+    }
+    
+    func handleStageFilter(forSelection selection: Int) {
+        switch selection {
+        case 0:
+            selectedStage = .main
+        case 1:
+            selectedStage = .resistance
+        case 2:
+            selectedStage = .live
+        case 3:
+            selectedStage = .oasis
+        default:
+            selectedStage = .main
+        }
+        getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay)
+    }
+    
+    func handleDayFilter(forSelection selection: Int) {
+        selectedDay = selection
+        getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay)
     }
     
     private func getFilteredArtists(stage: String, day: Int) {
