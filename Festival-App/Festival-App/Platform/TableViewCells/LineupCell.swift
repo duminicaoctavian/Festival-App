@@ -12,6 +12,7 @@ private struct Constants {
     static let captionCornerRadius: CGFloat = 2.0
     static let captionColor = UIColor.timelineCaptionColor
     static let tickAssetName = "tick"
+    static let addAssetName = "addChannelButton"
 }
 
 class LineupCell: UITableViewCell {
@@ -117,5 +118,9 @@ extension LineupCell: LineupItemView {
     
     func changeButton() {
         addButton.setImage(UIImage(named: Constants.tickAssetName), for: .normal)
+    }
+    
+    func resetButton() {
+        addButton.setImage(UIImage(named: Constants.addAssetName), for: .normal)
     }
 }

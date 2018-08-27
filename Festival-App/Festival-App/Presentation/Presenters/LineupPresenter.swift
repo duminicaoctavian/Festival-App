@@ -48,12 +48,19 @@ class LineupPresenter {
     }
     
     func configure(_ itemView: LineupItemView, at index: Int) {
+        itemView.resetButton()
         let artist = ArtistService.shared.artists[index]
         guard let formattedDate = artist.date.convertFromISODate(toFormat: DateFormat.HHmm.rawValue) else { return }
         
         itemView.displayArtistName(artist.name)
         itemView.displayTimestamp(formattedDate)
         itemView.displayArtistImage(artist.artistImageURL)
+        
+        for id in AuthService.shared.user.artists {
+            if id == artist.id {
+                itemView.changeButton()
+            }
+        }
         
         switch index {
         case 0:
@@ -80,7 +87,10 @@ class LineupPresenter {
             AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
                 guard let _ = self else { return }
                 if success {
-                    // change UI for button
+                    DispatchQueue.main.async { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.view?.reloadData()
+                    }
                 } else {
                     // TODO
                 }
@@ -89,16 +99,12 @@ class LineupPresenter {
     }
     
     private func isArtistAlreadyAdded(withId id: String) -> Bool {
-        let ids = AuthService.shared.user.artists
-        var found = false
-        
-        ids.forEach { [weak self] (item) in
-            guard let _ = self else { return }
-            if item == id {
-                found = true
+        for artistId in AuthService.shared.user.artists {
+            if artistId == id {
+                return true
             }
         }
-        return found
+        return false
     }
     
     private func getFilteredArtists(stage: String, day: Int) {
