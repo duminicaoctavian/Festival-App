@@ -31,7 +31,11 @@ class LineupViewController: UIViewController {
         hideNavigationBar()
         manageHighlightForItems(highlight: mainButton, unhighlight: [resistanceButton, liveButton, oasisButton])
         manageHighlightForItems(highlight: dayOneButton, unhighlight: [dayTwoButton, dayThreeButton, dayFourButton])
-        presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
     
     @IBAction func onDayTapped(_ sender: UIButton) {

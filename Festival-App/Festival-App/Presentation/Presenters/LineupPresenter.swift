@@ -22,7 +22,7 @@ class LineupPresenter {
         self.view = view
     }
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         getFilteredArtists(stage: selectedStage.rawValue, day: selectedDay)
     }
     
@@ -76,69 +76,29 @@ class LineupPresenter {
     func addArtistToUserTimeline(withIndex index: Int) {
         let artist = ArtistService.shared.artists[index]
         
-        if !artistAlreadyAdded(artistToAdd: artist, forDay: artist.day - 1) {
-            let artists = ArtistService.shared.userArtists[artist.day - 1]
-            
-            if artists != nil {
-                guard var artists = artists else { return }
-                artists.append(artist)
-                
-                AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
-                    
-                    guard let weakSelf = self else { return }
-                    
-                    if success {
-                        ArtistService.shared.userArtists.updateValue(artists, forKey: artist.day - 1)
-                        weakSelf.sortUserArtistsByDate(forDay: artist.day - 1)
-                    } else {
-                        // TODO
-                    }
-                }
-            } else {
-                let artistToAdd = [artist]
-                
-                AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
-                    
-                    guard let _ = self else { return }
-                    
-                    if success {
-                        ArtistService.shared.userArtists[artist.day - 1] = artistToAdd
-                    } else {
-                        // TODO
-                    }
+        if !isArtistAlreadyAdded(withId: artist.id) {
+            AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
+                guard let _ = self else { return }
+                if success {
+                    // change UI for button
+                } else {
+                    // TODO
                 }
             }
         }
     }
     
-    private func artistAlreadyAdded(artistToAdd: Artist, forDay day: Int) -> Bool {
-        let artists = ArtistService.shared.userArtists[day]
+    private func isArtistAlreadyAdded(withId id: String) -> Bool {
+        let ids = AuthService.shared.user.artists
+        var found = false
         
-        if artists != nil {
-            guard let artists = artists else { return false }
-            
-            if artists.contains(where: { [weak self] (artist) -> Bool in
-                guard let _ = self else { return false }
-                if artist.id == artistToAdd.id {
-                    return true
-                }
-                return false
-            }) {
-                return true
+        ids.forEach { [weak self] (item) in
+            guard let _ = self else { return }
+            if item == id {
+                found = true
             }
-            return false
-        } else {
-            return false
         }
-    }
-    
-    private func sortUserArtistsByDate(forDay day: Int) {
-        guard let artists = ArtistService.shared.userArtists[day] else { return }
-        let sortedArray = artists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
-            guard let _ = self else { return false }
-            return artistOne.date < artistTwo.date
-        }
-        ArtistService.shared.userArtists[day] = sortedArray
+        return found
     }
     
     private func getFilteredArtists(stage: String, day: Int) {

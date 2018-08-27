@@ -58,15 +58,36 @@ class MyLineupPresenter {
     }
     
     private func getUserArtists() {
-        view?.startActivityIndicator()
+        ArtistService.shared.clearUserArtists()
+        ArtistService.shared.clearArtists()
         
         ArtistService.shared.getAllArtists { [weak self] (success) in
             guard let _ = self else { return }
             
             if success {
+                for artist in ArtistService.shared.artists {
+                    let userArtistsIDs = AuthService.shared.user.artists
+                    userArtistsIDs.forEach({ [weak self] (id) in
+                        guard let weakSelf = self else { return }
+                        if artist.id == id {
+                            
+                            let artists = ArtistService.shared.userArtists[artist.day - 1]
+                            
+                            if artists != nil {
+                                guard var artists = artists else { return }
+                                artists.append(artist)
+                                ArtistService.shared.userArtists.updateValue(artists, forKey: artist.day - 1)
+                                weakSelf.sortUserArtistsByDate(forDay: artist.day - 1)
+                            } else {
+                                let artistToAdd = [artist]
+                                ArtistService.shared.userArtists[artist.day - 1] = artistToAdd
+                            }
+                        }
+                    })
+                }
+                
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
-                    weakSelf.view?.stopActivityIndicator()
                     weakSelf.view?.reloadData()
                 }
             } else {
@@ -74,5 +95,14 @@ class MyLineupPresenter {
             }
            
         }
+    }
+    
+    private func sortUserArtistsByDate(forDay day: Int) {
+        guard let artists = ArtistService.shared.userArtists[day] else { return }
+        let sortedArray = artists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
+            guard let _ = self else { return false }
+            return artistOne.date < artistTwo.date
+        }
+        ArtistService.shared.userArtists[day] = sortedArray
     }
 }

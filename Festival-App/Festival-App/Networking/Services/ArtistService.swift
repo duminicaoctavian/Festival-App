@@ -23,24 +23,17 @@ class ArtistService {
     func getAllArtists(completion: @escaping CompletionHandler) {
         Alamofire.request(Route.artists, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
+            guard let weakSelf = self else { completion(false); return }
+            
             if response.result.error == nil {
                 guard let data = response.data else { completion(false); return }
                 do {
                     let json = try JSON(data: data)
                     let array = json[Constants.artistsSerializationKey].arrayValue
-                    
-                    var tempArtistArray = [Artist]()
+
                     for item in array {
                         let artist = Artist(json: item)
-                        
-                        let userArtistsIDs = AuthService.shared.user.artists
-                        userArtistsIDs.forEach({ [weak self] (id) in
-                            guard let weakSelf = self else { return }
-                            if artist.id == id {
-                                tempArtistArray.append(artist)
-                                weakSelf.userArtists.updateValue(tempArtistArray, forKey: artist.day - 1)
-                            }
-                        })
+                        weakSelf.artists.append(artist)
                     }
                     completion(true)
                 } catch {
@@ -114,5 +107,9 @@ class ArtistService {
     
     func clearArtists() {
         artists.removeAll()
+    }
+    
+    func clearUserArtists() {
+        userArtists.removeAll()
     }
 }

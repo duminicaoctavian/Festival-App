@@ -99,13 +99,5 @@ extension MyLineupViewController: MyLineupView {
     func reloadData() {
         tableView.reloadData()
     }
-    
-    func startActivityIndicator() {
-        LoadingView.startLoading()
-    }
-    
-    func stopActivityIndicator() {
-        LoadingView.stopLoading()
-    }
 }
 
