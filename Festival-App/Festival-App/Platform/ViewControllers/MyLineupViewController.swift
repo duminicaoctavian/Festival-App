@@ -24,6 +24,7 @@ class MyLineupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
     }
     
     @IBAction func onBackTapped(_ sender: Any) {
@@ -93,6 +94,18 @@ extension MyLineupViewController: UITableViewDelegate {
 extension MyLineupViewController: MyLineupView {
     func navigateToLineupScreen() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func startActivityIndicator() {
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        LoadingView.stopLoading()
     }
 }
 

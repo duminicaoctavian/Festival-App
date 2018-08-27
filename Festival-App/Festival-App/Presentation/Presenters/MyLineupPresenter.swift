@@ -23,6 +23,10 @@ class MyLineupPresenter {
         return ArtistService.shared.userArtists[day]?.count
     }
     
+    func viewDidLoad() {
+        getUserArtists()
+    }
+    
     func configure(_ itemView: MyLineupItemView, at index: Int, with day: Int) {
         guard let artists = ArtistService.shared.userArtists[day] else { return }
         
@@ -50,6 +54,25 @@ class MyLineupPresenter {
         if artistCount == 1 {
             itemView.hideUpperTimeline()
             itemView.hideLowerTimeline()
+        }
+    }
+    
+    private func getUserArtists() {
+        view?.startActivityIndicator()
+        
+        ArtistService.shared.getAllArtists { [weak self] (success) in
+            guard let _ = self else { return }
+            
+            if success {
+                DispatchQueue.main.async { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.view?.stopActivityIndicator()
+                    weakSelf.view?.reloadData()
+                }
+            } else {
+                // TODO
+            }
+           
         }
     }
 }

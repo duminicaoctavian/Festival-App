@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupSlideMenu()
         hideNavigationBar()
+        print(AuthService.shared.user.artists)
     }
     
     @IBAction func onChatTapped(_ sender: Any) {

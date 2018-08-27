@@ -82,11 +82,31 @@ class LineupPresenter {
             if artists != nil {
                 guard var artists = artists else { return }
                 artists.append(artist)
-                ArtistService.shared.userArtists.updateValue(artists, forKey: artist.day - 1)
-                sortUserArtistsByDate(forDay: artist.day - 1)
+                
+                AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
+                    
+                    guard let weakSelf = self else { return }
+                    
+                    if success {
+                        ArtistService.shared.userArtists.updateValue(artists, forKey: artist.day - 1)
+                        weakSelf.sortUserArtistsByDate(forDay: artist.day - 1)
+                    } else {
+                        // TODO
+                    }
+                }
             } else {
                 let artistToAdd = [artist]
-                ArtistService.shared.userArtists[artist.day - 1] = artistToAdd
+                
+                AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
+                    
+                    guard let _ = self else { return }
+                    
+                    if success {
+                        ArtistService.shared.userArtists[artist.day - 1] = artistToAdd
+                    } else {
+                        // TODO
+                    }
+                }
             }
         }
     }

@@ -179,6 +179,35 @@ class AuthService {
         }
     }
     
+    func addArtistID(_ id: String, completion: @escaping CompletionHandler) {
+        
+        let body = User.generateBody(artistID: id)
+        let userID = user.id
+        
+        Alamofire.request("\(Route.addArtistID)/\(userID)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { return }
+            
+            if response.result.error == nil {
+                guard let data = response.data else { completion(false); return }
+                do {
+                    let json = try JSON(data: data)
+                    let fetchedUser = User(json: json)
+                    weakSelf.user = fetchedUser
+                    completion(true)
+                } catch {
+                    debugPrint(error)
+                    completion(false)
+                    return
+                }
+            } else {
+                debugPrint(response.result.error as Any)
+                completion(false)
+                return
+            }
+        }
+    }
+    
     func editUser(username: String, password: String, imageURL: String, completion: @escaping CompletionHandler) {
         
         let body = User.generateBody(username: username, password: password, imageURL: imageURL)
