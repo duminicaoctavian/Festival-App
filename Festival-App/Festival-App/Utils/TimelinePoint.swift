@@ -9,7 +9,7 @@
 import Foundation
 
 private struct Constants {
-    static let diameter: CGFloat = 12.9
+    static let diameter: CGFloat = 12.0
     static let lineWidth: CGFloat = 4.0
 }
 

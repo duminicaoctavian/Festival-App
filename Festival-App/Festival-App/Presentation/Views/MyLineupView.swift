@@ -11,4 +11,6 @@ import Foundation
 protocol MyLineupView: class {
     func navigateToLineupScreen()
     func reloadData()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }

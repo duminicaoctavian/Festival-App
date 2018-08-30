@@ -424,7 +424,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNt-Td-8hh">
-                                                            <rect key="frame" x="160" y="84" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="160" y="84" width="200" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -452,6 +452,7 @@
                                                         <constraint firstItem="srH-ql-ktz" firstAttribute="centerY" secondItem="ome-uz-qdY" secondAttribute="centerY" constant="-5" id="Bqe-Mz-tG9"/>
                                                         <constraint firstItem="ome-uz-qdY" firstAttribute="top" secondItem="uOK-jl-Nqx" secondAttribute="top" constant="19" id="GEG-J7-fOX"/>
                                                         <constraint firstItem="wNt-Td-8hh" firstAttribute="leading" secondItem="ome-uz-qdY" secondAttribute="trailing" constant="55" id="Mzw-s6-P2M"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wNt-Td-8hh" secondAttribute="trailing" constant="15" id="mW0-eH-8A5"/>
                                                         <constraint firstItem="srH-ql-ktz" firstAttribute="leading" secondItem="ome-uz-qdY" secondAttribute="trailing" constant="65" id="mlB-C8-9hs"/>
                                                         <constraint firstItem="ome-uz-qdY" firstAttribute="leading" secondItem="uOK-jl-Nqx" secondAttribute="leading" constant="25" id="ufI-13-lWY"/>
                                                     </constraints>

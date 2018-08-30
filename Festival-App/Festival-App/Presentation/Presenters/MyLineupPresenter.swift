@@ -60,9 +60,11 @@ class MyLineupPresenter {
     private func getUserArtists() {
         ArtistService.shared.clearUserArtists()
         ArtistService.shared.clearArtists()
+        view?.startActivityIndicator()
         
         ArtistService.shared.getAllArtists { [weak self] (success) in
-            guard let _ = self else { return }
+            guard let weakSelf = self else { return }
+            weakSelf.view?.stopActivityIndicator()
             
             if success {
                 for artist in ArtistService.shared.artists {
