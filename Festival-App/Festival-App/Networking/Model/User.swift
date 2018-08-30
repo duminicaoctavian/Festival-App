@@ -17,6 +17,7 @@ private struct SerializationKey {
     static let password = "password"
     static let artists = "artists"
     static let artistID = "artistID"
+    static let deviceToken = "deviceToken"
 }
 
 class User: NSObject {
@@ -55,7 +56,8 @@ class User: NSObject {
         let body = [
             SerializationKey.username: username,
             SerializationKey.email: email,
-            SerializationKey.password: password
+            SerializationKey.password: password,
+            SerializationKey.deviceToken: pushNotificationToken ?? ""
         ]
         return body
     }
@@ -63,7 +65,8 @@ class User: NSObject {
     static func generateBody(email: String, password: String) -> [String: String] {
         let body = [
             SerializationKey.email: email,
-            SerializationKey.password: password
+            SerializationKey.password: password,
+            SerializationKey.deviceToken: pushNotificationToken ?? ""
         ]
         return body
     }

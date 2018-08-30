@@ -55,6 +55,10 @@ extension NotificationService: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
         print(Log.willPresentDelegateMethod)
-        completionHandler([.alert, .badge, .sound])
+        if AuthService.shared.isLoggedIn {
+            completionHandler([.alert, .badge, .sound])
+        } else {
+            completionHandler([])
+        }
     }
 }
