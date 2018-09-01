@@ -42,6 +42,8 @@ class AuthService {
         }
     }
     
+    var deviceToken: String?
+    
     private func getUserFromDefaults() -> User? {
         if let data = UserDefaults.standard.data(forKey: UserDefaultsKey.user) {
             if let user = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {

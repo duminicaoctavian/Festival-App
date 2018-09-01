@@ -57,7 +57,7 @@ class User: NSObject {
             SerializationKey.username: username,
             SerializationKey.email: email,
             SerializationKey.password: password,
-            SerializationKey.deviceToken: pushNotificationToken ?? ""
+            SerializationKey.deviceToken: AuthService.shared.deviceToken ?? ""
         ]
         return body
     }
@@ -66,7 +66,7 @@ class User: NSObject {
         let body = [
             SerializationKey.email: email,
             SerializationKey.password: password,
-            SerializationKey.deviceToken: pushNotificationToken ?? ""
+            SerializationKey.deviceToken: AuthService.shared.deviceToken ?? ""
         ]
         return body
     }
