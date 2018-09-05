@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -142,14 +141,54 @@
                                             <constraint firstAttribute="width" constant="175" id="xDM-xT-thi"/>
                                         </constraints>
                                     </imageView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wu-8l-yRr">
+                                        <rect key="frame" x="99.5" y="40" width="175" height="175"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-AB-cgf">
+                                                <rect key="frame" x="87.5" y="20" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gxa-iB-vwD">
+                                                <rect key="frame" x="63" y="72" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="backendSwitchChanged:" destination="TF7-Yd-CmO" eventType="valueChanged" id="kIS-UA-JRT"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vt3-po-WuM">
+                                                <rect key="frame" x="68" y="122" width="39" height="33"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                <state key="normal" title="Close">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCloseTapped:" destination="TF7-Yd-CmO" eventType="touchUpInside" id="TmK-y1-jCT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vt3-po-WuM" firstAttribute="top" secondItem="Gxa-iB-vwD" secondAttribute="top" constant="50" id="Fy5-HM-LZZ"/>
+                                            <constraint firstItem="vt3-po-WuM" firstAttribute="centerX" secondItem="2wu-8l-yRr" secondAttribute="centerX" id="gGb-EY-RxF"/>
+                                            <constraint firstItem="LZ4-AB-cgf" firstAttribute="centerX" secondItem="2wu-8l-yRr" secondAttribute="centerX" id="jeq-Cn-2ax"/>
+                                            <constraint firstItem="LZ4-AB-cgf" firstAttribute="top" secondItem="2wu-8l-yRr" secondAttribute="top" constant="20" id="jyf-pB-ZHi"/>
+                                            <constraint firstItem="Gxa-iB-vwD" firstAttribute="centerX" secondItem="2wu-8l-yRr" secondAttribute="centerX" id="obH-wo-5r1"/>
+                                            <constraint firstItem="Gxa-iB-vwD" firstAttribute="centerY" secondItem="2wu-8l-yRr" secondAttribute="centerY" id="qPa-dT-a48"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="553-C8-gtR" firstAttribute="centerX" secondItem="Lsp-5f-FHS" secondAttribute="centerX" id="5CB-W2-Axa"/>
+                                    <constraint firstItem="2wu-8l-yRr" firstAttribute="centerX" secondItem="Lsp-5f-FHS" secondAttribute="centerX" id="5ve-Q5-x6D"/>
+                                    <constraint firstItem="2wu-8l-yRr" firstAttribute="width" secondItem="lnQ-B7-QXN" secondAttribute="width" id="6qn-n4-4Nc"/>
                                     <constraint firstItem="553-C8-gtR" firstAttribute="top" secondItem="lnQ-B7-QXN" secondAttribute="bottom" constant="30" id="IzS-Md-Odt"/>
                                     <constraint firstItem="zoL-O7-HHy" firstAttribute="centerX" secondItem="Lsp-5f-FHS" secondAttribute="centerX" id="L6c-WW-GwE"/>
                                     <constraint firstItem="zoL-O7-HHy" firstAttribute="top" secondItem="553-C8-gtR" secondAttribute="bottom" constant="2" id="Pbo-Qj-aTt"/>
+                                    <constraint firstItem="2wu-8l-yRr" firstAttribute="height" secondItem="lnQ-B7-QXN" secondAttribute="height" id="TGx-et-8Cr"/>
                                     <constraint firstItem="lnQ-B7-QXN" firstAttribute="top" secondItem="Lsp-5f-FHS" secondAttribute="top" constant="40" id="X6S-Xb-0eS"/>
                                     <constraint firstItem="lnQ-B7-QXN" firstAttribute="centerX" secondItem="Lsp-5f-FHS" secondAttribute="centerX" id="ejE-YN-day"/>
+                                    <constraint firstItem="2wu-8l-yRr" firstAttribute="top" secondItem="lnQ-B7-QXN" secondAttribute="top" id="nNe-vp-xvW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="startX">
@@ -186,6 +225,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="u7a-vM-0Wp"/>
                     <connections>
+                        <outlet property="backendLabel" destination="LZ4-AB-cgf" id="gH5-BV-d7I"/>
+                        <outlet property="backendSwitch" destination="Gxa-iB-vwD" id="JsV-AP-nO7"/>
+                        <outlet property="backendView" destination="2wu-8l-yRr" id="MZQ-ek-G0G"/>
                         <outlet property="emailTextField" destination="eVs-Tu-CKa" id="qUx-a8-smN"/>
                         <outlet property="passwordTextField" destination="tKr-rJ-5HB" id="R70-dz-pFo"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toHomeFromLogin" id="hgO-G5-ZHv"/>
@@ -1140,6 +1182,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="COe-lv-7BE"/>
-        <segue reference="Bb2-sH-5zi"/>
+        <segue reference="hgO-G5-ZHv"/>
     </inferredMetricsTieBreakers>
 </document>

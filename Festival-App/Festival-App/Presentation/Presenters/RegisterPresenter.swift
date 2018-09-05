@@ -49,15 +49,28 @@ class RegisterPresenter {
             return
         }
         
-        AuthService.shared.registerUser(username: username, email: email, password: password, completion: { [weak self] (success) in
-            guard let weakSelf = self else { return }
-            
-            if (success) {
-                weakSelf.view?.stopActivityIndicator()
-                weakSelf.view?.navigateToHomeScreen()
-            } else {
-                weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
+        if AuthService.shared.isServerless {
+            FirebaseAuthService.shared.registerUser(username: username, email: email, password: password) { [weak self] (success) in
+                guard let weakSelf = self else { return }
+                
+                if success {
+                    weakSelf.view?.stopActivityIndicator()
+                    weakSelf.view?.navigateToHomeScreen()
+                } else {
+                    weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
+                }
             }
-        })
+        } else {
+            AuthService.shared.registerUser(username: username, email: email, password: password, completion: { [weak self] (success) in
+                guard let weakSelf = self else { return }
+                
+                if (success) {
+                    weakSelf.view?.stopActivityIndicator()
+                    weakSelf.view?.navigateToHomeScreen()
+                } else {
+                    weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
+                }
+            })
+        }
     }
 }

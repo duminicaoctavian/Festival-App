@@ -87,6 +87,16 @@ class User: NSObject {
         return body
     }
     
+    static func generateFirebaseRegisterBody(username: String, email: String) -> [String: String] {
+        let body = [
+            SerializationKey.username: username,
+            SerializationKey.email: email,
+            SerializationKey.imageURL: Route.defaultProfilePicture,
+            SerializationKey.deviceToken: AuthService.shared.deviceToken ?? ""
+        ]
+        return body
+    }
+    
     required convenience init?(coder aDecoder: NSCoder) {
         guard let id = aDecoder.decodeObject(forKey: SerializationKey.id) as? String,
             let username = aDecoder.decodeObject(forKey: SerializationKey.username) as? String,
@@ -95,6 +105,19 @@ class User: NSObject {
             let artists = aDecoder.decodeObject(forKey: SerializationKey.artists) as? [String] else { return nil }
         
         self.init(id: id, username: username, email: email, imageURL: imageURL, artists: artists)
+    }
+    
+    init?(dictionary: [String: AnyObject]) {
+        guard let id = dictionary[SerializationKey.id] as? String,
+            let username = dictionary[SerializationKey.username] as? String,
+            let email = dictionary[SerializationKey.email] as? String,
+            let imageURL = dictionary[SerializationKey.imageURL] as? String else { return nil }
+        
+        self.id = id
+        self.username = username
+        self.email = email
+        self.imageURL = imageURL
+        self.artists = [String]()
     }
 }
 

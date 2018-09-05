@@ -12,8 +12,16 @@ import SwiftyJSON
 
 class AuthService {
     static let shared = AuthService()
-    
     let defaults = UserDefaults.standard
+    
+    var isServerless: Bool {
+        get {
+            return defaults.bool(forKey: UserDefaultsKey.isServerless)
+        }
+        set {
+            defaults.set(newValue, forKey: UserDefaultsKey.isServerless)
+        }
+    }
 
     var isLoggedIn: Bool {
         get {

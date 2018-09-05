@@ -20,13 +20,25 @@ class UserMenuPresenter {
     }
     
     func logout() {
-        AuthService.shared.logoutUser { [weak self] (success) in
-            guard let weakSelf = self else { return }
-            
-            if success {
-                weakSelf.view?.navigateToLoginScreen()
-            } else {
-                // TODO
+        if AuthService.shared.isServerless {
+            FirebaseAuthService.shared.logoutUser { [weak self] (success) in
+                guard let weakSelf = self else { return }
+                
+                if success {
+                    weakSelf.view?.navigateToLoginScreen()
+                } else {
+                    // TODO
+                }
+            }
+        } else {
+            AuthService.shared.logoutUser { [weak self] (success) in
+                guard let weakSelf = self else { return }
+                
+                if success {
+                    weakSelf.view?.navigateToLoginScreen()
+                } else {
+                    // TODO
+                }
             }
         }
     }

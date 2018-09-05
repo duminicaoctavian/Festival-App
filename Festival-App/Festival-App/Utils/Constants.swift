@@ -43,8 +43,19 @@ enum Event: String {
     case userTypingUpdate = "userTypingUpdate"
 }
 
+enum BackendType: String {
+    case clientServer = "Client Server"
+    case serverless = "Serverless"
+}
+
+struct FirebaseChild {
+    static let users = "users"
+    static let artists = "artists"
+}
+
 struct Route {
     static let baseAWS = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket"
+    static let defaultProfilePicture = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/profileDefault.png"
     static let artists = "\(baseURL)/artists"
     static let products = "\(baseURL)/products"
     static let users = "\(baseURL)/users"
@@ -77,6 +88,7 @@ struct UserDefaultsKey {
     static let token = "token"
     static let loggedIn = "loggedIn"
     static let user = "user"
+    static let isServerless = "isServerless"
 }
 
 struct Header {

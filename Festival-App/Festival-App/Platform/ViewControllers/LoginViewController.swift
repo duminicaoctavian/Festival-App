@@ -12,6 +12,7 @@ private struct Constants {
     static let alertTitle = "Login Failed"
     static let alertMessage = "Invalid data!"
     static let okActionTitle = "OK"
+    static let longPressDuration = 0.5
 }
 
 class LoginViewController: UIViewController {
@@ -20,8 +21,17 @@ class LoginViewController: UIViewController {
         return LoginPresenter(view: self)
     }()
     
+    lazy var longPress: UILongPressGestureRecognizer = {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showBackendView))
+        longPress.minimumPressDuration = Constants.longPressDuration
+        return longPress
+    }()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var backendView: UIView!
+    @IBOutlet weak var backendLabel: UILabel!
+    @IBOutlet weak var backendSwitch: UISwitch!
     
     lazy var visualEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
@@ -33,9 +43,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hideNavigationBar()
         hideKeyboardWhenTappedAround()
+        addGestures()
+    }
+    
+    private func addGestures() {
+        view.addGestureRecognizer(longPress)
     }
     
     @IBAction func onLoginTapped(_ sender: Any) {
@@ -47,6 +61,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func onRegisterTapped(_ sender: Any) {
         navigateToRegisterScreen()
+    }
+    
+    @IBAction func onCloseTapped(_ sender: Any) {
+        hideBackendView()
+    }
+    
+    @IBAction func backendSwitchChanged(_ sender: UISwitch) {
+        presenter.handleSwitch(forValue: sender.isOn)
     }
     
     private func displayLoginFailedAlert(forError error: Error?) {
@@ -70,6 +92,24 @@ extension LoginViewController: LoginView {
         stopActivityIndicator()
         resetPasswordTextField()
         displayLoginFailedAlert(forError: error)
+    }
+    
+    @objc func showBackendView() {
+        backendView.isHidden = false
+        presenter.handleLabelTitle()
+        presenter.showSwitch()
+    }
+    
+    func hideBackendView() {
+        backendView.isHidden = true
+    }
+    
+    func displaySwitch(value: Bool) {
+        backendSwitch.isOn = value
+    }
+    
+    func displayBackendLabel(_ title: String) {
+        backendLabel.text = title
     }
     
     func hideNavigationBar() {

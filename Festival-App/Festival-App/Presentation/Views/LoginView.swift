@@ -15,4 +15,8 @@ protocol LoginView: class {
     func stopActivityIndicator()
     func hideNavigationBar()
     func presentLoginFailedFeedback(forError error: Error?)
+    func showBackendView()
+    func hideBackendView()
+    func displaySwitch(value: Bool)
+    func displayBackendLabel(_ title: String)
 }

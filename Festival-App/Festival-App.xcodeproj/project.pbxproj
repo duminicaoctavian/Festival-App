@@ -40,6 +40,9 @@
 		8A3057992118420900D3AC85 /* NewsImageViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3057982118420900D3AC85 /* NewsImageViewModelItem.swift */; };
 		8A30579B211842C500D3AC85 /* NewsVideoViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A30579A211842C500D3AC85 /* NewsVideoViewModelItem.swift */; };
 		8A30579E2118533800D3AC85 /* NewsViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A30579D2118533800D3AC85 /* NewsViewModelItem.swift */; };
+		8A32DBCC213FDAF600357E11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A32DBCB213FDAF500357E11 /* GoogleService-Info.plist */; };
+		8A32DBCF213FDCF200357E11 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBCE213FDCF200357E11 /* FirebaseAuthService.swift */; };
+		8A32DBD1213FDDAA00357E11 /* FirebaseArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD0213FDDAA00357E11 /* FirebaseArtistService.swift */; };
 		8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CA2101BF6400B301B7 /* LoginView.swift */; };
 		8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */; };
 		8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674CE2101C36C00B301B7 /* News.storyboard */; };
@@ -204,6 +207,9 @@
 		8A3057982118420900D3AC85 /* NewsImageViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImageViewModelItem.swift; sourceTree = "<group>"; };
 		8A30579A211842C500D3AC85 /* NewsVideoViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVideoViewModelItem.swift; sourceTree = "<group>"; };
 		8A30579D2118533800D3AC85 /* NewsViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelItem.swift; sourceTree = "<group>"; };
+		8A32DBCB213FDAF500357E11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A32DBCE213FDCF200357E11 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		8A32DBD0213FDDAA00357E11 /* FirebaseArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseArtistService.swift; sourceTree = "<group>"; };
 		8A3674CA2101BF6400B301B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8A3674CE2101C36C00B301B7 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
@@ -383,6 +389,15 @@
 			path = ViewModelItems;
 			sourceTree = "<group>";
 		};
+		8A32DBCD213FDCE400357E11 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8A32DBCE213FDCF200357E11 /* FirebaseAuthService.swift */,
+				8A32DBD0213FDDAA00357E11 /* FirebaseArtistService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		8A3674B92101B95D00B301B7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +442,7 @@
 		8A3674BC2101BB3700B301B7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8A32DBCD213FDCE400357E11 /* Firebase */,
 				8A3674BD2101BB6000B301B7 /* Model */,
 				8A3674BE2101BB6500B301B7 /* Services */,
 			);
@@ -695,6 +711,7 @@
 			isa = PBXGroup;
 			children = (
 				8A97356E212E9116007D79DB /* Festival-App.entitlements */,
+				8A32DBCB213FDAF500357E11 /* GoogleService-Info.plist */,
 				DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */,
 				DECDBC02203DE43B0001B7BA /* Assets.xcassets */,
 				DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */,
@@ -833,6 +850,7 @@
 				8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsViewController.xib in Resources */,
 				8A3674D12101C38F00B301B7 /* Lineup.storyboard in Resources */,
+				8A32DBCC213FDAF600357E11 /* GoogleService-Info.plist in Resources */,
 				8A3674D72101C40C00B301B7 /* Artists.storyboard in Resources */,
 				8A973580212EEF48007D79DB /* confetti.json in Resources */,
 				DE84F439208B46CB00CE35FA /* LocationDetailsViewController.xib in Resources */,
@@ -863,10 +881,13 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -875,10 +896,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1026,6 +1050,7 @@
 				DEE34C96205E7ADD006C7B55 /* ChannelsViewController.swift in Sources */,
 				DEE34CA9205E923E006C7B55 /* MessageService.swift in Sources */,
 				8A435CD62131D40900ECF90C /* MyLineupItemView.swift in Sources */,
+				8A32DBD1213FDDAA00357E11 /* FirebaseArtistService.swift in Sources */,
 				8A305794211823B000D3AC85 /* ShopCategoryItemView.swift in Sources */,
 				DEE34CA6205E9208006C7B55 /* ChannelCell.swift in Sources */,
 				DE5A8117203DE7C700D8A7FA /* UserMenuViewController.swift in Sources */,
@@ -1039,6 +1064,7 @@
 				8A973570212E9188007D79DB /* NotificationService.swift in Sources */,
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
 				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
+				8A32DBCF213FDCF200357E11 /* FirebaseAuthService.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
 				8ACCB867212FFC85006CC335 /* MyLineupView.swift in Sources */,
