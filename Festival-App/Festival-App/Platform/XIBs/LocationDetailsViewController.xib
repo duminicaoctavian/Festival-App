@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationDetailsViewController" customModule="Festival_App" customModuleProvider="target">
             <connections>
                 <outlet property="addressLabel" destination="3mn-vE-cUF" id="b8M-ib-JP8"/>
+                <outlet property="closeButton" destination="pw5-Wu-qk7" id="Tss-3m-dlv"/>
                 <outlet property="descriptionLabel" destination="sJD-Jc-ypR" id="qve-Dt-YvT"/>
                 <outlet property="imageScrollView" destination="YxL-87-DI7" id="F9h-Li-v4N"/>
+                <outlet property="navigationBarView" destination="DAG-PH-4za" id="4CP-1S-xYG"/>
                 <outlet property="offererImageView" destination="u5X-Lc-c72" id="yWw-uh-Y0n"/>
                 <outlet property="offererLabel" destination="e49-fB-fYr" id="hag-Sa-FnF"/>
                 <outlet property="offererNameView" destination="OSj-O8-vGQ" id="lb3-R4-ij8"/>
@@ -32,6 +33,55 @@
                 <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-jB-axZ" userLabel="bgView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-PH-4za" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                    <subviews>
+                        <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2c-lj-Z7P">
+                            <rect key="frame" x="12" y="47" width="24" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="8WK-7S-0EY"/>
+                                <constraint firstAttribute="width" constant="24" id="GdD-Vw-Qdv"/>
+                            </constraints>
+                            <state key="normal" image="backButton"/>
+                            <connections>
+                                <action selector="onBackTapped:" destination="-1" eventType="touchUpInside" id="bzz-Ap-a0M"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNe-sL-0A2">
+                            <rect key="frame" x="133" y="43.5" width="110.5" height="26"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="eNe-sL-0A2" firstAttribute="centerX" secondItem="DAG-PH-4za" secondAttribute="centerX" id="Byn-93-1k7"/>
+                        <constraint firstAttribute="bottom" secondItem="N2c-lj-Z7P" secondAttribute="bottom" constant="12" id="Rob-Mf-e3F"/>
+                        <constraint firstAttribute="height" constant="77" id="UaG-MU-H5m"/>
+                        <constraint firstAttribute="bottom" secondItem="eNe-sL-0A2" secondAttribute="bottom" constant="7.5" id="W5q-tm-bHJ"/>
+                        <constraint firstItem="N2c-lj-Z7P" firstAttribute="leading" secondItem="DAG-PH-4za" secondAttribute="leading" constant="12" id="saW-pe-nhu"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="startX">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="startY">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="endX">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="endY">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                            <color key="value" red="0.21796020760000001" green="0.079810581780000001" blue="0.37307731379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78I-e3-PB5" customClass="GradientView" customModule="Festival_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="77" width="375" height="590"/>
@@ -82,7 +132,7 @@
                                                         <action selector="onCallTapped:" destination="-1" eventType="touchUpInside" id="NvO-SW-Ttn"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw5-Wu-qk7" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw5-Wu-qk7" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="52" width="255" height="37"/>
                                                     <color key="backgroundColor" red="0.23921568630000001" green="0.086274509799999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
@@ -227,6 +277,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="DAG-PH-4za" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6h0-lg-wdc"/>
                 <constraint firstAttribute="bottom" secondItem="78I-e3-PB5" secondAttribute="bottom" id="8y4-LH-0vr"/>
                 <constraint firstAttribute="trailing" secondItem="78I-e3-PB5" secondAttribute="trailing" id="HAr-fs-8vP"/>
                 <constraint firstItem="kZz-jB-axZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XI9-ao-dRH"/>
@@ -235,8 +286,13 @@
                 <constraint firstItem="78I-e3-PB5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxE-TD-r2A"/>
                 <constraint firstAttribute="bottom" secondItem="kZz-jB-axZ" secondAttribute="bottom" id="qzZ-VC-3CO"/>
                 <constraint firstItem="78I-e3-PB5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="sLL-tz-rPe"/>
+                <constraint firstItem="DAG-PH-4za" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ytY-Mv-UQN"/>
+                <constraint firstAttribute="trailing" secondItem="DAG-PH-4za" secondAttribute="trailing" id="zO8-Xg-NFy"/>
             </constraints>
             <point key="canvasLocation" x="32.5" y="55.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="backButton" width="25" height="25"/>
+    </resources>
 </document>

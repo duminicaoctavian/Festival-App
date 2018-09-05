@@ -47,6 +47,34 @@ class LocationService {
         }
     }
     
+    func getLocationsForUser(withID id: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(Route.locations)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+            
+            guard let weakSelf = self else { return }
+            
+            if response.result.error == nil {
+                guard let data = response.data else { completion(false); return }
+                do {
+                    let json = try JSON(data: data)
+                    let array = json[Constants.locationsSerializationKey].arrayValue
+                    for item in array {
+                        let location = Location(json: item)
+                        weakSelf.locations.append(location)
+                    }
+                    completion(true)
+                } catch {
+                    debugPrint(error)
+                    completion(false)
+                    return
+                }
+            } else {
+                debugPrint(response.result.error as Any)
+                completion(false)
+                return
+            }
+        }
+    }
+    
     func clearLocations() {
         locations.removeAll()
     }

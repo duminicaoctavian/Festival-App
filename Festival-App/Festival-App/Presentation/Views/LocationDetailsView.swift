@@ -19,4 +19,7 @@ protocol LocationDetailsView: class {
     func setupPageControl()
     func displayOffererName(_ username: String)
     func displayOferrerProfilePicture(_ URLString: String)
+    func hideNavigationBar()
+    func navigateToMyOffersScreen()
+    func showCloseButton()
 }

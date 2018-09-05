@@ -19,6 +19,7 @@ class LocationDetailsViewController: UIViewController {
         return LocationDetailsPresenter(view: self)
     }()
     
+    @IBOutlet weak var navigationBarView: GradientView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -29,6 +30,7 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var offererImageView: CircleImage!
     @IBOutlet weak var offererLabel: UILabel!
     @IBOutlet weak var offererNameView: UIView!
+    @IBOutlet weak var closeButton: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,10 @@ class LocationDetailsViewController: UIViewController {
         presenter.callNumber()
     }
     
+    @IBAction func onBackTapped(_ sender: Any) {
+        navigateToMyOffersScreen()
+    }
+    
     private func makeImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -55,6 +61,9 @@ class LocationDetailsViewController: UIViewController {
 }
 
 extension LocationDetailsViewController: LocationDetailsView {
+    func hideNavigationBar() {
+        navigationBarView.isHidden = true
+    }
     
     func navigateToAccommodationScreen() {
         dismiss(animated: true, completion: nil)
@@ -108,6 +117,14 @@ extension LocationDetailsViewController: LocationDetailsView {
     
     func displayOferrerProfilePicture(_ URLString: String) {
         offererImageView.loadImageUsingCache(withURLString: URLString)
+    }
+    
+    func navigateToMyOffersScreen() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func showCloseButton() {
+        closeButton.alpha = 1.0
     }
 }
 

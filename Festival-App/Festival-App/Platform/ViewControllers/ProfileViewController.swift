@@ -48,7 +48,7 @@ extension ProfileViewController: ProfileView {
     }
     
     func navigateToMyOffersScreen() {
-        
+        performSegue(withIdentifier: Segue.toMyOffers, sender: self)
     }
     
     func navigateToEditProfileScreen() {

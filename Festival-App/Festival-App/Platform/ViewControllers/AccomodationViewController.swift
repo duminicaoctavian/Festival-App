@@ -88,6 +88,7 @@ extension AccomodationViewController: AccommodationView {
     func navigateToLocationDetailsScreen(forLocation location: Location) {
         let locationDetailsViewController = LocationDetailsViewController()
         locationDetailsViewController.presenter.locationChanged(location)
+        locationDetailsViewController.presenter.isModal = true
         locationDetailsViewController.modalPresentationStyle = .custom
         present(locationDetailsViewController, animated: true, completion: nil)
     }

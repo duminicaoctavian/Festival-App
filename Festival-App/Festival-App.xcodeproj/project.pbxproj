@@ -43,6 +43,11 @@
 		8A32DBCC213FDAF600357E11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A32DBCB213FDAF500357E11 /* GoogleService-Info.plist */; };
 		8A32DBCF213FDCF200357E11 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBCE213FDCF200357E11 /* FirebaseAuthService.swift */; };
 		8A32DBD1213FDDAA00357E11 /* FirebaseArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD0213FDDAA00357E11 /* FirebaseArtistService.swift */; };
+		8A32DBD3214019D800357E11 /* MyOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD2214019D800357E11 /* MyOffersView.swift */; };
+		8A32DBD5214019FD00357E11 /* OfferItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD4214019FD00357E11 /* OfferItemView.swift */; };
+		8A32DBD721401A1600357E11 /* MyOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD621401A1600357E11 /* MyOffersPresenter.swift */; };
+		8A32DBD921401A2E00357E11 /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBD821401A2E00357E11 /* MyOffersViewController.swift */; };
+		8A32DBDB21401B1900357E11 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DBDA21401B1900357E11 /* OfferCell.swift */; };
 		8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CA2101BF6400B301B7 /* LoginView.swift */; };
 		8A3674CD2101BF7000B301B7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */; };
 		8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3674CE2101C36C00B301B7 /* News.storyboard */; };
@@ -210,6 +215,11 @@
 		8A32DBCB213FDAF500357E11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A32DBCE213FDCF200357E11 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		8A32DBD0213FDDAA00357E11 /* FirebaseArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseArtistService.swift; sourceTree = "<group>"; };
+		8A32DBD2214019D800357E11 /* MyOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffersView.swift; sourceTree = "<group>"; };
+		8A32DBD4214019FD00357E11 /* OfferItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItemView.swift; sourceTree = "<group>"; };
+		8A32DBD621401A1600357E11 /* MyOffersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffersPresenter.swift; sourceTree = "<group>"; };
+		8A32DBD821401A2E00357E11 /* MyOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
+		8A32DBDA21401B1900357E11 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		8A3674CA2101BF6400B301B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8A3674CE2101C36C00B301B7 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
@@ -499,6 +509,7 @@
 				DE19FC6C2071A7B900316199 /* LineupCell.swift */,
 				DEE34CA5205E9208006C7B55 /* MessageCell.swift */,
 				8A435CD32131D22600ECF90C /* MyLineupCell.swift */,
+				8A32DBDA21401B1900357E11 /* OfferCell.swift */,
 				8A3E6B0821177B0C004CA677 /* PictureNewsCell.swift */,
 				DE1648512041F9E500EB371B /* ShopCategoryCell.swift */,
 				DE5A8121203E1EDA00D8A7FA /* UserMenuCell.swift */,
@@ -547,6 +558,7 @@
 				DE84F436208B46CB00CE35FA /* LocationDetailsViewController.swift */,
 				DE742A102044963A000CF48F /* LoginViewController.swift */,
 				8ACCB862212FFC07006CC335 /* MyLineupViewController.swift */,
+				8A32DBD821401A2E00357E11 /* MyOffersViewController.swift */,
 				DEA915B7205FBBD000A276E5 /* NewsViewController.swift */,
 				8A27521B21189FD700ABF57C /* ProductDetailsViewController.swift */,
 				DEAA6487208334B700C53E58 /* ProfileViewController.swift */,
@@ -579,7 +591,9 @@
 				8A3674CA2101BF6400B301B7 /* LoginView.swift */,
 				8A435CD52131D40900ECF90C /* MyLineupItemView.swift */,
 				8ACCB866212FFC85006CC335 /* MyLineupView.swift */,
+				8A32DBD2214019D800357E11 /* MyOffersView.swift */,
 				8A3E6B0221176163004CA677 /* NewsView.swift */,
+				8A32DBD4214019FD00357E11 /* OfferItemView.swift */,
 				8A3E6B0A21177C17004CA677 /* PictureNewsItemView.swift */,
 				8A27521D2118A05200ABF57C /* ProductDetailsView.swift */,
 				8A27521521188D2D00ABF57C /* ProductItemView.swift */,
@@ -611,6 +625,7 @@
 				8AD9C081212C2C9A00189A14 /* LocationDetailsPresenter.swift */,
 				8A3674CC2101BF7000B301B7 /* LoginPresenter.swift */,
 				8ACCB864212FFC75006CC335 /* MyLineupPresenter.swift */,
+				8A32DBD621401A1600357E11 /* MyOffersPresenter.swift */,
 				8A3E6B0021176150004CA677 /* NewsPresenter.swift */,
 				8A27521F2118A06800ABF57C /* ProductDetailsPresenter.swift */,
 				8A8D01BF2119A8F600889197 /* ProfilePresenter.swift */,
@@ -963,6 +978,7 @@
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
 				8A121D9E2116F3470050EDBB /* ArtistItemView.swift in Sources */,
+				8A32DBD921401A2E00357E11 /* MyOffersViewController.swift in Sources */,
 				8A148449211DD0D00012D802 /* ChannelsPresenter.swift in Sources */,
 				8A3057992118420900D3AC85 /* NewsImageViewModelItem.swift in Sources */,
 				8A3674DE2101C5FA00B301B7 /* LoadingView.swift in Sources */,
@@ -980,6 +996,7 @@
 				8ACCB86D21301190006CC335 /* LineupItemView.swift in Sources */,
 				8A121D9C2116F3070050EDBB /* ArtistsView.swift in Sources */,
 				8A27521A21188EB800ABF57C /* ShopPresenter.swift in Sources */,
+				8A32DBDB21401B1900357E11 /* OfferCell.swift in Sources */,
 				DE84F441208B69F400CE35FA /* Location.swift in Sources */,
 				8A30579021181FD900D3AC85 /* ShopCategoryPresenter.swift in Sources */,
 				8A8D01C42119AEA700889197 /* EditProfilePresenter.swift in Sources */,
@@ -992,6 +1009,7 @@
 				8A8D01C02119A8F600889197 /* ProfilePresenter.swift in Sources */,
 				DE16485E204219DE00EB371B /* ProductCell.swift in Sources */,
 				8A3E6AFD211758E8004CA677 /* UserMenuView.swift in Sources */,
+				8A32DBD721401A1600357E11 /* MyOffersPresenter.swift in Sources */,
 				8A3E6B0121176150004CA677 /* NewsPresenter.swift in Sources */,
 				8A27521E2118A05200ABF57C /* ProductDetailsView.swift in Sources */,
 				DE5A8119203DE80D00D8A7FA /* HomeViewController.swift in Sources */,
@@ -1004,6 +1022,7 @@
 				8A27521C21189FD700ABF57C /* ProductDetailsViewController.swift in Sources */,
 				8A148445211DC8F80012D802 /* AddAccommodationPresenter.swift in Sources */,
 				8A121DA721171DEA0050EDBB /* Highlightable.swift in Sources */,
+				8A32DBD3214019D800357E11 /* MyOffersView.swift in Sources */,
 				DEDCF8CC208CA9FB006AD857 /* User.swift in Sources */,
 				DE1648562042006F00EB371B /* HalfRoundedView.swift in Sources */,
 				DE4DF16C2041CB4E0083A8F1 /* ShopCategoryViewController.swift in Sources */,
@@ -1016,6 +1035,7 @@
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsViewController.swift in Sources */,
 				DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationViewController.swift in Sources */,
+				8A32DBD5214019FD00357E11 /* OfferItemView.swift in Sources */,
 				8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */,
 				8AD9C084212C2CAA00189A14 /* LocationDetailsView.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,

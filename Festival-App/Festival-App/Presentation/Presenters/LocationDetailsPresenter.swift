@@ -18,12 +18,18 @@ class LocationDetailsPresenter {
         return count
     }
     
+    var isModal: Bool?
+    
     init(view: LocationDetailsView) {
         self.view = view
     }
     
     func viewDidLoad() {
         guard let location = location else { return }
+        if let isModal = isModal, isModal {
+            view?.hideNavigationBar()
+            view?.showCloseButton()
+        }
         getOffererByID(location.userID)
         
         
