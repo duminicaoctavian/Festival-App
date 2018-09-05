@@ -16,7 +16,11 @@ class ArtistsPresenter {
     }
     
     var artistsCount: Int {
-        return ArtistService.shared.artists.count
+        if AuthService.shared.isServerless {
+            return FirebaseArtistService.shared.artists.count
+        } else {
+            return ArtistService.shared.artists.count
+        }
     }
     
     func viewDidLoad() {
@@ -32,17 +36,34 @@ class ArtistsPresenter {
         }
        
         view?.startActivityIndicator()
-        ArtistService.shared.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
-            guard let weakSelf = self else { return }
+        
+        if AuthService.shared.isServerless {
             
-            if success {
+            FirebaseArtistService.shared.fetchArtistsFromDatabase { [weak self] (artists) in
+                guard let weakSelf = self else { return }
+                
                 weakSelf.view?.stopActivityIndicator()
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
+                    FirebaseArtistService.shared.artists =  FirebaseArtistService.shared.artists.filter({ (artist) -> Bool in
+                        return artist.stage == stage.rawValue ? true : false
+                    })
                     weakSelf.view?.reloadData()
                 }
-            } else {
-                // TODO
+            }
+        } else {
+            ArtistService.shared.getAllArtists(forStage: stage.rawValue) { [weak self] (success) in
+                guard let weakSelf = self else { return }
+                
+                if success {
+                    weakSelf.view?.stopActivityIndicator()
+                    DispatchQueue.main.async { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.view?.reloadData()
+                    }
+                } else {
+                    // TODO
+                }
             }
         }
     }
@@ -56,17 +77,30 @@ class ArtistsPresenter {
     }
     
     func configure(_ itemView: ArtistItemView, at index: Int) {
-        let artist = ArtistService.shared.artists[index]
-        itemView.displayName(artist.name)
-        itemView.displayArtistImage(artist.artistImageURL)
+        if AuthService.shared.isServerless {
+            let artist = FirebaseArtistService.shared.artists[index]
+            itemView.displayName(artist.name)
+            itemView.displayArtistImage(artist.artistImageURL)
+        } else {
+            let artist = ArtistService.shared.artists[index]
+            itemView.displayName(artist.name)
+            itemView.displayArtistImage(artist.artistImageURL)
+        }
     }
     
     func handleDetailsTapped(forIndex index: Int, withPresenter presenter: ArtistDetailsPresenter) {
-        let artist = ArtistService.shared.artists[index]
-        presenter.nameChanged(artist.name)
-        presenter.genreChanged(artist.genre)
-        presenter.descriptionChanged(artist.description)
-        presenter.imageURLChanged(artist.artistImageURL)
+        if AuthService.shared.isServerless {
+            let artist = FirebaseArtistService.shared.artists[index]
+            presenter.nameChanged(artist.name)
+            presenter.genreChanged(artist.genre)
+            presenter.descriptionChanged(artist.description)
+            presenter.imageURLChanged(artist.artistImageURL)
+        } else {
+            let artist = ArtistService.shared.artists[index]
+            presenter.nameChanged(artist.name)
+            presenter.genreChanged(artist.genre)
+            presenter.descriptionChanged(artist.description)
+            presenter.imageURLChanged(artist.artistImageURL)
+        }
     }
-    
 }

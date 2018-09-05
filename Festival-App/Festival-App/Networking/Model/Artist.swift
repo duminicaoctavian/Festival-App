@@ -40,4 +40,24 @@ struct Artist {
         self.date = json[SerializationKey.date].stringValue
         self.artistImageURL = json[SerializationKey.imageURL].stringValue
     }
+    
+    init?(dictionary: [String: AnyObject]) {
+        guard let id = dictionary[SerializationKey.id] as? String,
+            let name = dictionary[SerializationKey.name] as? String,
+            let genre = dictionary[SerializationKey.genre] as? String,
+            let description = dictionary[SerializationKey.description] as? String,
+            let stage = dictionary[SerializationKey.stage] as? String,
+            let day = dictionary[SerializationKey.day] as? Int,
+            let date = dictionary[SerializationKey.date] as? String,
+            let artistImageURL = dictionary[SerializationKey.imageURL] as? String else { return nil }
+        
+        self.id = id
+        self.name = name
+        self.genre = genre
+        self.description = description
+        self.stage = stage
+        self.day = day
+        self.date = date
+        self.artistImageURL = artistImageURL
+    }
 }

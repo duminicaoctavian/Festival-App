@@ -13,6 +13,7 @@ private struct Constants {
     static let alertMessage = "Invalid data!"
     static let okActionTitle = "OK"
     static let longPressDuration = 0.5
+    static let cornerRadius: CGFloat = 5.0
 }
 
 class LoginViewController: UIViewController {
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundBackendView()
         hideNavigationBar()
         hideKeyboardWhenTappedAround()
         addGestures()
@@ -131,5 +133,10 @@ extension LoginViewController: LoginView {
     
     func stopActivityIndicator() {
         LoadingView.stopLoading()
+    }
+    
+    func roundBackendView() {
+        backendView.clipsToBounds = true
+        backendView.layer.cornerRadius = Constants.cornerRadius
     }
 }

@@ -19,4 +19,5 @@ protocol LoginView: class {
     func hideBackendView()
     func displaySwitch(value: Bool)
     func displayBackendLabel(_ title: String)
+    func roundBackendView()
 }
