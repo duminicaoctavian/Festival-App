@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 class LoadingView: UIView {
     
-    static let indicatorView = NVActivityIndicatorView(frame: CGRect.zero, type: .lineScale, color: .white, padding: 30)
+    static let indicatorView = NVActivityIndicatorView(frame: CGRect.zero, type: .lineScale, color: .appBlue, padding: 30)
     
     static func startLoading() {
         guard let window = UIApplication.shared.delegate?.window as? UIWindow else { return }

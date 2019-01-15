@@ -61,16 +61,16 @@ class RegisterPresenter {
                 }
             }
         } else {
-            AuthService.shared.registerUser(username: username, email: email, password: password, completion: { [weak self] (success) in
-                guard let weakSelf = self else { return }
-                
-                if (success) {
-                    weakSelf.view?.stopActivityIndicator()
-                    weakSelf.view?.navigateToHomeScreen()
-                } else {
-                    weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
-                }
-            })
+//            AuthService.shared.registerUser(username: username, email: email, password: password, type: completion: { [weak self] (success) in
+//                guard let weakSelf = self else { return }
+//                
+//                if (success) {
+//                    weakSelf.view?.stopActivityIndicator()
+//                    weakSelf.view?.navigateToHomeScreen()
+//                } else {
+//                    weakSelf.view?.presentRegisterFailedFeedback(forError: nil)
+//                }
+//            })
         }
     }
 }

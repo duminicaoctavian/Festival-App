@@ -132,6 +132,7 @@ extension LoginViewController: LoginView {
     }
     
     func stopActivityIndicator() {
+        visualEffectView.removeFromSuperview()
         LoadingView.stopLoading()
     }
     

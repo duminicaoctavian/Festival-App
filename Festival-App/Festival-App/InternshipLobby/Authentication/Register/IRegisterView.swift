@@ -9,5 +9,10 @@
 import Foundation
 
 protocol IRegisterView: class {
-    
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func navigateToApplicantScreen()
+    func navigateToUniversityScreen()
+    func navigateToCompanyScreen()
+    func presentRegisterFailedFeedback(forError error: Error?)
 }

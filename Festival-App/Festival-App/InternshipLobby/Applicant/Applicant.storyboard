@@ -1,7 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Internship Offers-->
+        <scene sceneID="Hiv-9F-qHn">
+            <objects>
+                <viewController storyboardIdentifier="AMainViewController" id="3bq-nv-6g2" customClass="AMainViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T9I-1j-psJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1TS-hO-3vF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Internship Offers" id="yNC-EO-a6p"/>
+                    <connections>
+                        <segue destination="44q-4i-IRS" kind="show" identifier="ToADetailsViewController" id="EU8-Y0-aYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBD-Kd-vel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.20000000000005" y="25.637181409295355"/>
+        </scene>
+        <!--Offer Details-->
+        <scene sceneID="Tp2-Xa-bN5">
+            <objects>
+                <viewController storyboardIdentifier="ADetailsViewController" id="44q-4i-IRS" customClass="Added" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bda-Fx-NwY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zHd-cn-qOY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Offer Details" id="keD-R6-EfL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6R2-uq-dEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="26"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tWh-yf-GS7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HPl-Uo-1Kp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ArB-fd-4ei" customClass="AppNavigationBar" customModule="Festival_App" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3bq-nv-6g2" kind="relationship" relationship="rootViewController" id="S5E-EB-t2C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYg-Tm-qtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="25.637181409295355"/>
+        </scene>
+    </scenes>
 </document>

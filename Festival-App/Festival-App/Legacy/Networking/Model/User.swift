@@ -18,6 +18,8 @@ private struct SerializationKey {
     static let artists = "artists"
     static let artistID = "artistID"
     static let deviceToken = "deviceToken"
+    static let offersAppliedTo = "offersAppliedTo"
+    static let type = "type"
 }
 
 class User: NSObject {
@@ -27,12 +29,15 @@ class User: NSObject {
     public private(set) var email: String
     public var imageURL: String
     public private(set) var artists: [String]
+    public private(set) var offersAppliedTo: [String]
+    public private(set) var type: String
     
     init(json: JSON) {
         self.id = json[SerializationKey.id].stringValue
         self.username = json[SerializationKey.username].stringValue
         self.email = json[SerializationKey.email].stringValue
         self.imageURL = json[SerializationKey.imageURL].stringValue
+        self.type = json[SerializationKey.type].stringValue
         let jsonArray = json[SerializationKey.artists].arrayValue
         
         var artists = [String]()
@@ -42,21 +47,34 @@ class User: NSObject {
         }
         
         self.artists = artists
+        
+        let offersArray = json[SerializationKey.offersAppliedTo].arrayValue
+        
+        var offers = [String]()
+        offersArray.forEach { (json) in
+            let offerID = json.stringValue
+            offers.append(offerID)
+        }
+        
+        self.offersAppliedTo = offers
     }
     
-    init(id: String = "", username: String = "", email: String = "", imageURL: String = "", artists: [String] = [String]()) {
+    init(id: String = "", username: String = "", email: String = "", imageURL: String = "", artists: [String] = [String](), offers: [String] = [String](), type: String = "") {
         self.id = id
         self.username = username
         self.email = email
         self.imageURL = imageURL
         self.artists = artists
+        self.offersAppliedTo = offers
+        self.type = type
     }
     
-    static func generateBody(username: String, email: String, password: String) -> [String: String] {
+    static func generateBody(username: String, email: String, password: String, type: String) -> [String: String] {
         let body = [
             SerializationKey.username: username,
             SerializationKey.email: email,
             SerializationKey.password: password,
+            SerializationKey.type: type,
             SerializationKey.deviceToken: AuthService.shared.deviceToken ?? ""
         ]
         return body
@@ -102,22 +120,27 @@ class User: NSObject {
             let username = aDecoder.decodeObject(forKey: SerializationKey.username) as? String,
             let email = aDecoder.decodeObject(forKey: SerializationKey.email) as? String,
             let imageURL = aDecoder.decodeObject(forKey: SerializationKey.imageURL) as? String,
+            let type = aDecoder.decodeObject(forKey: SerializationKey.type) as? String,
+            let offers = aDecoder.decodeObject(forKey: SerializationKey.offersAppliedTo) as? [String],
             let artists = aDecoder.decodeObject(forKey: SerializationKey.artists) as? [String] else { return nil }
         
-        self.init(id: id, username: username, email: email, imageURL: imageURL, artists: artists)
+        self.init(id: id, username: username, email: email, imageURL: imageURL, artists: artists, offers: offers, type: type)
     }
     
     init?(dictionary: [String: AnyObject]) {
         guard let id = dictionary[SerializationKey.id] as? String,
             let username = dictionary[SerializationKey.username] as? String,
             let email = dictionary[SerializationKey.email] as? String,
-            let imageURL = dictionary[SerializationKey.imageURL] as? String else { return nil }
+            let imageURL = dictionary[SerializationKey.imageURL] as? String,
+        let type = dictionary[SerializationKey.type] as? String else { return nil }
         
         self.id = id
         self.username = username
         self.email = email
         self.imageURL = imageURL
         self.artists = [String]()
+        self.offersAppliedTo = [String]()
+        self.type = type
     }
 }
 
@@ -128,5 +151,7 @@ extension User: NSCoding {
         aCoder.encode(email, forKey: SerializationKey.email)
         aCoder.encode(imageURL, forKey: SerializationKey.imageURL)
         aCoder.encode(artists, forKey: SerializationKey.artists)
+        aCoder.encode(offersAppliedTo, forKey: SerializationKey.offersAppliedTo)
+        aCoder.encode(type, forKey: SerializationKey.type)
     }
 }

@@ -69,10 +69,10 @@ class AuthService {
         UserDefaults.standard.set(data, forKey: UserDefaultsKey.user)
     }
     
-    func registerUser(username: String, email: String, password: String, completion: @escaping CompletionHandler) {
+    func registerUser(username: String, email: String, password: String, type: String, completion: @escaping CompletionHandler) {
         
         let lowercaseEmail = email.lowercased()
-        let body = User.generateBody(username: username, email: lowercaseEmail, password: password)
+        let body = User.generateBody(username: username, email: lowercaseEmail, password: password, type: type)
         
         Alamofire.request(Route.users, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Header.header).responseJSON { [weak self] (response) in
             
@@ -91,6 +91,7 @@ class AuthService {
                             guard let token = response.response?.allHeaderFields[Header.bearerHeaderTitle] as? String else { completion(false); return }
                             weakSelf.authToken = token
                             weakSelf.user = user
+                            print(weakSelf.user.type, weakSelf.user.username)
                         } else {
                             completion(false)
                             return
@@ -129,6 +130,7 @@ class AuthService {
                     guard let token = (response.response?.allHeaderFields[Header.bearerHeaderTitle] as? String) else { completion(false); return }
                     weakSelf.authToken = token
                     weakSelf.user = user
+                    print(weakSelf.user.type, weakSelf.user.username)
                 } catch {
                     debugPrint(error)
                     completion(false)

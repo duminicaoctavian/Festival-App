@@ -16,4 +16,6 @@ struct Storyboard {
     static let UDetailViewController = "UDetailViewController"
     static let ADetailViewController = "ADetailViewController"
     static let CDetailViewController = "CDetailViewController"
+    static let ILoginViewController = "ILoginViewController"
+    static let IRegisterViewController = "IRegisterViewController"
 }

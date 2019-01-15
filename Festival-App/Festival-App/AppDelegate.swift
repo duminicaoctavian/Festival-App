@@ -23,37 +23,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.isStatusBarHidden = false
         
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         UIApplication.shared.statusBarStyle = .lightContent
         
-        if AuthService.shared.isServerless {
-            if FirebaseAuthService.shared.isLoggedIn {
-                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
-                if let window = self.window {
-                    window.rootViewController = rootController
-                }
-            } else {
-                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
-                if let window = self.window {
-                    window.rootViewController = rootController
-                }
-            }
-        } else {
-            if AuthService.shared.isLoggedIn {
-                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
-                if let window = self.window {
-                    window.rootViewController = rootController
-                }
-            } else {
-                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
-                if let window = self.window {
-                    window.rootViewController = rootController
-                }
-            }
-        }
+//        if AuthService.shared.isServerless {
+//            if FirebaseAuthService.shared.isLoggedIn {
+//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
+//                if let window = self.window {
+//                    window.rootViewController = rootController
+//                }
+//            } else {
+//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
+//                if let window = self.window {
+//                    window.rootViewController = rootController
+//                }
+//            }
+//        } else {
+//            if AuthService.shared.isLoggedIn {
+//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
+//                if let window = self.window {
+//                    window.rootViewController = rootController
+//                }
+//            } else {
+//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
+//                if let window = self.window {
+//                    window.rootViewController = rootController
+//                }
+//            }
+//        }
         
         NotificationService.shared.authorize()
         

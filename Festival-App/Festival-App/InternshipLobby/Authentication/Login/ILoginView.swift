@@ -9,5 +9,11 @@
 import Foundation
 
 protocol ILoginView: class {
-    
+    func navigateToApplicantScreen()
+    func navigateToUniversityScreen()
+    func navigateToCompanyScreen()
+    func navigateToRegisterScreen()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func presentLoginFailedFeedback(forError error: Error?)
 }

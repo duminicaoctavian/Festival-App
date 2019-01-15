@@ -113,7 +113,7 @@
 		B029016221EE81840020EAD5 /* AMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029016121EE81840020EAD5 /* AMainView.swift */; };
 		B029016521EE819B0020EAD5 /* ILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029016421EE819B0020EAD5 /* ILoginViewController.swift */; };
 		B029016721EE81A80020EAD5 /* IRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029016621EE81A80020EAD5 /* IRegisterViewController.swift */; };
-		B029016921EE81C80020EAD5 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B029016821EE81C80020EAD5 /* Authentication.storyboard */; };
+		B029016921EE81C80020EAD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B029016821EE81C80020EAD5 /* Main.storyboard */; };
 		B029016B21EE81D80020EAD5 /* Company.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B029016A21EE81D80020EAD5 /* Company.storyboard */; };
 		B029016D21EE81E10020EAD5 /* University.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B029016C21EE81E10020EAD5 /* University.storyboard */; };
 		B029016F21EE81EB0020EAD5 /* Applicant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B029016E21EE81EB0020EAD5 /* Applicant.storyboard */; };
@@ -127,6 +127,7 @@
 		B029018521EE85890020EAD5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018421EE85890020EAD5 /* UIColor+Extensions.swift */; };
 		B029018721EE85940020EAD5 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018621EE85940020EAD5 /* UIFont+Extensions.swift */; };
 		B029018921EE85E00020EAD5 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018821EE85E00020EAD5 /* Storyboard.swift */; };
+		B029018B21EE8F610020EAD5 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018A21EE8F610020EAD5 /* AlertView.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -172,7 +173,7 @@
 		DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D0792083B9DC00127695 /* Extensions.swift */; };
 		DEC8D07C2083EFC400127695 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D07B2083EFC300127695 /* MapPin.swift */; };
 		DECDBBF9203DE43B0001B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */; };
-		DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Main.storyboard */; };
+		DECDBBFE203DE43B0001B7BA /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBBFC203DE43B0001B7BA /* Authentication.storyboard */; };
 		DECDBC01203DE43B0001B7BA /* Festival_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECDBBFF203DE43B0001B7BA /* Festival_App.xcdatamodeld */; };
 		DECDBC03203DE43B0001B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC02203DE43B0001B7BA /* Assets.xcassets */; };
 		DECDBC06203DE43B0001B7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */; };
@@ -311,7 +312,7 @@
 		B029016121EE81840020EAD5 /* AMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMainView.swift; sourceTree = "<group>"; };
 		B029016421EE819B0020EAD5 /* ILoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginViewController.swift; sourceTree = "<group>"; };
 		B029016621EE81A80020EAD5 /* IRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRegisterViewController.swift; sourceTree = "<group>"; };
-		B029016821EE81C80020EAD5 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		B029016821EE81C80020EAD5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B029016A21EE81D80020EAD5 /* Company.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Company.storyboard; sourceTree = "<group>"; };
 		B029016C21EE81E10020EAD5 /* University.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = University.storyboard; sourceTree = "<group>"; };
 		B029016E21EE81EB0020EAD5 /* Applicant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Applicant.storyboard; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 		B029018421EE85890020EAD5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		B029018621EE85940020EAD5 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		B029018821EE85E00020EAD5 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		B029018A21EE8F610020EAD5 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -372,7 +374,7 @@
 		DEC8D07B2083EFC300127695 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		DECDBBF5203DE43B0001B7BA /* Festival-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Festival-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECDBBF8203DE43B0001B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DECDBBFD203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		DECDBC00203DE43B0001B7BA /* Festival_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Festival_App.xcdatamodel; sourceTree = "<group>"; };
 		DECDBC02203DE43B0001B7BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECDBC05203DE43B0001B7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -708,7 +710,7 @@
 				8A3674D82101C43000B301B7 /* Chat.storyboard */,
 				DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */,
 				8A3674D02101C38F00B301B7 /* Lineup.storyboard */,
-				DECDBBFC203DE43B0001B7BA /* Main.storyboard */,
+				DECDBBFC203DE43B0001B7BA /* Authentication.storyboard */,
 				8A3674DA2101C45200B301B7 /* MyAccount.storyboard */,
 				8A3674CE2101C36C00B301B7 /* News.storyboard */,
 				8A3674D22101C3B200B301B7 /* Shop.storyboard */,
@@ -792,7 +794,7 @@
 			children = (
 				B029017121EE82F50020EAD5 /* Register */,
 				B029017021EE82EA0020EAD5 /* Login */,
-				B029016821EE81C80020EAD5 /* Authentication.storyboard */,
+				B029016821EE81C80020EAD5 /* Main.storyboard */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -844,6 +846,7 @@
 				B029017C21EE84AB0020EAD5 /* CellIdentifier.swift */,
 				B029017E21EE85470020EAD5 /* AppNavigationBar.swift */,
 				B029018821EE85E00020EAD5 /* Storyboard.swift */,
+				B029018A21EE8F610020EAD5 /* AlertView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1028,7 +1031,7 @@
 				8A3674CF2101C36C00B301B7 /* News.storyboard in Resources */,
 				B029016F21EE81EB0020EAD5 /* Applicant.storyboard in Resources */,
 				8A973584212F126A007D79DB /* form.json in Resources */,
-				B029016921EE81C80020EAD5 /* Authentication.storyboard in Resources */,
+				B029016921EE81C80020EAD5 /* Main.storyboard in Resources */,
 				8A3674D92101C43000B301B7 /* Chat.storyboard in Resources */,
 				DE0FCD6C203F747900FE29BB /* ArtistDetailsViewController.xib in Resources */,
 				8A3674D12101C38F00B301B7 /* Lineup.storyboard in Resources */,
@@ -1038,7 +1041,7 @@
 				DE84F439208B46CB00CE35FA /* LocationDetailsViewController.xib in Resources */,
 				8A3674D52101C3D200B301B7 /* Accomodation.storyboard in Resources */,
 				8A3674D32101C3B200B301B7 /* Shop.storyboard in Resources */,
-				DECDBBFE203DE43B0001B7BA /* Main.storyboard in Resources */,
+				DECDBBFE203DE43B0001B7BA /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,6 +1219,7 @@
 				DE4DF16E2041CB690083A8F1 /* AccomodationViewController.swift in Sources */,
 				8A32DBD5214019FD00357E11 /* OfferItemView.swift in Sources */,
 				8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */,
+				B029018B21EE8F610020EAD5 /* AlertView.swift in Sources */,
 				8AD9C084212C2CAA00189A14 /* LocationDetailsView.swift in Sources */,
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* VideoNewsCell.swift in Sources */,
@@ -1314,12 +1318,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DECDBBFC203DE43B0001B7BA /* Main.storyboard */ = {
+		DECDBBFC203DE43B0001B7BA /* Authentication.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DECDBBFD203DE43B0001B7BA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Authentication.storyboard;
 			sourceTree = "<group>";
 		};
 		DECDBC04203DE43B0001B7BA /* LaunchScreen.storyboard */ = {
