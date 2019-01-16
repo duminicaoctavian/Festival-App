@@ -18,4 +18,7 @@ struct Storyboard {
     static let CDetailViewController = "CDetailViewController"
     static let ILoginViewController = "ILoginViewController"
     static let IRegisterViewController = "IRegisterViewController"
+    static let ANav = "ANav"
+    static let UNav = "UNav"
+    static let CNav = "CNav"
 }

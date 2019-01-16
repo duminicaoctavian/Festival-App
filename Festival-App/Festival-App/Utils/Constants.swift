@@ -12,8 +12,8 @@ import Foundation
 // ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
 
 typealias CompletionHandler = (_ success: Bool) -> ()
-let baseURL = "http://localhost:3000"
-//let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
+//let baseURL = "http://localhost:3000"
+let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
 let baseLocalURL = "http://localhost:3000"
 
 struct StoryboardID {
@@ -57,6 +57,7 @@ struct Route {
     static let baseAWS = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket"
     static let defaultProfilePicture = "https://s3.eu-central-1.amazonaws.com/octaviansuniversalbucket/profileDefault.png"
     static let artists = "\(baseURL)/artists"
+    static let offers = "\(baseURL)/offers"
     static let products = "\(baseURL)/products"
     static let users = "\(baseURL)/users"
     static let channels = "\(baseURL)/channels"
@@ -67,6 +68,7 @@ struct Route {
     static let logoutUser = "\(baseURL)/users/me/token"
     static let randomQuestion = "\(baseURL)/questions/random"
     static let addArtistID = "\(baseURL)/users/addArtist"
+    static let postApplication = "\(baseURL)/applications"
 }
 
 struct NotificationName {

@@ -128,6 +128,21 @@
 		B029018721EE85940020EAD5 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018621EE85940020EAD5 /* UIFont+Extensions.swift */; };
 		B029018921EE85E00020EAD5 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018821EE85E00020EAD5 /* Storyboard.swift */; };
 		B029018B21EE8F610020EAD5 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018A21EE8F610020EAD5 /* AlertView.swift */; };
+		B029018D21EEA2220020EAD5 /* AOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018C21EEA2220020EAD5 /* AOfferTableViewCell.swift */; };
+		B029018F21EEA22E0020EAD5 /* AOfferItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029018E21EEA22E0020EAD5 /* AOfferItemView.swift */; };
+		B029019221EEA65D0020EAD5 /* OfferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029019121EEA65D0020EAD5 /* OfferService.swift */; };
+		B029019621EEA6B60020EAD5 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029019521EEA6B60020EAD5 /* Offer.swift */; };
+		B0F4D9FC21EF1D4D00EB21B3 /* ADetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4D9FB21EF1D4D00EB21B3 /* ADetailsView.swift */; };
+		B0F4D9FE21EF1D5700EB21B3 /* ADetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4D9FD21EF1D5700EB21B3 /* ADetailsPresenter.swift */; };
+		B0F4DA0021EF1D6000EB21B3 /* ADetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4D9FF21EF1D6000EB21B3 /* ADetailsViewController.swift */; };
+		B0F4DA0421EF1F1100EB21B3 /* UDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0321EF1F1100EB21B3 /* UDetailsViewController.swift */; };
+		B0F4DA0621EF1F1A00EB21B3 /* UDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0521EF1F1A00EB21B3 /* UDetailsPresenter.swift */; };
+		B0F4DA0821EF1F2300EB21B3 /* UDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0721EF1F2300EB21B3 /* UDetailsView.swift */; };
+		B0F4DA0C21EF1FAD00EB21B3 /* CDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0B21EF1FAD00EB21B3 /* CDetailsViewController.swift */; };
+		B0F4DA0E21EF1FB800EB21B3 /* CDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0D21EF1FB800EB21B3 /* CDetailsPresenter.swift */; };
+		B0F4DA1021EF1FC300EB21B3 /* CDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0F21EF1FC300EB21B3 /* CDetailsView.swift */; };
+		B0F4DA1221EF57AE00EB21B3 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1121EF57AE00EB21B3 /* ApplicationService.swift */; };
+		B0F4DA1421EF57B900EB21B3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1321EF57B900EB21B3 /* Application.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -327,6 +342,21 @@
 		B029018621EE85940020EAD5 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		B029018821EE85E00020EAD5 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		B029018A21EE8F610020EAD5 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B029018C21EEA2220020EAD5 /* AOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOfferTableViewCell.swift; sourceTree = "<group>"; };
+		B029018E21EEA22E0020EAD5 /* AOfferItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOfferItemView.swift; sourceTree = "<group>"; };
+		B029019121EEA65D0020EAD5 /* OfferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferService.swift; sourceTree = "<group>"; };
+		B029019521EEA6B60020EAD5 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		B0F4D9FB21EF1D4D00EB21B3 /* ADetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetailsView.swift; sourceTree = "<group>"; };
+		B0F4D9FD21EF1D5700EB21B3 /* ADetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetailsPresenter.swift; sourceTree = "<group>"; };
+		B0F4D9FF21EF1D6000EB21B3 /* ADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetailsViewController.swift; sourceTree = "<group>"; };
+		B0F4DA0321EF1F1100EB21B3 /* UDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDetailsViewController.swift; sourceTree = "<group>"; };
+		B0F4DA0521EF1F1A00EB21B3 /* UDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDetailsPresenter.swift; sourceTree = "<group>"; };
+		B0F4DA0721EF1F2300EB21B3 /* UDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDetailsView.swift; sourceTree = "<group>"; };
+		B0F4DA0B21EF1FAD00EB21B3 /* CDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDetailsViewController.swift; sourceTree = "<group>"; };
+		B0F4DA0D21EF1FB800EB21B3 /* CDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDetailsPresenter.swift; sourceTree = "<group>"; };
+		B0F4DA0F21EF1FC300EB21B3 /* CDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDetailsView.swift; sourceTree = "<group>"; };
+		B0F4DA1121EF57AE00EB21B3 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		B0F4DA1321EF57B900EB21B3 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -759,9 +789,8 @@
 		B029014E21EE80E80020EAD5 /* Applicant */ = {
 			isa = PBXGroup;
 			children = (
-				B029015D21EE81700020EAD5 /* AMainViewController.swift */,
-				B029015F21EE817B0020EAD5 /* AMainPresenter.swift */,
-				B029016121EE81840020EAD5 /* AMainView.swift */,
+				B0F4D9FA21EF1D3D00EB21B3 /* Details */,
+				B0F4D9F921EF1D2C00EB21B3 /* Main */,
 				B029016E21EE81EB0020EAD5 /* Applicant.storyboard */,
 			);
 			path = Applicant;
@@ -770,9 +799,8 @@
 		B029014F21EE80FD0020EAD5 /* University */ = {
 			isa = PBXGroup;
 			children = (
-				B029015721EE81500020EAD5 /* UMainViewController.swift */,
-				B029015921EE815B0020EAD5 /* UMainPresenter.swift */,
-				B029015B21EE81640020EAD5 /* UMainView.swift */,
+				B0F4DA0221EF1F0500EB21B3 /* Details */,
+				B0F4DA0121EF1EF600EB21B3 /* Main */,
 				B029016C21EE81E10020EAD5 /* University.storyboard */,
 			);
 			path = University;
@@ -781,9 +809,8 @@
 		B029015021EE81020020EAD5 /* Company */ = {
 			isa = PBXGroup;
 			children = (
-				B029015121EE812E0020EAD5 /* CMainViewController.swift */,
-				B029015321EE81390020EAD5 /* CMainPresenter.swift */,
-				B029015521EE81420020EAD5 /* CMainView.swift */,
+				B0F4DA0A21EF1F9F00EB21B3 /* Details */,
+				B0F4DA0921EF1F9000EB21B3 /* Main */,
 				B029016A21EE81D80020EAD5 /* Company.storyboard */,
 			);
 			path = Company;
@@ -822,6 +849,7 @@
 		B029017A21EE847F0020EAD5 /* InternshipLobby */ = {
 			isa = PBXGroup;
 			children = (
+				B029019321EEA6A40020EAD5 /* Data */,
 				B029017B21EE849E0020EAD5 /* Utils */,
 				B029014E21EE80E80020EAD5 /* Applicant */,
 				B029014F21EE80FD0020EAD5 /* University */,
@@ -859,6 +887,95 @@
 				B029018621EE85940020EAD5 /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B029019021EEA64C0020EAD5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B029019121EEA65D0020EAD5 /* OfferService.swift */,
+				B0F4DA1121EF57AE00EB21B3 /* ApplicationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B029019321EEA6A40020EAD5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B029019421EEA6AB0020EAD5 /* Model */,
+				B029019021EEA64C0020EAD5 /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B029019421EEA6AB0020EAD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B029019521EEA6B60020EAD5 /* Offer.swift */,
+				B0F4DA1321EF57B900EB21B3 /* Application.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0F4D9F921EF1D2C00EB21B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B029018E21EEA22E0020EAD5 /* AOfferItemView.swift */,
+				B029018C21EEA2220020EAD5 /* AOfferTableViewCell.swift */,
+				B029016121EE81840020EAD5 /* AMainView.swift */,
+				B029015F21EE817B0020EAD5 /* AMainPresenter.swift */,
+				B029015D21EE81700020EAD5 /* AMainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B0F4D9FA21EF1D3D00EB21B3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B0F4D9FB21EF1D4D00EB21B3 /* ADetailsView.swift */,
+				B0F4D9FD21EF1D5700EB21B3 /* ADetailsPresenter.swift */,
+				B0F4D9FF21EF1D6000EB21B3 /* ADetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		B0F4DA0121EF1EF600EB21B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B029015721EE81500020EAD5 /* UMainViewController.swift */,
+				B029015921EE815B0020EAD5 /* UMainPresenter.swift */,
+				B029015B21EE81640020EAD5 /* UMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B0F4DA0221EF1F0500EB21B3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B0F4DA0321EF1F1100EB21B3 /* UDetailsViewController.swift */,
+				B0F4DA0521EF1F1A00EB21B3 /* UDetailsPresenter.swift */,
+				B0F4DA0721EF1F2300EB21B3 /* UDetailsView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		B0F4DA0921EF1F9000EB21B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B029015121EE812E0020EAD5 /* CMainViewController.swift */,
+				B029015321EE81390020EAD5 /* CMainPresenter.swift */,
+				B029015521EE81420020EAD5 /* CMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B0F4DA0A21EF1F9F00EB21B3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B0F4DA0B21EF1FAD00EB21B3 /* CDetailsViewController.swift */,
+				B0F4DA0D21EF1FB800EB21B3 /* CDetailsPresenter.swift */,
+				B0F4DA0F21EF1FC300EB21B3 /* CDetailsView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		BC2A6BA8F44BBF55AB86511B /* Frameworks */ = {
@@ -987,6 +1104,9 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -1150,6 +1270,7 @@
 				DE5A8122203E1EDA00D8A7FA /* UserMenuCell.swift in Sources */,
 				B029018721EE85940020EAD5 /* UIFont+Extensions.swift in Sources */,
 				B029016721EE81A80020EAD5 /* IRegisterViewController.swift in Sources */,
+				B0F4DA1021EF1FC300EB21B3 /* CDetailsView.swift in Sources */,
 				DEE34CA3205E91EF006C7B55 /* KeyboardBoundView.swift in Sources */,
 				B029015221EE812E0020EAD5 /* CMainViewController.swift in Sources */,
 				8A121D9E2116F3470050EDBB /* ArtistItemView.swift in Sources */,
@@ -1215,7 +1336,10 @@
 				B029015C21EE81640020EAD5 /* UMainView.swift in Sources */,
 				B029015821EE81500020EAD5 /* UMainViewController.swift in Sources */,
 				DE0FCD6B203F747900FE29BB /* ArtistDetailsViewController.swift in Sources */,
+				B0F4DA0021EF1D6000EB21B3 /* ADetailsViewController.swift in Sources */,
 				DEA915B8205FBBD000A276E5 /* NewsViewController.swift in Sources */,
+				B029019621EEA6B60020EAD5 /* Offer.swift in Sources */,
+				B029018D21EEA2220020EAD5 /* AOfferTableViewCell.swift in Sources */,
 				DE4DF16E2041CB690083A8F1 /* AccomodationViewController.swift in Sources */,
 				8A32DBD5214019FD00357E11 /* OfferItemView.swift in Sources */,
 				8A14844F211DE8120012D802 /* ChatItemView.swift in Sources */,
@@ -1224,17 +1348,23 @@
 				DE1648622042350400EB371B /* RoundedImage.swift in Sources */,
 				DE4DF1682041C1720083A8F1 /* VideoNewsCell.swift in Sources */,
 				B029017D21EE84AB0020EAD5 /* CellIdentifier.swift in Sources */,
+				B0F4DA1421EF57B900EB21B3 /* Application.swift in Sources */,
+				B0F4DA0421EF1F1100EB21B3 /* UDetailsViewController.swift in Sources */,
 				DEC8D07A2083B9DC00127695 /* Extensions.swift in Sources */,
 				B029016021EE817B0020EAD5 /* AMainPresenter.swift in Sources */,
 				8AD9C080212C279300189A14 /* MKCoordinateRegionExtensions.swift in Sources */,
 				8AD7FAC02116135400B8320C /* UIColorExtensions.swift in Sources */,
 				DE84F43F208B69C600CE35FA /* LocationService.swift in Sources */,
+				B0F4DA0C21EF1FAD00EB21B3 /* CDetailsViewController.swift in Sources */,
 				8A3E6B0321176163004CA677 /* NewsView.swift in Sources */,
 				B029018921EE85E00020EAD5 /* Storyboard.swift in Sources */,
 				8A98E1C9211C82680009B19C /* WinTicketsViewController.swift in Sources */,
 				8A148451211DE8330012D802 /* ChatLogPresenter.swift in Sources */,
 				DE742A112044963A000CF48F /* LoginViewController.swift in Sources */,
 				DE5A811D203DF95B00D8A7FA /* RoundedButton.swift in Sources */,
+				B029019221EEA65D0020EAD5 /* OfferService.swift in Sources */,
+				B0F4DA1221EF57AE00EB21B3 /* ApplicationService.swift in Sources */,
+				B0F4DA0621EF1F1A00EB21B3 /* UDetailsPresenter.swift in Sources */,
 				B029018321EE857F0020EAD5 /* UIViewController+Extensions.swift in Sources */,
 				8A14844B211DD1450012D802 /* ChannelItemView.swift in Sources */,
 				DEE34CA0205E91DE006C7B55 /* Channel.swift in Sources */,
@@ -1275,17 +1405,22 @@
 				8A10E04C21105D9100021478 /* UIViewControllerExtensions.swift in Sources */,
 				8ACA50F9211D72EB00D50CCF /* QuestionService.swift in Sources */,
 				8A32DBCF213FDCF200357E11 /* FirebaseAuthService.swift in Sources */,
+				B029018F21EEA22E0020EAD5 /* AOfferItemView.swift in Sources */,
+				B0F4D9FE21EF1D5700EB21B3 /* ADetailsPresenter.swift in Sources */,
 				DE5A8112203DE56900D8A7FA /* SWRevealViewController.m in Sources */,
 				B029015A21EE815B0020EAD5 /* UMainPresenter.swift in Sources */,
+				B0F4DA0821EF1F2300EB21B3 /* UDetailsView.swift in Sources */,
 				B029018521EE85890020EAD5 /* UIColor+Extensions.swift in Sources */,
 				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
 				8ACCB867212FFC85006CC335 /* MyLineupView.swift in Sources */,
 				8A148447211DD0C20012D802 /* ChannelsView.swift in Sources */,
+				B0F4D9FC21EF1D4D00EB21B3 /* ADetailsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,
 				DE84F438208B46CB00CE35FA /* LocationDetailsViewController.swift in Sources */,
 				8A98E1CE211C82850009B19C /* WinTicketsPresenter.swift in Sources */,
 				DE3B2CF72043300C00C4E49D /* AuthService.swift in Sources */,
+				B0F4DA0E21EF1FB800EB21B3 /* CDetailsPresenter.swift in Sources */,
 				8A3674CB2101BF6400B301B7 /* LoginView.swift in Sources */,
 				DE0FCD5B203F1F1300FE29BB /* Artist.swift in Sources */,
 				8AD7FAC321161B2F00B8320C /* Validator.swift in Sources */,

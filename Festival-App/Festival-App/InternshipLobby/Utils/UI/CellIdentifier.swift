@@ -9,5 +9,5 @@
 import Foundation
 
 struct CellIdentifier {
-    
+    static let offerCell = AOfferTableViewCell.className
 }

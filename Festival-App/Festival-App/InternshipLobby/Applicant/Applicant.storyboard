@@ -17,11 +17,81 @@
                     <view key="view" contentMode="scaleToFill" id="T9I-1j-psJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-ta-7al">
+                                <rect key="frame" x="15" y="84" width="345" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Applied For"/>
+                                </segments>
+                                <color key="tintColor" red="0.086274509799999996" green="0.58431372550000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="3bq-nv-6g2" eventType="valueChanged" id="DGz-xW-SAb"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwh-kj-fXl">
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AOfferTableViewCell" rowHeight="80" id="xvE-V0-dk1" customClass="AOfferTableViewCell" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xvE-V0-dk1" id="xKI-IG-gbf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-3n-dni" customClass="CircleImage" customModule="Festival_App" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="10" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="HtG-jr-KkT"/>
+                                                        <constraint firstAttribute="height" constant="60" id="hpG-OY-0RZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internship Position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cl-iL-6BB">
+                                                    <rect key="frame" x="90" y="28.5" width="255" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7cl-iL-6BB" firstAttribute="leading" secondItem="hVr-3n-dni" secondAttribute="trailing" constant="15" id="7Uw-4v-m9y"/>
+                                                <constraint firstItem="hVr-3n-dni" firstAttribute="centerY" secondItem="xKI-IG-gbf" secondAttribute="centerY" id="DyR-lw-u4l"/>
+                                                <constraint firstItem="hVr-3n-dni" firstAttribute="leading" secondItem="xKI-IG-gbf" secondAttribute="leading" constant="15" id="IOM-YR-Rri"/>
+                                                <constraint firstAttribute="bottom" secondItem="hVr-3n-dni" secondAttribute="bottom" constant="10" id="L5K-dU-9Sb"/>
+                                                <constraint firstItem="hVr-3n-dni" firstAttribute="top" secondItem="xKI-IG-gbf" secondAttribute="top" constant="10" id="M7k-in-E4S"/>
+                                                <constraint firstItem="7cl-iL-6BB" firstAttribute="centerY" secondItem="hVr-3n-dni" secondAttribute="centerY" id="O3E-zs-sfE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7cl-iL-6BB" secondAttribute="trailing" constant="15" id="Rnf-u2-yWS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyImageView" destination="hVr-3n-dni" id="hQj-jF-JQ8"/>
+                                            <outlet property="titleLabel" destination="7cl-iL-6BB" id="0ga-Kw-ibY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3bq-nv-6g2" id="s08-lM-kqv"/>
+                                    <outlet property="delegate" destination="3bq-nv-6g2" id="2ZJ-IY-DFK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dwh-kj-fXl" firstAttribute="leading" secondItem="1TS-hO-3vF" secondAttribute="leading" id="4lD-4Q-50G"/>
+                            <constraint firstItem="Zeu-ta-7al" firstAttribute="leading" secondItem="1TS-hO-3vF" secondAttribute="leading" constant="15" id="URE-R2-P4Z"/>
+                            <constraint firstItem="Dwh-kj-fXl" firstAttribute="top" secondItem="Zeu-ta-7al" secondAttribute="bottom" constant="20" id="Uwz-HU-QQg"/>
+                            <constraint firstItem="Dwh-kj-fXl" firstAttribute="trailing" secondItem="1TS-hO-3vF" secondAttribute="trailing" id="aAF-wZ-Q1j"/>
+                            <constraint firstItem="Zeu-ta-7al" firstAttribute="top" secondItem="1TS-hO-3vF" secondAttribute="top" constant="20" id="beI-PK-R0s"/>
+                            <constraint firstItem="Dwh-kj-fXl" firstAttribute="bottom" secondItem="1TS-hO-3vF" secondAttribute="bottom" id="iCa-32-bj9"/>
+                            <constraint firstItem="1TS-hO-3vF" firstAttribute="trailing" secondItem="Zeu-ta-7al" secondAttribute="trailing" constant="15" id="vJe-PF-fn6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1TS-hO-3vF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Internship Offers" id="yNC-EO-a6p"/>
                     <connections>
+                        <outlet property="offerSegmentedControl" destination="Zeu-ta-7al" id="R7l-Mg-9Y8"/>
+                        <outlet property="tableView" destination="Dwh-kj-fXl" id="3qm-ye-bUT"/>
                         <segue destination="44q-4i-IRS" kind="show" identifier="ToADetailsViewController" id="EU8-Y0-aYN"/>
                     </connections>
                 </viewController>
@@ -32,23 +102,150 @@
         <!--Offer Details-->
         <scene sceneID="Tp2-Xa-bN5">
             <objects>
-                <viewController storyboardIdentifier="ADetailsViewController" id="44q-4i-IRS" customClass="Added" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ADetailViewController" id="44q-4i-IRS" customClass="ADetailsViewController" customModule="Festival_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bda-Fx-NwY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-Ey-aIo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="9i6-Qa-AXK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internship Position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlj-sD-9PM">
+                                <rect key="frame" x="15" y="222" width="345" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sg-2I-8T7">
+                                <rect key="frame" x="15" y="348.5" width="345" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kT-Me-P08">
+                                <rect key="frame" x="15" y="260.5" width="345" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="K2O-EH-nYx"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8zR-H6-RXv">
+                                <rect key="frame" x="15" y="379.5" width="345" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="trW-m6-Xm5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Eem-J6-4XV">
+                                <rect key="frame" x="15" y="467.5" width="345" height="136"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L62-7M-dXn" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                        <color key="backgroundColor" red="0.086274509799999996" green="0.58431372550000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="d8C-yd-s0l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Upload Resume">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onUploadResumeTapped:" destination="44q-4i-IRS" eventType="touchUpInside" id="zu0-JM-RgH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSQ-l5-jcT" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="48" width="345" height="40"/>
+                                        <color key="backgroundColor" red="0.086274509799999996" green="0.58431372550000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="28J-Du-hss"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Call">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCallTapped:" destination="44q-4i-IRS" eventType="touchUpInside" id="kZC-c2-CBR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-8v-5eJ" customClass="RoundedButton" customModule="Festival_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="96" width="345" height="40"/>
+                                        <color key="backgroundColor" red="0.086274509799999996" green="0.58431372550000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DeS-lF-yEw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Apply">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onApplyTapped:" destination="44q-4i-IRS" eventType="touchUpInside" id="5Z7-MS-SKB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vlj-sD-9PM" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" constant="15" id="0vM-n7-8hF"/>
+                            <constraint firstItem="ccY-Ey-aIo" firstAttribute="trailing" secondItem="zHd-cn-qOY" secondAttribute="trailing" id="4e6-oE-ngs"/>
+                            <constraint firstItem="2kT-Me-P08" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" constant="15" id="Clo-di-Uy7"/>
+                            <constraint firstItem="vlj-sD-9PM" firstAttribute="top" secondItem="ccY-Ey-aIo" secondAttribute="bottom" constant="8" id="J4I-gh-AQ0"/>
+                            <constraint firstItem="8zR-H6-RXv" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" constant="15" id="K77-yP-QWa"/>
+                            <constraint firstItem="zHd-cn-qOY" firstAttribute="trailing" secondItem="vlj-sD-9PM" secondAttribute="trailing" constant="15" id="LQr-Te-gai"/>
+                            <constraint firstItem="8zR-H6-RXv" firstAttribute="top" secondItem="8sg-2I-8T7" secondAttribute="bottom" constant="9" id="PVI-fM-jJ8"/>
+                            <constraint firstItem="Eem-J6-4XV" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" constant="15" id="PVg-Ee-JBP"/>
+                            <constraint firstItem="zHd-cn-qOY" firstAttribute="trailing" secondItem="8zR-H6-RXv" secondAttribute="trailing" constant="15" id="Pz9-70-90m"/>
+                            <constraint firstItem="Eem-J6-4XV" firstAttribute="top" secondItem="8zR-H6-RXv" secondAttribute="bottom" constant="8" id="Qzi-Tx-0qE"/>
+                            <constraint firstItem="zHd-cn-qOY" firstAttribute="trailing" secondItem="2kT-Me-P08" secondAttribute="trailing" constant="15" id="VHf-Aw-eNy"/>
+                            <constraint firstItem="zHd-cn-qOY" firstAttribute="trailing" secondItem="8sg-2I-8T7" secondAttribute="trailing" constant="15" id="a8j-Ba-uSC"/>
+                            <constraint firstItem="2kT-Me-P08" firstAttribute="top" secondItem="vlj-sD-9PM" secondAttribute="bottom" constant="8" id="fpp-95-Ad0"/>
+                            <constraint firstItem="ccY-Ey-aIo" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" id="mAU-dd-WWs"/>
+                            <constraint firstItem="ccY-Ey-aIo" firstAttribute="top" secondItem="zHd-cn-qOY" secondAttribute="top" id="nIo-ON-WiD"/>
+                            <constraint firstItem="8sg-2I-8T7" firstAttribute="top" secondItem="2kT-Me-P08" secondAttribute="bottom" constant="8" id="pVA-sW-fYe"/>
+                            <constraint firstItem="zHd-cn-qOY" firstAttribute="trailing" secondItem="Eem-J6-4XV" secondAttribute="trailing" constant="15" id="sUN-fc-Y5j"/>
+                            <constraint firstItem="8sg-2I-8T7" firstAttribute="leading" secondItem="zHd-cn-qOY" secondAttribute="leading" constant="15" id="tr5-ou-ID1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zHd-cn-qOY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Offer Details" id="keD-R6-EfL"/>
+                    <connections>
+                        <outlet property="detailsImageView" destination="ccY-Ey-aIo" id="JTO-Sw-tOT"/>
+                        <outlet property="offerDescriptionTextView" destination="2kT-Me-P08" id="9o5-Qt-aLo"/>
+                        <outlet property="offerTitle" destination="vlj-sD-9PM" id="Psi-R4-vKX"/>
+                        <outlet property="workTextView" destination="8zR-H6-RXv" id="FPF-b4-u31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R2-uq-dEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="26"/>
+            <point key="canvasLocation" x="1668" y="25.637181409295355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tWh-yf-GS7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HPl-Uo-1Kp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ANav" automaticallyAdjustsScrollViewInsets="NO" id="HPl-Uo-1Kp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ArB-fd-4ei" customClass="AppNavigationBar" customModule="Festival_App" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

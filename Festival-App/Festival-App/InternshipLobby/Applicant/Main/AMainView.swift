@@ -1,5 +1,5 @@
 //
-//  AMainPresenter.swift
+//  AMainView.swift
 //  Festival-App
 //
 //  Created by Octavian Duminica on 15/01/2019.
@@ -8,11 +8,7 @@
 
 import Foundation
 
-class AMainPresenter {
-    
-    weak var view: AMainView?
-    
-    init(view: AMainView) {
-        self.view = view
-    }
+protocol AMainView: class {
+    func navigateToDetails(at index: Int)
+    func reloadData()
 }

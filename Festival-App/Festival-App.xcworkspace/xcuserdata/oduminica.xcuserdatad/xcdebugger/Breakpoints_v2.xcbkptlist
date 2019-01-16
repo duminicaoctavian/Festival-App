@@ -2,4 +2,86 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Festival-App/InternshipLobby/Applicant/Details/ADetailsPresenter.swift"
+            timestampString = "569338752.423135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "handleUpload(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Festival-App/InternshipLobby/Applicant/Details/ADetailsPresenter.swift"
+            timestampString = "569338752.423208"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "handleUpload(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Festival-App/InternshipLobby/Applicant/Details/ADetailsPresenter.swift"
+            timestampString = "569338752.423261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "handleUpload(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Festival_App.ADetailsPresenter.(handleUpload in _F576F9091DD26E68FCF6E4486ADCAAB0)(Swift.String) -&gt; ()"
+                  moduleName = "Festival-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oduminica/Documents/iOS/InternshipLobby/Festival-App/Festival-App/Festival-App/InternshipLobby/Applicant/Details/ADetailsPresenter.swift"
+                  timestampString = "569338710.30583"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Festival_App.ADetailsPresenter.(handleUpload in _F576F9091DD26E68FCF6E4486ADCAAB0)(Swift.String) -&gt; ()"
+                  moduleName = "Festival-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oduminica/Documents/iOS/InternshipLobby/Festival-App/Festival-App/Festival-App/InternshipLobby/Applicant/Details/ADetailsPresenter.swift"
+                  timestampString = "569338710.307831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

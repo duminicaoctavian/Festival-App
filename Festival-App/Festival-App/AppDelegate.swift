@@ -29,31 +29,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIApplication.shared.statusBarStyle = .lightContent
         
-//        if AuthService.shared.isServerless {
-//            if FirebaseAuthService.shared.isLoggedIn {
-//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
+//        let rootController = storyboard.instantiateViewController(withIdentifier: Storyboard.ILoginViewController)
+//        if let window = self.window {
+//            window.rootViewController = rootController
+//        }
+//
+//        if AuthService.shared.isLoggedIn {
+//            switch AuthService.shared.user.type {
+//            case "company":
+//                guard let c = storyboard.instantiateViewController(withIdentifier: Storyboard.CMainViewController) as? CMainViewController else { return false }
 //                if let window = self.window {
-//                    window.rootViewController = rootController
+//                    window.rootViewController?.navigationController?.pushViewController(c, animated: false)
 //                }
-//            } else {
-//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
+//            case "university":
+//                guard let u = storyboard.instantiateViewController(withIdentifier: Storyboard.UMainViewController) as? UMainViewController else { return false }
 //                if let window = self.window {
-//                    window.rootViewController = rootController
+//                    window.rootViewController?.navigationController?.pushViewController(u, animated: false)
 //                }
-//            }
-//        } else {
-//            if AuthService.shared.isLoggedIn {
-//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.SWRevealViewController)
-//                if let window = self.window {
-//                    window.rootViewController = rootController
-//                }
-//            } else {
-//                let rootController = storyboard.instantiateViewController(withIdentifier: StoryboardID.loginViewController)
-//                if let window = self.window {
-//                    window.rootViewController = rootController
+//            default:
+//                guard let a = storyboard.instantiateViewController(withIdentifier: Storyboard.AMainViewController) as? AMainViewController else { return false }
+//                if let root = self.window?.rootViewController {
+//                    let navC = UINavigationController(rootViewController: root)
+//                    navC.pushViewController(a, animated: false)
 //                }
 //            }
 //        }
+ 
         
         NotificationService.shared.authorize()
         
