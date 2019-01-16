@@ -5,37 +5,9 @@ PODS:
   - AWSCore (2.6.12)
   - AWSS3 (2.6.12):
     - AWSCore (= 2.6.12)
-  - Firebase/Auth (5.6.0):
-    - Firebase/CoreOnly
-    - FirebaseAuth (= 5.0.3)
-  - Firebase/CoreOnly (5.6.0):
-    - FirebaseCore (= 5.1.1)
-  - Firebase/Database (5.6.0):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.0.2)
-  - FirebaseAuth (5.0.3):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 5.0)
-    - GoogleUtilities/Environment (~> 5.2)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (5.1.1):
-    - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseDatabase (5.0.2):
-    - FirebaseCore (~> 5.0)
-    - leveldb-library (~> 1.18)
-  - GoogleUtilities/Environment (5.2.2)
-  - GoogleUtilities/Logger (5.2.2):
-    - GoogleUtilities/Environment
-  - GTMSessionFetcher/Core (1.2.0)
-  - leveldb-library (1.20)
-  - lottie-ios (2.5.0)
   - NVActivityIndicatorView (4.3.0):
     - NVActivityIndicatorView/Presenter (= 4.3.0)
   - NVActivityIndicatorView/Presenter (4.3.0)
-  - Socket.IO-Client-Swift (13.1.1):
-    - Starscream (~> 3.0.2)
-  - Starscream (3.0.4)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -43,11 +15,7 @@ DEPENDENCIES:
   - AWSCognito
   - AWSCore
   - AWSS3
-  - Firebase/Auth
-  - Firebase/Database
-  - lottie-ios
   - NVActivityIndicatorView
-  - Socket.IO-Client-Swift
   - SwiftyJSON
 
 SPEC REPOS:
@@ -56,18 +24,7 @@ SPEC REPOS:
     - AWSCognito
     - AWSCore
     - AWSS3
-    - Firebase
-    - FirebaseAuth
-    - FirebaseAuthInterop
-    - FirebaseCore
-    - FirebaseDatabase
-    - GoogleUtilities
-    - GTMSessionFetcher
-    - leveldb-library
-    - lottie-ios
     - NVActivityIndicatorView
-    - Socket.IO-Client-Swift
-    - Starscream
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -75,20 +32,9 @@ SPEC CHECKSUMS:
   AWSCognito: c69d91501b460c8abe22e224a0d5c3277486a21b
   AWSCore: d0d6e4f6831754aaf98058d2306a016ae71510fe
   AWSS3: c35608e0cdd5172f9e1d943221fd5fde01c5f749
-  Firebase: 75ea9e232eefa158c1049028030b8f661a2ccb62
-  FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
-  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: cb9ee75e0894def766167c95a4d5a14b1c138269
-  FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
-  GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
-  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
-  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
-  Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
-  Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9d216f22fb3df4ef7da5704803286d064e703e11
+PODFILE CHECKSUM: 67b7e526c7090b4eb17e2d75b5a7c257843bf027
 
 COCOAPODS: 1.5.3

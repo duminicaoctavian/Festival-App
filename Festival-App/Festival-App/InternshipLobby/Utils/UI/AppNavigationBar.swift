@@ -6,7 +6,7 @@
 //  Copyright © 2019 Duminica Octavian. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @IBDesignable
 class AppNavigationBar: UINavigationBar {

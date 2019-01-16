@@ -9,14 +9,10 @@ target 'Festival-App' do
   # Pods for Festival-App
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'Socket.IO-Client-Swift'
   pod 'AWSCore'
   pod 'AWSCognito'
   pod 'AWSS3'
   pod 'NVActivityIndicatorView'
-  pod 'lottie-ios'
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
 
   target 'Festival-AppTests' do
     inherit! :search_paths
