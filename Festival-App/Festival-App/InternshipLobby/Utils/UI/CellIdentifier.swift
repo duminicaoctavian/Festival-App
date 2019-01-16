@@ -10,4 +10,5 @@ import Foundation
 
 struct CellIdentifier {
     static let offerCell = AOfferTableViewCell.className
+    static let pendingOfferCell = CPendingOfferTableViewCell.className
 }

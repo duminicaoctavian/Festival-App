@@ -17,6 +17,14 @@ class ADetailsViewController: UIViewController {
     @IBOutlet weak var offerTitle: UILabel!
     @IBOutlet weak var offerDescriptionTextView: UITextView!
     
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
     lazy var presenter: ADetailsPresenter = {
         return ADetailsPresenter(view: self)
     }()
@@ -71,6 +79,16 @@ extension ADetailsViewController: ADetailsView {
     
     func displayOfferDescription(_ text: String) {
         offerDescriptionTextView.text = text
+    }
+    
+    func startActivityIndicator() {
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        visualEffectView.removeFromSuperview()
+        LoadingView.stopLoading()
     }
 }
 

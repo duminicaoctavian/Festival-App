@@ -143,6 +143,8 @@
 		B0F4DA1021EF1FC300EB21B3 /* CDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA0F21EF1FC300EB21B3 /* CDetailsView.swift */; };
 		B0F4DA1221EF57AE00EB21B3 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1121EF57AE00EB21B3 /* ApplicationService.swift */; };
 		B0F4DA1421EF57B900EB21B3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1321EF57B900EB21B3 /* Application.swift */; };
+		B0F4DA1621EF7E6F00EB21B3 /* CPendingOfferItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1521EF7E6F00EB21B3 /* CPendingOfferItemView.swift */; };
+		B0F4DA1821EF7E8100EB21B3 /* CPendingOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F4DA1721EF7E8100EB21B3 /* CPendingOfferTableViewCell.swift */; };
 		B2F493533729A46192834459 /* Pods_Festival_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F5C21C5FE26E4AE11A1F5E /* Pods_Festival_AppTests.framework */; };
 		D3F765C1DBC1FF987E737016 /* Pods_Festival_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6773EB899B34DE25D3349 /* Pods_Festival_App.framework */; };
 		DE0FCD59203F1E3B00FE29BB /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */; };
@@ -357,6 +359,8 @@
 		B0F4DA0F21EF1FC300EB21B3 /* CDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDetailsView.swift; sourceTree = "<group>"; };
 		B0F4DA1121EF57AE00EB21B3 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
 		B0F4DA1321EF57B900EB21B3 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		B0F4DA1521EF7E6F00EB21B3 /* CPendingOfferItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPendingOfferItemView.swift; sourceTree = "<group>"; };
+		B0F4DA1721EF7E8100EB21B3 /* CPendingOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPendingOfferTableViewCell.swift; sourceTree = "<group>"; };
 		C69FA063702F5610C88A408D /* Pods-Festival-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festival-AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Festival-AppTests/Pods-Festival-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0FCD58203F1E3B00FE29BB /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		DE0FCD5A203F1F1300FE29BB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -964,6 +968,8 @@
 				B029015121EE812E0020EAD5 /* CMainViewController.swift */,
 				B029015321EE81390020EAD5 /* CMainPresenter.swift */,
 				B029015521EE81420020EAD5 /* CMainView.swift */,
+				B0F4DA1521EF7E6F00EB21B3 /* CPendingOfferItemView.swift */,
+				B0F4DA1721EF7E8100EB21B3 /* CPendingOfferTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1414,6 +1420,7 @@
 				8A98E1CC211C82790009B19C /* WinTicketsView.swift in Sources */,
 				8ACCB867212FFC85006CC335 /* MyLineupView.swift in Sources */,
 				8A148447211DD0C20012D802 /* ChannelsView.swift in Sources */,
+				B0F4DA1621EF7E6F00EB21B3 /* CPendingOfferItemView.swift in Sources */,
 				B0F4D9FC21EF1D4D00EB21B3 /* ADetailsView.swift in Sources */,
 				DE5A8120203E1DF200D8A7FA /* Constants.swift in Sources */,
 				8AD7FAB72116080D00B8320C /* RegisterPresenter.swift in Sources */,
@@ -1430,6 +1437,7 @@
 				8A8D01BE2119A8EA00889197 /* ProfileView.swift in Sources */,
 				DEA915B6205F882400A276E5 /* CircleImage.swift in Sources */,
 				8A8D01C62119BD2B00889197 /* StorageService.swift in Sources */,
+				B0F4DA1821EF7E8100EB21B3 /* CPendingOfferTableViewCell.swift in Sources */,
 				8A121DA02116F4EE0050EDBB /* ArtistsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

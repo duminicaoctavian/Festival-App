@@ -28,12 +28,14 @@ class AMainPresenter {
     }
     
     func loadOffers() {
+        view?.startActivityIndicator()
         OfferService.shared.getAllOffers { [weak self] (success) in
+            self?.view?.stopActivityIndicator()
             
             if success {
                 self?.view?.reloadData()
             } else {
-                // error
+                self?.view?.displayAlert(title: "Info", message: "Failed to get offers.")
             }
         }
     }

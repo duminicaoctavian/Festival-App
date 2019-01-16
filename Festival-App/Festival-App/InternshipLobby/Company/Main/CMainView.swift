@@ -9,5 +9,8 @@
 import Foundation
 
 protocol CMainView: class {
-    
+    func reloadData()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func displayAlert(title: String, message: String)
 }

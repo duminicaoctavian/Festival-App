@@ -48,11 +48,14 @@ class ADetailsPresenter {
         let fileURL = "\(Route.baseAWS)/\(fileName)"
         
         StorageService.shared.setupProvider()
+        
+        view?.startActivityIndicator()
         StorageService.shared.uploadFile(imageName: fileName, withData: resumeData) { [weak self] (success) in
             if success {
                 
                 self?.handleUpload(fileURL)
             } else {
+                self?.view?.stopActivityIndicator()
                 self?.view?.displayAlert(title: "Info", message: "Failure to upload resume.")
             }
         }
@@ -60,7 +63,8 @@ class ADetailsPresenter {
     
     private func handleUpload(_ resumeURL: String) {
         
-        ApplicationService.shared.apply(userID: AuthService.shared.user.id, offerID: offer.id, projects: application.projects, resumeURL: resumeURL, phone: application.phone) { [weak self] (success) in
+        ApplicationService.shared.apply(userID: AuthService.shared.user.id, offerID: offer.id, projects: application.projects, resumeURL: resumeURL, phone: application.phone, companyID: offer.userID, offerTitle: offer.title) { [weak self] (success) in
+            self?.view?.stopActivityIndicator()
             if success {
                 self?.view?.displayAlert(title: "Info", message: "Application has been sent.")
             } else {

@@ -13,6 +13,14 @@ class AMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var offerSegmentedControl: UISegmentedControl!
     
+    lazy var visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
     lazy var presenter: AMainPresenter = {
         return AMainPresenter(view: self)
     }()
@@ -59,6 +67,19 @@ extension AMainViewController: UITableViewDelegate {
 }
 
 extension AMainViewController: AMainView {
+    func displayAlert(title: String, message: String) {
+        alert(title: title, message: message)
+    }
+    
+    func startActivityIndicator() {
+        view.addSubview(visualEffectView)
+        LoadingView.startLoading()
+    }
+    
+    func stopActivityIndicator() {
+        visualEffectView.removeFromSuperview()
+        LoadingView.stopLoading()
+    }
     
     func reloadData() {
         tableView.reloadData()

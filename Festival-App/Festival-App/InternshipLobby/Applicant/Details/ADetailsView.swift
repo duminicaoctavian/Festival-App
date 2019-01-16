@@ -15,4 +15,6 @@ protocol ADetailsView: class {
     func callNumber(_ text: String)
     func openFilePicker()
     func displayAlert(title: String, message: String)
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }

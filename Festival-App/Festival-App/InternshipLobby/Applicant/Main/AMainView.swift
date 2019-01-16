@@ -11,4 +11,7 @@ import Foundation
 protocol AMainView: class {
     func navigateToDetails(at index: Int)
     func reloadData()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func displayAlert(title: String, message: String)
 }
