@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 
+// for SQ
+
 private struct Log {
     static let didRegisterForNotifications = "didRegisterForNotifications"
     static let didFailToRegisterForNotifications = "didFailToRegisterToNotifications"
