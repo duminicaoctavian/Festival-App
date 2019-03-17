@@ -1,42 +1,43 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AWSCognito (2.6.12):
-    - AWSCore (= 2.6.12)
-  - AWSCore (2.6.12)
-  - AWSS3 (2.6.12):
-    - AWSCore (= 2.6.12)
-  - Firebase/Auth (5.6.0):
+  - Alamofire (4.8.1)
+  - AWSCognito (2.9.3):
+    - AWSCore (= 2.9.3)
+  - AWSCore (2.9.3)
+  - AWSS3 (2.9.3):
+    - AWSCore (= 2.9.3)
+  - Firebase/Auth (5.18.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.0.3)
-  - Firebase/CoreOnly (5.6.0):
-    - FirebaseCore (= 5.1.1)
-  - Firebase/Database (5.6.0):
+    - FirebaseAuth (= 5.4.0)
+  - Firebase/CoreOnly (5.18.0):
+    - FirebaseCore (= 5.3.1)
+  - Firebase/Database (5.18.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.0.2)
-  - FirebaseAuth (5.0.3):
+    - FirebaseDatabase (= 5.1.0)
+  - FirebaseAuth (5.4.0):
     - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 5.0)
+    - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (5.1.1):
+  - FirebaseCore (5.3.1):
     - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseDatabase (5.0.2):
-    - FirebaseCore (~> 5.0)
+  - FirebaseDatabase (5.1.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
     - leveldb-library (~> 1.18)
-  - GoogleUtilities/Environment (5.2.2)
-  - GoogleUtilities/Logger (5.2.2):
+  - GoogleUtilities/Environment (5.5.0)
+  - GoogleUtilities/Logger (5.5.0):
     - GoogleUtilities/Environment
-  - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Core (1.2.1)
   - leveldb-library (1.20)
-  - lottie-ios (2.5.0)
-  - NVActivityIndicatorView (4.3.0):
-    - NVActivityIndicatorView/Presenter (= 4.3.0)
-  - NVActivityIndicatorView/Presenter (4.3.0)
-  - Socket.IO-Client-Swift (13.1.1):
-    - Starscream (~> 3.0.2)
-  - Starscream (3.0.4)
-  - SwiftyJSON (4.0.0)
+  - lottie-ios (2.5.3)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
+  - Socket.IO-Client-Swift (14.0.0):
+    - Starscream (~> 3.0.6)
+  - Starscream (3.0.6)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -71,23 +72,23 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AWSCognito: c69d91501b460c8abe22e224a0d5c3277486a21b
-  AWSCore: d0d6e4f6831754aaf98058d2306a016ae71510fe
-  AWSS3: c35608e0cdd5172f9e1d943221fd5fde01c5f749
-  Firebase: 75ea9e232eefa158c1049028030b8f661a2ccb62
-  FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AWSCognito: 508185a281676e58914f297dce13de8d7ac01fd4
+  AWSCore: 5cbb6c6ccfad4b55e494c2e8df87781512f7881e
+  AWSS3: f016dddb6de858f0cc328d4e10a551299a66a3bb
+  Firebase: 02f3281965c075426141a0ce1277e9de6649cab9
+  FirebaseAuth: d85d052354447f30b4b2a805ab91b511458b56a6
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: cb9ee75e0894def766167c95a4d5a14b1c138269
-  FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
-  GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
-  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  FirebaseCore: 52f851b30e11360f1e67cf04b1edfebf0a47a2d3
+  FirebaseDatabase: 23acb0c53cd4d4070a427b60100b2e4aaa97c45d
+  GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
-  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
-  Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
-  Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
+  Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
 PODFILE CHECKSUM: 7b5c047b4f16976dc12e718fe417f5ae1d399879
 
