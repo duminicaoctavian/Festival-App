@@ -79,6 +79,7 @@ PODS:
   - Socket.IO-Client-Swift (14.0.0):
     - Starscream (~> 3.0.6)
   - Starscream (3.0.6)
+  - SwiftLint (0.31.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - lottie-ios
   - NVActivityIndicatorView
   - Socket.IO-Client-Swift
+  - SwiftLint
   - SwiftyJSON
 
 SPEC REPOS:
@@ -116,6 +118,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - Socket.IO-Client-Swift
     - Starscream
+    - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -139,8 +142,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 7bdcb34b63fe5c4a563b1a048f9c6303c51a3abb
+PODFILE CHECKSUM: 81d2aab0ed10849b4e31e3f69ad87f4f42373e9e
 
 COCOAPODS: 1.5.3
