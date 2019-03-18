@@ -39,12 +39,12 @@ class RegisterViewController: UIViewController {
         return blurEffectView
     }()
     
-    lazy var formAnimationView: LOTAnimationView = {
-        let formAnimationView = LOTAnimationView(name: Constants.formAnimationName)
+    lazy var formAnimationView: AnimationView = {
+        let formAnimationView = AnimationView(name: Constants.formAnimationName)
         formAnimationView.animationSpeed = Constants.animationSpeed
         formAnimationView.contentMode = .scaleAspectFill
         formAnimationView.frame = animationView.bounds
-        formAnimationView.loopAnimation = false
+        formAnimationView.loopMode = .playOnce
         return formAnimationView
     }()
     
@@ -112,6 +112,6 @@ extension RegisterViewController: RegisterView {
     
     func playFormAnimation() {
         animationView.addSubview(formAnimationView)
-        formAnimationView.play(fromProgress: Constants.animationStart, toProgress: Constants.animationEnd, withCompletion: nil)
+        formAnimationView.play(fromProgress: Constants.animationStart, toProgress: Constants.animationEnd, loopMode: .playOnce, completion: nil)
     }
 }

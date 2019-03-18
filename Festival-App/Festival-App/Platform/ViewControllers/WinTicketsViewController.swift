@@ -33,11 +33,11 @@ class WinTicketsViewController: UIViewController {
         return blurEffectView
     }()
     
-    lazy var animationView: LOTAnimationView = {
-        let animationView = LOTAnimationView(name: Constants.animationName)
+    lazy var animationView: AnimationView = {
+        let animationView = AnimationView(name: Constants.animationName)
         animationView.contentMode = .scaleAspectFit
         animationView.frame = view.bounds
-        animationView.loopAnimation = false
+        animationView.loopMode = .playOnce
         return animationView
     }()
     
