@@ -1,0 +1,9 @@
+disabled_rules:
+  - todo
+  - identifier_name
+  - trailing_whitespace
+  - force_cast
+excluded:
+  - Pods
+
+line_length: 150
