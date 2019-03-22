@@ -29,7 +29,9 @@ class ProductDetailsViewController: UIViewController {
     var roundedImageView: RoundedImage = RoundedImage()
     
     lazy var carousel: iCarousel = {
-        let carousel = iCarousel(frame: CGRect(x: 0, y: view.frame.height / Constants.carouselHeightDivisor, width: view.frame.width, height: Constants.carouselHeight))
+        let carousel = iCarousel(frame: CGRect(x: 0, y: view.frame.height / Constants.carouselHeightDivisor,
+                                               width: view.frame.width,
+                                               height: Constants.carouselHeight))
         carousel.delegate = self
         carousel.dataSource = self
         carousel.type = .rotary

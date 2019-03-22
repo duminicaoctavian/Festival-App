@@ -55,12 +55,12 @@ extension InputError: LocalizedError {
         switch self {
         case .invalidEmail: return NSLocalizedString("Your email is invalid!", comment: "Invalid Email")
         case .invalidPassword: return NSLocalizedString("Your password must have at least 6 characters.", comment: "Invalid Password")
-        case .invalidPasswordMatching: return NSLocalizedString("Your passwords must match and they must have at least 6 characters.", comment: "Password Mismatch")
+        case .invalidPasswordMatching: return NSLocalizedString("Your passwords must match and they must have at least 6 characters.",
+                                                                comment: "Password Mismatch")
         case .invalidUsername: return NSLocalizedString("Your username must have at least 6 alphanumeric characters.", comment: "Invalid Username")
         }
     }
 }
-
 
 private struct Regex {
     static let email = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"

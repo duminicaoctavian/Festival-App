@@ -45,7 +45,7 @@ class AccomodationViewController: UIViewController {
     }
 }
 
-extension AccomodationViewController : MKMapViewDelegate {
+extension AccomodationViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -93,4 +93,3 @@ extension AccomodationViewController: AccommodationView {
         present(locationDetailsViewController, animated: true, completion: nil)
     }
 }
-

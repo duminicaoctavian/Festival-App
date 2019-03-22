@@ -74,7 +74,11 @@ class AuthService {
         let lowercaseEmail = email.lowercased()
         let body = User.generateBody(username: username, email: lowercaseEmail, password: password)
         
-        Alamofire.request(Route.users, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Header.header).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.users,
+                          method: .post,
+                          parameters: body,
+                          encoding: JSONEncoding.default,
+                          headers: Header.header).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -88,7 +92,10 @@ class AuthService {
                         let json = try JSON(data: data)
                         let user = User(json: json)
                         if response.response?.allHeaderFields[Header.bearerHeaderTitle] != nil {
-                            guard let token = response.response?.allHeaderFields[Header.bearerHeaderTitle] as? String else { completion(false); return }
+                            guard let token = response.response?.allHeaderFields[Header.bearerHeaderTitle] as? String else {
+                                completion(false)
+                                return
+                            }
                             weakSelf.authToken = token
                             weakSelf.user = user
                         } else {
@@ -117,7 +124,11 @@ class AuthService {
         let lowercaseEmail = email.lowercased()
         let body = User.generateBody(email: lowercaseEmail, password: password)
 
-        Alamofire.request(Route.loginUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Header.header).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.loginUser,
+                          method: .post,
+                          parameters: body,
+                          encoding: JSONEncoding.default,
+                          headers: Header.header).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -146,7 +157,11 @@ class AuthService {
     
     func logoutUser(completion: @escaping CompletionHandler) {
         
-        Alamofire.request(Route.logoutUser, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.logoutUser,
+                          method: .delete,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -165,9 +180,11 @@ class AuthService {
     }
     
     func findUserByID(id: String, completion: @escaping (_ user: User?) -> Void) {
-        Alamofire.request("\(Route.users)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.header).responseJSON { [weak self] (response) in
-            
-            guard let _ = self else { completion(nil); return }
+        Alamofire.request("\(Route.users)/\(id)",
+                            method: .get,
+                            parameters: nil,
+                            encoding: JSONEncoding.default,
+                            headers: Header.header).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { completion(nil); return }
@@ -194,7 +211,11 @@ class AuthService {
         let body = User.generateBody(artistID: id)
         let userID = user.id
         
-        Alamofire.request("\(Route.addArtistID)/\(userID)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.addArtistID)/\(userID)",
+                            method: .patch,
+                            parameters: body,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { return }
             
@@ -222,9 +243,11 @@ class AuthService {
         
         let body = User.generateBody(username: username, password: password, imageURL: imageURL)
         
-        Alamofire.request("\(Route.users)/\(AuthService.shared.user.id)", method: .patch, parameters: body, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
-            
-            guard let _ = self else { completion(false); return }
+        Alamofire.request("\(Route.users)/\(AuthService.shared.user.id)",
+                            method: .patch,
+                            parameters: body,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { completion(false); return }

@@ -82,9 +82,10 @@ extension LineupViewController: UITableViewDataSource, UITableViewDelegate {
         return presenter.artistCount
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: LineupCell.className, for: indexPath) as? LineupCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LineupCell.className, for: indexPath) as? LineupCell else {
+            return UITableViewCell()
+        }
         
         presenter.configure(cell, at: indexPath.row)
 

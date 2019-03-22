@@ -54,7 +54,10 @@ extension UserMenuViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserMenuOption.rawValues[indexPath.row], for: indexPath) as? UserMenuCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserMenuOption.rawValues[indexPath.row],
+                                                       for: indexPath) as? UserMenuCell else {
+            return UITableViewCell()
+        }
         
         presenter.configure(cell, at: indexPath.row)
         
@@ -76,7 +79,10 @@ extension UserMenuViewController: UserMenuView {
     }
     
     func navigateToProfileScreen() {
-        guard let profileViewController = storyboard?.instantiateViewController(withIdentifier: StoryboardID.profileViewController) as? UINavigationController else { return }
+        guard let profileViewController = storyboard?.instantiateViewController(withIdentifier: StoryboardID.profileViewController)
+            as? UINavigationController else {
+            return
+        }
         revealViewController().pushFrontViewController(profileViewController, animated: true)
     }
     

@@ -21,7 +21,11 @@ class ArtistService {
     var userArtists = [Int: [Artist]]()
     
     func getAllArtists(completion: @escaping CompletionHandler) {
-        Alamofire.request(Route.artists, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.artists,
+                          method: .get,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -50,7 +54,11 @@ class ArtistService {
     }
     
     func getAllArtists(forStage stage: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(Route.artists)/\(stage)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.artists)/\(stage)",
+                            method: .get,
+                            parameters: nil,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -78,7 +86,11 @@ class ArtistService {
     }
     
     func getFilteredArtists(forStage stage: String, and day: Int, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(Route.artists)/\(stage)/\(day)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.artists)/\(stage)/\(day)",
+                            method: .get,
+                            parameters: nil,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { [weak self] (response) in
         
             guard let weakSelf = self else { completion(false); return }
             

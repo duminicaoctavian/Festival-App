@@ -57,7 +57,9 @@ extension MyLineupViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyLineupCell.className, for: indexPath) as? MyLineupCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyLineupCell.className, for: indexPath) as? MyLineupCell else {
+            return UITableViewCell()
+        }
         let section = indexPath.section
         presenter.configure(cell, at: indexPath.row, with: section)
         return cell
@@ -109,4 +111,3 @@ extension MyLineupViewController: MyLineupView {
         LoadingView.stopLoading()
     }
 }
-

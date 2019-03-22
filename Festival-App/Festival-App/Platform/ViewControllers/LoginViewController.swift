@@ -76,7 +76,7 @@ class LoginViewController: UIViewController {
     private func displayLoginFailedAlert(forError error: Error?) {
         let message = error != nil ? error?.localizedDescription : Constants.alertMessage
         let alert = UIAlertController(title: Constants.alertTitle, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constants.okActionTitle, style: .default, handler: { [weak self] (action) in
+        let okAction = UIAlertAction(title: Constants.okActionTitle, style: .default, handler: { [weak self] (_) in
             guard let weakSelf = self else { return }
             weakSelf.visualEffectView.removeFromSuperview()
         })

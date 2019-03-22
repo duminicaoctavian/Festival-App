@@ -40,7 +40,9 @@ class ChatLogPresenter {
     func sendMessage(withText text: String) {
         guard let channedID = MessageService.shared.selectedChannel?.id else { return }
             
-        SocketService.shared.addMessage(body: text, userID: AuthService.shared.user.id, channelID: channedID, username: AuthService.shared.user.username) { [weak self] (success) in
+        SocketService.shared.addMessage(body: text, userID: AuthService.shared.user.id,
+                                        channelID: channedID,
+                                        username: AuthService.shared.user.username) { [weak self] (success) in
             guard let weakSelf = self else { return }
             
             if success {
@@ -52,8 +54,7 @@ class ChatLogPresenter {
     }
     
     private func observeNewMessages() {
-        SocketService.shared.getCreatedMessage { [weak self] (message) in
-            guard let _ = self else { return }
+        SocketService.shared.getCreatedMessage { (message) in
             guard let message = message, let selectedChannelID = MessageService.shared.selectedChannel?.id else { return }
             
             if message.channelID == selectedChannelID {
@@ -148,14 +149,13 @@ class ChatLogPresenter {
             completion(false)
         }
         
-        MessageService.shared.usersForChannel.forEach { (key: String, value: User) in
+        MessageService.shared.usersForChannel.forEach { (key: String, _: User) in
             
-            AuthService.shared.findUserByID(id: key, completion: { [weak self] (user) in
-                guard let _ = self else { return }
+            AuthService.shared.findUserByID(id: key, completion: { (user) in
                 guard let user = user else { return }
 
                 MessageService.shared.usersForChannel.updateValue(user, forKey: key)
-                count = count + 1
+                count += 1
                 
                 if count == MessageService.shared.usersForChannel.count {
                     completion(true)

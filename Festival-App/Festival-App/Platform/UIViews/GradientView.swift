@@ -69,4 +69,3 @@ class GradientView: UIView {
         gradientLayer.frame = self.bounds
     }
 }
-

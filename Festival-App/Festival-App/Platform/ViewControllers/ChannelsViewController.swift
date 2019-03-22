@@ -34,7 +34,9 @@ extension ChannelsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelCell.className, for: indexPath) as? ChannelCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelCell.className, for: indexPath) as? ChannelCell else {
+            return UITableViewCell()
+        }
         
         presenter.configure(cell, at: indexPath.row)
         

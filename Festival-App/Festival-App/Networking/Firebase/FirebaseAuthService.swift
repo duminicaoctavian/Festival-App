@@ -53,7 +53,7 @@ class FirebaseAuthService {
     }
 
     func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (_, error) in
             guard let weakSelf = self else { completion(false); return }
             
             if error != nil {
@@ -138,8 +138,7 @@ class FirebaseAuthService {
     func addUserToDatabase(withUID uid: String, values: [String: AnyObject], completion: @escaping CompletionHandler) {
         
         let usersReference = Database.database().reference().child(FirebaseChild.users).child(uid)
-        usersReference.updateChildValues(values, withCompletionBlock: { [weak self] (error, reference) in
-            guard let _ = self else { completion(false); return }
+        usersReference.updateChildValues(values, withCompletionBlock: { (error, _) in
             
             if error != nil {
                 print(error as Any)
@@ -153,7 +152,7 @@ class FirebaseAuthService {
 
     func logoutUser(completion: @escaping CompletionHandler) {
         do {
-            guard let _ = Auth.auth().currentUser?.uid else { completion(false); return }
+            guard Auth.auth().currentUser?.uid != nil else { completion(false); return }
             
             try Auth.auth().signOut()
 

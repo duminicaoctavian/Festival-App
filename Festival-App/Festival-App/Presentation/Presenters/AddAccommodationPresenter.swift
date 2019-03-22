@@ -19,10 +19,8 @@ class AddAccommodationPresenter: NSObject {
     var locationManager = CLLocationManager()
     
     var userCoordinates: (latitude: Double, longitude: Double) {
-        get {
-            guard let coordinate = locationManager.location?.coordinate else { return (0, 0) }
-            return (coordinate.latitude, coordinate.longitude)
-        }
+        guard let coordinate = locationManager.location?.coordinate else { return (0, 0) }
+        return (coordinate.latitude, coordinate.longitude)
     }
     
     var location: Location?
@@ -109,8 +107,7 @@ class AddAccommodationPresenter: NSObject {
             
             guard let location = weakSelf.location else { return }
             
-            SocketService.shared.addLocation(location) { [weak self] (success) in
-                guard let _ = self else { return }
+            SocketService.shared.addLocation(location) { (success) in
                 
                 if success {
                     DispatchQueue.main.async { [weak self] in

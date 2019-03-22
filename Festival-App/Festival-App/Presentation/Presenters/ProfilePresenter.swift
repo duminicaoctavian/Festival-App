@@ -31,5 +31,3 @@ extension ProfilePresenter: EditProfilePresenterDelegate {
         loadData()
     }
 }
-
-

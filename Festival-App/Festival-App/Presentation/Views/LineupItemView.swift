@@ -19,4 +19,3 @@ protocol LineupItemView {
     func changeButton()
     func resetButton()
 }
-

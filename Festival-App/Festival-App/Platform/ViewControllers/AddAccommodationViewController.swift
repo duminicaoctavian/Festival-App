@@ -86,11 +86,6 @@ class AddAccommodationViewController: UIViewController {
         setupKeyboardObservers()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        removeKeyboardObservers()
-    }
-    
     @IBAction func onBackTapped(_ sender: Any) {
         navigateToAccommodationScreen()
     }
@@ -104,19 +99,23 @@ class AddAccommodationViewController: UIViewController {
         
         var imagesData = [Data]()
         if firstButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = firstButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
+            guard let image = firstButton.imageView?.image,
+                let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if secondButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = secondButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
+            guard let image = secondButton.imageView?.image,
+                let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if thirdButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = thirdButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
+            guard let image = thirdButton.imageView?.image,
+                let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
         if fourthButton.imageView?.image != UIImage(named: Constants.addImageAssetName) {
-            guard let image = fourthButton.imageView?.image, let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
+            guard let image = fourthButton.imageView?.image,
+                let imageData = UIImageJPEGRepresentation(image, Constants.compressionQuality) else { return }
             imagesData.append(imageData)
         }
  
@@ -145,12 +144,10 @@ class AddAccommodationViewController: UIViewController {
     }
     
     private func setupKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    private func removeKeyboardObservers() {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow),
+                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     private func handleKeyboard(view: UIView, keyboardFrame: CGRect) {
@@ -292,9 +289,10 @@ extension AddAccommodationViewController: UITextViewDelegate {
 }
 
 extension AddAccommodationViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         handleImageSelected(fromInfo: info)
-        dismiss(animated:true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -329,7 +327,7 @@ extension AddAccommodationViewController: AddAccommodationView {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
-            imagePicker.sourceType = .photoLibrary;
+            imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
         }
     }

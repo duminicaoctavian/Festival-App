@@ -35,10 +35,8 @@ class ChannelsPresenter {
         itemView.displayName(channel.name)
         itemView.displayReadChannel()
         
-        for id in MessageService.shared.unreadChannels {
-            if id == channel.id {
-                itemView.displayUnreadChannel()
-            }
+        for id in MessageService.shared.unreadChannels where id == channel.id {
+            itemView.displayUnreadChannel()
         }
     }
     
@@ -54,8 +52,7 @@ class ChannelsPresenter {
     }
     
     private func observeChannelCreated() {
-        SocketService.shared.getCreatedChannel { [weak self] (success) in
-            guard let _ = self else { return }
+        SocketService.shared.getCreatedChannel { (success) in
             
             if success {
                 DispatchQueue.main.async { [weak self] in
@@ -69,8 +66,7 @@ class ChannelsPresenter {
     }
     
     private func observeMessageCreated() {
-        SocketService.shared.getCreatedMessage { [weak self] (message) in
-            guard let _ = self else { return }
+        SocketService.shared.getCreatedMessage { (message) in
             
             if message?.channelID != MessageService.shared.selectedChannel?.id {
                 guard let id = message?.channelID else { return }

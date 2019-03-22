@@ -16,7 +16,11 @@ class QuestionService {
     var question: Question?
     
     func getRandomQuestion(completion: @escaping CompletionHandler) {
-        Alamofire.request(Route.randomQuestion, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.randomQuestion,
+                          method: .get,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             guard let weakSelf = self else { return }
             
             if response.result.error == nil {

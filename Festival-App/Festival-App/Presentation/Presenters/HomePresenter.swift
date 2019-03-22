@@ -21,8 +21,7 @@ class HomePresenter {
     
     func handleBuyTicketsPage() {
         guard let URL = URL(string: Constants.buyTicketsURL) else { return }
-        UIApplication.shared.open(URL, options: [:]) { [weak self] (success) in
-            guard let _ = self else { return }
+        UIApplication.shared.open(URL, options: [:]) { (_) in
         }
     }
 }

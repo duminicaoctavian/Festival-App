@@ -31,8 +31,6 @@ class LocationDetailsPresenter {
             view?.showCloseButton()
         }
         getOffererByID(location.userID)
-        
-        
         view?.displayTitle(location.title)
         view?.displayAddress(location.address)
         view?.displayPrice(String(location.price))

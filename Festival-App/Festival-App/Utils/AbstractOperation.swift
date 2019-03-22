@@ -83,5 +83,3 @@ class AbstractOperation: Operation {
         _finished = true
     }
 }
-
-

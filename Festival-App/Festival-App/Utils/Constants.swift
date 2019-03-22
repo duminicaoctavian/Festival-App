@@ -11,7 +11,7 @@ import Foundation
 // generate class diagram
 // ruby generateEntityDiagram.rb ~/Documents/iOS/Degree/Festival-App/Festival-App/Festival-App/
 
-typealias CompletionHandler = (_ success: Bool) -> ()
+typealias CompletionHandler = (_ success: Bool) -> Void
 //let baseURL = "http://localhost:3000"
 let baseURL = "https://pacific-anchorage-10639.herokuapp.com"
 let baseLocalURL = "http://localhost:3000"
@@ -30,17 +30,17 @@ enum Stage: String {
 }
 
 enum Event: String {
-    case newChannel = "newChannel"
-    case channelCreated = "channelCreated"
-    case newMessage = "newMessage"
-    case messageCreated = "messageCreated"
-    case newLocation = "newLocation"
-    case deleteLocation = "deleteLocation"
-    case updateLocation = "updateLocation"
-    case locationDeleted = "locationDeleted"
-    case locationUpdated = "locationUpdated"
-    case locationCreated = "locationCreated"
-    case userTypingUpdate = "userTypingUpdate"
+    case newChannel
+    case channelCreated
+    case newMessage
+    case messageCreated
+    case newLocation
+    case deleteLocation
+    case updateLocation
+    case locationDeleted
+    case locationUpdated
+    case locationCreated
+    case userTypingUpdate
 }
 
 enum BackendType: String {
@@ -122,14 +122,12 @@ enum UserMenuOption: String {
     case shop = "Shop"
     
     static var rawValues: [String] {
-        get {
-            let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .shop]
-            var rawValues = [String]()
-            options.forEach { (option) in
-                rawValues.append(option.rawValue)
-            }
-            return rawValues
+        let options: [UserMenuOption] = [.home, .news, .artists, .lineup, .accommodation, .shop]
+        var rawValues = [String]()
+        options.forEach { (option) in
+            rawValues.append(option.rawValue)
         }
+        return rawValues
     }
 }
 
@@ -140,14 +138,12 @@ enum ProductCategory: String {
     case music = "Music"
     
     static var rawValues: [String] {
-        get {
-            let categories: [ProductCategory] = [.men, .women, .accessories, .music]
-            var rawValues = [String]()
-            categories.forEach { (category) in
-                rawValues.append(category.rawValue)
-            }
-            return rawValues
+        let categories: [ProductCategory] = [.men, .women, .accessories, .music]
+        var rawValues = [String]()
+        categories.forEach { (category) in
+            rawValues.append(category.rawValue)
         }
+        return rawValues
     }
 }
 

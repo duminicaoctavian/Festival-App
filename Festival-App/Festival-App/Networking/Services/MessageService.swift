@@ -19,10 +19,14 @@ class MessageService {
 
     var usersForChannel = [String: User]()
     
-    var selectedChannel : Channel?
+    var selectedChannel: Channel?
     
     func getAllChannels(completion: @escaping CompletionHandler) {
-        Alamofire.request(Route.channels, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.channels,
+                          method: .get,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             
@@ -52,7 +56,11 @@ class MessageService {
     }
     
     func getAllMessagesForChannel(withID id: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(Route.messages)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.messages)/\(id)",
+                            method: .get,
+                            parameters: nil,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             

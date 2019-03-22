@@ -21,7 +21,11 @@ class NewsService {
     var loaded = false
     
     func findAllNews(completion: @escaping CompletionHandler) {
-        Alamofire.request(Route.news, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.news,
+                          method: .get,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { completion(false); return }
             

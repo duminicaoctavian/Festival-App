@@ -40,14 +40,9 @@ class NewsViewController: UIViewController {
         showStatusBar()
         presenter.viewWillAppear()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        presenter.viewWillDisappear()
-    }
 }
 
-extension NewsViewController : UITableViewDelegate {
+extension NewsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.layer.transform = CATransform3DMakeScale(AnimationParameter.xStartScale,
@@ -102,7 +97,7 @@ extension NewsViewController: NewsView {
 extension NewsViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
-        if (webView.isLoading) {
+        if webView.isLoading {
             return
         } else {
             presenter.handleLoadingOfWebViews()

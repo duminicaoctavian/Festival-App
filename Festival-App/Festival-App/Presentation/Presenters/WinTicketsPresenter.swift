@@ -42,8 +42,7 @@ class WinTicketsPresenter {
     func beginRecognitionProcess(forData data: Data) {
         guard let model = try? VNCoreMLModel(for: artists().model) else { return }
         
-        let request = VNCoreMLRequest(model: model) { [weak self] (request, error) in
-            guard let _ = self else { return }
+        let request = VNCoreMLRequest(model: model) { (request, _) in
             
             guard let results = request.results as? [VNClassificationObservation], let topResult = results.first else { return }
             
@@ -76,5 +75,3 @@ class WinTicketsPresenter {
         }
     }
 }
-
-

@@ -64,7 +64,7 @@ class RegisterPresenter {
             AuthService.shared.registerUser(username: username, email: email, password: password, completion: { [weak self] (success) in
                 guard let weakSelf = self else { return }
                 
-                if (success) {
+                if success {
                     weakSelf.view?.stopActivityIndicator()
                     weakSelf.view?.navigateToHomeScreen()
                 } else {

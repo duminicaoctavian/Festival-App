@@ -32,7 +32,10 @@ extension MyOffersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OfferCell.className, for: indexPath) as? OfferCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OfferCell.className,
+                                                       for: indexPath) as? OfferCell else {
+            return UITableViewCell()
+        }
         
         presenter.configure(cell, at: indexPath.row)
         

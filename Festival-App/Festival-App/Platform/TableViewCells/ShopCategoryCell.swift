@@ -48,4 +48,3 @@ extension ShopCategoryCell: ShopCategoryItemView {
         customView.backgroundColor = UIColor.halfRoundedViewColor
     }
 }
-

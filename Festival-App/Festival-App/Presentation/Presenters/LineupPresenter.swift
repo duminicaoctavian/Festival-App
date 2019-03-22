@@ -56,10 +56,8 @@ class LineupPresenter {
         itemView.displayTimestamp(formattedDate)
         itemView.displayArtistImage(artist.artistImageURL)
         
-        for id in AuthService.shared.user.artists {
-            if id == artist.id {
-                itemView.changeButton()
-            }
+        for id in AuthService.shared.user.artists where id == artist.id {
+            itemView.changeButton()
         }
         
         switch index {
@@ -84,8 +82,8 @@ class LineupPresenter {
         let artist = ArtistService.shared.artists[index]
         
         if !isArtistAlreadyAdded(withId: artist.id) {
-            AuthService.shared.addArtistID(artist.id) { [weak self] (success) in
-                guard let _ = self else { return }
+            AuthService.shared.addArtistID(artist.id) { (success) in
+
                 if success {
                     DispatchQueue.main.async { [weak self] in
                         guard let weakSelf = self else { return }
@@ -99,10 +97,8 @@ class LineupPresenter {
     }
     
     private func isArtistAlreadyAdded(withId id: String) -> Bool {
-        for artistId in AuthService.shared.user.artists {
-            if artistId == id {
-                return true
-            }
+        for artistId in AuthService.shared.user.artists where artistId == id {
+            return true
         }
         return false
     }
@@ -116,10 +112,9 @@ class LineupPresenter {
             weakSelf.view?.reloadData()
         }
         
-        ArtistService.shared.getFilteredArtists(forStage: stage, and: day) { [weak self] (success) in
-            guard let _ = self else { return }
+        ArtistService.shared.getFilteredArtists(forStage: stage, and: day) { (success) in
             
-            if (success) {
+            if success {
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.view?.stopActivityIndicator()

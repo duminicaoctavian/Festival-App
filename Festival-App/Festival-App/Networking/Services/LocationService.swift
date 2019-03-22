@@ -20,7 +20,11 @@ class LocationService {
     var locations = [Location]()
     
     func getAllLocations(completion: @escaping CompletionHandler) {
-        Alamofire.request(Route.locations, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request(Route.locations,
+                          method: .get,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { return }
             
@@ -48,7 +52,11 @@ class LocationService {
     }
     
     func getLocationsForUser(withID id: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(Route.locations)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Header.bearerHeader).responseJSON { [weak self] (response) in
+        Alamofire.request("\(Route.locations)/\(id)",
+                            method: .get,
+                            parameters: nil,
+                            encoding: JSONEncoding.default,
+                            headers: Header.bearerHeader).responseJSON { [weak self] (response) in
             
             guard let weakSelf = self else { return }
             

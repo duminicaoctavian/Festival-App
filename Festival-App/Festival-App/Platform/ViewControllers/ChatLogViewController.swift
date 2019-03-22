@@ -142,4 +142,3 @@ extension ChatLogViewController: ChatLogView {
         channelNameLabel.text = Constants.noChannelsAvailable
     }
 }
-

@@ -19,8 +19,8 @@ class StorageService {
     static let shared = StorageService()
 
     func setupProvider() {
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.EUCentral1, identityPoolId: Constants.awsKey)
-        let configuration = AWSServiceConfiguration(region:.EUCentral1, credentialsProvider: credentialsProvider)
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .EUCentral1, identityPoolId: Constants.awsKey)
+        let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider: credentialsProvider)
         
         AWSServiceManager.default().defaultServiceConfiguration = configuration
     }

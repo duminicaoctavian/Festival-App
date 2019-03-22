@@ -37,10 +37,8 @@ class MyLineupCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         guard let sublayers = contentView.layer.sublayers else { return }
         
-        for layer in sublayers {
-            if layer is CAShapeLayer {
-                layer.removeFromSuperlayer()
-            }
+        for layer in sublayers where layer is CAShapeLayer {
+            layer.removeFromSuperlayer()
         }
         
         timelinePoint.position = CGPoint(x: timeline.leftMargin + timeline.width / 2, y: timestampLabel.frame.origin.y + 15)

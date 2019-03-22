@@ -38,7 +38,3 @@ extension NewsViewModel: UITableViewDataSource {
         return UITableViewCell()
     }
 }
-
-
-
-

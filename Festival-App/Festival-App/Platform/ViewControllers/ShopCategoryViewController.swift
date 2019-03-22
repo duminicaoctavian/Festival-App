@@ -43,7 +43,9 @@ extension ShopCategoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShopCategoryCell.className, for: indexPath) as? ShopCategoryCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShopCategoryCell.className, for: indexPath) as? ShopCategoryCell else {
+            return UITableViewCell()
+        }
         
         presenter.configure(cell, at: indexPath.row)
         

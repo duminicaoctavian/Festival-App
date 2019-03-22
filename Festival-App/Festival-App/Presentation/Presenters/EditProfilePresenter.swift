@@ -14,7 +14,7 @@ protocol EditProfilePresenterDelegate: class {
 
 class EditProfilePresenter {
     weak var view: EditProfileView?
-    var delegate: EditProfilePresenterDelegate?
+    weak var delegate: EditProfilePresenterDelegate?
     
     init(view: EditProfileView) {
         self.view = view
@@ -43,7 +43,7 @@ class EditProfilePresenter {
     }
     
     func saveData(withImageData imageData: Data) {
-        guard let username = username, let password = password, let _ = confirmPassword else { return }
+        guard let username = username, let password = password, confirmPassword != nil else { return }
         let imageName = NSUUID().uuidString + ".jpg"
         let imageURL = "\(Route.baseAWS)/\(imageName)"
         

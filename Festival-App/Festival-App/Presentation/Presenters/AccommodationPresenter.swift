@@ -15,10 +15,8 @@ class AccommodationPresenter: NSObject {
     var locationManager = CLLocationManager()
     
     var userCoordinates: (latitude: Double, longitude: Double) {
-        get {
-            guard let coordinate = locationManager.location?.coordinate else { return (0, 0) }
-            return (coordinate.latitude, coordinate.longitude)
-        }
+        guard let coordinate = locationManager.location?.coordinate else { return (0, 0) }
+        return (coordinate.latitude, coordinate.longitude)
     }
     
     let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -69,12 +67,12 @@ class AccommodationPresenter: NSObject {
     }
     
     private func observeLocationDeleted() {
-        SocketService.shared.getDeletedLocation { (deletedLocation) in
+        SocketService.shared.getDeletedLocation { (_) in
         }
     }
     
     private func observeLocationUpdated() {
-        SocketService.shared.getUpdatedLocation { (updatedLocation) in
+        SocketService.shared.getUpdatedLocation { (_) in
         }
     }
     

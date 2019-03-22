@@ -122,7 +122,7 @@ extension WinTicketsViewController: WinTicketsView {
     func showWrongAnswerAlert() {
         view.addSubview(visualEffectView)
         let alert = UIAlertController(title: Constants.wrongAnswerAlertTitle, message: Constants.wrongAnswerAlertMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (action) in
+        let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (_) in
             guard let weakSelf = self else { return }
             weakSelf.visualEffectView.removeFromSuperview()
         })
@@ -134,11 +134,13 @@ extension WinTicketsViewController: WinTicketsView {
     func showCorrectAnswerAlert() {
         view.addSubview(visualEffectView)
         view.addSubview(animationView)
-        animationView.play { [weak self] (finished) in
+        animationView.play { [weak self] (_) in
             guard let weakSelf = self else { return }
             
-            let alert = UIAlertController(title: Constants.correctAnswerAlertTitle, message: Constants.correctAnswerAlertMessage, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (action) in
+            let alert = UIAlertController(title: Constants.correctAnswerAlertTitle,
+                                          message: Constants.correctAnswerAlertMessage,
+                                          preferredStyle: .alert)
+            let okAction = UIAlertAction(title: Constants.actionTitle, style: .cancel, handler: { [weak self] (_) in
                 guard let weakSelf = self else { return }
                 weakSelf.visualEffectView.removeFromSuperview()
                 weakSelf.animationView.removeFromSuperview()
@@ -152,7 +154,7 @@ extension WinTicketsViewController: WinTicketsView {
 
 extension WinTicketsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photoImageView.image = pickedImage

@@ -16,7 +16,8 @@ class NewsPresenter {
     }
     
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(webViewsFinishedLoading(_:)), name: NotificationName.webViewsLoaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(webViewsFinishedLoading(_:)),
+                                               name: NotificationName.webViewsLoaded, object: nil)
     }
     
     @objc func webViewsFinishedLoading(_ notif: Notification) {
@@ -29,10 +30,9 @@ class NewsPresenter {
         NewsService.shared.clearNews()
         
         view?.startActivityIndicator()
-        NewsService.shared.findAllNews(completion: { [weak self] (success) in
-            guard let _ = self else { return }
+        NewsService.shared.findAllNews(completion: { (success) in
             
-            if (success) {
+            if success {
                 DispatchQueue.main.async { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.view?.reloadData()
@@ -42,10 +42,6 @@ class NewsPresenter {
                 // TODO
             }
         })
-    }
-    
-    func viewWillDisappear() {
-        NotificationCenter.default.removeObserver(self)
     }
     
     func handleLoadingOfWebViews() {

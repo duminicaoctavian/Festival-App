@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class UploadImageOperation: AbstractOperation {
     
     let imageName: String

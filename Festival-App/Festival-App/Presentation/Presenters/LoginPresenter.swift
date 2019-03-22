@@ -84,7 +84,7 @@ class LoginPresenter {
                 guard let weakSelf = self else { return }
                 weakSelf.view?.stopActivityIndicator()
                 
-                if (success) {
+                if success {
                     weakSelf.view?.navigateToHomeScreen()
                 } else {
                     weakSelf.view?.presentLoginFailedFeedback(forError: nil)

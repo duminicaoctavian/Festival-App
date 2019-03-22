@@ -27,10 +27,8 @@ class SocketService: NSObject {
     
     func getCreatedChannel(completion: @escaping CompletionHandler) {
         
-        socket.on(Event.channelCreated.rawValue) { [weak self] (dataArray, ack) in
+        socket.on(Event.channelCreated.rawValue) { (dataArray, _) in
             print(dataArray)
-            
-            guard let _ = self else { completion(false); return }
             
             if let channel = Channel(dataArray) {
                 MessageService.shared.channels.append(channel)
@@ -48,9 +46,7 @@ class SocketService: NSObject {
     }
     
     func getCreatedMessage(completion: @escaping (_ message: Message?) -> Void) {
-        socket.on(Event.messageCreated.rawValue) { [weak self] (dataArray, ack) in
-            
-            guard let _ = self else { completion(nil); return }
+        socket.on(Event.messageCreated.rawValue) { (dataArray, _) in
             
             if let message = Message(dataArray) {
                 completion(message)
@@ -80,9 +76,7 @@ class SocketService: NSObject {
     }
     
     func getCreatedLocation(completion: @escaping (_ location: Location?) -> Void) {
-        socket.on(Event.locationCreated.rawValue) { [weak self] (dataArray, ack) in
-            
-            guard let _ = self else { completion(nil); return }
+        socket.on(Event.locationCreated.rawValue) { (dataArray, _) in
             
             if let location = Location(dataArray) {
                 completion(location)
@@ -94,9 +88,7 @@ class SocketService: NSObject {
     }
     
     func getDeletedLocation(completion: @escaping (_ location: Location?) -> Void) {
-        socket.on(Event.locationDeleted.rawValue) { [weak self] (dataArray, ack) in
-            
-            guard let _ = self else { completion(nil); return }
+        socket.on(Event.locationDeleted.rawValue) { (dataArray, _) in
             
             if let location = Location(dataArray) {
                 completion(location)
@@ -108,9 +100,7 @@ class SocketService: NSObject {
     }
     
     func getUpdatedLocation(completion: @escaping (_ location: Location?) -> Void) {
-        socket.on(Event.locationUpdated.rawValue) { [weak self] (dataArray, ack) in
-            
-            guard let _ = self else { completion(nil); return }
+        socket.on(Event.locationUpdated.rawValue) { (dataArray, _) in
             
             if let location = Location(dataArray) {
                 completion(location)
@@ -149,9 +139,7 @@ class SocketService: NSObject {
     }
     
     func getTypingUsers(_ completion: @escaping (_ typingUsers: [String: String]?) -> Void) {
-        socket.on(Event.userTypingUpdate.rawValue) { [weak self] (dataArray, ack) in
-         
-            guard let _ = self else { completion(nil); return }
+        socket.on(Event.userTypingUpdate.rawValue) { (dataArray, _) in
             
             if let typingUsers = dataArray[0] as? [String: String] {
                 completion(typingUsers)

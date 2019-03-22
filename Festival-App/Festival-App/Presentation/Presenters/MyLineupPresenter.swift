@@ -101,8 +101,7 @@ class MyLineupPresenter {
     
     private func sortUserArtistsByDate(forDay day: Int) {
         guard let artists = ArtistService.shared.userArtists[day] else { return }
-        let sortedArray = artists.sorted { [weak self] (artistOne, artistTwo) -> Bool in
-            guard let _ = self else { return false }
+        let sortedArray = artists.sorted { (artistOne, artistTwo) -> Bool in
             return artistOne.date < artistTwo.date
         }
         ArtistService.shared.userArtists[day] = sortedArray

@@ -30,4 +30,3 @@ class LoadingView: UIView {
         indicatorView.color = color
     }
 }
-

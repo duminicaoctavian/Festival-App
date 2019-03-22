@@ -25,4 +25,3 @@ class HalfRoundedView: UIView {
         layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
 }
-

@@ -30,4 +30,3 @@ class VideoNewsCell: UITableViewCell {
         }
     }
 }
-

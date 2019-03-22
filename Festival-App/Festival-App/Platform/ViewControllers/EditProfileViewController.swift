@@ -86,10 +86,11 @@ class EditProfileViewController: UIViewController {
     }
 }
 
-extension EditProfileViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+extension EditProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         handleImageSelected(fromInfo: info)
-        dismiss(animated:true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -103,7 +104,6 @@ extension EditProfileViewController: EditProfileView {
         LoadingView.stopLoading()
     }
     
-    
     func displayProfileImage(_ URLString: String) {
         profileImageView.loadImageUsingCache(withURLString: URLString)
     }
@@ -113,7 +113,7 @@ extension EditProfileViewController: EditProfileView {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
-            imagePicker.sourceType = .photoLibrary;
+            imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
         }
     }

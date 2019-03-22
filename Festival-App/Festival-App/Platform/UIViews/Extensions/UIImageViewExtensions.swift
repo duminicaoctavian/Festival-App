@@ -23,8 +23,7 @@ extension UIImageView {
         
         guard let URL = URL(string: URLString) else { completion?(false); return }
 
-        URLSession.shared.dataTask(with: URL) { [weak self] (data, response, error) in
-            guard let _ = self else { completion?(false); return }
+        URLSession.shared.dataTask(with: URL) { (data, _, error) in
             
             if error != nil {
                 print(error as Any)

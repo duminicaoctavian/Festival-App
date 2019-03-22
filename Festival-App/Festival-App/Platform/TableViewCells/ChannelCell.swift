@@ -56,5 +56,3 @@ extension ChannelCell: ChannelItemView {
         nameLabel.font = UIFont(name: Constants.readChannelFontFamily, size: Constants.readChannelFontSize)
     }
 }
-
-
