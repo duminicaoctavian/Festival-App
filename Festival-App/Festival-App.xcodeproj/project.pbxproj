@@ -892,7 +892,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Festival-App/Pods-Festival-App-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
@@ -925,7 +925,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Festival-App/Pods-Festival-App-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Festival-App/Pods-Festival-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4A9DA70A47205DF5438DEBB4 /* [CP] Check Pods Manifest.lock */ = {
