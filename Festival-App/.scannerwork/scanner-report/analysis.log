@@ -1,0 +1,127 @@
+Environment variables:
+  - Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.5Ansq4xwBv/Render
+  - HOME=/Users/duminicaoctavian
+  - JAVA_HOME=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre
+  - JAVA_MAIN_CLASS_64086=org.sonarsource.scanner.cli.Main
+  - LC_CTYPE=UTF-8
+  - LOGNAME=duminicaoctavian
+  - PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/duminicaoctavian/Documents/Sonar/sonarqube-6.7.6/bin/macosx-universal-64:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/bin:/Users/duminicaoctavian/Documents/Sonar:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  - PWD=/Users/duminicaoctavian/Documents/iOS/Degree/Festival-App/Festival-App
+  - SHELL=/bin/bash
+  - SHLVL=2
+  - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.PLVhGJUDMo/Listeners
+  - TERM=xterm-256color
+  - TERM_PROGRAM=Apple_Terminal
+  - TERM_PROGRAM_VERSION=421.2
+  - TERM_SESSION_ID=47A374C8-B58C-47E7-8EEA-7ADA86A20F04
+  - TMPDIR=/var/folders/f2/jbpcb6rj3nj_9fhmj9h8p5j40000gn/T/
+  - USER=duminicaoctavian
+  - XPC_FLAGS=0x0
+  - XPC_SERVICE_NAME=0
+  - __CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+System properties:
+  - awt.toolkit=sun.lwawt.macosx.LWCToolkit
+  - file.encoding=UTF-8
+  - file.encoding.pkg=sun.io
+  - file.separator=/
+  - ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - gopherProxySet=false
+  - http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - java.awt.graphicsenv=sun.awt.CGraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.lwawt.macosx.CPrinterJob
+  - java.class.path=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/lib/sonar-scanner-cli-3.3.0.1492.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/endorsed
+  - java.ext.dirs=/Users/duminicaoctavian/Library/Java/Extensions:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+  - java.home=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre
+  - java.io.tmpdir=/var/folders/f2/jbpcb6rj3nj_9fhmj9h8p5j40000gn/T/
+  - java.library.path=/Users/duminicaoctavian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_121-b13
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_121
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.121-b13
+  - line.separator=
+
+  - os.arch=x86_64
+  - os.name=Mac OS X
+  - os.version=10.14.5
+  - path.separator=:
+  - project.home=/Users/duminicaoctavian/Documents/iOS/Degree/Festival-App/Festival-App
+  - scanner.home=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner
+  - socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16
+  - sun.arch.data.model=64
+  - sun.boot.class.path=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/resources.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/rt.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/sunrsasign.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/jsse.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/jce.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/charsets.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib/jfr.jar:/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/classes
+  - sun.boot.library.path=/Users/duminicaoctavian/Documents/Sonar/sonar-scanner/jre/lib
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=
+  - sun.io.unicode.encoding=UnicodeBig
+  - sun.java.command=org.sonarsource.scanner.cli.Main -X
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=UTF-8
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=unknown
+  - user.country=US
+  - user.country.format=RO
+  - user.dir=/Users/duminicaoctavian/Documents/iOS/Degree/Festival-App/Festival-App
+  - user.home=/Users/duminicaoctavian
+  - user.language=en
+  - user.name=duminicaoctavian
+  - user.timezone=Europe/Bucharest
+SonarQube plugins:
+  - SonarC# 6.5.0.3766 (csharp)
+  - SonarPython 1.8.0.1496 (python)
+  - SonarJava 4.15.0.12310 (java)
+  - Flex 2.3 (flex)
+  - SonarQube :: Plugins :: SCM :: Git 1.3.0.869 (scmgit)
+  - SonarXML 1.4.3.1027 (xml)
+  - SonarPHP 2.11.0.2485 (php)
+  - SonarTS 1.1.0.1079 (typescript)
+  - Swift (Backelite) 0.4.4 (backelitesonarswiftplugin)
+  - SonarQube :: Plugins :: SCM :: SVN 1.6.0.860 (scmsvn)
+  - SonarJS 3.2.0.5506 (javascript)
+Global properties:
+  - sonar.core.id=BF41A1F2-AWoY9vuYtOKVH7tNefK9
+  - sonar.core.startTime=2019-05-31T13:31:27+0300
+Settings for module: com.Octavian.Festival-App
+  - sonar.exclusions=**/*.xml,Pods/**/*,Reports/**/*
+  - sonar.host.url=http://localhost:9000
+  - sonar.junit.reportsPath=sonar-reports/TEST-report.xml
+  - sonar.language=swift
+  - sonar.login=******
+  - sonar.password=******
+  - sonar.projectBaseDir=/Users/duminicaoctavian/Documents/iOS/Degree/Festival-App/Festival-App
+  - sonar.projectDescription=Ann app with festival features
+  - sonar.projectKey=com.Octavian.Festival-App
+  - sonar.projectName=Festival-App
+  - sonar.projectVersion=1.0
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.3.0.1492
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=.
+  - sonar.swift.appConfiguration=Debug
+  - sonar.swift.appName=Festival-App
+  - sonar.swift.appScheme=Festival-App
+  - sonar.swift.coverage.reportPattern=sonar-reports/coverage-swift*.xml
+  - sonar.swift.project=Festival-App.xcodeproj
+  - sonar.swift.simulator=platform=iOS Simulator,name=iPhone X,OS=12.2
+  - sonar.swift.swiftlint.report=sonar-reports/*swiftlint.txt
+  - sonar.swift.tailor.config=--no-color --max-line-length=100 --max-file-length=500 --max-name-length=40 --max-name-length=40 --min-name-length=4
+  - sonar.swift.tailor.report=sonar-reports/*tailor.txt
+  - sonar.swift.workspace=Festival-App.xcworkspace
+  - sonar.test.inclusions=*.swift
+  - sonar.tests=Festival-AppTests
+  - sonar.verbose=true
+  - sonar.working.directory=/Users/duminicaoctavian/Documents/iOS/Degree/Festival-App/Festival-App/.scannerwork

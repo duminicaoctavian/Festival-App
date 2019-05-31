@@ -406,34 +406,34 @@ else
 	echo 'Skipping Tailor!'
 fi
 
-if [ "$oclint" = "on" ] && [ "$hasObjC" = "yes" ]; then
+# if [ "$oclint" = "on" ] && [ "$hasObjC" = "yes" ]; then
 
-	echo -n 'Running OCLint...'
+# 	echo -n 'Running OCLint...'
 
-	# Options
-	maxPriority=10000
-    longLineThreshold=250
+# 	# Options
+# 	maxPriority=10000
+#     longLineThreshold=250
 
-	# Build the --include flags
-	currentDirectory=${PWD##*/}
-	echo "$srcDirs" | sed -n 1'p' | tr ',' '\n' > tmpFileRunSonarSh
-	while read word; do
+# 	# Build the --include flags
+# 	currentDirectory=${PWD##*/}
+# 	echo "$srcDirs" | sed -n 1'p' | tr ',' '\n' > tmpFileRunSonarSh
+# 	while read word; do
 
-		includedCommandLineFlags=" --include .*/${currentDirectory}/${word}"
-		if [ "$vflag" = "on" ]; then
-            echo
-            echo -n "Path included in oclint analysis is:$includedCommandLineFlags"
-        fi
-		# Run OCLint with the right set of compiler options
-	    runCommand no oclint-json-compilation-database -v $includedCommandLineFlags -- -rc LONG_LINE=$longLineThreshold -max-priority-1 $maxPriority -max-priority-2 $maxPriority -max-priority-3 $maxPriority -report-type pmd -o sonar-reports/$(echo $word | sed 's/\//_/g')-oclint.xml
+# 		includedCommandLineFlags=" --include .*/${currentDirectory}/${word}"
+# 		if [ "$vflag" = "on" ]; then
+#             echo
+#             echo -n "Path included in oclint analysis is:$includedCommandLineFlags"
+#         fi
+# 		# Run OCLint with the right set of compiler options
+# 	    runCommand no oclint-json-compilation-database -v $includedCommandLineFlags -- -rc LONG_LINE=$longLineThreshold -max-priority-1 $maxPriority -max-priority-2 $maxPriority -max-priority-3 $maxPriority -report-type pmd -o sonar-reports/$(echo $word | sed 's/\//_/g')-oclint.xml
 
-	done < tmpFileRunSonarSh
-	rm -rf tmpFileRunSonarSh
+# 	done < tmpFileRunSonarSh
+# 	rm -rf tmpFileRunSonarSh
 
 
-else
-	echo 'Skipping OCLint (test purposes only!)'
-fi
+# else
+# 	echo 'Skipping OCLint (test purposes only!)'
+# fi
 
 #FauxPas
 if [ "$fauxpas" = "on" ] && [ "$hasObjC" = "yes" ]; then
@@ -509,16 +509,19 @@ fi
 if [ "$sonarscanner" = "on" ]; then
     echo -n 'Running SonarQube using SonarQube Scanner'
     if hash /dev/stdout sonar-scanner 2>/dev/null; then
-        runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
+		echo -n 'Running sonar-scanner -X command'
+        runCommand /dev/stdout sonar-scanner -X $numVersionSonarRunner
     else
         echo 'Skipping sonar-scanner (not installed!)'
     fi
 else
     echo -n 'Running SonarQube using SonarQube Runner'
     if hash /dev/stdout sonar-runner 2>/dev/null; then
+	   echo -n 'Running sonar-runner command'
 	   runCommand /dev/stdout sonar-runner $numVersionSonarRunner
     else
-	   runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
+	   echo -n 'Running sonar-scanner -X command'
+	   runCommand /dev/stdout sonar-scanner -X $numVersionSonarRunner
     fi
 fi
 
