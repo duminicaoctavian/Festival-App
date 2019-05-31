@@ -1,0 +1,92 @@
+{
+    "non-test-frameworks": [
+        {
+            "Festival-App": {
+                "loc": 5949,
+                "noc": 958,
+                "poc": 13.87,
+                "n_a": 36,
+                "n_c": 138,
+                "nom": 756,
+                "not": 0,
+                "noi": 32,
+                "analysis": "The code is under commented. Highly unstable component (lack of dependents, easy to change, irresponsible) ",
+                "dependencies": [
+                    "Firebase(1)",
+                    "FirebaseDatabase(2)",
+                    "FirebaseAuth(1)",
+                    "SwiftyJSON(15)",
+                    "Alamofire(7)",
+                    "AWSS3(1)",
+                    "AWSCognito(1)",
+                    "SocketIO(1)",
+                    "Lottie(2)",
+                    "NVActivityIndicatorView(1)"
+                ],
+                "fan_in": 0,
+                "fan_out": 32,
+                "i": 1.0,
+                "a": 0.261,
+                "d_3": 0.261
+            }
+        }
+    ],
+    "tests-frameworks": [
+        {
+            "Festival-AppTests_Test": {
+                "loc": 1,
+                "noc": 7,
+                "poc": 87.5,
+                "n_a": 0,
+                "n_c": 0,
+                "nom": 0,
+                "not": 0,
+                "noi": 0,
+                "analysis": "The code is over commented. ",
+                "dependencies": []
+            }
+        }
+    ],
+    "shared": {
+        "loc": 0,
+        "noc": 0,
+        "n_a": 0,
+        "n_c": 0,
+        "nom": 0,
+        "not": 0,
+        "poc": 0.0,
+        "noi": 0
+    },
+    "aggregate": {
+        "non-test-frameworks": {
+            "loc": 5949,
+            "noc": 958,
+            "n_a": 36,
+            "n_c": 138,
+            "nom": 756,
+            "not": 0,
+            "poc": 13.87,
+            "noi": 32
+        },
+        "tests-frameworks": {
+            "loc": 1,
+            "noc": 7,
+            "n_a": 0,
+            "n_c": 0,
+            "nom": 0,
+            "not": 0,
+            "poc": 87.5,
+            "noi": 0
+        },
+        "total": {
+            "loc": 5950,
+            "noc": 965,
+            "n_a": 36,
+            "n_c": 138,
+            "nom": 756,
+            "not": 0,
+            "poc": 13.955,
+            "noi": 32
+        }
+    }
+}
